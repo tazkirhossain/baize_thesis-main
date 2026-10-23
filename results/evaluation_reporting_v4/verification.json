@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "metric_rows_independently_checked": 29,
+  "figures": 6,
+  "png_svg_files_checked": 12,
+  "original_numerical_summary_unchanged": true,
+  "synthetic_split_files_unchanged": 15,
+  "winner_selected": false,
+  "checks": [
+    "both-class metric arithmetic",
+    "original confusion-count aggregation",
+    "timing/byte accounting",
+    "source and figure hashes",
+    "PNG/SVG integrity",
+    "synthetic/real separation",
+    "missing real-neural coverage"
+  ],
+  "rendered_review": "six final PNG figures visually inspected; SVGs parsed; no browser/mobile or formal accessibility certification claimed",
+  "report_sha256": "3f8d0fcbfae53c8dc108ab8aa748a2971c8a12f185a698c610822b6d5d308909"
+}

@@ -1,0 +1,14 @@
+name: Repository data and credential safety
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  safety:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check tracked files for prohibited artifacts
+        run: python3 scripts/check_repository_safety.py

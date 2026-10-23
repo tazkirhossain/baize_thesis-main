@@ -1,0 +1,5192 @@
+{
+  "schema_version": 1,
+  "automatic_method_selection": false,
+  "best_method": null,
+  "fit_warning_count_total": 74,
+  "selection_policy": "no accuracy-only selection; validation and final test measurements required; no automatic ranking",
+  "rows": [
+    {
+      "experiment_id": "b6866f215428:category_skew:ensemble_undersampling",
+      "scope": "pooled independent local numerical models",
+      "family": "engineered_numeric",
+      "data_kind": "real",
+      "partition": "category_skew",
+      "classifier": "sgd_logistic",
+      "method": "ensemble_undersampling",
+      "ratio": "1:1",
+      "split": "val",
+      "round": null,
+      "seed": 42,
+      "metrics": {
+        "adult_precision": 0.04962276124665069,
+        "adult_recall": 0.5845099667774086,
+        "adult_f1": 0.09147926686598207,
+        "non_adult_precision": 0.9854907477231858,
+        "non_adult_recall": 0.7159842801753203,
+        "non_adult_f1": 0.8293931701125296,
+        "macro_f1": 0.4604362184892558,
+        "balanced_accuracy": 0.6502471234763645,
+        "accuracy": 0.7127311960542541,
+        "confusion_matrix": [
+          [
+            135911,
+            53913
+          ],
+          [
+            2001,
+            2815
+          ]
+        ],
+        "confusion_matrix_order": [
+          "Non-adult",
+          "Adult"
+        ],
+        "n_records": 194640,
+        "adult_count": 4816,
+        "non_adult_count": 189824,
+        "adult_prevalence": 0.024743115495273325,
+        "threshold": 0.5
+      },
+      "timing": {
+        "total_elapsed_seconds_sum": 5.231670400011353,
+        "training_seconds_sum": null
+      },
+      "communication": null,
+      "fit_warning_count": 22
+    },
+    {
+      "experiment_id": "b6866f215428:category_skew:ensemble_undersampling",
+      "scope": "pooled independent local numerical models",
+      "family": "engineered_numeric",
+      "data_kind": "real",
+      "partition": "category_skew",
+      "classifier": "sgd_logistic",
+      "method": "ensemble_undersampling",
+      "ratio": "1:1",
+      "split": "test",
+      "round": null,
+      "seed": 42,
+      "metrics": {
+        "adult_precision": 0.04192704325073111,
+        "adult_recall": 0.5607245780156443,
+        "adult_f1": 0.07802027839835023,
+        "non_adult_precision": 0.9859535030673231,
+        "non_adult_recall": 0.7064366428342357,
+        "non_adult_f1": 0.8231124299373558,
+        "macro_f1": 0.450566354167853,
+        "balanced_accuracy": 0.63358061042494,
+        "accuracy": 0.7031729785056294,
+        "confusion_matrix": [
+          [
+            149790,
+            62246
+          ],
+          [
+            2134,
+            2724
+          ]
+        ],
+        "confusion_matrix_order": [
+          "Non-adult",
+          "Adult"
+        ],
+        "n_records": 216894,
+        "adult_count": 4858,
+        "non_adult_count": 212036,
+        "adult_prevalence": 0.022398037751159554,
+        "threshold": 0.5
+      },
+      "timing": {
+        "total_elapsed_seconds_sum": 5.231670400011353,
+        "training_seconds_sum": null
+      },
+      "communication": null,
+      "fit_warning_count": 22
+    },
+    {
+      "experiment_id": "b6866f215428:category_skew:oversampling",
+      "scope": "pooled independent local numerical models",
+      "family": "engineered_numeric",
+      "data_kind": "real",
+      "partition": "category_skew",
+      "classifier": "sgd_logistic",
+      "method": "oversampling",
+      "ratio": "1:1",
+      "split": "val",
+      "round": null,
+      "seed": 42,
+      "metrics": {
+        "adult_precision": 0.04453686733399126,
+        "adult_recall": 0.65593853820598,
+        "adult_f1": 0.08341034510073139,
+        "non_adult_precision": 0.9866057715625253,
+        "non_adult_recall": 0.6429798128792987,
+        "non_adult_f1": 0.7785630904463312,
+        "macro_f1": 0.4309867177735313,
+        "balanced_accuracy": 0.6494591755426393,
+        "accuracy": 0.6433004521167284,
+        "confusion_matrix": [
+          [
+            122053,
+            67771
+          ],
+          [
+            1657,
+            3159
+          ]
+        ],
+        "confusion_matrix_order": [
+          "Non-adult",
+          "Adult"
+        ],
+        "n_records": 194640,
+        "adult_count": 4816,
+        "non_adult_count": 189824,
+        "adult_prevalence": 0.024743115495273325,
+        "threshold": 0.5
+      },
+      "timing": {
+        "total_elapsed_seconds_sum": 9.750903299995116,
+        "training_seconds_sum": null
+      },
+      "communication": null,
+      "fit_warning_count": 0
+    },
+    {
+      "experiment_id": "b6866f215428:category_skew:oversampling",
+      "scope": "pooled independent local numerical models",
+      "family": "engineered_numeric",
+      "data_kind": "real",
+      "partition": "category_skew",
+      "classifier": "sgd_logistic",
+      "method": "oversampling",
+      "ratio": "1:1",
+      "split": "test",
+      "round": null,
+      "seed": 42,
+      "metrics": {
+        "adult_precision": 0.03883922396992443,
+        "adult_recall": 0.6358583779333059,
+        "adult_f1": 0.07320685855126731,
+        "non_adult_precision": 0.9871215264885957,
+        "non_adult_recall": 0.6394763153426777,
+        "non_adult_f1": 0.776148621768361,
+        "macro_f1": 0.42467774015981413,
+        "balanced_accuracy": 0.6376673466379918,
+        "accuracy": 0.6393952806440012,
+        "confusion_matrix": [
+          [
+            135592,
+            76444
+          ],
+          [
+            1769,
+            3089
+          ]
+        ],
+        "confusion_matrix_order": [
+          "Non-adult",
+          "Adult"
+        ],
+        "n_records": 216894,
+        "adult_count": 4858,
+        "non_adult_count": 212036,
+        "adult_prevalence": 0.022398037751159554,
+        "threshold": 0.5
+      },
+      "timing": {
+        "total_elapsed_seconds_sum": 9.750903299995116,
+        "training_seconds_sum": null
+      },
+      "communication": null,
+      "fit_warning_count": 0
+    },
+    {
+      "experiment_id": "b6866f215428:category_skew:smote",
+      "scope": "pooled independent local numerical models",
+      "family": "engineered_numeric",
+      "data_kind": "real",
+      "partition": "category_skew",
+      "classifier": "sgd_logistic",
+      "method": "smote",
+      "ratio": "1:1",
+      "split": "val",
+      "round": null,
+      "seed": 42,
+      "metrics": {
+        "adult_precision": 0.04838709677419355,
+        "adult_recall": 0.6216777408637874,
+        "adult_f1": 0.08978588136508127,
+        "non_adult_precision": 0.9862764002289778,
+        "non_adult_recall": 0.6898074005394471,
+        "non_adult_f1": 0.8118218904608975,
+        "macro_f1": 0.45080388591298937,
+        "balanced_accuracy": 0.6557425707016172,
+        "accuracy": 0.6881216605014385,
+        "confusion_matrix": [
+          [
+            130942,
+            58882
+          ],
+          [
+            1822,
+            2994
+          ]
+        ],
+        "confusion_matrix_order": [
+          "Non-adult",
+          "Adult"
+        ],
+        "n_records": 194640,
+        "adult_count": 4816,
+        "non_adult_count": 189824,
+        "adult_prevalence": 0.024743115495273325,
+        "threshold": 0.5
+      },
+      "timing": {
+        "total_elapsed_seconds_sum": 10.73661130000255,
+        "training_seconds_sum": null
+      },
+      "communication": null,
+      "fit_warning_count": 0
+    },
+    {
+      "experiment_id": "b6866f215428:category_skew:smote",
+      "scope": "pooled independent local numerical models",
+      "family": "engineered_numeric",
+      "data_kind": "real",
+      "partition": "category_skew",
+      "classifier": "sgd_logistic",
+      "method": "smote",
+      "ratio": "1:1",
+      "split": "test",
+      "round": null,
+      "seed": 42,
+      "metrics": {
+        "adult_precision": 0.04122510604644475,
+        "adult_recall": 0.5901605599011939,
+        "adult_f1": 0.07706678494146742,
+        "non_adult_precision": 0.9864878621504048,
+        "non_adult_recall": 0.6855345318719462,
+        "non_adult_f1": 0.808926360309974,
+        "macro_f1": 0.44299657262572073,
+        "balanced_accuracy": 0.63784754588657,
+        "accuracy": 0.6833983420472673,
+        "confusion_matrix": [
+          [
+            145358,
+            66678
+          ],
+          [
+            1991,
+            2867
+          ]
+        ],
+        "confusion_matrix_order": [
+          "Non-adult",
+          "Adult"
+        ],
+        "n_records": 216894,
+        "adult_count": 4858,
+        "non_adult_count": 212036,
+        "adult_prevalence": 0.022398037751159554,
+        "threshold": 0.5
+      },
+      "timing": {
+        "total_elapsed_seconds_sum": 10.73661130000255,
+        "training_seconds_sum": null
+      },
+      "communication": null,
+      "fit_warning_count": 0
+    },
+    {
+      "experiment_id": "b6866f215428:category_skew:undersampling",
+      "scope": "pooled independent local numerical models",
+      "family": "engineered_numeric",
+      "data_kind": "real",
+      "partition": "category_skew",
+      "classifier": "sgd_logistic",
+      "method": "undersampling",
+      "ratio": "1:1",
+      "split": "val",
+      "round": null,
+      "seed": 42,
+      "metrics": {
+        "adult_precision": 0.04067378800328677,
+        "adult_recall": 0.6578073089700996,
+        "adult_f1": 0.07661056297156123,
+        "non_adult_precision": 0.9858846101137454,
+        "non_adult_recall": 0.606372218476062,
+        "non_adult_f1": 0.750900266165649,
+        "macro_f1": 0.4137554145686051,
+        "balanced_accuracy": 0.6320897637230809,
+        "accuracy": 0.6076448828606659,
+        "confusion_matrix": [
+          [
+            115104,
+            74720
+          ],
+          [
+            1648,
+            3168
+          ]
+        ],
+        "confusion_matrix_order": [
+          "Non-adult",
+          "Adult"
+        ],
+        "n_records": 194640,
+        "adult_count": 4816,
+        "non_adult_count": 189824,
+        "adult_prevalence": 0.024743115495273325,
+        "threshold": 0.5
+      },
+      "timing": {
+        "total_elapsed_seconds_sum": 1.3563018999848282,
+        "training_seconds_sum": null
+      },
+      "communication": null,
+      "fit_warning_count": 4
+    },
+    {
+      "experiment_id": "b6866f215428:category_skew:undersampling",
+      "scope": "pooled independent local numerical models",
+      "family": "engineered_numeric",
+      "data_kind": "real",
+      "partition": "category_skew",
+      "classifier": "sgd_logistic",
+      "method": "undersampling",
+      "ratio": "1:1",
+      "split": "test",
+      "round": null,
+      "seed": 42,
+      "metrics": {
+        "adult_precision": 0.03690701975520974,
+        "adult_recall": 0.6449156031288596,
+        "adult_f1": 0.06981848975453218,
+        "non_adult_precision": 0.9869323131699557,
+        "non_adult_recall": 0.6144239657416665,
+        "non_adult_f1": 0.757351594722722,
+        "macro_f1": 0.4135850422386271,
+        "balanced_accuracy": 0.629669784435263,
+        "accuracy": 0.6151069185869595,
+        "confusion_matrix": [
+          [
+            130280,
+            81756
+          ],
+          [
+            1725,
+            3133
+          ]
+        ],
+        "confusion_matrix_order": [
+          "Non-adult",
+          "Adult"
+        ],
+        "n_records": 216894,
+        "adult_count": 4858,
+        "non_adult_count": 212036,
+        "adult_prevalence": 0.022398037751159554,
+        "threshold": 0.5
+      },
+      "timing": {
+        "total_elapsed_seconds_sum": 1.3563018999848282,
+        "training_seconds_sum": null
+      },
+      "communication": null,
+      "fit_warning_count": 4
+    },
+    {
+      "experiment_id": "b6866f215428:iid:ensemble_undersampling",
+      "scope": "pooled independent local numerical models",
+      "family": "engineered_numeric",
+      "data_kind": "real",
+      "partition": "iid",
+      "classifier": "sgd_logistic",
+      "method": "ensemble_undersampling",
+      "ratio": "1:1",
+      "split": "val",
+      "round": null,
+      "seed": 42,
+      "metrics": {
+        "adult_precision": 0.045496208649279224,
+        "adult_recall": 0.5668604651162791,
+        "adult_f1": 0.08423196186421067,
+        "non_adult_precision": 0.9845062576595982,
+        "non_adult_recall": 0.6982731372218476,
+        "non_adult_f1": 0.8170462215564986,
+        "macro_f1": 0.45063909171035466,
+        "balanced_accuracy": 0.6325668011690633,
+        "accuracy": 0.6950215782983971,
+        "confusion_matrix": [
+          [
+            132549,
+            57275
+          ],
+          [
+            2086,
+            2730
+          ]
+        ],
+        "confusion_matrix_order": [
+          "Non-adult",
+          "Adult"
+        ],
+        "n_records": 194640,
+        "adult_count": 4816,
+        "non_adult_count": 189824,
+        "adult_prevalence": 0.024743115495273325,
+        "threshold": 0.5
+      },
+      "timing": {
+        "total_elapsed_seconds_sum": 10.300723000007565,
+        "training_seconds_sum": null
+      },
+      "communication": null,
+      "fit_warning_count": 20
+    },
+    {
+      "experiment_id": "b6866f215428:iid:ensemble_undersampling",
+      "scope": "pooled independent local numerical models",
+      "family": "engineered_numeric",
+      "data_kind": "real",
+      "partition": "iid",
+      "classifier": "sgd_logistic",
+      "method": "ensemble_undersampling",
+      "ratio": "1:1",
+      "split": "test",
+      "round": null,
+      "seed": 42,
+      "metrics": {
+        "adult_precision": 0.03853315101969569,
+        "adult_recall": 0.5452861259777686,
+        "adult_f1": 0.07197978370740721,
+        "non_adult_precision": 0.9850892350892351,
+        "non_adult_recall": 0.6882746326095569,
+        "non_adult_f1": 0.8103580392243964,
+        "macro_f1": 0.4411689114659018,
+        "balanced_accuracy": 0.6167803792936628,
+        "accuracy": 0.6850719706400361,
+        "confusion_matrix": [
+          [
+            145939,
+            66097
+          ],
+          [
+            2209,
+            2649
+          ]
+        ],
+        "confusion_matrix_order": [
+          "Non-adult",
+          "Adult"
+        ],
+        "n_records": 216894,
+        "adult_count": 4858,
+        "non_adult_count": 212036,
+        "adult_prevalence": 0.022398037751159554,
+        "threshold": 0.5
+      },
+      "timing": {
+        "total_elapsed_seconds_sum": 10.300723000007565,
+        "training_seconds_sum": null
+      },
+      "communication": null,
+      "fit_warning_count": 20
+    },
+    {
+      "experiment_id": "b6866f215428:iid:oversampling",
+      "scope": "pooled independent local numerical models",
+      "family": "engineered_numeric",
+      "data_kind": "real",
+      "partition": "iid",
+      "classifier": "sgd_logistic",
+      "method": "oversampling",
+      "ratio": "1:1",
+      "split": "val",
+      "round": null,
+      "seed": 42,
+      "metrics": {
+        "adult_precision": 0.04711746781040283,
+        "adult_recall": 0.5554401993355482,
+        "adult_f1": 0.08686616116514313,
+        "non_adult_precision": 0.9844705404484032,
+        "non_adult_recall": 0.7150096931894808,
+        "non_adult_f1": 0.8283779536209417,
+        "macro_f1": 0.4576220573930424,
+        "balanced_accuracy": 0.6352249462625146,
+        "accuracy": 0.7110614467735307,
+        "confusion_matrix": [
+          [
+            135726,
+            54098
+          ],
+          [
+            2141,
+            2675
+          ]
+        ],
+        "confusion_matrix_order": [
+          "Non-adult",
+          "Adult"
+        ],
+        "n_records": 194640,
+        "adult_count": 4816,
+        "non_adult_count": 189824,
+        "adult_prevalence": 0.024743115495273325,
+        "threshold": 0.5
+      },
+      "timing": {
+        "total_elapsed_seconds_sum": 16.499554799986072,
+        "training_seconds_sum": null
+      },
+      "communication": null,
+      "fit_warning_count": 0
+    },
+    {
+      "experiment_id": "b6866f215428:iid:oversampling",
+      "scope": "pooled independent local numerical models",
+      "family": "engineered_numeric",
+      "data_kind": "real",
+      "partition": "iid",
+      "classifier": "sgd_logistic",
+      "method": "oversampling",
+      "ratio": "1:1",
+      "split": "test",
+      "round": null,
+      "seed": 42,
+      "metrics": {
+        "adult_precision": 0.039221454894552664,
+        "adult_recall": 0.5214079868258542,
+        "adult_f1": 0.07295506912442397,
+        "non_adult_precision": 0.984735280214297,
+        "non_adult_recall": 0.7073657303476768,
+        "non_adult_f1": 0.8233172681063159,
+        "macro_f1": 0.4481361686153699,
+        "balanced_accuracy": 0.6143868585867656,
+        "accuracy": 0.7032006417881546,
+        "confusion_matrix": [
+          [
+            149987,
+            62049
+          ],
+          [
+            2325,
+            2533
+          ]
+        ],
+        "confusion_matrix_order": [
+          "Non-adult",
+          "Adult"
+        ],
+        "n_records": 216894,
+        "adult_count": 4858,
+        "non_adult_count": 212036,
+        "adult_prevalence": 0.022398037751159554,
+        "threshold": 0.5
+      },
+      "timing": {
+        "total_elapsed_seconds_sum": 16.499554799986072,
+        "training_seconds_sum": null
+      },
+      "communication": null,
+      "fit_warning_count": 0
+    },
+    {
+      "experiment_id": "b6866f215428:iid:smote",
+      "scope": "pooled independent local numerical models",
+      "family": "engineered_numeric",
+      "data_kind": "real",
+      "partition": "iid",
+      "classifier": "sgd_logistic",
+      "method": "smote",
+      "ratio": "1:1",
+      "split": "val",
+      "round": null,
+      "seed": 42,
+      "metrics": {
+        "adult_precision": 0.046296296296296294,
+        "adult_recall": 0.5793189368770764,
+        "adult_f1": 0.08574062692071296,
+        "non_adult_precision": 0.9849229028993273,
+        "non_adult_recall": 0.69722479770735,
+        "non_adult_f1": 0.8164713140037014,
+        "macro_f1": 0.4511059704622072,
+        "balanced_accuracy": 0.6382718672922132,
+        "accuracy": 0.6943074393752569,
+        "confusion_matrix": [
+          [
+            132350,
+            57474
+          ],
+          [
+            2026,
+            2790
+          ]
+        ],
+        "confusion_matrix_order": [
+          "Non-adult",
+          "Adult"
+        ],
+        "n_records": 194640,
+        "adult_count": 4816,
+        "non_adult_count": 189824,
+        "adult_prevalence": 0.024743115495273325,
+        "threshold": 0.5
+      },
+      "timing": {
+        "total_elapsed_seconds_sum": 19.052659900000435,
+        "training_seconds_sum": null
+      },
+      "communication": null,
+      "fit_warning_count": 0
+    },
+    {
+      "experiment_id": "b6866f215428:iid:smote",
+      "scope": "pooled independent local numerical models",
+      "family": "engineered_numeric",
+      "data_kind": "real",
+      "partition": "iid",
+      "classifier": "sgd_logistic",
+      "method": "smote",
+      "ratio": "1:1",
+      "split": "test",
+      "round": null,
+      "seed": 42,
+      "metrics": {
+        "adult_precision": 0.038477318016645175,
+        "adult_recall": 0.5405516673528201,
+        "adult_f1": 0.07184088857275736,
+        "non_adult_precision": 0.9849844597231006,
+        "non_adult_recall": 0.6905148182384123,
+        "non_adult_f1": 0.811873062697889,
+        "macro_f1": 0.44185697563532317,
+        "balanced_accuracy": 0.6155332427956162,
+        "accuracy": 0.687155937923594,
+        "confusion_matrix": [
+          [
+            146414,
+            65622
+          ],
+          [
+            2232,
+            2626
+          ]
+        ],
+        "confusion_matrix_order": [
+          "Non-adult",
+          "Adult"
+        ],
+        "n_records": 216894,
+        "adult_count": 4858,
+        "non_adult_count": 212036,
+        "adult_prevalence": 0.022398037751159554,
+        "threshold": 0.5
+      },
+      "timing": {
+        "total_elapsed_seconds_sum": 19.052659900000435,
+        "training_seconds_sum": null
+      },
+      "communication": null,
+      "fit_warning_count": 0
+    },
+    {
+      "experiment_id": "b6866f215428:iid:undersampling",
+      "scope": "pooled independent local numerical models",
+      "family": "engineered_numeric",
+      "data_kind": "real",
+      "partition": "iid",
+      "classifier": "sgd_logistic",
+      "method": "undersampling",
+      "ratio": "1:1",
+      "split": "val",
+      "round": null,
+      "seed": 42,
+      "metrics": {
+        "adult_precision": 0.041568568643623,
+        "adult_recall": 0.5755813953488372,
+        "adult_f1": 0.07753737709962098,
+        "non_adult_precision": 0.9840256340119573,
+        "non_adult_recall": 0.6633039025623736,
+        "non_adult_f1": 0.7924438052860636,
+        "macro_f1": 0.4349905911928423,
+        "balanced_accuracy": 0.6194426489556054,
+        "accuracy": 0.6611333744348541,
+        "confusion_matrix": [
+          [
+            125911,
+            63913
+          ],
+          [
+            2044,
+            2772
+          ]
+        ],
+        "confusion_matrix_order": [
+          "Non-adult",
+          "Adult"
+        ],
+        "n_records": 194640,
+        "adult_count": 4816,
+        "non_adult_count": 189824,
+        "adult_prevalence": 0.024743115495273325,
+        "threshold": 0.5
+      },
+      "timing": {
+        "total_elapsed_seconds_sum": 3.0749747999798274,
+        "training_seconds_sum": null
+      },
+      "communication": null,
+      "fit_warning_count": 1
+    },
+    {
+      "experiment_id": "b6866f215428:iid:undersampling",
+      "scope": "pooled independent local numerical models",
+      "family": "engineered_numeric",
+      "data_kind": "real",
+      "partition": "iid",
+      "classifier": "sgd_logistic",
+      "method": "undersampling",
+      "ratio": "1:1",
+      "split": "test",
+      "round": null,
+      "seed": 42,
+      "metrics": {
+        "adult_precision": 0.03632892259552915,
+        "adult_recall": 0.5640181144503911,
+        "adult_f1": 0.06826108619830593,
+        "non_adult_precision": 0.9850288396290432,
+        "non_adult_recall": 0.657218585523213,
+        "non_adult_f1": 0.788406485850391,
+        "macro_f1": 0.42833378602434846,
+        "balanced_accuracy": 0.6106183499868021,
+        "accuracy": 0.6551310778536982,
+        "confusion_matrix": [
+          [
+            139354,
+            72682
+          ],
+          [
+            2118,
+            2740
+          ]
+        ],
+        "confusion_matrix_order": [
+          "Non-adult",
+          "Adult"
+        ],
+        "n_records": 216894,
+        "adult_count": 4858,
+        "non_adult_count": 212036,
+        "adult_prevalence": 0.022398037751159554,
+        "threshold": 0.5
+      },
+      "timing": {
+        "total_elapsed_seconds_sum": 3.0749747999798274,
+        "training_seconds_sum": null
+      },
+      "communication": null,
+      "fit_warning_count": 1
+    },
+    {
+      "experiment_id": "b6866f215428:label_skew:ensemble_undersampling",
+      "scope": "pooled independent local numerical models",
+      "family": "engineered_numeric",
+      "data_kind": "real",
+      "partition": "label_skew",
+      "classifier": "sgd_logistic",
+      "method": "ensemble_undersampling",
+      "ratio": "1:1",
+      "split": "val",
+      "round": null,
+      "seed": 42,
+      "metrics": {
+        "adult_precision": 0.045202339025848894,
+        "adult_recall": 0.5649916943521595,
+        "adult_f1": 0.08370762320802314,
+        "non_adult_precision": 0.9844173038588557,
+        "non_adult_recall": 0.6972195296695887,
+        "non_adult_f1": 0.8162939297124601,
+        "macro_f1": 0.4500007764602416,
+        "balanced_accuracy": 0.631105612010874,
+        "accuracy": 0.6939478010686395,
+        "confusion_matrix": [
+          [
+            132349,
+            57475
+          ],
+          [
+            2095,
+            2721
+          ]
+        ],
+        "confusion_matrix_order": [
+          "Non-adult",
+          "Adult"
+        ],
+        "n_records": 194640,
+        "adult_count": 4816,
+        "non_adult_count": 189824,
+        "adult_prevalence": 0.024743115495273325,
+        "threshold": 0.5
+      },
+      "timing": {
+        "total_elapsed_seconds_sum": 4.488795299999765,
+        "training_seconds_sum": null
+      },
+      "communication": null,
+      "fit_warning_count": 22
+    },
+    {
+      "experiment_id": "b6866f215428:label_skew:ensemble_undersampling",
+      "scope": "pooled independent local numerical models",
+      "family": "engineered_numeric",
+      "data_kind": "real",
+      "partition": "label_skew",
+      "classifier": "sgd_logistic",
+      "method": "ensemble_undersampling",
+      "ratio": "1:1",
+      "split": "test",
+      "round": null,
+      "seed": 42,
+      "metrics": {
+        "adult_precision": 0.03755316523683026,
+        "adult_recall": 0.5325236722931247,
+        "adult_f1": 0.07015878612011336,
+        "non_adult_precision": 0.9846559237863586,
+        "non_adult_recall": 0.6873078156539456,
+        "non_adult_f1": 0.8095411355928908,
+        "macro_f1": 0.4398499608565021,
+        "balanced_accuracy": 0.6099157439735352,
+        "accuracy": 0.683840954567669,
+        "confusion_matrix": [
+          [
+            145734,
+            66302
+          ],
+          [
+            2271,
+            2587
+          ]
+        ],
+        "confusion_matrix_order": [
+          "Non-adult",
+          "Adult"
+        ],
+        "n_records": 216894,
+        "adult_count": 4858,
+        "non_adult_count": 212036,
+        "adult_prevalence": 0.022398037751159554,
+        "threshold": 0.5
+      },
+      "timing": {
+        "total_elapsed_seconds_sum": 4.488795299999765,
+        "training_seconds_sum": null
+      },
+      "communication": null,
+      "fit_warning_count": 22
+    },
+    {
+      "experiment_id": "b6866f215428:label_skew:oversampling",
+      "scope": "pooled independent local numerical models",
+      "family": "engineered_numeric",
+      "data_kind": "real",
+      "partition": "label_skew",
+      "classifier": "sgd_logistic",
+      "method": "oversampling",
+      "ratio": "1:1",
+      "split": "val",
+      "round": null,
+      "seed": 42,
+      "metrics": {
+        "adult_precision": 0.04013285358427899,
+        "adult_recall": 0.6322674418604651,
+        "adult_f1": 0.07547497180532663,
+        "non_adult_precision": 0.985088450495508,
+        "non_adult_recall": 0.6163393459204316,
+        "non_adult_f1": 0.7582593141083181,
+        "macro_f1": 0.41686714295682237,
+        "balanced_accuracy": 0.6243033938904483,
+        "accuracy": 0.6167334566378956,
+        "confusion_matrix": [
+          [
+            116996,
+            72828
+          ],
+          [
+            1771,
+            3045
+          ]
+        ],
+        "confusion_matrix_order": [
+          "Non-adult",
+          "Adult"
+        ],
+        "n_records": 194640,
+        "adult_count": 4816,
+        "non_adult_count": 189824,
+        "adult_prevalence": 0.024743115495273325,
+        "threshold": 0.5
+      },
+      "timing": {
+        "total_elapsed_seconds_sum": 8.896433700007037,
+        "training_seconds_sum": null
+      },
+      "communication": null,
+      "fit_warning_count": 0
+    },
+    {
+      "experiment_id": "b6866f215428:label_skew:oversampling",
+      "scope": "pooled independent local numerical models",
+      "family": "engineered_numeric",
+      "data_kind": "real",
+      "partition": "label_skew",
+      "classifier": "sgd_logistic",
+      "method": "oversampling",
+      "ratio": "1:1",
+      "split": "test",
+      "round": null,
+      "seed": 42,
+      "metrics": {
+        "adult_precision": 0.03494534614110632,
+        "adult_recall": 0.6080691642651297,
+        "adult_f1": 0.06609240407204385,
+        "non_adult_precision": 0.9856152067814025,
+        "non_adult_recall": 0.6152634458299534,
+        "non_adult_f1": 0.757600218352023,
+        "macro_f1": 0.4118463112120334,
+        "balanced_accuracy": 0.6116663050475415,
+        "accuracy": 0.615102308039872,
+        "confusion_matrix": [
+          [
+            130458,
+            81578
+          ],
+          [
+            1904,
+            2954
+          ]
+        ],
+        "confusion_matrix_order": [
+          "Non-adult",
+          "Adult"
+        ],
+        "n_records": 216894,
+        "adult_count": 4858,
+        "non_adult_count": 212036,
+        "adult_prevalence": 0.022398037751159554,
+        "threshold": 0.5
+      },
+      "timing": {
+        "total_elapsed_seconds_sum": 8.896433700007037,
+        "training_seconds_sum": null
+      },
+      "communication": null,
+      "fit_warning_count": 0
+    },
+    {
+      "experiment_id": "b6866f215428:label_skew:smote",
+      "scope": "pooled independent local numerical models",
+      "family": "engineered_numeric",
+      "data_kind": "real",
+      "partition": "label_skew",
+      "classifier": "sgd_logistic",
+      "method": "smote",
+      "ratio": "1:1",
+      "split": "val",
+      "round": null,
+      "seed": 42,
+      "metrics": {
+        "adult_precision": 0.044019664920111265,
+        "adult_recall": 0.5651993355481728,
+        "adult_f1": 0.08167796915321371,
+        "non_adult_precision": 0.9842324026384748,
+        "non_adult_recall": 0.6885852157788267,
+        "non_adult_f1": 0.8102830504481942,
+        "macro_f1": 0.4459805098007039,
+        "balanced_accuracy": 0.6268922756634998,
+        "accuracy": 0.6855322646937937,
+        "confusion_matrix": [
+          [
+            130710,
+            59114
+          ],
+          [
+            2094,
+            2722
+          ]
+        ],
+        "confusion_matrix_order": [
+          "Non-adult",
+          "Adult"
+        ],
+        "n_records": 194640,
+        "adult_count": 4816,
+        "non_adult_count": 189824,
+        "adult_prevalence": 0.024743115495273325,
+        "threshold": 0.5
+      },
+      "timing": {
+        "total_elapsed_seconds_sum": 10.52380739999353,
+        "training_seconds_sum": null
+      },
+      "communication": null,
+      "fit_warning_count": 0
+    },
+    {
+      "experiment_id": "b6866f215428:label_skew:smote",
+      "scope": "pooled independent local numerical models",
+      "family": "engineered_numeric",
+      "data_kind": "real",
+      "partition": "label_skew",
+      "classifier": "sgd_logistic",
+      "method": "smote",
+      "ratio": "1:1",
+      "split": "test",
+      "round": null,
+      "seed": 42,
+      "metrics": {
+        "adult_precision": 0.03691189050470488,
+        "adult_recall": 0.5329353643474681,
+        "adult_f1": 0.06904184111576309,
+        "non_adult_precision": 0.9845387519249901,
+        "non_adult_recall": 0.6814173064951234,
+        "non_adult_f1": 0.8054014883357953,
+        "macro_f1": 0.43722166472577917,
+        "balanced_accuracy": 0.6071763354212958,
+        "accuracy": 0.6780916023495348,
+        "confusion_matrix": [
+          [
+            144485,
+            67551
+          ],
+          [
+            2269,
+            2589
+          ]
+        ],
+        "confusion_matrix_order": [
+          "Non-adult",
+          "Adult"
+        ],
+        "n_records": 216894,
+        "adult_count": 4858,
+        "non_adult_count": 212036,
+        "adult_prevalence": 0.022398037751159554,
+        "threshold": 0.5
+      },
+      "timing": {
+        "total_elapsed_seconds_sum": 10.52380739999353,
+        "training_seconds_sum": null
+      },
+      "communication": null,
+      "fit_warning_count": 0
+    },
+    {
+      "experiment_id": "b6866f215428:label_skew:undersampling",
+      "scope": "pooled independent local numerical models",
+      "family": "engineered_numeric",
+      "data_kind": "real",
+      "partition": "label_skew",
+      "classifier": "sgd_logistic",
+      "method": "undersampling",
+      "ratio": "1:1",
+      "split": "val",
+      "round": null,
+      "seed": 42,
+      "metrics": {
+        "adult_precision": 0.043871876513139556,
+        "adult_recall": 0.6208471760797342,
+        "adult_f1": 0.08195261001247105,
+        "non_adult_precision": 0.9855637338224481,
+        "non_adult_recall": 0.6567188553607552,
+        "non_adult_f1": 0.788217924763919,
+        "macro_f1": 0.43508526738819503,
+        "balanced_accuracy": 0.6387830157202448,
+        "accuracy": 0.6558312782572955,
+        "confusion_matrix": [
+          [
+            124661,
+            65163
+          ],
+          [
+            1826,
+            2990
+          ]
+        ],
+        "confusion_matrix_order": [
+          "Non-adult",
+          "Adult"
+        ],
+        "n_records": 194640,
+        "adult_count": 4816,
+        "non_adult_count": 189824,
+        "adult_prevalence": 0.024743115495273325,
+        "threshold": 0.5
+      },
+      "timing": {
+        "total_elapsed_seconds_sum": 1.3705181000113953,
+        "training_seconds_sum": null
+      },
+      "communication": null,
+      "fit_warning_count": 5
+    },
+    {
+      "experiment_id": "b6866f215428:label_skew:undersampling",
+      "scope": "pooled independent local numerical models",
+      "family": "engineered_numeric",
+      "data_kind": "real",
+      "partition": "label_skew",
+      "classifier": "sgd_logistic",
+      "method": "undersampling",
+      "ratio": "1:1",
+      "split": "test",
+      "round": null,
+      "seed": 42,
+      "metrics": {
+        "adult_precision": 0.037610273007255834,
+        "adult_recall": 0.593248250308769,
+        "adult_f1": 0.0707360773629826,
+        "non_adult_precision": 0.9859124805726263,
+        "non_adult_recall": 0.6522005697145767,
+        "non_adult_f1": 0.7850650862044496,
+        "macro_f1": 0.4279005817837161,
+        "balanced_accuracy": 0.6227244100116729,
+        "accuracy": 0.6508801534390071,
+        "confusion_matrix": [
+          [
+            138290,
+            73746
+          ],
+          [
+            1976,
+            2882
+          ]
+        ],
+        "confusion_matrix_order": [
+          "Non-adult",
+          "Adult"
+        ],
+        "n_records": 216894,
+        "adult_count": 4858,
+        "non_adult_count": 212036,
+        "adult_prevalence": 0.022398037751159554,
+        "threshold": 0.5
+      },
+      "timing": {
+        "total_elapsed_seconds_sum": 1.3705181000113953,
+        "training_seconds_sum": null
+      },
+      "communication": null,
+      "fit_warning_count": 5
+    },
+    {
+      "experiment_id": "b58d73e6738abc28",
+      "scope": "federated global model",
+      "family": "character_cnn",
+      "data_kind": "synthetic",
+      "partition": "unknown",
+      "classifier": "character_cnn",
+      "method": "undersampling",
+      "ratio": "1:1",
+      "seed": 42,
+      "split": "train",
+      "round": 1,
+      "metrics": {
+        "adult_precision": 0.3389830508474576,
+        "adult_recall": 1.0,
+        "adult_f1": 0.5063291139240507,
+        "non_adult_precision": 1.0,
+        "non_adult_recall": 0.025,
+        "non_adult_f1": 0.04878048780487805,
+        "macro_f1": 0.2775548008644644,
+        "balanced_accuracy": 0.5125,
+        "accuracy": 0.35,
+        "confusion_matrix": [
+          [
+            1,
+            39
+          ],
+          [
+            0,
+            20
+          ]
+        ],
+        "confusion_matrix_order": [
+          "Non-adult",
+          "Adult"
+        ],
+        "n_records": 60,
+        "adult_count": 20,
+        "non_adult_count": 40,
+        "adult_prevalence": 0.3333333333333333,
+        "threshold": 0.5,
+        "loss": 0.88516180117925
+      },
+      "optimization": {
+        "loss": 6.601030254364014,
+        "examples_processed": 40,
+        "scope": "balanced training views, epochs and ensemble members; not global train evaluation"
+      },
+      "timing": {
+        "client_training_seconds_sum": 10.871392300000025,
+        "client_training_seconds_max": 10.278148400000191,
+        "fit_round_wall_seconds": 12.909571900000174,
+        "val_client_evaluation_seconds_sum": 0.18664329999955953,
+        "val_phase_wall_seconds": 1.5133890000001884,
+        "round_wall_seconds": 14.471289200000228,
+        "train_evaluation_seconds_sum": 0.3578949000002467
+      },
+      "communication": {
+        "fit_down_bytes": 62423485,
+        "fit_up_bytes": 62424705,
+        "evaluation_down_bytes": 62423235,
+        "evaluation_up_bytes": 2770,
+        "total_bytes": 187274195,
+        "measurement": "serialized Flower Fit/Evaluate protobuf payloads, both directions; excludes gRPC/TLS/control/retry overhead"
+      },
+      "fit_warning_count": null
+    },
+    {
+      "experiment_id": "b58d73e6738abc28",
+      "scope": "federated global model",
+      "family": "character_cnn",
+      "data_kind": "synthetic",
+      "partition": "unknown",
+      "classifier": "character_cnn",
+      "method": "undersampling",
+      "ratio": "1:1",
+      "seed": 42,
+      "split": "val",
+      "round": 1,
+      "metrics": {
+        "adult_precision": 0.5,
+        "adult_recall": 0.9,
+        "adult_f1": 0.6428571428571429,
+        "non_adult_precision": 0.5,
+        "non_adult_recall": 0.1,
+        "non_adult_f1": 0.16666666666666666,
+        "macro_f1": 0.40476190476190477,
+        "balanced_accuracy": 0.5,
+        "accuracy": 0.5,
+        "confusion_matrix": [
+          [
+            1,
+            9
+          ],
+          [
+            1,
+            9
+          ]
+        ],
+        "confusion_matrix_order": [
+          "Non-adult",
+          "Adult"
+        ],
+        "n_records": 20,
+        "adult_count": 10,
+        "non_adult_count": 10,
+        "adult_prevalence": 0.5,
+        "threshold": 0.5,
+        "loss": 0.7722979068756104
+      },
+      "optimization": {
+        "loss": 6.601030254364014,
+        "examples_processed": 40,
+        "scope": "balanced training views, epochs and ensemble members; not global train evaluation"
+      },
+      "timing": {
+        "client_training_seconds_sum": 10.871392300000025,
+        "client_training_seconds_max": 10.278148400000191,
+        "fit_round_wall_seconds": 12.909571900000174,
+        "val_client_evaluation_seconds_sum": 0.18664329999955953,
+        "val_phase_wall_seconds": 1.5133890000001884,
+        "round_wall_seconds": 14.471289200000228,
+        "train_evaluation_seconds_sum": 0.3578949000002467
+      },
+      "communication": {
+        "fit_down_bytes": 62423485,
+        "fit_up_bytes": 62424705,
+        "evaluation_down_bytes": 62423235,
+        "evaluation_up_bytes": 2770,
+        "total_bytes": 187274195,
+        "measurement": "serialized Flower Fit/Evaluate protobuf payloads, both directions; excludes gRPC/TLS/control/retry overhead"
+      },
+      "fit_warning_count": null
+    },
+    {
+      "experiment_id": "b58d73e6738abc28",
+      "scope": "federated global model",
+      "family": "character_cnn",
+      "data_kind": "synthetic",
+      "partition": "unknown",
+      "classifier": "character_cnn",
+      "method": "undersampling",
+      "ratio": "1:1",
+      "seed": 42,
+      "split": "train",
+      "round": 2,
+      "metrics": {
+        "adult_precision": 0.0,
+        "adult_recall": 0.0,
+        "adult_f1": 0.0,
+        "non_adult_precision": 0.6666666666666666,
+        "non_adult_recall": 1.0,
+        "non_adult_f1": 0.8,
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "accuracy": 0.6666666666666666,
+        "confusion_matrix": [
+          [
+            40,
+            0
+          ],
+          [
+            20,
+            0
+          ]
+        ],
+        "confusion_matrix_order": [
+          "Non-adult",
+          "Adult"
+        ],
+        "n_records": 60,
+        "adult_count": 20,
+        "non_adult_count": 40,
+        "adult_prevalence": 0.3333333333333333,
+        "threshold": 0.5,
+        "loss": 0.7684748279551665
+      },
+      "optimization": {
+        "loss": 2.2130108758807174,
+        "examples_processed": 40,
+        "scope": "balanced training views, epochs and ensemble members; not global train evaluation"
+      },
+      "timing": {
+        "client_training_seconds_sum": 0.6266951000002337,
+        "client_training_seconds_max": 0.18849210000007588,
+        "fit_round_wall_seconds": 2.6444673999999395,
+        "val_client_evaluation_seconds_sum": 0.16138820000014675,
+        "val_phase_wall_seconds": 1.3435890999999174,
+        "round_wall_seconds": 4.060722700000042,
+        "train_evaluation_seconds_sum": 0.2850949999997283,
+        "test_client_evaluation_seconds_sum": 0.20801499999970474,
+        "test_phase_wall_seconds": 1.09756920000018
+      },
+      "communication": {
+        "fit_down_bytes": 62423485,
+        "fit_up_bytes": 62424705,
+        "evaluation_down_bytes": 124846475,
+        "evaluation_up_bytes": 4770,
+        "total_bytes": 249699435,
+        "measurement": "serialized Flower Fit/Evaluate protobuf payloads, both directions; excludes gRPC/TLS/control/retry overhead"
+      },
+      "fit_warning_count": null
+    },
+    {
+      "experiment_id": "b58d73e6738abc28",
+      "scope": "federated global model",
+      "family": "character_cnn",
+      "data_kind": "synthetic",
+      "partition": "unknown",
+      "classifier": "character_cnn",
+      "method": "undersampling",
+      "ratio": "1:1",
+      "seed": 42,
+      "split": "val",
+      "round": 2,
+      "metrics": {
+        "adult_precision": 0.0,
+        "adult_recall": 0.0,
+        "adult_f1": 0.0,
+        "non_adult_precision": 0.5,
+        "non_adult_recall": 1.0,
+        "non_adult_f1": 0.6666666666666666,
+        "macro_f1": 0.3333333333333333,
+        "balanced_accuracy": 0.5,
+        "accuracy": 0.5,
+        "confusion_matrix": [
+          [
+            10,
+            0
+          ],
+          [
+            10,
+            0
+          ]
+        ],
+        "confusion_matrix_order": [
+          "Non-adult",
+          "Adult"
+        ],
+        "n_records": 20,
+        "adult_count": 10,
+        "non_adult_count": 10,
+        "adult_prevalence": 0.5,
+        "threshold": 0.5,
+        "loss": 1.7154876947402955
+      },
+      "optimization": {
+        "loss": 2.2130108758807174,
+        "examples_processed": 40,
+        "scope": "balanced training views, epochs and ensemble members; not global train evaluation"
+      },
+      "timing": {
+        "client_training_seconds_sum": 0.6266951000002337,
+        "client_training_seconds_max": 0.18849210000007588,
+        "fit_round_wall_seconds": 2.6444673999999395,
+        "val_client_evaluation_seconds_sum": 0.16138820000014675,
+        "val_phase_wall_seconds": 1.3435890999999174,
+        "round_wall_seconds": 4.060722700000042,
+        "train_evaluation_seconds_sum": 0.2850949999997283,
+        "test_client_evaluation_seconds_sum": 0.20801499999970474,
+        "test_phase_wall_seconds": 1.09756920000018
+      },
+      "communication": {
+        "fit_down_bytes": 62423485,
+        "fit_up_bytes": 62424705,
+        "evaluation_down_bytes": 124846475,
+        "evaluation_up_bytes": 4770,
+        "total_bytes": 249699435,
+        "measurement": "serialized Flower Fit/Evaluate protobuf payloads, both directions; excludes gRPC/TLS/control/retry overhead"
+      },
+      "fit_warning_count": null
+    },
+    {
+      "experiment_id": "b58d73e6738abc28",
+      "scope": "federated global model",
+      "family": "character_cnn",
+      "data_kind": "synthetic",
+      "partition": "unknown",
+      "classifier": "character_cnn",
+      "method": "undersampling",
+      "ratio": "1:1",
+      "seed": 42,
+      "split": "test",
+      "round": 2,
+      "metrics": {
+        "adult_precision": 0.0,
+        "adult_recall": 0.0,
+        "adult_f1": 0.0,
+        "non_adult_precision": 0.5,
+        "non_adult_recall": 1.0,
+        "non_adult_f1": 0.6666666666666666,
+        "macro_f1": 0.3333333333333333,
+        "balanced_accuracy": 0.5,
+        "accuracy": 0.5,
+        "confusion_matrix": [
+          [
+            10,
+            0
+          ],
+          [
+            10,
+            0
+          ]
+        ],
+        "confusion_matrix_order": [
+          "Non-adult",
+          "Adult"
+        ],
+        "n_records": 20,
+        "adult_count": 10,
+        "non_adult_count": 10,
+        "adult_prevalence": 0.5,
+        "threshold": 0.5,
+        "loss": 1.1530115127563476
+      },
+      "optimization": {
+        "loss": 2.2130108758807174,
+        "examples_processed": 40,
+        "scope": "balanced training views, epochs and ensemble members; not global train evaluation"
+      },
+      "timing": {
+        "client_training_seconds_sum": 0.6266951000002337,
+        "client_training_seconds_max": 0.18849210000007588,
+        "fit_round_wall_seconds": 2.6444673999999395,
+        "val_client_evaluation_seconds_sum": 0.16138820000014675,
+        "val_phase_wall_seconds": 1.3435890999999174,
+        "round_wall_seconds": 4.060722700000042,
+        "train_evaluation_seconds_sum": 0.2850949999997283,
+        "test_client_evaluation_seconds_sum": 0.20801499999970474,
+        "test_phase_wall_seconds": 1.09756920000018
+      },
+      "communication": {
+        "fit_down_bytes": 62423485,
+        "fit_up_bytes": 62424705,
+        "evaluation_down_bytes": 124846475,
+        "evaluation_up_bytes": 4770,
+        "total_bytes": 249699435,
+        "measurement": "serialized Flower Fit/Evaluate protobuf payloads, both directions; excludes gRPC/TLS/control/retry overhead"
+      },
+      "fit_warning_count": null
+    }
+  ],
+  "experiments": {
+    "b6866f215428:category_skew:ensemble_undersampling": {
+      "configuration": {
+        "balancing": {
+          "method": "undersampling",
+          "adult_to_non_adult": "1:1",
+          "seed": 42,
+          "ensemble_members": 5,
+          "k_neighbors": 5,
+          "insufficient_minority": "adjust"
+        },
+        "model": {
+          "family": "engineered_numeric",
+          "classifier": "sgd_logistic",
+          "parameters": {
+            "max_iter": 30,
+            "alpha": 0.0001,
+            "tol": 0.001
+          }
+        },
+        "threshold": 0.5
+      },
+      "runtime": {
+        "git_commit": "NO_GIT_REPO - results are not tied to a code version",
+        "timestamp_utc": "2026-10-21T17:35:53Z",
+        "python": "3.13.5",
+        "numpy": "2.2.3",
+        "scipy": "1.15.3",
+        "sklearn": "1.7.0",
+        "tldextract": "5.1.2",
+        "platform": "Windows-11-10.0.26300-SP0"
+      },
+      "code_tree_sha256": "af86c41e32f1c030e011fd321aae37fd803ec58c6d4e7425fb647ca3edbac72b",
+      "source_summary_sha256": "b6866f2154285e4b74d3335c9b61e49d2a703462ebbd1217ce0ec32cf13d163a",
+      "clients": [
+        {
+          "client_id": 0,
+          "balancing": {
+            "method": "ensemble_undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 42,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 42,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "15fc80d7569d68564db8363261a22191797211f6bf7bff2888f3ecd82bb6fa96",
+            "val": "a52343066af018fd3e0722e7f9408be200a176ba5c6b09f58980fa15bba4c719",
+            "test": "e9f0a02beab521b367ba1f8ef24703a933b1573106b0c7ce29d3812d531c24d5"
+          },
+          "feature_transform_fingerprint": "66bf8ba6d443061e28ebc8a9bc05a6d8106ea32a2a537468eed33279b05e0bc1"
+        },
+        {
+          "client_id": 1,
+          "balancing": {
+            "method": "ensemble_undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 43,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 43,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "f5f3644502d7b7e358da97bcd77f9cf0380718bc58a89c70786b3586a047dfb2",
+            "val": "8a7c2d4e6e9ce7ae4dd97f59c20b375da98cd9d9be0ca1766102d9cddf559bf3",
+            "test": "730645a70f32a526928b991152c9abf30b40fbc8716641753ccbf57c8e9354ee"
+          },
+          "feature_transform_fingerprint": "2d0e7d4357d08ff16f1829876c85596eb994c40a20556bc18d2a83e7f4f7c209"
+        },
+        {
+          "client_id": 2,
+          "balancing": {
+            "method": "ensemble_undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 44,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 44,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "3d0518a2fbe650494c3b0c0b024117773bda98bde92ed47a3ee0b2741f98c4c7",
+            "val": "0f083313a13929261788e5cbe0f84edf0923298a552c1f61919230208c28eed6",
+            "test": "09a5b774650041fb770fc1cac3178d8afd5997850eb362e4bf85bb665f5ec0ce"
+          },
+          "feature_transform_fingerprint": "8c2521f5eade28bbe17ef445f90f6cc5666280f56cd245efec8d8e95050d6111"
+        },
+        {
+          "client_id": 3,
+          "balancing": {
+            "method": "ensemble_undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 45,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 45,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "f4e2cb59d447fd58ce9709a180adff4f65447341da221d9a2c34e6b3cac7bdf9",
+            "val": "3a9a46aea098803752a0e92426d967d4d77c52c9a6c73c117069407e782d90a3",
+            "test": "fdb62ca44e443a1c77ff7c4fedc1dde1dbe66a4c327e657e2f6eee2cd0cbb800"
+          },
+          "feature_transform_fingerprint": "643f6f469a8e6481cecae2b60d72f5560f79494f201f2fbc4ab5030a3a926b4d"
+        },
+        {
+          "client_id": 4,
+          "balancing": {
+            "method": "ensemble_undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 46,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 46,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "71b0822136dbe8418bd168e6befe25ffd2ad0ba0a8697d2b8657e60c66d5a7bb",
+            "val": "83a318a24b06b3c222b6c6c747a8123bbbc80d5162c7df6f3a6411a6088edde0",
+            "test": "28007dd0d603c47699abb8f1a547c2b8b00fd9db3acc299e64f8a3b442d58e98"
+          },
+          "feature_transform_fingerprint": "0f794ca273a138499d4ff2999793ba02b22d132f19d4d7cba51dc58ecb504354"
+        }
+      ]
+    },
+    "b6866f215428:category_skew:oversampling": {
+      "configuration": {
+        "balancing": {
+          "method": "undersampling",
+          "adult_to_non_adult": "1:1",
+          "seed": 42,
+          "ensemble_members": 5,
+          "k_neighbors": 5,
+          "insufficient_minority": "adjust"
+        },
+        "model": {
+          "family": "engineered_numeric",
+          "classifier": "sgd_logistic",
+          "parameters": {
+            "max_iter": 30,
+            "alpha": 0.0001,
+            "tol": 0.001
+          }
+        },
+        "threshold": 0.5
+      },
+      "runtime": {
+        "git_commit": "NO_GIT_REPO - results are not tied to a code version",
+        "timestamp_utc": "2026-10-21T17:35:53Z",
+        "python": "3.13.5",
+        "numpy": "2.2.3",
+        "scipy": "1.15.3",
+        "sklearn": "1.7.0",
+        "tldextract": "5.1.2",
+        "platform": "Windows-11-10.0.26300-SP0"
+      },
+      "code_tree_sha256": "af86c41e32f1c030e011fd321aae37fd803ec58c6d4e7425fb647ca3edbac72b",
+      "source_summary_sha256": "b6866f2154285e4b74d3335c9b61e49d2a703462ebbd1217ce0ec32cf13d163a",
+      "clients": [
+        {
+          "client_id": 0,
+          "balancing": {
+            "method": "oversampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 42,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 42,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "15fc80d7569d68564db8363261a22191797211f6bf7bff2888f3ecd82bb6fa96",
+            "val": "a52343066af018fd3e0722e7f9408be200a176ba5c6b09f58980fa15bba4c719",
+            "test": "e9f0a02beab521b367ba1f8ef24703a933b1573106b0c7ce29d3812d531c24d5"
+          },
+          "feature_transform_fingerprint": "66bf8ba6d443061e28ebc8a9bc05a6d8106ea32a2a537468eed33279b05e0bc1"
+        },
+        {
+          "client_id": 1,
+          "balancing": {
+            "method": "oversampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 43,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 43,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "f5f3644502d7b7e358da97bcd77f9cf0380718bc58a89c70786b3586a047dfb2",
+            "val": "8a7c2d4e6e9ce7ae4dd97f59c20b375da98cd9d9be0ca1766102d9cddf559bf3",
+            "test": "730645a70f32a526928b991152c9abf30b40fbc8716641753ccbf57c8e9354ee"
+          },
+          "feature_transform_fingerprint": "2d0e7d4357d08ff16f1829876c85596eb994c40a20556bc18d2a83e7f4f7c209"
+        },
+        {
+          "client_id": 2,
+          "balancing": {
+            "method": "oversampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 44,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 44,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "3d0518a2fbe650494c3b0c0b024117773bda98bde92ed47a3ee0b2741f98c4c7",
+            "val": "0f083313a13929261788e5cbe0f84edf0923298a552c1f61919230208c28eed6",
+            "test": "09a5b774650041fb770fc1cac3178d8afd5997850eb362e4bf85bb665f5ec0ce"
+          },
+          "feature_transform_fingerprint": "8c2521f5eade28bbe17ef445f90f6cc5666280f56cd245efec8d8e95050d6111"
+        },
+        {
+          "client_id": 3,
+          "balancing": {
+            "method": "oversampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 45,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 45,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "f4e2cb59d447fd58ce9709a180adff4f65447341da221d9a2c34e6b3cac7bdf9",
+            "val": "3a9a46aea098803752a0e92426d967d4d77c52c9a6c73c117069407e782d90a3",
+            "test": "fdb62ca44e443a1c77ff7c4fedc1dde1dbe66a4c327e657e2f6eee2cd0cbb800"
+          },
+          "feature_transform_fingerprint": "643f6f469a8e6481cecae2b60d72f5560f79494f201f2fbc4ab5030a3a926b4d"
+        },
+        {
+          "client_id": 4,
+          "balancing": {
+            "method": "oversampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 46,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 46,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "71b0822136dbe8418bd168e6befe25ffd2ad0ba0a8697d2b8657e60c66d5a7bb",
+            "val": "83a318a24b06b3c222b6c6c747a8123bbbc80d5162c7df6f3a6411a6088edde0",
+            "test": "28007dd0d603c47699abb8f1a547c2b8b00fd9db3acc299e64f8a3b442d58e98"
+          },
+          "feature_transform_fingerprint": "0f794ca273a138499d4ff2999793ba02b22d132f19d4d7cba51dc58ecb504354"
+        }
+      ]
+    },
+    "b6866f215428:category_skew:smote": {
+      "configuration": {
+        "balancing": {
+          "method": "undersampling",
+          "adult_to_non_adult": "1:1",
+          "seed": 42,
+          "ensemble_members": 5,
+          "k_neighbors": 5,
+          "insufficient_minority": "adjust"
+        },
+        "model": {
+          "family": "engineered_numeric",
+          "classifier": "sgd_logistic",
+          "parameters": {
+            "max_iter": 30,
+            "alpha": 0.0001,
+            "tol": 0.001
+          }
+        },
+        "threshold": 0.5
+      },
+      "runtime": {
+        "git_commit": "NO_GIT_REPO - results are not tied to a code version",
+        "timestamp_utc": "2026-10-21T17:35:53Z",
+        "python": "3.13.5",
+        "numpy": "2.2.3",
+        "scipy": "1.15.3",
+        "sklearn": "1.7.0",
+        "tldextract": "5.1.2",
+        "platform": "Windows-11-10.0.26300-SP0"
+      },
+      "code_tree_sha256": "af86c41e32f1c030e011fd321aae37fd803ec58c6d4e7425fb647ca3edbac72b",
+      "source_summary_sha256": "b6866f2154285e4b74d3335c9b61e49d2a703462ebbd1217ce0ec32cf13d163a",
+      "clients": [
+        {
+          "client_id": 0,
+          "balancing": {
+            "method": "smote",
+            "adult_to_non_adult": "1:1",
+            "seed": 42,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 42,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "15fc80d7569d68564db8363261a22191797211f6bf7bff2888f3ecd82bb6fa96",
+            "val": "a52343066af018fd3e0722e7f9408be200a176ba5c6b09f58980fa15bba4c719",
+            "test": "e9f0a02beab521b367ba1f8ef24703a933b1573106b0c7ce29d3812d531c24d5"
+          },
+          "feature_transform_fingerprint": "66bf8ba6d443061e28ebc8a9bc05a6d8106ea32a2a537468eed33279b05e0bc1"
+        },
+        {
+          "client_id": 1,
+          "balancing": {
+            "method": "smote",
+            "adult_to_non_adult": "1:1",
+            "seed": 43,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 43,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "f5f3644502d7b7e358da97bcd77f9cf0380718bc58a89c70786b3586a047dfb2",
+            "val": "8a7c2d4e6e9ce7ae4dd97f59c20b375da98cd9d9be0ca1766102d9cddf559bf3",
+            "test": "730645a70f32a526928b991152c9abf30b40fbc8716641753ccbf57c8e9354ee"
+          },
+          "feature_transform_fingerprint": "2d0e7d4357d08ff16f1829876c85596eb994c40a20556bc18d2a83e7f4f7c209"
+        },
+        {
+          "client_id": 2,
+          "balancing": {
+            "method": "smote",
+            "adult_to_non_adult": "1:1",
+            "seed": 44,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 44,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "3d0518a2fbe650494c3b0c0b024117773bda98bde92ed47a3ee0b2741f98c4c7",
+            "val": "0f083313a13929261788e5cbe0f84edf0923298a552c1f61919230208c28eed6",
+            "test": "09a5b774650041fb770fc1cac3178d8afd5997850eb362e4bf85bb665f5ec0ce"
+          },
+          "feature_transform_fingerprint": "8c2521f5eade28bbe17ef445f90f6cc5666280f56cd245efec8d8e95050d6111"
+        },
+        {
+          "client_id": 3,
+          "balancing": {
+            "method": "smote",
+            "adult_to_non_adult": "1:1",
+            "seed": 45,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 45,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "f4e2cb59d447fd58ce9709a180adff4f65447341da221d9a2c34e6b3cac7bdf9",
+            "val": "3a9a46aea098803752a0e92426d967d4d77c52c9a6c73c117069407e782d90a3",
+            "test": "fdb62ca44e443a1c77ff7c4fedc1dde1dbe66a4c327e657e2f6eee2cd0cbb800"
+          },
+          "feature_transform_fingerprint": "643f6f469a8e6481cecae2b60d72f5560f79494f201f2fbc4ab5030a3a926b4d"
+        },
+        {
+          "client_id": 4,
+          "balancing": {
+            "method": "smote",
+            "adult_to_non_adult": "1:1",
+            "seed": 46,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 46,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "71b0822136dbe8418bd168e6befe25ffd2ad0ba0a8697d2b8657e60c66d5a7bb",
+            "val": "83a318a24b06b3c222b6c6c747a8123bbbc80d5162c7df6f3a6411a6088edde0",
+            "test": "28007dd0d603c47699abb8f1a547c2b8b00fd9db3acc299e64f8a3b442d58e98"
+          },
+          "feature_transform_fingerprint": "0f794ca273a138499d4ff2999793ba02b22d132f19d4d7cba51dc58ecb504354"
+        }
+      ]
+    },
+    "b6866f215428:category_skew:undersampling": {
+      "configuration": {
+        "balancing": {
+          "method": "undersampling",
+          "adult_to_non_adult": "1:1",
+          "seed": 42,
+          "ensemble_members": 5,
+          "k_neighbors": 5,
+          "insufficient_minority": "adjust"
+        },
+        "model": {
+          "family": "engineered_numeric",
+          "classifier": "sgd_logistic",
+          "parameters": {
+            "max_iter": 30,
+            "alpha": 0.0001,
+            "tol": 0.001
+          }
+        },
+        "threshold": 0.5
+      },
+      "runtime": {
+        "git_commit": "NO_GIT_REPO - results are not tied to a code version",
+        "timestamp_utc": "2026-10-21T17:35:53Z",
+        "python": "3.13.5",
+        "numpy": "2.2.3",
+        "scipy": "1.15.3",
+        "sklearn": "1.7.0",
+        "tldextract": "5.1.2",
+        "platform": "Windows-11-10.0.26300-SP0"
+      },
+      "code_tree_sha256": "af86c41e32f1c030e011fd321aae37fd803ec58c6d4e7425fb647ca3edbac72b",
+      "source_summary_sha256": "b6866f2154285e4b74d3335c9b61e49d2a703462ebbd1217ce0ec32cf13d163a",
+      "clients": [
+        {
+          "client_id": 0,
+          "balancing": {
+            "method": "undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 42,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 42,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "15fc80d7569d68564db8363261a22191797211f6bf7bff2888f3ecd82bb6fa96",
+            "val": "a52343066af018fd3e0722e7f9408be200a176ba5c6b09f58980fa15bba4c719",
+            "test": "e9f0a02beab521b367ba1f8ef24703a933b1573106b0c7ce29d3812d531c24d5"
+          },
+          "feature_transform_fingerprint": "66bf8ba6d443061e28ebc8a9bc05a6d8106ea32a2a537468eed33279b05e0bc1"
+        },
+        {
+          "client_id": 1,
+          "balancing": {
+            "method": "undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 43,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 43,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "f5f3644502d7b7e358da97bcd77f9cf0380718bc58a89c70786b3586a047dfb2",
+            "val": "8a7c2d4e6e9ce7ae4dd97f59c20b375da98cd9d9be0ca1766102d9cddf559bf3",
+            "test": "730645a70f32a526928b991152c9abf30b40fbc8716641753ccbf57c8e9354ee"
+          },
+          "feature_transform_fingerprint": "2d0e7d4357d08ff16f1829876c85596eb994c40a20556bc18d2a83e7f4f7c209"
+        },
+        {
+          "client_id": 2,
+          "balancing": {
+            "method": "undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 44,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 44,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "3d0518a2fbe650494c3b0c0b024117773bda98bde92ed47a3ee0b2741f98c4c7",
+            "val": "0f083313a13929261788e5cbe0f84edf0923298a552c1f61919230208c28eed6",
+            "test": "09a5b774650041fb770fc1cac3178d8afd5997850eb362e4bf85bb665f5ec0ce"
+          },
+          "feature_transform_fingerprint": "8c2521f5eade28bbe17ef445f90f6cc5666280f56cd245efec8d8e95050d6111"
+        },
+        {
+          "client_id": 3,
+          "balancing": {
+            "method": "undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 45,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 45,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "f4e2cb59d447fd58ce9709a180adff4f65447341da221d9a2c34e6b3cac7bdf9",
+            "val": "3a9a46aea098803752a0e92426d967d4d77c52c9a6c73c117069407e782d90a3",
+            "test": "fdb62ca44e443a1c77ff7c4fedc1dde1dbe66a4c327e657e2f6eee2cd0cbb800"
+          },
+          "feature_transform_fingerprint": "643f6f469a8e6481cecae2b60d72f5560f79494f201f2fbc4ab5030a3a926b4d"
+        },
+        {
+          "client_id": 4,
+          "balancing": {
+            "method": "undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 46,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 46,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "71b0822136dbe8418bd168e6befe25ffd2ad0ba0a8697d2b8657e60c66d5a7bb",
+            "val": "83a318a24b06b3c222b6c6c747a8123bbbc80d5162c7df6f3a6411a6088edde0",
+            "test": "28007dd0d603c47699abb8f1a547c2b8b00fd9db3acc299e64f8a3b442d58e98"
+          },
+          "feature_transform_fingerprint": "0f794ca273a138499d4ff2999793ba02b22d132f19d4d7cba51dc58ecb504354"
+        }
+      ]
+    },
+    "b6866f215428:iid:ensemble_undersampling": {
+      "configuration": {
+        "balancing": {
+          "method": "undersampling",
+          "adult_to_non_adult": "1:1",
+          "seed": 42,
+          "ensemble_members": 5,
+          "k_neighbors": 5,
+          "insufficient_minority": "adjust"
+        },
+        "model": {
+          "family": "engineered_numeric",
+          "classifier": "sgd_logistic",
+          "parameters": {
+            "max_iter": 30,
+            "alpha": 0.0001,
+            "tol": 0.001
+          }
+        },
+        "threshold": 0.5
+      },
+      "runtime": {
+        "git_commit": "NO_GIT_REPO - results are not tied to a code version",
+        "timestamp_utc": "2026-10-21T17:35:53Z",
+        "python": "3.13.5",
+        "numpy": "2.2.3",
+        "scipy": "1.15.3",
+        "sklearn": "1.7.0",
+        "tldextract": "5.1.2",
+        "platform": "Windows-11-10.0.26300-SP0"
+      },
+      "code_tree_sha256": "af86c41e32f1c030e011fd321aae37fd803ec58c6d4e7425fb647ca3edbac72b",
+      "source_summary_sha256": "b6866f2154285e4b74d3335c9b61e49d2a703462ebbd1217ce0ec32cf13d163a",
+      "clients": [
+        {
+          "client_id": 0,
+          "balancing": {
+            "method": "ensemble_undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 42,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 42,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "f14772e831bc603aa4f4521995482127e68a2d6933169550a30fbcb78a5eb4f9",
+            "val": "78e316c34254f28b4504f3a2059430771123b40692e01a3437f41d4170e8319c",
+            "test": "4fed443ad4ea55c141f69e8276e3d2c71f4bd415f8851475f4d670668721d3b4"
+          },
+          "feature_transform_fingerprint": "ea9379a057d0fcbd2b87fe97b5c6f10dbe4ac43dbb17ac072f94ff2accfd7c82"
+        },
+        {
+          "client_id": 1,
+          "balancing": {
+            "method": "ensemble_undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 43,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 43,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "713c8da5b5b20287a2bc47f9f800c66b38d5927057e5ba367a7ca375be4a84c5",
+            "val": "96fa6005a8264f641b36f9ab80e237ddbca59869100638e3be963c6b4a33bb11",
+            "test": "fab1eb0ee5fae79ea732b053c10e3edb10b9d1fc4150dd08efb95b5b4517db9b"
+          },
+          "feature_transform_fingerprint": "66eebbad4e211dfd19396c64ae6fec49c8268ccc74da21320a6444bd01786adc"
+        },
+        {
+          "client_id": 2,
+          "balancing": {
+            "method": "ensemble_undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 44,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 44,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "0ae34742bd1685c95f82dee9758c44d8393e037965a6b866810d62da6e8d4290",
+            "val": "bf07527faf5fa6963bbb1bdf98ec5a21519394c36ec1eded9d8ff46facad090e",
+            "test": "d46c53648e80afd6e6a311692488cc20d6bbea3d95ef34a430c6c97deeecd078"
+          },
+          "feature_transform_fingerprint": "8ff3cb4eb2afdf4b44775db7e14c7f503a7f9633209c2b13394ddeb12fa4feae"
+        },
+        {
+          "client_id": 3,
+          "balancing": {
+            "method": "ensemble_undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 45,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 45,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "f8cd50b2be48c44ad500383b73c262486e7bb048af9b1f86e6d84b5c59cf11db",
+            "val": "61b944420cafd45d2b04344406cc787f284c66f7f780a28606ad43d9c53e9e11",
+            "test": "df8d43966b29b6112e837171033437319c783697b5ce4db596c685241a560465"
+          },
+          "feature_transform_fingerprint": "09f68180e1b193667c3ff4a5788b8e1616a34b884cb9bc5a38a494fda16614f6"
+        },
+        {
+          "client_id": 4,
+          "balancing": {
+            "method": "ensemble_undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 46,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 46,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "1f28f2572a6210fa4c7083b249fefc6eece7a2f98fc1391ca642c5c226d4be8c",
+            "val": "939dd9ad6fcd310d5fff5ac696f6244029a304154cb584aaa263ebf4ebd9b02b",
+            "test": "23128cc718ab50cb7747fb3384df4d5c810ef2f99a9a5cb20e336d750517f85c"
+          },
+          "feature_transform_fingerprint": "01c50fecb4f73b037e797d369ab548fa73aeb61dbe5dd6d3221ffbccf5443c56"
+        }
+      ]
+    },
+    "b6866f215428:iid:oversampling": {
+      "configuration": {
+        "balancing": {
+          "method": "undersampling",
+          "adult_to_non_adult": "1:1",
+          "seed": 42,
+          "ensemble_members": 5,
+          "k_neighbors": 5,
+          "insufficient_minority": "adjust"
+        },
+        "model": {
+          "family": "engineered_numeric",
+          "classifier": "sgd_logistic",
+          "parameters": {
+            "max_iter": 30,
+            "alpha": 0.0001,
+            "tol": 0.001
+          }
+        },
+        "threshold": 0.5
+      },
+      "runtime": {
+        "git_commit": "NO_GIT_REPO - results are not tied to a code version",
+        "timestamp_utc": "2026-10-21T17:35:53Z",
+        "python": "3.13.5",
+        "numpy": "2.2.3",
+        "scipy": "1.15.3",
+        "sklearn": "1.7.0",
+        "tldextract": "5.1.2",
+        "platform": "Windows-11-10.0.26300-SP0"
+      },
+      "code_tree_sha256": "af86c41e32f1c030e011fd321aae37fd803ec58c6d4e7425fb647ca3edbac72b",
+      "source_summary_sha256": "b6866f2154285e4b74d3335c9b61e49d2a703462ebbd1217ce0ec32cf13d163a",
+      "clients": [
+        {
+          "client_id": 0,
+          "balancing": {
+            "method": "oversampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 42,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 42,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "f14772e831bc603aa4f4521995482127e68a2d6933169550a30fbcb78a5eb4f9",
+            "val": "78e316c34254f28b4504f3a2059430771123b40692e01a3437f41d4170e8319c",
+            "test": "4fed443ad4ea55c141f69e8276e3d2c71f4bd415f8851475f4d670668721d3b4"
+          },
+          "feature_transform_fingerprint": "ea9379a057d0fcbd2b87fe97b5c6f10dbe4ac43dbb17ac072f94ff2accfd7c82"
+        },
+        {
+          "client_id": 1,
+          "balancing": {
+            "method": "oversampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 43,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 43,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "713c8da5b5b20287a2bc47f9f800c66b38d5927057e5ba367a7ca375be4a84c5",
+            "val": "96fa6005a8264f641b36f9ab80e237ddbca59869100638e3be963c6b4a33bb11",
+            "test": "fab1eb0ee5fae79ea732b053c10e3edb10b9d1fc4150dd08efb95b5b4517db9b"
+          },
+          "feature_transform_fingerprint": "66eebbad4e211dfd19396c64ae6fec49c8268ccc74da21320a6444bd01786adc"
+        },
+        {
+          "client_id": 2,
+          "balancing": {
+            "method": "oversampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 44,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 44,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "0ae34742bd1685c95f82dee9758c44d8393e037965a6b866810d62da6e8d4290",
+            "val": "bf07527faf5fa6963bbb1bdf98ec5a21519394c36ec1eded9d8ff46facad090e",
+            "test": "d46c53648e80afd6e6a311692488cc20d6bbea3d95ef34a430c6c97deeecd078"
+          },
+          "feature_transform_fingerprint": "8ff3cb4eb2afdf4b44775db7e14c7f503a7f9633209c2b13394ddeb12fa4feae"
+        },
+        {
+          "client_id": 3,
+          "balancing": {
+            "method": "oversampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 45,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 45,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "f8cd50b2be48c44ad500383b73c262486e7bb048af9b1f86e6d84b5c59cf11db",
+            "val": "61b944420cafd45d2b04344406cc787f284c66f7f780a28606ad43d9c53e9e11",
+            "test": "df8d43966b29b6112e837171033437319c783697b5ce4db596c685241a560465"
+          },
+          "feature_transform_fingerprint": "09f68180e1b193667c3ff4a5788b8e1616a34b884cb9bc5a38a494fda16614f6"
+        },
+        {
+          "client_id": 4,
+          "balancing": {
+            "method": "oversampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 46,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 46,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "1f28f2572a6210fa4c7083b249fefc6eece7a2f98fc1391ca642c5c226d4be8c",
+            "val": "939dd9ad6fcd310d5fff5ac696f6244029a304154cb584aaa263ebf4ebd9b02b",
+            "test": "23128cc718ab50cb7747fb3384df4d5c810ef2f99a9a5cb20e336d750517f85c"
+          },
+          "feature_transform_fingerprint": "01c50fecb4f73b037e797d369ab548fa73aeb61dbe5dd6d3221ffbccf5443c56"
+        }
+      ]
+    },
+    "b6866f215428:iid:smote": {
+      "configuration": {
+        "balancing": {
+          "method": "undersampling",
+          "adult_to_non_adult": "1:1",
+          "seed": 42,
+          "ensemble_members": 5,
+          "k_neighbors": 5,
+          "insufficient_minority": "adjust"
+        },
+        "model": {
+          "family": "engineered_numeric",
+          "classifier": "sgd_logistic",
+          "parameters": {
+            "max_iter": 30,
+            "alpha": 0.0001,
+            "tol": 0.001
+          }
+        },
+        "threshold": 0.5
+      },
+      "runtime": {
+        "git_commit": "NO_GIT_REPO - results are not tied to a code version",
+        "timestamp_utc": "2026-10-21T17:35:53Z",
+        "python": "3.13.5",
+        "numpy": "2.2.3",
+        "scipy": "1.15.3",
+        "sklearn": "1.7.0",
+        "tldextract": "5.1.2",
+        "platform": "Windows-11-10.0.26300-SP0"
+      },
+      "code_tree_sha256": "af86c41e32f1c030e011fd321aae37fd803ec58c6d4e7425fb647ca3edbac72b",
+      "source_summary_sha256": "b6866f2154285e4b74d3335c9b61e49d2a703462ebbd1217ce0ec32cf13d163a",
+      "clients": [
+        {
+          "client_id": 0,
+          "balancing": {
+            "method": "smote",
+            "adult_to_non_adult": "1:1",
+            "seed": 42,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 42,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "f14772e831bc603aa4f4521995482127e68a2d6933169550a30fbcb78a5eb4f9",
+            "val": "78e316c34254f28b4504f3a2059430771123b40692e01a3437f41d4170e8319c",
+            "test": "4fed443ad4ea55c141f69e8276e3d2c71f4bd415f8851475f4d670668721d3b4"
+          },
+          "feature_transform_fingerprint": "ea9379a057d0fcbd2b87fe97b5c6f10dbe4ac43dbb17ac072f94ff2accfd7c82"
+        },
+        {
+          "client_id": 1,
+          "balancing": {
+            "method": "smote",
+            "adult_to_non_adult": "1:1",
+            "seed": 43,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 43,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "713c8da5b5b20287a2bc47f9f800c66b38d5927057e5ba367a7ca375be4a84c5",
+            "val": "96fa6005a8264f641b36f9ab80e237ddbca59869100638e3be963c6b4a33bb11",
+            "test": "fab1eb0ee5fae79ea732b053c10e3edb10b9d1fc4150dd08efb95b5b4517db9b"
+          },
+          "feature_transform_fingerprint": "66eebbad4e211dfd19396c64ae6fec49c8268ccc74da21320a6444bd01786adc"
+        },
+        {
+          "client_id": 2,
+          "balancing": {
+            "method": "smote",
+            "adult_to_non_adult": "1:1",
+            "seed": 44,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 44,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "0ae34742bd1685c95f82dee9758c44d8393e037965a6b866810d62da6e8d4290",
+            "val": "bf07527faf5fa6963bbb1bdf98ec5a21519394c36ec1eded9d8ff46facad090e",
+            "test": "d46c53648e80afd6e6a311692488cc20d6bbea3d95ef34a430c6c97deeecd078"
+          },
+          "feature_transform_fingerprint": "8ff3cb4eb2afdf4b44775db7e14c7f503a7f9633209c2b13394ddeb12fa4feae"
+        },
+        {
+          "client_id": 3,
+          "balancing": {
+            "method": "smote",
+            "adult_to_non_adult": "1:1",
+            "seed": 45,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 45,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "f8cd50b2be48c44ad500383b73c262486e7bb048af9b1f86e6d84b5c59cf11db",
+            "val": "61b944420cafd45d2b04344406cc787f284c66f7f780a28606ad43d9c53e9e11",
+            "test": "df8d43966b29b6112e837171033437319c783697b5ce4db596c685241a560465"
+          },
+          "feature_transform_fingerprint": "09f68180e1b193667c3ff4a5788b8e1616a34b884cb9bc5a38a494fda16614f6"
+        },
+        {
+          "client_id": 4,
+          "balancing": {
+            "method": "smote",
+            "adult_to_non_adult": "1:1",
+            "seed": 46,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 46,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "1f28f2572a6210fa4c7083b249fefc6eece7a2f98fc1391ca642c5c226d4be8c",
+            "val": "939dd9ad6fcd310d5fff5ac696f6244029a304154cb584aaa263ebf4ebd9b02b",
+            "test": "23128cc718ab50cb7747fb3384df4d5c810ef2f99a9a5cb20e336d750517f85c"
+          },
+          "feature_transform_fingerprint": "01c50fecb4f73b037e797d369ab548fa73aeb61dbe5dd6d3221ffbccf5443c56"
+        }
+      ]
+    },
+    "b6866f215428:iid:undersampling": {
+      "configuration": {
+        "balancing": {
+          "method": "undersampling",
+          "adult_to_non_adult": "1:1",
+          "seed": 42,
+          "ensemble_members": 5,
+          "k_neighbors": 5,
+          "insufficient_minority": "adjust"
+        },
+        "model": {
+          "family": "engineered_numeric",
+          "classifier": "sgd_logistic",
+          "parameters": {
+            "max_iter": 30,
+            "alpha": 0.0001,
+            "tol": 0.001
+          }
+        },
+        "threshold": 0.5
+      },
+      "runtime": {
+        "git_commit": "NO_GIT_REPO - results are not tied to a code version",
+        "timestamp_utc": "2026-10-21T17:35:53Z",
+        "python": "3.13.5",
+        "numpy": "2.2.3",
+        "scipy": "1.15.3",
+        "sklearn": "1.7.0",
+        "tldextract": "5.1.2",
+        "platform": "Windows-11-10.0.26300-SP0"
+      },
+      "code_tree_sha256": "af86c41e32f1c030e011fd321aae37fd803ec58c6d4e7425fb647ca3edbac72b",
+      "source_summary_sha256": "b6866f2154285e4b74d3335c9b61e49d2a703462ebbd1217ce0ec32cf13d163a",
+      "clients": [
+        {
+          "client_id": 0,
+          "balancing": {
+            "method": "undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 42,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 42,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "f14772e831bc603aa4f4521995482127e68a2d6933169550a30fbcb78a5eb4f9",
+            "val": "78e316c34254f28b4504f3a2059430771123b40692e01a3437f41d4170e8319c",
+            "test": "4fed443ad4ea55c141f69e8276e3d2c71f4bd415f8851475f4d670668721d3b4"
+          },
+          "feature_transform_fingerprint": "ea9379a057d0fcbd2b87fe97b5c6f10dbe4ac43dbb17ac072f94ff2accfd7c82"
+        },
+        {
+          "client_id": 1,
+          "balancing": {
+            "method": "undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 43,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 43,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "713c8da5b5b20287a2bc47f9f800c66b38d5927057e5ba367a7ca375be4a84c5",
+            "val": "96fa6005a8264f641b36f9ab80e237ddbca59869100638e3be963c6b4a33bb11",
+            "test": "fab1eb0ee5fae79ea732b053c10e3edb10b9d1fc4150dd08efb95b5b4517db9b"
+          },
+          "feature_transform_fingerprint": "66eebbad4e211dfd19396c64ae6fec49c8268ccc74da21320a6444bd01786adc"
+        },
+        {
+          "client_id": 2,
+          "balancing": {
+            "method": "undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 44,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 44,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "0ae34742bd1685c95f82dee9758c44d8393e037965a6b866810d62da6e8d4290",
+            "val": "bf07527faf5fa6963bbb1bdf98ec5a21519394c36ec1eded9d8ff46facad090e",
+            "test": "d46c53648e80afd6e6a311692488cc20d6bbea3d95ef34a430c6c97deeecd078"
+          },
+          "feature_transform_fingerprint": "8ff3cb4eb2afdf4b44775db7e14c7f503a7f9633209c2b13394ddeb12fa4feae"
+        },
+        {
+          "client_id": 3,
+          "balancing": {
+            "method": "undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 45,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 45,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "f8cd50b2be48c44ad500383b73c262486e7bb048af9b1f86e6d84b5c59cf11db",
+            "val": "61b944420cafd45d2b04344406cc787f284c66f7f780a28606ad43d9c53e9e11",
+            "test": "df8d43966b29b6112e837171033437319c783697b5ce4db596c685241a560465"
+          },
+          "feature_transform_fingerprint": "09f68180e1b193667c3ff4a5788b8e1616a34b884cb9bc5a38a494fda16614f6"
+        },
+        {
+          "client_id": 4,
+          "balancing": {
+            "method": "undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 46,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 46,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "1f28f2572a6210fa4c7083b249fefc6eece7a2f98fc1391ca642c5c226d4be8c",
+            "val": "939dd9ad6fcd310d5fff5ac696f6244029a304154cb584aaa263ebf4ebd9b02b",
+            "test": "23128cc718ab50cb7747fb3384df4d5c810ef2f99a9a5cb20e336d750517f85c"
+          },
+          "feature_transform_fingerprint": "01c50fecb4f73b037e797d369ab548fa73aeb61dbe5dd6d3221ffbccf5443c56"
+        }
+      ]
+    },
+    "b6866f215428:label_skew:ensemble_undersampling": {
+      "configuration": {
+        "balancing": {
+          "method": "undersampling",
+          "adult_to_non_adult": "1:1",
+          "seed": 42,
+          "ensemble_members": 5,
+          "k_neighbors": 5,
+          "insufficient_minority": "adjust"
+        },
+        "model": {
+          "family": "engineered_numeric",
+          "classifier": "sgd_logistic",
+          "parameters": {
+            "max_iter": 30,
+            "alpha": 0.0001,
+            "tol": 0.001
+          }
+        },
+        "threshold": 0.5
+      },
+      "runtime": {
+        "git_commit": "NO_GIT_REPO - results are not tied to a code version",
+        "timestamp_utc": "2026-10-21T17:35:53Z",
+        "python": "3.13.5",
+        "numpy": "2.2.3",
+        "scipy": "1.15.3",
+        "sklearn": "1.7.0",
+        "tldextract": "5.1.2",
+        "platform": "Windows-11-10.0.26300-SP0"
+      },
+      "code_tree_sha256": "af86c41e32f1c030e011fd321aae37fd803ec58c6d4e7425fb647ca3edbac72b",
+      "source_summary_sha256": "b6866f2154285e4b74d3335c9b61e49d2a703462ebbd1217ce0ec32cf13d163a",
+      "clients": [
+        {
+          "client_id": 0,
+          "balancing": {
+            "method": "ensemble_undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 42,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 42,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "e6981a2ead86e21acff8dd879c0dfd55dd63926037e1cd1af5d515c9b4df0fa9",
+            "val": "855bbb6b575c1c24ea04115a81e28f6eef8fedbc8ce617ebbc508c2fa1e7f9f2",
+            "test": "d621ffc935b34f61758578c389ab6c0d6005352ed0f0d350cd67943039015895"
+          },
+          "feature_transform_fingerprint": "ee4a115096a032a69783f5ea8376d84730858299385bd9ce779a112c6cd29055"
+        },
+        {
+          "client_id": 1,
+          "balancing": {
+            "method": "ensemble_undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 43,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 43,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "6614025a780820490222a492eda507d7ddf0e4071344fdcd9a89fcc4305a29f9",
+            "val": "f4b63e92f9b418ae800ee32385580c0ed2335f7be848db2e65414f9eadabc0ce",
+            "test": "2d6a9b286a0292402ef40cf62f3a6d477df2af778f3e7a049f8c45afba724a24"
+          },
+          "feature_transform_fingerprint": "c1ce616fc0fca0dae4353c8bf1d747b28a92ceee91dcd8ab6cd96403d78d043b"
+        },
+        {
+          "client_id": 2,
+          "balancing": {
+            "method": "ensemble_undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 44,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 44,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "ab1eb826caff01b1831bf499af4e673969b300e1dc94895aef9c7cc2b152d316",
+            "val": "8dbbe448f528b220e0bccfa72f640eed09a4cd4c7c70aec49aa882c96609aeff",
+            "test": "31559bcc26560533e75abb28da7c48f85be605350dfd582088e5c3f5e4fa0a6f"
+          },
+          "feature_transform_fingerprint": "f8623e68b21b897ecf22d1b5b071d2c08a5b4cdc821d06fbef4d1a15c3548b6e"
+        },
+        {
+          "client_id": 3,
+          "balancing": {
+            "method": "ensemble_undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 45,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 45,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "9ebc12aaf578ec6788249ffc5643828004ff970d9ccb84f81f28d58a5efa13f6",
+            "val": "06ab756707002d311b1529b9edc0e50641f1ff378a7856d460b7ccbecd7da30e",
+            "test": "6130be787d74c048d44349af5dfe3c6f040faa6fe3b8e5bf154a4049b22c2073"
+          },
+          "feature_transform_fingerprint": "b06c58dba0f7a785876263c6c70eda9f9a7a7007601ca57bfb6f4084869817e6"
+        },
+        {
+          "client_id": 4,
+          "balancing": {
+            "method": "ensemble_undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 46,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 46,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "1d9847bc7cef6db34649fa826e87a42de473e55951b9c3e0f7a151228add7286",
+            "val": "7a152df58c7f715ddb8913721d74469be93c4f6929b4b968a15a6bae1e347401",
+            "test": "2bac945f3fa2376f1e4c1335e47eb34a2495b94e089b7e23e93c2ebe6bb57b5f"
+          },
+          "feature_transform_fingerprint": "541267e3956f92941b6ec8636c4f7c8810f6cd7fb7c94d95dd2cb78bffbfc4ea"
+        }
+      ]
+    },
+    "b6866f215428:label_skew:oversampling": {
+      "configuration": {
+        "balancing": {
+          "method": "undersampling",
+          "adult_to_non_adult": "1:1",
+          "seed": 42,
+          "ensemble_members": 5,
+          "k_neighbors": 5,
+          "insufficient_minority": "adjust"
+        },
+        "model": {
+          "family": "engineered_numeric",
+          "classifier": "sgd_logistic",
+          "parameters": {
+            "max_iter": 30,
+            "alpha": 0.0001,
+            "tol": 0.001
+          }
+        },
+        "threshold": 0.5
+      },
+      "runtime": {
+        "git_commit": "NO_GIT_REPO - results are not tied to a code version",
+        "timestamp_utc": "2026-10-21T17:35:53Z",
+        "python": "3.13.5",
+        "numpy": "2.2.3",
+        "scipy": "1.15.3",
+        "sklearn": "1.7.0",
+        "tldextract": "5.1.2",
+        "platform": "Windows-11-10.0.26300-SP0"
+      },
+      "code_tree_sha256": "af86c41e32f1c030e011fd321aae37fd803ec58c6d4e7425fb647ca3edbac72b",
+      "source_summary_sha256": "b6866f2154285e4b74d3335c9b61e49d2a703462ebbd1217ce0ec32cf13d163a",
+      "clients": [
+        {
+          "client_id": 0,
+          "balancing": {
+            "method": "oversampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 42,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 42,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "e6981a2ead86e21acff8dd879c0dfd55dd63926037e1cd1af5d515c9b4df0fa9",
+            "val": "855bbb6b575c1c24ea04115a81e28f6eef8fedbc8ce617ebbc508c2fa1e7f9f2",
+            "test": "d621ffc935b34f61758578c389ab6c0d6005352ed0f0d350cd67943039015895"
+          },
+          "feature_transform_fingerprint": "ee4a115096a032a69783f5ea8376d84730858299385bd9ce779a112c6cd29055"
+        },
+        {
+          "client_id": 1,
+          "balancing": {
+            "method": "oversampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 43,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 43,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "6614025a780820490222a492eda507d7ddf0e4071344fdcd9a89fcc4305a29f9",
+            "val": "f4b63e92f9b418ae800ee32385580c0ed2335f7be848db2e65414f9eadabc0ce",
+            "test": "2d6a9b286a0292402ef40cf62f3a6d477df2af778f3e7a049f8c45afba724a24"
+          },
+          "feature_transform_fingerprint": "c1ce616fc0fca0dae4353c8bf1d747b28a92ceee91dcd8ab6cd96403d78d043b"
+        },
+        {
+          "client_id": 2,
+          "balancing": {
+            "method": "oversampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 44,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 44,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "ab1eb826caff01b1831bf499af4e673969b300e1dc94895aef9c7cc2b152d316",
+            "val": "8dbbe448f528b220e0bccfa72f640eed09a4cd4c7c70aec49aa882c96609aeff",
+            "test": "31559bcc26560533e75abb28da7c48f85be605350dfd582088e5c3f5e4fa0a6f"
+          },
+          "feature_transform_fingerprint": "f8623e68b21b897ecf22d1b5b071d2c08a5b4cdc821d06fbef4d1a15c3548b6e"
+        },
+        {
+          "client_id": 3,
+          "balancing": {
+            "method": "oversampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 45,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 45,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "9ebc12aaf578ec6788249ffc5643828004ff970d9ccb84f81f28d58a5efa13f6",
+            "val": "06ab756707002d311b1529b9edc0e50641f1ff378a7856d460b7ccbecd7da30e",
+            "test": "6130be787d74c048d44349af5dfe3c6f040faa6fe3b8e5bf154a4049b22c2073"
+          },
+          "feature_transform_fingerprint": "b06c58dba0f7a785876263c6c70eda9f9a7a7007601ca57bfb6f4084869817e6"
+        },
+        {
+          "client_id": 4,
+          "balancing": {
+            "method": "oversampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 46,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 46,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "1d9847bc7cef6db34649fa826e87a42de473e55951b9c3e0f7a151228add7286",
+            "val": "7a152df58c7f715ddb8913721d74469be93c4f6929b4b968a15a6bae1e347401",
+            "test": "2bac945f3fa2376f1e4c1335e47eb34a2495b94e089b7e23e93c2ebe6bb57b5f"
+          },
+          "feature_transform_fingerprint": "541267e3956f92941b6ec8636c4f7c8810f6cd7fb7c94d95dd2cb78bffbfc4ea"
+        }
+      ]
+    },
+    "b6866f215428:label_skew:smote": {
+      "configuration": {
+        "balancing": {
+          "method": "undersampling",
+          "adult_to_non_adult": "1:1",
+          "seed": 42,
+          "ensemble_members": 5,
+          "k_neighbors": 5,
+          "insufficient_minority": "adjust"
+        },
+        "model": {
+          "family": "engineered_numeric",
+          "classifier": "sgd_logistic",
+          "parameters": {
+            "max_iter": 30,
+            "alpha": 0.0001,
+            "tol": 0.001
+          }
+        },
+        "threshold": 0.5
+      },
+      "runtime": {
+        "git_commit": "NO_GIT_REPO - results are not tied to a code version",
+        "timestamp_utc": "2026-10-21T17:35:53Z",
+        "python": "3.13.5",
+        "numpy": "2.2.3",
+        "scipy": "1.15.3",
+        "sklearn": "1.7.0",
+        "tldextract": "5.1.2",
+        "platform": "Windows-11-10.0.26300-SP0"
+      },
+      "code_tree_sha256": "af86c41e32f1c030e011fd321aae37fd803ec58c6d4e7425fb647ca3edbac72b",
+      "source_summary_sha256": "b6866f2154285e4b74d3335c9b61e49d2a703462ebbd1217ce0ec32cf13d163a",
+      "clients": [
+        {
+          "client_id": 0,
+          "balancing": {
+            "method": "smote",
+            "adult_to_non_adult": "1:1",
+            "seed": 42,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 42,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "e6981a2ead86e21acff8dd879c0dfd55dd63926037e1cd1af5d515c9b4df0fa9",
+            "val": "855bbb6b575c1c24ea04115a81e28f6eef8fedbc8ce617ebbc508c2fa1e7f9f2",
+            "test": "d621ffc935b34f61758578c389ab6c0d6005352ed0f0d350cd67943039015895"
+          },
+          "feature_transform_fingerprint": "ee4a115096a032a69783f5ea8376d84730858299385bd9ce779a112c6cd29055"
+        },
+        {
+          "client_id": 1,
+          "balancing": {
+            "method": "smote",
+            "adult_to_non_adult": "1:1",
+            "seed": 43,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 43,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "6614025a780820490222a492eda507d7ddf0e4071344fdcd9a89fcc4305a29f9",
+            "val": "f4b63e92f9b418ae800ee32385580c0ed2335f7be848db2e65414f9eadabc0ce",
+            "test": "2d6a9b286a0292402ef40cf62f3a6d477df2af778f3e7a049f8c45afba724a24"
+          },
+          "feature_transform_fingerprint": "c1ce616fc0fca0dae4353c8bf1d747b28a92ceee91dcd8ab6cd96403d78d043b"
+        },
+        {
+          "client_id": 2,
+          "balancing": {
+            "method": "smote",
+            "adult_to_non_adult": "1:1",
+            "seed": 44,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 44,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "ab1eb826caff01b1831bf499af4e673969b300e1dc94895aef9c7cc2b152d316",
+            "val": "8dbbe448f528b220e0bccfa72f640eed09a4cd4c7c70aec49aa882c96609aeff",
+            "test": "31559bcc26560533e75abb28da7c48f85be605350dfd582088e5c3f5e4fa0a6f"
+          },
+          "feature_transform_fingerprint": "f8623e68b21b897ecf22d1b5b071d2c08a5b4cdc821d06fbef4d1a15c3548b6e"
+        },
+        {
+          "client_id": 3,
+          "balancing": {
+            "method": "smote",
+            "adult_to_non_adult": "1:1",
+            "seed": 45,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 45,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "9ebc12aaf578ec6788249ffc5643828004ff970d9ccb84f81f28d58a5efa13f6",
+            "val": "06ab756707002d311b1529b9edc0e50641f1ff378a7856d460b7ccbecd7da30e",
+            "test": "6130be787d74c048d44349af5dfe3c6f040faa6fe3b8e5bf154a4049b22c2073"
+          },
+          "feature_transform_fingerprint": "b06c58dba0f7a785876263c6c70eda9f9a7a7007601ca57bfb6f4084869817e6"
+        },
+        {
+          "client_id": 4,
+          "balancing": {
+            "method": "smote",
+            "adult_to_non_adult": "1:1",
+            "seed": 46,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 46,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "1d9847bc7cef6db34649fa826e87a42de473e55951b9c3e0f7a151228add7286",
+            "val": "7a152df58c7f715ddb8913721d74469be93c4f6929b4b968a15a6bae1e347401",
+            "test": "2bac945f3fa2376f1e4c1335e47eb34a2495b94e089b7e23e93c2ebe6bb57b5f"
+          },
+          "feature_transform_fingerprint": "541267e3956f92941b6ec8636c4f7c8810f6cd7fb7c94d95dd2cb78bffbfc4ea"
+        }
+      ]
+    },
+    "b6866f215428:label_skew:undersampling": {
+      "configuration": {
+        "balancing": {
+          "method": "undersampling",
+          "adult_to_non_adult": "1:1",
+          "seed": 42,
+          "ensemble_members": 5,
+          "k_neighbors": 5,
+          "insufficient_minority": "adjust"
+        },
+        "model": {
+          "family": "engineered_numeric",
+          "classifier": "sgd_logistic",
+          "parameters": {
+            "max_iter": 30,
+            "alpha": 0.0001,
+            "tol": 0.001
+          }
+        },
+        "threshold": 0.5
+      },
+      "runtime": {
+        "git_commit": "NO_GIT_REPO - results are not tied to a code version",
+        "timestamp_utc": "2026-10-21T17:35:53Z",
+        "python": "3.13.5",
+        "numpy": "2.2.3",
+        "scipy": "1.15.3",
+        "sklearn": "1.7.0",
+        "tldextract": "5.1.2",
+        "platform": "Windows-11-10.0.26300-SP0"
+      },
+      "code_tree_sha256": "af86c41e32f1c030e011fd321aae37fd803ec58c6d4e7425fb647ca3edbac72b",
+      "source_summary_sha256": "b6866f2154285e4b74d3335c9b61e49d2a703462ebbd1217ce0ec32cf13d163a",
+      "clients": [
+        {
+          "client_id": 0,
+          "balancing": {
+            "method": "undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 42,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 42,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "e6981a2ead86e21acff8dd879c0dfd55dd63926037e1cd1af5d515c9b4df0fa9",
+            "val": "855bbb6b575c1c24ea04115a81e28f6eef8fedbc8ce617ebbc508c2fa1e7f9f2",
+            "test": "d621ffc935b34f61758578c389ab6c0d6005352ed0f0d350cd67943039015895"
+          },
+          "feature_transform_fingerprint": "ee4a115096a032a69783f5ea8376d84730858299385bd9ce779a112c6cd29055"
+        },
+        {
+          "client_id": 1,
+          "balancing": {
+            "method": "undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 43,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 43,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "6614025a780820490222a492eda507d7ddf0e4071344fdcd9a89fcc4305a29f9",
+            "val": "f4b63e92f9b418ae800ee32385580c0ed2335f7be848db2e65414f9eadabc0ce",
+            "test": "2d6a9b286a0292402ef40cf62f3a6d477df2af778f3e7a049f8c45afba724a24"
+          },
+          "feature_transform_fingerprint": "c1ce616fc0fca0dae4353c8bf1d747b28a92ceee91dcd8ab6cd96403d78d043b"
+        },
+        {
+          "client_id": 2,
+          "balancing": {
+            "method": "undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 44,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 44,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "ab1eb826caff01b1831bf499af4e673969b300e1dc94895aef9c7cc2b152d316",
+            "val": "8dbbe448f528b220e0bccfa72f640eed09a4cd4c7c70aec49aa882c96609aeff",
+            "test": "31559bcc26560533e75abb28da7c48f85be605350dfd582088e5c3f5e4fa0a6f"
+          },
+          "feature_transform_fingerprint": "f8623e68b21b897ecf22d1b5b071d2c08a5b4cdc821d06fbef4d1a15c3548b6e"
+        },
+        {
+          "client_id": 3,
+          "balancing": {
+            "method": "undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 45,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 45,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "9ebc12aaf578ec6788249ffc5643828004ff970d9ccb84f81f28d58a5efa13f6",
+            "val": "06ab756707002d311b1529b9edc0e50641f1ff378a7856d460b7ccbecd7da30e",
+            "test": "6130be787d74c048d44349af5dfe3c6f040faa6fe3b8e5bf154a4049b22c2073"
+          },
+          "feature_transform_fingerprint": "b06c58dba0f7a785876263c6c70eda9f9a7a7007601ca57bfb6f4084869817e6"
+        },
+        {
+          "client_id": 4,
+          "balancing": {
+            "method": "undersampling",
+            "adult_to_non_adult": "1:1",
+            "seed": 46,
+            "ensemble_members": 5,
+            "k_neighbors": 5,
+            "insufficient_minority": "adjust"
+          },
+          "model": {
+            "family": "engineered_numeric",
+            "classifier": "sgd_logistic",
+            "parameters": {
+              "alpha": 0.0001,
+              "average": false,
+              "class_weight": null,
+              "early_stopping": false,
+              "epsilon": 0.1,
+              "eta0": 0.0,
+              "fit_intercept": true,
+              "l1_ratio": 0.15,
+              "learning_rate": "optimal",
+              "loss": "log_loss",
+              "max_iter": 30,
+              "n_iter_no_change": 5,
+              "n_jobs": null,
+              "penalty": "l2",
+              "power_t": 0.5,
+              "random_state": 46,
+              "shuffle": true,
+              "tol": 0.001,
+              "validation_fraction": 0.1,
+              "verbose": 0,
+              "warm_start": false
+            }
+          },
+          "data_contract": {
+            "train": "1d9847bc7cef6db34649fa826e87a42de473e55951b9c3e0f7a151228add7286",
+            "val": "7a152df58c7f715ddb8913721d74469be93c4f6929b4b968a15a6bae1e347401",
+            "test": "2bac945f3fa2376f1e4c1335e47eb34a2495b94e089b7e23e93c2ebe6bb57b5f"
+          },
+          "feature_transform_fingerprint": "541267e3956f92941b6ec8636c4f7c8810f6cd7fb7c94d95dd2cb78bffbfc4ea"
+        }
+      ]
+    },
+    "b58d73e6738abc28": {
+      "configuration": {
+        "n_clients": 5,
+        "rounds": 2,
+        "clients_per_round": 5,
+        "local_epochs": 1,
+        "batch_size": 8,
+        "learning_rate": 0.001,
+        "seed": 42,
+        "model": {
+          "family": "character_cnn",
+          "characters": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~:/?#[]@!$&'()*+,;=%",
+          "sequence_length": 32,
+          "dropout_input": 0.1
+        },
+        "balancing": {
+          "method": "undersampling",
+          "adult_to_non_adult": "1:1",
+          "seed": 42,
+          "ensemble_members": 5,
+          "k_neighbors": 5,
+          "insufficient_minority": "adjust"
+        },
+        "aggregation_weight": "original_training",
+        "threshold": 0.5,
+        "evaluate_final_test": true,
+        "evaluate_training": true,
+        "experiment": {
+          "partition_strategy": "unknown",
+          "data_kind": "synthetic",
+          "evaluation_population_id": "synthetic-five-client-smoke-v1"
+        }
+      },
+      "scope": "federated global model",
+      "data_contracts": {
+        "0": {
+          "train_sha256": "112b4b1a6e1534ca7099e51709e8c95fad5c60c6930b4520423bd4204d2df516",
+          "val_sha256": "59f9210f94b56aa0f99a425a95427507d7007b14ee396e9b368d03bac28dacd0",
+          "test_sha256": "92327b5265d72d58d1bf4bb982aaf83626ff00eb9e99524c0a912e07b5e4dc70",
+          "partition_strategy": "unknown",
+          "data_kind": "synthetic"
+        },
+        "1": {
+          "train_sha256": "3a3aee626c0fa1957dc2f8f0e0e8960597f05a6222f94bc7a967e47bddde6bda",
+          "val_sha256": "c412be7b7a979013accca5a66438cbca769921d607d6605d8b44468118183e24",
+          "test_sha256": "683155bddbea39e95226b340d9a4254a6f3318da5f388f6ae744c2f79e01c8ff",
+          "partition_strategy": "unknown",
+          "data_kind": "synthetic"
+        },
+        "2": {
+          "train_sha256": "a9ff44db9fe9975d410f19c6e4f8f0edf697d080f585eb86a223222dbd3b8c5e",
+          "val_sha256": "44e28af2cc428221b09d35dd88a8a3a6bca957fc3481b8068b83617eedf1aabf",
+          "test_sha256": "60973601ca4d57578a041001a4c4e6f8cd07deea2e20943191165c4568a0f529",
+          "partition_strategy": "unknown",
+          "data_kind": "synthetic"
+        },
+        "3": {
+          "train_sha256": "bcacffa568e3483d2681c2407d6d5a8c5b5a01327f066892f256aaea1d7dd2fc",
+          "val_sha256": "a640802d6125bcf33d9f9d77c4b864543577c3817cc800e9eb0a4c313fd8421c",
+          "test_sha256": "b475fe550584b2d69b1bfa11438590bb17ed574687ee054c242a1984f3e3ed3d",
+          "partition_strategy": "unknown",
+          "data_kind": "synthetic"
+        },
+        "4": {
+          "train_sha256": "38feb807a1b9cabee2c555c167d1d1ccdffb44fd432452602f5c7cad693320c3",
+          "val_sha256": "7d996a2d957030a11f38f62f91d5cbd014b8b27a61550c6ced7c2d8beb83250d",
+          "test_sha256": "16dc21cee6155e924aaa1d88e5d3fccd7d7bb3a75c4e3707c19fa107d914a711",
+          "partition_strategy": "unknown",
+          "data_kind": "synthetic"
+        }
+      },
+      "source_files_sha256": {
+        "run.json": "b58d73e6738abc28bcc46a954fc4b41cb054a44dc0ecdcf75b4f9e2bfe37ee5e",
+        "round_0001.json": "54dfd9a22a4e573185b9576aba57aac51406c2f65ee0706a1b4fbb2a76d85a8a",
+        "round_0002.json": "8836e028b465bd4d12ae043893dcfcaf23610fee7174cc71ffcd637fbef0c1a8"
+      },
+      "final_global_hash": "9b00ab14a321c41d69754ca9a2cb21dae77e6204cef9ae927583386276e2681d",
+      "client_runtime": {
+        "0": {
+          "device": "cpu",
+          "torch_threads": 2,
+          "cuda_runtime": "none"
+        },
+        "1": {
+          "device": "cpu",
+          "torch_threads": 2,
+          "cuda_runtime": "none"
+        },
+        "2": {
+          "device": "cpu",
+          "torch_threads": 2,
+          "cuda_runtime": "none"
+        },
+        "3": {
+          "device": "cpu",
+          "torch_threads": 2,
+          "cuda_runtime": "none"
+        },
+        "4": {
+          "device": "cpu",
+          "torch_threads": 2,
+          "cuda_runtime": "none"
+        }
+      },
+      "server_runtime": {
+        "platform": "Windows-11-10.0.26300-SP0",
+        "processor": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel"
+      },
+      "selection": "fixed final round, no holdout-driven tuning",
+      "declared_experiment": {
+        "partition_strategy": "unknown",
+        "data_kind": "synthetic",
+        "evaluation_population_id": "synthetic-five-client-smoke-v1"
+      },
+      "reproduction": {
+        "source_files_sha256": {
+          "baize/__init__.py": "2495d69ef3e276b47ab84e06952fb2534d0c0e4548039e7b8c5bf5e5c7969350",
+          "baize/data/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "baize/data/dataset.py": "b9a4b67bb1696f0c882a343a006880c11f7b852dffcd6fb4d782b4e62e2b77f1",
+          "baize/data/features.py": "80242ca28d6fa328592066aed615fd8306f337eb88504e27180674d154ddd0ad",
+          "baize/data/loaders.py": "6462f78255a55a18953f3d72a7f79b93b8bdf3a8e8a4cb8abd7541984a128526",
+          "baize/data/noise.py": "c13bd00ecd9b012b40c08366d77d38cddd939e5411d8f5aaa5de9084f031b4e4",
+          "baize/data/partition.py": "c6c52573bf1097878e508fa11fc94f4fb8645d297c3ac206f530dd565f7e377e",
+          "baize/data/preprocessing.py": "63bddda7d0290927744f7c327842cb54432f28fca5317a362310179877d7514d",
+          "baize/data/splits.py": "051a8ff33693eecfac55d53d6a3efa9f86d6b53ae95fe4c60e10575263bccb1f",
+          "baize/data/url.py": "8ad5ff48a3d1a831178ae70bc761e48ecb6106bb556c053b7a89535752f1bc0e",
+          "baize/data/validation.py": "44d9097ea55715f0a9350ae346fb846e37de513b7d6c5894a0e07c62384df2a6",
+          "baize/demo_server.py": "34aee5d5e675c3d36f8f73658d9e5cfb56bae35f2dbb803e8d337a88c2d594dd",
+          "baize/evaluation/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "baize/evaluation/budget.py": "c8c116f8374a588627659638df5c34373ff2f93b3ef3a9ea3f37284785bb2a64",
+          "baize/evaluation/convergence.py": "6814c1363f012ebb6bbaee8a072bfdd325edd6e666cef72d111d325dfb817511",
+          "baize/evaluation/metrics.py": "a7cc280a4877ae8c5a209c92bf92fa7c89fec47e6287b60979ecc23995fb201e",
+          "baize/evaluation/selection.py": "468a0db772cd0878c4a7bfe5aea9b26f60f885a0596a89e3fb83b40c9b9805df",
+          "baize/experiments/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "baize/experiments/runner.py": "87f2701a4e0bd3cee81018fc2c4871e5e9aa116bc57695b69d70ebf4d1c9c150",
+          "baize/federated/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "baize/federated/aggregation.py": "b483fff1328b9564e306bbc8f4b89f2e5206f69fe8a594c0dec5956b91db22e8",
+          "baize/federated/client.py": "d28865aa1bf98ceee1801312a7d6987f60dcbcf0dec8a9fef0b52bd2b524559f",
+          "baize/federated/simulator.py": "0e040adf1e7f1eca7e50e3190b6ad2ce63ef43bdc3bd586a74d7596c0019b030",
+          "baize/hparams.py": "48ecfd8e8ea76f1679fdbb89be5ab3a57065197a1a55d6b9187cf2e977a2f928",
+          "baize/inference.py": "46baeda0c5a3ee5386ac4785fa0d6e360bbca894d15164a9688a8c9052a342c7",
+          "baize/models/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "baize/models/linear.py": "e8f6ee5ec10fab6d1924932e5f5d1a006ab85521d23ab41eb15e997e501a1f72",
+          "baize/provenance.py": "0226929c24251112fd2677fa4dfe7d29405ba26236e315539e8365237d0ff0d9",
+          "baize/research_snapshot.py": "7ed69c8e5b2561bb6e592e23c2f3610ce8d9f5b721a609ebfc2931a4e3a43aa1",
+          "src/__init__.py": "98160b76d443c41109ca1bf2d652744c447f38ee2ca39ae351d1ad025eb39d1a",
+          "src/client/__init__.py": "aaf64132c33e71c30b92adf25ab54c32a00ac0150f99e595a154ee6291038981",
+          "src/client/balancing_experiment.py": "b2cd3878adfc8b650ee1e8eefd94c79e6a409683aae29f2509efcdbdc380dff8",
+          "src/client/data.py": "03911d1bb58fc75b9fd2c9ba82c976725976269b5c896eef52c5d0f9cb4748fa",
+          "src/client/flower_client.py": "b234579799c9f0feb38f4752b46edeb511c38423b2c92d59cca25e26b49fd38d",
+          "src/client/neural_data.py": "6dd67dcf00c0d6b65b38b85f27fd23a23c872abdbc468f1a037a8d9545888b7c",
+          "src/data/__init__.py": "7d58743b1e1d1aec0c024e86a959bf41a33e371f4647c6fae9b3df5d15257174",
+          "src/data/allocation_plans.py": "e83ffeccfb2375cde3e278ea3329f5101a9d9c51dbf19c0b1782fbd01a16ca2c",
+          "src/data/balancing.py": "ff6ecd5a300e67859ebbc3a6f991884fb554e34e5d097ef948a3f5710aa2f8ba",
+          "src/data/comparison.py": "c53fd9b1cf80c4439d00da53c26e1b655fbff3379a7bc3af7c79b8c3e2b11188",
+          "src/data/iid_partitioning.py": "5e05812031159e7d2890185bfddedd5657834ef879aa71b5b624918e9acdd067",
+          "src/data/non_iid_partitioning.py": "d93c8682e9d9effde1cb38c0dc8c2570bcb30473a205fb596c3e39d96fe3aaa7",
+          "src/data/numerical_features.py": "22d9e98e377385050bb947525a82c88473db40fb0c53bc01763de5226e3ab848",
+          "src/data/partitioning.py": "540104ec841d3b4ab6d62ef5303fb25fb040900b91c7790065cfe58c6842c76a",
+          "src/data/planned_partitioning.py": "a25504b70487307f6f79415a47500b1de6821f175254acef71c0e2546c775964",
+          "src/data/sampling.py": "1cbc1540dd574ebbaa431909061a2ad55fa9273a250e29cfcaf21fe5ab17bd24",
+          "src/data/smote.py": "7b9b44ccb02a466d47fa8167d7ab4dceb9c3ebdeaccd42fc8b1a16742038739c",
+          "src/data/split_policy.py": "d62c98f7bfde078dc0c4b47eba1d604d593c3ee83833200a105d1c4ff0d5ed74",
+          "src/data/strategies.py": "12492480500d87c923352d59bc77df9f87870cdf3d0ecbf01f9b8c6058b5a714",
+          "src/data/verification.py": "8bb64d08e36af317de974accc7321370a1b108352d695adea9e2b746062c5889",
+          "src/evaluation/__init__.py": "c72f16c79ba0f02a1ab6b04fee03fc5a7a498a9fcd545a973915ddf7cf0104f9",
+          "src/evaluation/balancing_comparison.py": "a6dab025eb72b4a727ad9d7728e53019cf6e24889357222052a64ca0d7436989",
+          "src/evaluation/balancing_metrics.py": "347eb26153f42cb6d0023e1848c1fcf1c9f75605e940712dd74c0791a708c963",
+          "src/evaluation/classification.py": "665c7d7e5503c2bad472713d4462e7678ca2ae7e6dcdd30edc00d71dd6ff43e4",
+          "src/evaluation/federated.py": "a403dd1402e74829c928ca5373c2a0cbd6dbca97dc271ce982e8487f1b1fd450",
+          "src/evaluation/plots.py": "de016d93041a2cadefaf30a413ea67225db6080dfebefa116afdd37fe04adc5d",
+          "src/evaluation/reporting.py": "0f8eceeca8e5155d50d52356dac6040d4baaed1c87c728067d4d3a49cec6389b",
+          "src/models/__init__.py": "11c8d2204a78e9a031352c29cfcfb389d1cb829697df1ed901da7cabc589f439",
+          "src/models/character_cnn/__init__.py": "223f9908c35cccd651e7ee1542504872639a4c4aa2e23aa0dbf7072f3e0c17aa",
+          "src/models/character_cnn/model.py": "23e1d4758e5e735afd18abc5af1bedae04d20f5bdcb5a673901ddb33aa7ef899",
+          "src/models/deberta_v3_base/__init__.py": "a40e06ae99927109e9fa4e8d01cb22e2a5aa137a2a92422d7cc972c7141f1d79",
+          "src/models/deberta_v3_base/model.py": "1a7ba8fb17700f1aaba9ab0748594f342b533481fe2fbf2a753e95aecece2d3d",
+          "src/models/federated_state.py": "a76e12acef343ec795638ea608cea4749fb96811014aa383d4314797b12515ca",
+          "src/models/numerical_logistic.py": "417ca504bc181301198fc2ad3c9d1142463e7ba36f83e75aaa2b2454e3562782",
+          "src/models/training_audit.py": "d88257541f36a8a5f83b572e28599e98ebdba5961b79e9c92652d2847a558a60",
+          "src/models/undersampling_ensemble.py": "598016b026c83baa2121cd7d783ea9bd9fa1047d0de1ee7bc5a5813a7314d01c",
+          "src/server/__init__.py": "14625b32779b5954945b9d5fcb5adfd48823c4b36a0b4fc14d7a082bdf625d34",
+          "src/server/config.py": "d2906fe315ded627f326ea67ddae4083987a1a199c919c9ec287be4b3f0d6daa",
+          "src/server/flower_strategy.py": "f59fe6e4e24f72a9c1546be9d953eb09cb3935e1c2caf5892e520d4220ddb1c1",
+          "src/server/local_transport.py": "4d345ea09fb4b336f232010f8eac1f0f84f3211325a2b11d15ba763f6d19ab8d",
+          "config/five_client_iid.json": "2dad6d3dcd2150bdb018930a2fcf0d4d1bbf019270169dae4aa058a7ebf28d79",
+          "config/five_client_non_iid.json": "0113874bcbb8b080664624890fa9dba281f2f88ba6616e64c0d2520fd3a06759",
+          "config/five_client_label_skew.json": "0113874bcbb8b080664624890fa9dba281f2f88ba6616e64c0d2520fd3a06759",
+          "config/five_client_category_skew.json": "81ed3b08f582bf1b51b49ebe0a561771c0546ef116d4ed21d70034e96e54dca2",
+          "config/five_client_dirichlet.json": "e244346c6e1fdb13177253221e5276edb33b1e11dbc9fa15539a6bb1c73fab4d",
+          "config/balancing/undersampling.json": "dfa88c00e208c204f44c6c68c175341579dbf219dd41570f83aed4dadd333766",
+          "config/balancing/oversampling.json": "33a17d6d89fe4a198ff06b47639fe5cb7a437ba11bc605c92a02d84571207a24",
+          "config/balancing/smote.json": "f814ab645d9230f3b25d17356677052e3b3985b8a7c79a4364a55135baa5a0c0",
+          "config/balancing/ensemble_undersampling.json": "ba3ea029827af3433eed6c2ea66cb044c51c2c184299c0df95bce137f0963812",
+          "scripts/prepare_clients.py": "8f4ca28a1a674e30502ef0e2f7ec04d6f28c1b139a6fb0ef5cc00e69474ef7d6",
+          "scripts/split_client.py": "6fe1dec9d9b4cfadfd151957fd85c8e744594de126f2ddf30452375524904048",
+          "scripts/check_repository_safety.py": "ee9df7cf7472baf63e4eaf3ca2a94e96faf461e33cbc7fc175c7ac85055cccb0",
+          "scripts/partition_iid.py": "821d9a9aa3d69faa81cc02a953ce97f974206f4c9fe225a4132b0a39cc39d94b",
+          "scripts/partition_clients.py": "499aff698e7a7901cb70c18824656d2161aad756fad27e41c641c22ea82f173c",
+          "scripts/compare_partitions.py": "6ebeef099d38ce725c20ee8074c6f49a8f2cd8b12fb1486eb7742acf6c5f6d96",
+          "scripts/create_category_skew_config.py": "3fece30e8b83d0955c11f217930b36f44d1f86acbed814733c47987a1d978987",
+          "scripts/verify_partitions.py": "575cf2fb6dbffc307efa5785c18fa4c9ed24ec1333e8ba503bd62511339b8bd5",
+          "scripts/run_balancing.py": "42d8253810e7141746d13ba4d2a59c03f84ff2ef304d465887be1097c60e5863",
+          ".gitignore": "4b297a80b8ec7304cc6a392564f9cf95d21026f2428f9a9072814537bb18c955",
+          "requirements.txt": "81c6526a50957cd62fa1a746560795e64de6318b10c4cdf0ec581482d4dee037",
+          "pyproject.toml": "4133e714b397199894060d5bb5b5daccc0ea4261806fec41eee6d6d3eb671735",
+          "docs/PREPROCESSING.md": "15cceb0d9d01a3bea280e238c8c0639d4579ba310ac785015730892cc0c8da96",
+          "scripts/federated.py": "74a7d0a106b295124d20d46266dd9d68d1b32a3efc12d03174076e37326c023a",
+          "config/federated/character_cnn.json": "6a570d8369bf8462b2077f3952968f052609c5f9c49227ccb5cf17919a5814a7",
+          "config/federated/deberta_v3_base.json": "2afd348efd7a56a20fd54147196a842e036bd2afe3cda100bede69551e1fc5a9"
+        },
+        "source_tree_sha256": "867848cf4226d8228408fe473311b39a1f29ecf584eb81ff1d371a7bd54a3364",
+        "runtime_requirements_sha256": "897ff9fae902654c5a087d9450613240993b52ae2c5f91c89aca491c7a1fa0a7",
+        "cold_environment_reproduction_verified": false,
+        "runtime": {
+          "torch": "2.8.0",
+          "flwr": "1.22.0",
+          "numpy": "2.2.3",
+          "protobuf": "4.25.9",
+          "grpcio": "1.74.0"
+        },
+        "neural_runtime_requirements_sha256": "590fe139fd93e6ba8b96ed36a4f4cb406b518a62cd106371c36d071b6399eca5",
+        "python": "3.13.5"
+      }
+    }
+  },
+  "inputs": [
+    {
+      "kind": "numerical summary",
+      "name": "summary.json",
+      "sha256": "b6866f2154285e4b74d3335c9b61e49d2a703462ebbd1217ce0ec32cf13d163a"
+    },
+    {
+      "kind": "federated run",
+      "name": "server",
+      "sha256": "b58d73e6738abc28bcc46a954fc4b41cb054a44dc0ecdcf75b4f9e2bfe37ee5e"
+    }
+  ],
+  "missing_or_skipped": [],
+  "coverage": [
+    {
+      "family": "engineered_numeric",
+      "partition": "iid",
+      "method": "undersampling",
+      "validation_measured": true,
+      "final_test_measured": true,
+      "status": "measured"
+    },
+    {
+      "family": "engineered_numeric",
+      "partition": "iid",
+      "method": "oversampling",
+      "validation_measured": true,
+      "final_test_measured": true,
+      "status": "measured"
+    },
+    {
+      "family": "engineered_numeric",
+      "partition": "iid",
+      "method": "smote",
+      "validation_measured": true,
+      "final_test_measured": true,
+      "status": "measured"
+    },
+    {
+      "family": "engineered_numeric",
+      "partition": "iid",
+      "method": "ensemble_undersampling",
+      "validation_measured": true,
+      "final_test_measured": true,
+      "status": "measured"
+    },
+    {
+      "family": "engineered_numeric",
+      "partition": "label_skew",
+      "method": "undersampling",
+      "validation_measured": true,
+      "final_test_measured": true,
+      "status": "measured"
+    },
+    {
+      "family": "engineered_numeric",
+      "partition": "label_skew",
+      "method": "oversampling",
+      "validation_measured": true,
+      "final_test_measured": true,
+      "status": "measured"
+    },
+    {
+      "family": "engineered_numeric",
+      "partition": "label_skew",
+      "method": "smote",
+      "validation_measured": true,
+      "final_test_measured": true,
+      "status": "measured"
+    },
+    {
+      "family": "engineered_numeric",
+      "partition": "label_skew",
+      "method": "ensemble_undersampling",
+      "validation_measured": true,
+      "final_test_measured": true,
+      "status": "measured"
+    },
+    {
+      "family": "engineered_numeric",
+      "partition": "category_skew",
+      "method": "undersampling",
+      "validation_measured": true,
+      "final_test_measured": true,
+      "status": "measured"
+    },
+    {
+      "family": "engineered_numeric",
+      "partition": "category_skew",
+      "method": "oversampling",
+      "validation_measured": true,
+      "final_test_measured": true,
+      "status": "measured"
+    },
+    {
+      "family": "engineered_numeric",
+      "partition": "category_skew",
+      "method": "smote",
+      "validation_measured": true,
+      "final_test_measured": true,
+      "status": "measured"
+    },
+    {
+      "family": "engineered_numeric",
+      "partition": "category_skew",
+      "method": "ensemble_undersampling",
+      "validation_measured": true,
+      "final_test_measured": true,
+      "status": "measured"
+    },
+    {
+      "family": "character_cnn",
+      "partition": "iid",
+      "method": "undersampling",
+      "validation_measured": false,
+      "final_test_measured": false,
+      "status": "not measured"
+    },
+    {
+      "family": "character_cnn",
+      "partition": "iid",
+      "method": "oversampling",
+      "validation_measured": false,
+      "final_test_measured": false,
+      "status": "not measured"
+    },
+    {
+      "family": "character_cnn",
+      "partition": "iid",
+      "method": "smote",
+      "validation_measured": false,
+      "final_test_measured": false,
+      "status": "not applicable in this implementation"
+    },
+    {
+      "family": "character_cnn",
+      "partition": "iid",
+      "method": "ensemble_undersampling",
+      "validation_measured": false,
+      "final_test_measured": false,
+      "status": "not measured"
+    },
+    {
+      "family": "character_cnn",
+      "partition": "label_skew",
+      "method": "undersampling",
+      "validation_measured": false,
+      "final_test_measured": false,
+      "status": "not measured"
+    },
+    {
+      "family": "character_cnn",
+      "partition": "label_skew",
+      "method": "oversampling",
+      "validation_measured": false,
+      "final_test_measured": false,
+      "status": "not measured"
+    },
+    {
+      "family": "character_cnn",
+      "partition": "label_skew",
+      "method": "smote",
+      "validation_measured": false,
+      "final_test_measured": false,
+      "status": "not applicable in this implementation"
+    },
+    {
+      "family": "character_cnn",
+      "partition": "label_skew",
+      "method": "ensemble_undersampling",
+      "validation_measured": false,
+      "final_test_measured": false,
+      "status": "not measured"
+    },
+    {
+      "family": "character_cnn",
+      "partition": "category_skew",
+      "method": "undersampling",
+      "validation_measured": false,
+      "final_test_measured": false,
+      "status": "not measured"
+    },
+    {
+      "family": "character_cnn",
+      "partition": "category_skew",
+      "method": "oversampling",
+      "validation_measured": false,
+      "final_test_measured": false,
+      "status": "not measured"
+    },
+    {
+      "family": "character_cnn",
+      "partition": "category_skew",
+      "method": "smote",
+      "validation_measured": false,
+      "final_test_measured": false,
+      "status": "not applicable in this implementation"
+    },
+    {
+      "family": "character_cnn",
+      "partition": "category_skew",
+      "method": "ensemble_undersampling",
+      "validation_measured": false,
+      "final_test_measured": false,
+      "status": "not measured"
+    },
+    {
+      "family": "deberta_v3_base",
+      "partition": "iid",
+      "method": "undersampling",
+      "validation_measured": false,
+      "final_test_measured": false,
+      "status": "not measured"
+    },
+    {
+      "family": "deberta_v3_base",
+      "partition": "iid",
+      "method": "oversampling",
+      "validation_measured": false,
+      "final_test_measured": false,
+      "status": "not measured"
+    },
+    {
+      "family": "deberta_v3_base",
+      "partition": "iid",
+      "method": "smote",
+      "validation_measured": false,
+      "final_test_measured": false,
+      "status": "not applicable in this implementation"
+    },
+    {
+      "family": "deberta_v3_base",
+      "partition": "iid",
+      "method": "ensemble_undersampling",
+      "validation_measured": false,
+      "final_test_measured": false,
+      "status": "not applicable in this implementation"
+    },
+    {
+      "family": "deberta_v3_base",
+      "partition": "label_skew",
+      "method": "undersampling",
+      "validation_measured": false,
+      "final_test_measured": false,
+      "status": "not measured"
+    },
+    {
+      "family": "deberta_v3_base",
+      "partition": "label_skew",
+      "method": "oversampling",
+      "validation_measured": false,
+      "final_test_measured": false,
+      "status": "not measured"
+    },
+    {
+      "family": "deberta_v3_base",
+      "partition": "label_skew",
+      "method": "smote",
+      "validation_measured": false,
+      "final_test_measured": false,
+      "status": "not applicable in this implementation"
+    },
+    {
+      "family": "deberta_v3_base",
+      "partition": "label_skew",
+      "method": "ensemble_undersampling",
+      "validation_measured": false,
+      "final_test_measured": false,
+      "status": "not applicable in this implementation"
+    },
+    {
+      "family": "deberta_v3_base",
+      "partition": "category_skew",
+      "method": "undersampling",
+      "validation_measured": false,
+      "final_test_measured": false,
+      "status": "not measured"
+    },
+    {
+      "family": "deberta_v3_base",
+      "partition": "category_skew",
+      "method": "oversampling",
+      "validation_measured": false,
+      "final_test_measured": false,
+      "status": "not measured"
+    },
+    {
+      "family": "deberta_v3_base",
+      "partition": "category_skew",
+      "method": "smote",
+      "validation_measured": false,
+      "final_test_measured": false,
+      "status": "not applicable in this implementation"
+    },
+    {
+      "family": "deberta_v3_base",
+      "partition": "category_skew",
+      "method": "ensemble_undersampling",
+      "validation_measured": false,
+      "final_test_measured": false,
+      "status": "not applicable in this implementation"
+    }
+  ],
+  "report_configuration": {
+    "partition_aliases": {
+      "client-iid-v1": "iid",
+      "client-label-skew-v1": "label_skew",
+      "client-category-skew-v1": "category_skew",
+      "stratified_url_iid": "iid",
+      "planned_label_skew": "label_skew",
+      "planned_category_skew": "category_skew"
+    },
+    "expected_clients": 5,
+    "required_balancing_methods": [
+      "undersampling",
+      "oversampling",
+      "smote",
+      "ensemble_undersampling"
+    ],
+    "expected_adult_to_non_adult": "1:1",
+    "formats": [
+      "png",
+      "svg"
+    ],
+    "automatic_method_selection": false
+  },
+  "limitations": [
+    "Existing real-data results are single-seed numerical experiments, not CNN/DeBERTa FL performance.",
+    "Neural real-data comparisons remain not measured until those experiments run; synthetic smoke is never substituted.",
+    "Convergence warnings are preserved. Single-seed measured validation/test results do not establish a robust best method.",
+    "Historical elapsed times include training/evaluation/audits; separate training time is null where it was not recorded.",
+    "Local numerical runs have no federated communication measurement. Historical missing timing/bytes remain null, not zero.",
+    "Flower byte counts cover serialized application protobuf payloads, not gRPC/TLS framing, control messages or retries.",
+    "Global train metrics use original local training splits, evaluated after aggregation; optimization loss uses balanced views and is distinct.",
+    "Per-class undefined divisions use zero; macro-F1/balanced recall average the fixed [Non-adult, Adult] label set.",
+    "Data minimization is not differential privacy or secure aggregation; only counts and model states cross the FL API.",
+    "A declared cross-partition population label is not proof of identical membership; retain the preprocessing leakage/coverage audit."
+  ],
+  "reproduction": {
+    "python": "3.13.5",
+    "packages": {
+      "numpy": "2.2.3",
+      "matplotlib": "3.10.3",
+      "scikit-learn": "1.7.0"
+    },
+    "report_sources_sha256": {
+      "scripts/report_evaluation.py": "31ca1407744d2a38795f39dbb050e26211d2c4888897f772b1e95b74d015c7c9",
+      "src/evaluation/reporting.py": "bff5f56bad232e9e86543f8b85479b472317a5d082ff60f8a27bf1df21b53e21",
+      "src/evaluation/plots.py": "e8d8e83c0c721185d90b1266599188708c862bc0177a8ff1879afbba257c7b2d",
+      "src/evaluation/classification.py": "665c7d7e5503c2bad472713d4462e7678ca2ae7e6dcdd30edc00d71dd6ff43e4"
+    },
+    "settings_sha256": "1781ed3d9f79dafc49fe01332558b05b39ae976f50c14ca6603fa8b96a6ac6a6"
+  },
+  "plots": {
+    "01_iid_vs_non_iid_engineered_numeric_real_seed42_0.png": "d5ad11621517b2725a2d27f52aa8d14f4835d50ad00a2385800031b1110b94e9",
+    "01_iid_vs_non_iid_engineered_numeric_real_seed42_0.svg": "38fea5fa32041bc4411f03f29b7a281ce1a5086479b4fe1277b77421d515710d",
+    "02_balancing_iid_engineered_numeric_real_seed42_0.png": "6de4d3bdec2baaee5b304d8977ce03a02c727630bb17ede17c072f59b8d0d638",
+    "02_balancing_iid_engineered_numeric_real_seed42_0.svg": "3a2eef5c54aeaf627015f8ebde9b01698ab38fdfbbb8922e674e70fa7a8c3ae6",
+    "03_balancing_non_iid_engineered_numeric_real_seed42_0.png": "687bd8df3f19af2a370f1d92b3fe8a3539bc36f16c9c9553c0e8e7c60cebf301",
+    "03_balancing_non_iid_engineered_numeric_real_seed42_0.svg": "7f2261b313ec21a558453572861a35df15908c70224e7bd7f1f26926688c50e2",
+    "04_adult_recall_f1_engineered_numeric_real_seed42_0.png": "fae66da45ff206e911e52803af0cf222a441c44b757ab9aac8ad6f2d403c3230",
+    "04_adult_recall_f1_engineered_numeric_real_seed42_0.svg": "076591b6e222be0928c5320e3b8a05d5f4d8bfdcf0bea38cb9719958c40bde9f",
+    "05_convergence_b58d73e6738abc28.png": "b8226d047970fbc553d24191a3dc833bb97e1c13f0556885cecf31a164e21b18",
+    "05_convergence_b58d73e6738abc28.svg": "5aeb171d4e611fab20c0c7cb994cefb601be42c3116d42858f8138ac2de0f80e",
+    "06_costs_b58d73e6738abc28.png": "dde60530a8dbf3e4c862164fd7f239d183039149543c820691a27a198213d94e",
+    "06_costs_b58d73e6738abc28.svg": "1cfe6c6742ef6843a10e14b6429c2b7d8f1a2c201d9ce75da770e0c946175d2b"
+  }
+}
