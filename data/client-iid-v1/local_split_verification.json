@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "scope": "IID existing local splits; verified unchanged since full-record audit",
+  "configured_fractions": {
+    "train": 0.7,
+    "val": 0.15,
+    "test": 0.15
+  },
+  "clients": [
+    {
+      "client": 1,
+      "client_id": 0,
+      "counts": {
+        "train": 211166,
+        "val": 38987,
+        "test": 43495
+      },
+      "total": 293648
+    },
+    {
+      "client": 2,
+      "client_id": 1,
+      "counts": {
+        "train": 211249,
+        "val": 39109,
+        "test": 43290
+      },
+      "total": 293648
+    },
+    {
+      "client": 3,
+      "client_id": 2,
+      "counts": {
+        "train": 211377,
+        "val": 38992,
+        "test": 43280
+      },
+      "total": 293649
+    },
+    {
+      "client": 4,
+      "client_id": 3,
+      "counts": {
+        "train": 211989,
+        "val": 38460,
+        "test": 43200
+      },
+      "total": 293649
+    },
+    {
+      "client": 5,
+      "client_id": 4,
+      "counts": {
+        "train": 210928,
+        "val": 39092,
+        "test": 43629
+      },
+      "total": 293649
+    }
+  ],
+  "totals": {
+    "train": 1056709,
+    "val": 194640,
+    "test": 216894
+  },
+  "checks": {
+    "all_15_split_checksums_verified": true,
+    "client_dataset_hashes_unchanged": true,
+    "local_preprocessing_checksums_verified": true,
+    "full_record_audit_still_applies": true,
+    "both_classes_in_every_split": true
+  },
+  "full_record_verification_sha256": "ebf1ebde6be13d67579b83e50f6001c380699a16b6b93b2ddaec7f330308afdb"
+}

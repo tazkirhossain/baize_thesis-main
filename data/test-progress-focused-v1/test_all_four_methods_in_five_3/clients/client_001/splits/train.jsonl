@@ -1,0 +1,12 @@
+{"url": "https://c1-train-0.example/adult", "label": 1, "source_row": 1000}
+{"url": "https://c1-train-1.example/adult", "label": 1, "source_row": 1001}
+{"url": "https://c1-train-2.example/adult", "label": 1, "source_row": 1002}
+{"url": "https://c1-train-3.example/news", "label": 0, "source_row": 1003}
+{"url": "https://c1-train-4.example/news", "label": 0, "source_row": 1004}
+{"url": "https://c1-train-5.example/news", "label": 0, "source_row": 1005}
+{"url": "https://c1-train-6.example/news", "label": 0, "source_row": 1006}
+{"url": "https://c1-train-7.example/news", "label": 0, "source_row": 1007}
+{"url": "https://c1-train-8.example/news", "label": 0, "source_row": 1008}
+{"url": "https://c1-train-9.example/news", "label": 0, "source_row": 1009}
+{"url": "https://c1-train-10.example/news", "label": 0, "source_row": 1010}
+{"url": "https://c1-train-11.example/news", "label": 0, "source_row": 1011}

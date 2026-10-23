@@ -1,0 +1,81 @@
+{
+  "round": 1,
+  "weighting_policy": "original_training",
+  "clients": [
+    {
+      "client_id": 1,
+      "round": 1,
+      "contract": "3981b62f2a63ccf1bc9d20b0ef36c777659d468f5b4a3905866526e64370ac3b",
+      "schema": "4b09b4a07b83e696b87f35bc8173be540b631c152d668e7d8d959fafcb0e2a95",
+      "base_hash": "a66a78db643634358e094640f583d15fb76870f436d7026a854a43151e26f37e",
+      "original_train": 12,
+      "resampled_train": 6,
+      "original_adult": 3,
+      "original_non_adult": 9,
+      "used_adult": 3,
+      "used_non_adult": 3,
+      "duplicated": 0,
+      "ensemble_members": 1,
+      "examples_processed": 6,
+      "train_loss": 0.6942259271939596,
+      "aggregation_weight": 12
+    },
+    {
+      "client_id": 2,
+      "round": 1,
+      "contract": "3981b62f2a63ccf1bc9d20b0ef36c777659d468f5b4a3905866526e64370ac3b",
+      "schema": "4b09b4a07b83e696b87f35bc8173be540b631c152d668e7d8d959fafcb0e2a95",
+      "base_hash": "a66a78db643634358e094640f583d15fb76870f436d7026a854a43151e26f37e",
+      "original_train": 12,
+      "resampled_train": 8,
+      "original_adult": 4,
+      "original_non_adult": 8,
+      "used_adult": 4,
+      "used_non_adult": 4,
+      "duplicated": 0,
+      "ensemble_members": 1,
+      "examples_processed": 8,
+      "train_loss": 0.6941929161548615,
+      "aggregation_weight": 12
+    },
+    {
+      "client_id": 3,
+      "round": 1,
+      "contract": "3981b62f2a63ccf1bc9d20b0ef36c777659d468f5b4a3905866526e64370ac3b",
+      "schema": "4b09b4a07b83e696b87f35bc8173be540b631c152d668e7d8d959fafcb0e2a95",
+      "base_hash": "a66a78db643634358e094640f583d15fb76870f436d7026a854a43151e26f37e",
+      "original_train": 12,
+      "resampled_train": 10,
+      "original_adult": 5,
+      "original_non_adult": 7,
+      "used_adult": 5,
+      "used_non_adult": 5,
+      "duplicated": 0,
+      "ensemble_members": 1,
+      "examples_processed": 10,
+      "train_loss": 0.6943069100379944,
+      "aggregation_weight": 12
+    }
+  ],
+  "global_hash": "bdd0df1c8161d61aa6809e019c6c2501e5990291303b9f4863cf1cffcfed5bf1",
+  "val": {
+    "adult_precision": 0.0,
+    "adult_recall": 0.0,
+    "adult_f1": 0.0,
+    "macro_f1": 0.3333333333333333,
+    "balanced_accuracy": 0.5,
+    "accuracy": 0.5,
+    "confusion_matrix": [
+      [
+        10,
+        0
+      ],
+      [
+        10,
+        0
+      ]
+    ],
+    "n_records": 20,
+    "loss": 0.6975819826126098
+  }
+}

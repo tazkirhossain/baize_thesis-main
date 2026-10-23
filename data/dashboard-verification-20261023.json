@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "source_sha256": {
+    "dashboard/package.json": "8205f166a2096abc21829751bdff17c3318845a9b4bc9a80a2d5f15589e67a60",
+    "dashboard/package-lock.json": "ef59f7aa18a79b043bb01f38e640fee178c1e236bf839cf0df6553bd83a5048c",
+    "dashboard/src/App.tsx": "c2c80dd4f21422b3ac8f61c931cd8dc234ef3d73a9f7939fbf6f5836be9b0947",
+    "dashboard/src/data.ts": "49819f57191da87c3502634564d65254956f2cc5644fa51e680ea7dfb35e7b69",
+    "dashboard/src/components.tsx": "cf8dec9a7dcebac9d4c0949a20488b71e98772dd69212292617aa6bba716e6c0",
+    "dashboard/src/style.css": "4e849fa592cc69ee76bac56f926a0cdaef0794be4deb4db552ed21f5bac49515",
+    "src/evaluation/dashboard.py": "dd5a649a36e2c34e3a16704b683cd4234bf9e2e7cf7c3419d73336d47d8c2aa8",
+    "scripts/dashboard.py": "a39bbea0dec0cb7fdd5c46617cc682c0b9c11f39666f95c22233631e65081921",
+    "docs/DASHBOARD_RESULTS_SCHEMA.md": "3cf071201365033f7cb8a87f8e5f66116405017fd0bdf11b1c803865e9fc0c69",
+    "dashboard/README.md": "c10e73d50888607095b9d7c6e6020749fb10d13b7b2e4e029f509061f6de9451"
+  },
+  "python_tests": "181 passed, 3 skipped; six final adapter checks passed",
+  "frontend_tests": 3,
+  "production_build": true,
+  "http_boundary_checks": 9,
+  "browser_verified": [
+    "filters",
+    "round_range",
+    "metric_switch",
+    "missing_test",
+    "client_detail",
+    "multi_run_comparison_warning",
+    "history_search_sort",
+    "csv_download_14_rows",
+    "smote_config_download_valid_64_1_10",
+    "keyboard_focus_escape",
+    "responsive_breakpoints",
+    "no_console_errors"
+  ],
+  "ml_pipeline_changed": false,
+  "raw_datasets_served": false,
+  "published": false,
+  "screenshot": "data/dashboard-full-preview-20261023.png"
+}

@@ -1,0 +1,1546 @@
+.................................E.............................s........ [ 29%]
+...EE.EE............EE........EEEEEEE................................... [ 59%]
+...................................................FFF......FFFF....FF.. [ 88%]
+.........................EE                                              [100%]
+=================================== ERRORS ====================================
+_ ERROR at setup of test_public_reader_protects_holdout_labels_and_checks_file_hashes _
+
+tmp_path_factory = TempPathFactory(_given_basetemp=WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _...h('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def client(tmp_path_factory):
+        root = tmp_path_factory.mktemp("balanced-client")
+        source = root / "raw.csv"
+        with source.open("w",newline="") as stream:
+            writer = csv.writer(stream)
+            for domain in range(1000):
+                for page in range(2):
+                    label = "Adult" if domain%10 == 0 else "Arts"
+                    marker = "private-adult-path" if label == "Adult" else "public-info"
+                    writer.writerow([f"{domain:05}-{page}",f"https://site{domain}.com/{marker}/{page}",label])
+        prepared = root / "prepared"
+>       prepare_clients(source,prepared,PreprocessingConfig(n_features=64))
+
+tests\test_client_data.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+baize\data\preprocessing.py:374: in prepare_clients
+    reproduction = _snapshot_reproduction(ready)
+baize\data\preprocessing.py:233: in _snapshot_reproduction
+    shutil.copyfile(path, destination)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+src = WindowsPath('D:/baize_thesis-main/baize_thesis-main/scripts/run_balancing.py')
+dst = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/balanced-client0/.preparing-sg3j9lug/ready/code_snapshot/scripts/run_balancing.py')
+
+    def copyfile(src, dst, *, follow_symlinks=True):
+        """Copy data from src to dst in the most efficient way possible.
+    
+        If follow_symlinks is not set and src is a symbolic link, a new
+        symlink will be created instead of copying the file it points to.
+    
+        """
+        sys.audit("shutil.copyfile", src, dst)
+    
+        if _samefile(src, dst):
+            raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+    
+        file_size = 0
+        for i, fn in enumerate([src, dst]):
+            try:
+                st = _stat(fn)
+            except OSError:
+                # File most likely does not exist
+                pass
+            else:
+                # XXX What about other special files? (sockets, devices...)
+                if stat.S_ISFIFO(st.st_mode):
+                    fn = fn.path if isinstance(fn, os.DirEntry) else fn
+                    raise SpecialFileError("`%s` is a named pipe" % fn)
+                if _WINDOWS and i == 0:
+                    file_size = st.st_size
+    
+        if not follow_symlinks and _islink(src):
+            os.symlink(os.readlink(src), dst)
+        else:
+>           with open(src, 'rb') as fsrc:
+E           FileNotFoundError: [Errno 2] No such file or directory: 'D:\\baize_thesis-main\\baize_thesis-main\\scripts\\run_balancing.py'
+
+C:\Users\hossa\anaconda3\Lib\shutil.py:260: FileNotFoundError
+_ ERROR at setup of test_real_pipeline_is_url_iid_and_clients_split_without_global_files _
+
+tmp_path_factory = TempPathFactory(_given_basetemp=WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _...h('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def prepared(tmp_path_factory):
+        directory = tmp_path_factory.mktemp("iid-source")
+        source = directory / "raw.csv"
+        categories = ("Adult", "Arts", "Health", "Business")
+        with source.open("w", newline="") as stream:
+            writer = csv.writer(stream)
+            for domain in range(800):
+                for page in range(3):
+                    writer.writerow([f"{domain:05d}-{page}", f"https://site{domain}.com/{page}",
+                                     categories[domain % 4]])
+        root = directory / "prepared"
+>       prepare_clients(source, root, PreprocessingConfig(n_clients=5, n_features=64))
+
+tests\test_iid_partitioning.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+baize\data\preprocessing.py:374: in prepare_clients
+    reproduction = _snapshot_reproduction(ready)
+baize\data\preprocessing.py:233: in _snapshot_reproduction
+    shutil.copyfile(path, destination)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+src = WindowsPath('D:/baize_thesis-main/baize_thesis-main/scripts/run_balancing.py')
+dst = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/iid-source0/.preparing-v0_wz6or/ready/code_snapshot/scripts/run_balancing.py')
+
+    def copyfile(src, dst, *, follow_symlinks=True):
+        """Copy data from src to dst in the most efficient way possible.
+    
+        If follow_symlinks is not set and src is a symbolic link, a new
+        symlink will be created instead of copying the file it points to.
+    
+        """
+        sys.audit("shutil.copyfile", src, dst)
+    
+        if _samefile(src, dst):
+            raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+    
+        file_size = 0
+        for i, fn in enumerate([src, dst]):
+            try:
+                st = _stat(fn)
+            except OSError:
+                # File most likely does not exist
+                pass
+            else:
+                # XXX What about other special files? (sockets, devices...)
+                if stat.S_ISFIFO(st.st_mode):
+                    fn = fn.path if isinstance(fn, os.DirEntry) else fn
+                    raise SpecialFileError("`%s` is a named pipe" % fn)
+                if _WINDOWS and i == 0:
+                    file_size = st.st_size
+    
+        if not follow_symlinks and _islink(src):
+            os.symlink(os.readlink(src), dst)
+        else:
+>           with open(src, 'rb') as fsrc:
+E           FileNotFoundError: [Errno 2] No such file or directory: 'D:\\baize_thesis-main\\baize_thesis-main\\scripts\\run_balancing.py'
+
+C:\Users\hossa\anaconda3\Lib\shutil.py:260: FileNotFoundError
+_ ERROR at setup of test_artifacts_reproduce_and_input_tampering_blocks_publication _
+
+tmp_path_factory = TempPathFactory(_given_basetemp=WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _...h('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def prepared(tmp_path_factory):
+        directory = tmp_path_factory.mktemp("iid-source")
+        source = directory / "raw.csv"
+        categories = ("Adult", "Arts", "Health", "Business")
+        with source.open("w", newline="") as stream:
+            writer = csv.writer(stream)
+            for domain in range(800):
+                for page in range(3):
+                    writer.writerow([f"{domain:05d}-{page}", f"https://site{domain}.com/{page}",
+                                     categories[domain % 4]])
+        root = directory / "prepared"
+>       prepare_clients(source, root, PreprocessingConfig(n_clients=5, n_features=64))
+
+tests\test_iid_partitioning.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+baize\data\preprocessing.py:374: in prepare_clients
+    reproduction = _snapshot_reproduction(ready)
+baize\data\preprocessing.py:233: in _snapshot_reproduction
+    shutil.copyfile(path, destination)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+src = WindowsPath('D:/baize_thesis-main/baize_thesis-main/scripts/run_balancing.py')
+dst = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/iid-source0/.preparing-v0_wz6or/ready/code_snapshot/scripts/run_balancing.py')
+
+    def copyfile(src, dst, *, follow_symlinks=True):
+        """Copy data from src to dst in the most efficient way possible.
+    
+        If follow_symlinks is not set and src is a symbolic link, a new
+        symlink will be created instead of copying the file it points to.
+    
+        """
+        sys.audit("shutil.copyfile", src, dst)
+    
+        if _samefile(src, dst):
+            raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+    
+        file_size = 0
+        for i, fn in enumerate([src, dst]):
+            try:
+                st = _stat(fn)
+            except OSError:
+                # File most likely does not exist
+                pass
+            else:
+                # XXX What about other special files? (sockets, devices...)
+                if stat.S_ISFIFO(st.st_mode):
+                    fn = fn.path if isinstance(fn, os.DirEntry) else fn
+                    raise SpecialFileError("`%s` is a named pipe" % fn)
+                if _WINDOWS and i == 0:
+                    file_size = st.st_size
+    
+        if not follow_symlinks and _islink(src):
+            os.symlink(os.readlink(src), dst)
+        else:
+>           with open(src, 'rb') as fsrc:
+E           FileNotFoundError: [Errno 2] No such file or directory: 'D:\\baize_thesis-main\\baize_thesis-main\\scripts\\run_balancing.py'
+
+C:\Users\hossa\anaconda3\Lib\shutil.py:260: FileNotFoundError
+_______ ERROR at setup of test_unknown_shared_split_policy_is_rejected ________
+
+tmp_path_factory = TempPathFactory(_given_basetemp=WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _...h('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def prepared(tmp_path_factory):
+        directory = tmp_path_factory.mktemp("iid-source")
+        source = directory / "raw.csv"
+        categories = ("Adult", "Arts", "Health", "Business")
+        with source.open("w", newline="") as stream:
+            writer = csv.writer(stream)
+            for domain in range(800):
+                for page in range(3):
+                    writer.writerow([f"{domain:05d}-{page}", f"https://site{domain}.com/{page}",
+                                     categories[domain % 4]])
+        root = directory / "prepared"
+>       prepare_clients(source, root, PreprocessingConfig(n_clients=5, n_features=64))
+
+tests\test_iid_partitioning.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+baize\data\preprocessing.py:374: in prepare_clients
+    reproduction = _snapshot_reproduction(ready)
+baize\data\preprocessing.py:233: in _snapshot_reproduction
+    shutil.copyfile(path, destination)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+src = WindowsPath('D:/baize_thesis-main/baize_thesis-main/scripts/run_balancing.py')
+dst = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/iid-source0/.preparing-v0_wz6or/ready/code_snapshot/scripts/run_balancing.py')
+
+    def copyfile(src, dst, *, follow_symlinks=True):
+        """Copy data from src to dst in the most efficient way possible.
+    
+        If follow_symlinks is not set and src is a symbolic link, a new
+        symlink will be created instead of copying the file it points to.
+    
+        """
+        sys.audit("shutil.copyfile", src, dst)
+    
+        if _samefile(src, dst):
+            raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+    
+        file_size = 0
+        for i, fn in enumerate([src, dst]):
+            try:
+                st = _stat(fn)
+            except OSError:
+                # File most likely does not exist
+                pass
+            else:
+                # XXX What about other special files? (sockets, devices...)
+                if stat.S_ISFIFO(st.st_mode):
+                    fn = fn.path if isinstance(fn, os.DirEntry) else fn
+                    raise SpecialFileError("`%s` is a named pipe" % fn)
+                if _WINDOWS and i == 0:
+                    file_size = st.st_size
+    
+        if not follow_symlinks and _islink(src):
+            os.symlink(os.readlink(src), dst)
+        else:
+>           with open(src, 'rb') as fsrc:
+E           FileNotFoundError: [Errno 2] No such file or directory: 'D:\\baize_thesis-main\\baize_thesis-main\\scripts\\run_balancing.py'
+
+C:\Users\hossa\anaconda3\Lib\shutil.py:260: FileNotFoundError
+_ ERROR at setup of test_client_cannot_silently_change_the_shared_split_rule __
+
+tmp_path_factory = TempPathFactory(_given_basetemp=WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _...h('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def prepared(tmp_path_factory):
+        directory = tmp_path_factory.mktemp("iid-source")
+        source = directory / "raw.csv"
+        categories = ("Adult", "Arts", "Health", "Business")
+        with source.open("w", newline="") as stream:
+            writer = csv.writer(stream)
+            for domain in range(800):
+                for page in range(3):
+                    writer.writerow([f"{domain:05d}-{page}", f"https://site{domain}.com/{page}",
+                                     categories[domain % 4]])
+        root = directory / "prepared"
+>       prepare_clients(source, root, PreprocessingConfig(n_clients=5, n_features=64))
+
+tests\test_iid_partitioning.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+baize\data\preprocessing.py:374: in prepare_clients
+    reproduction = _snapshot_reproduction(ready)
+baize\data\preprocessing.py:233: in _snapshot_reproduction
+    shutil.copyfile(path, destination)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+src = WindowsPath('D:/baize_thesis-main/baize_thesis-main/scripts/run_balancing.py')
+dst = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/iid-source0/.preparing-v0_wz6or/ready/code_snapshot/scripts/run_balancing.py')
+
+    def copyfile(src, dst, *, follow_symlinks=True):
+        """Copy data from src to dst in the most efficient way possible.
+    
+        If follow_symlinks is not set and src is a symbolic link, a new
+        symlink will be created instead of copying the file it points to.
+    
+        """
+        sys.audit("shutil.copyfile", src, dst)
+    
+        if _samefile(src, dst):
+            raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+    
+        file_size = 0
+        for i, fn in enumerate([src, dst]):
+            try:
+                st = _stat(fn)
+            except OSError:
+                # File most likely does not exist
+                pass
+            else:
+                # XXX What about other special files? (sockets, devices...)
+                if stat.S_ISFIFO(st.st_mode):
+                    fn = fn.path if isinstance(fn, os.DirEntry) else fn
+                    raise SpecialFileError("`%s` is a named pipe" % fn)
+                if _WINDOWS and i == 0:
+                    file_size = st.st_size
+    
+        if not follow_symlinks and _islink(src):
+            os.symlink(os.readlink(src), dst)
+        else:
+>           with open(src, 'rb') as fsrc:
+E           FileNotFoundError: [Errno 2] No such file or directory: 'D:\\baize_thesis-main\\baize_thesis-main\\scripts\\run_balancing.py'
+
+C:\Users\hossa\anaconda3\Lib\shutil.py:260: FileNotFoundError
+_ ERROR at setup of test_full_record_verifier_checks_both_independent_scenarios[label_skew] _
+
+tmp_path_factory = TempPathFactory(_given_basetemp=WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _...h('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def tiny_source(tmp_path_factory):
+        root = tmp_path_factory.mktemp("verify-source")
+        csv_path = root / "input.csv"
+        with csv_path.open("w", newline="") as stream:
+            writer = csv.writer(stream)
+            for domain in range(90):
+                for page in range(2):
+                    writer.writerow([f"{domain:04}-{page}", f"https://source{domain}.com/{page}",
+                                     ("Adult", "Arts", "Health")[domain % 3]])
+        source = root / "source"
+>       prepare_clients(csv_path, source, PreprocessingConfig(n_features=64))
+
+tests\test_non_iid_scenarios.py:99: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+baize\data\preprocessing.py:374: in prepare_clients
+    reproduction = _snapshot_reproduction(ready)
+baize\data\preprocessing.py:233: in _snapshot_reproduction
+    shutil.copyfile(path, destination)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+src = WindowsPath('D:/baize_thesis-main/baize_thesis-main/scripts/run_balancing.py')
+dst = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/verify-source0/.preparing-8qqyjjpx/ready/code_snapshot/scripts/run_balancing.py')
+
+    def copyfile(src, dst, *, follow_symlinks=True):
+        """Copy data from src to dst in the most efficient way possible.
+    
+        If follow_symlinks is not set and src is a symbolic link, a new
+        symlink will be created instead of copying the file it points to.
+    
+        """
+        sys.audit("shutil.copyfile", src, dst)
+    
+        if _samefile(src, dst):
+            raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+    
+        file_size = 0
+        for i, fn in enumerate([src, dst]):
+            try:
+                st = _stat(fn)
+            except OSError:
+                # File most likely does not exist
+                pass
+            else:
+                # XXX What about other special files? (sockets, devices...)
+                if stat.S_ISFIFO(st.st_mode):
+                    fn = fn.path if isinstance(fn, os.DirEntry) else fn
+                    raise SpecialFileError("`%s` is a named pipe" % fn)
+                if _WINDOWS and i == 0:
+                    file_size = st.st_size
+    
+        if not follow_symlinks and _islink(src):
+            os.symlink(os.readlink(src), dst)
+        else:
+>           with open(src, 'rb') as fsrc:
+E           FileNotFoundError: [Errno 2] No such file or directory: 'D:\\baize_thesis-main\\baize_thesis-main\\scripts\\run_balancing.py'
+
+C:\Users\hossa\anaconda3\Lib\shutil.py:260: FileNotFoundError
+_ ERROR at setup of test_full_record_verifier_checks_both_independent_scenarios[category_skew] _
+
+tmp_path_factory = TempPathFactory(_given_basetemp=WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _...h('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def tiny_source(tmp_path_factory):
+        root = tmp_path_factory.mktemp("verify-source")
+        csv_path = root / "input.csv"
+        with csv_path.open("w", newline="") as stream:
+            writer = csv.writer(stream)
+            for domain in range(90):
+                for page in range(2):
+                    writer.writerow([f"{domain:04}-{page}", f"https://source{domain}.com/{page}",
+                                     ("Adult", "Arts", "Health")[domain % 3]])
+        source = root / "source"
+>       prepare_clients(csv_path, source, PreprocessingConfig(n_features=64))
+
+tests\test_non_iid_scenarios.py:99: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+baize\data\preprocessing.py:374: in prepare_clients
+    reproduction = _snapshot_reproduction(ready)
+baize\data\preprocessing.py:233: in _snapshot_reproduction
+    shutil.copyfile(path, destination)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+src = WindowsPath('D:/baize_thesis-main/baize_thesis-main/scripts/run_balancing.py')
+dst = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/verify-source0/.preparing-8qqyjjpx/ready/code_snapshot/scripts/run_balancing.py')
+
+    def copyfile(src, dst, *, follow_symlinks=True):
+        """Copy data from src to dst in the most efficient way possible.
+    
+        If follow_symlinks is not set and src is a symbolic link, a new
+        symlink will be created instead of copying the file it points to.
+    
+        """
+        sys.audit("shutil.copyfile", src, dst)
+    
+        if _samefile(src, dst):
+            raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+    
+        file_size = 0
+        for i, fn in enumerate([src, dst]):
+            try:
+                st = _stat(fn)
+            except OSError:
+                # File most likely does not exist
+                pass
+            else:
+                # XXX What about other special files? (sockets, devices...)
+                if stat.S_ISFIFO(st.st_mode):
+                    fn = fn.path if isinstance(fn, os.DirEntry) else fn
+                    raise SpecialFileError("`%s` is a named pipe" % fn)
+                if _WINDOWS and i == 0:
+                    file_size = st.st_size
+    
+        if not follow_symlinks and _islink(src):
+            os.symlink(os.readlink(src), dst)
+        else:
+>           with open(src, 'rb') as fsrc:
+E           FileNotFoundError: [Errno 2] No such file or directory: 'D:\\baize_thesis-main\\baize_thesis-main\\scripts\\run_balancing.py'
+
+C:\Users\hossa\anaconda3\Lib\shutil.py:260: FileNotFoundError
+_ ERROR at setup of test_same_pipeline_loader_and_evaluation_population_for_both_strategies _
+
+tmp_path_factory = TempPathFactory(_given_basetemp=WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _...h('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def runs(tmp_path_factory):
+        root = tmp_path_factory.mktemp("strategy-runs")
+        csv_path = root / "raw.csv"
+        with csv_path.open("w", newline="") as stream:
+            writer = csv.writer(stream)
+            for domain in range(1600):
+                for page in range(3):
+                    writer.writerow([f"{domain:06}-{page}", f"https://example{domain}.com/{page}",
+                                     ("Adult", "Arts", "Business", "Health")[domain % 4]])
+        source = root / "cleaned"
+>       prepare_clients(csv_path, source, PreprocessingConfig(n_features=64))
+
+tests\test_partition_strategies.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+baize\data\preprocessing.py:374: in prepare_clients
+    reproduction = _snapshot_reproduction(ready)
+baize\data\preprocessing.py:233: in _snapshot_reproduction
+    shutil.copyfile(path, destination)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+src = WindowsPath('D:/baize_thesis-main/baize_thesis-main/scripts/run_balancing.py')
+dst = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/strategy-runs0/.preparing-wg9mgdq0/ready/code_snapshot/scripts/run_balancing.py')
+
+    def copyfile(src, dst, *, follow_symlinks=True):
+        """Copy data from src to dst in the most efficient way possible.
+    
+        If follow_symlinks is not set and src is a symbolic link, a new
+        symlink will be created instead of copying the file it points to.
+    
+        """
+        sys.audit("shutil.copyfile", src, dst)
+    
+        if _samefile(src, dst):
+            raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+    
+        file_size = 0
+        for i, fn in enumerate([src, dst]):
+            try:
+                st = _stat(fn)
+            except OSError:
+                # File most likely does not exist
+                pass
+            else:
+                # XXX What about other special files? (sockets, devices...)
+                if stat.S_ISFIFO(st.st_mode):
+                    fn = fn.path if isinstance(fn, os.DirEntry) else fn
+                    raise SpecialFileError("`%s` is a named pipe" % fn)
+                if _WINDOWS and i == 0:
+                    file_size = st.st_size
+    
+        if not follow_symlinks and _islink(src):
+            os.symlink(os.readlink(src), dst)
+        else:
+>           with open(src, 'rb') as fsrc:
+E           FileNotFoundError: [Errno 2] No such file or directory: 'D:\\baize_thesis-main\\baize_thesis-main\\scripts\\run_balancing.py'
+
+C:\Users\hossa\anaconda3\Lib\shutil.py:260: FileNotFoundError
+_ ERROR at setup of test_comparison_rejects_mismatched_data_or_evaluation_rules[split_policy-value0] _
+
+tmp_path_factory = TempPathFactory(_given_basetemp=WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _...h('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def runs(tmp_path_factory):
+        root = tmp_path_factory.mktemp("strategy-runs")
+        csv_path = root / "raw.csv"
+        with csv_path.open("w", newline="") as stream:
+            writer = csv.writer(stream)
+            for domain in range(1600):
+                for page in range(3):
+                    writer.writerow([f"{domain:06}-{page}", f"https://example{domain}.com/{page}",
+                                     ("Adult", "Arts", "Business", "Health")[domain % 4]])
+        source = root / "cleaned"
+>       prepare_clients(csv_path, source, PreprocessingConfig(n_features=64))
+
+tests\test_partition_strategies.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+baize\data\preprocessing.py:374: in prepare_clients
+    reproduction = _snapshot_reproduction(ready)
+baize\data\preprocessing.py:233: in _snapshot_reproduction
+    shutil.copyfile(path, destination)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+src = WindowsPath('D:/baize_thesis-main/baize_thesis-main/scripts/run_balancing.py')
+dst = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/strategy-runs0/.preparing-wg9mgdq0/ready/code_snapshot/scripts/run_balancing.py')
+
+    def copyfile(src, dst, *, follow_symlinks=True):
+        """Copy data from src to dst in the most efficient way possible.
+    
+        If follow_symlinks is not set and src is a symbolic link, a new
+        symlink will be created instead of copying the file it points to.
+    
+        """
+        sys.audit("shutil.copyfile", src, dst)
+    
+        if _samefile(src, dst):
+            raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+    
+        file_size = 0
+        for i, fn in enumerate([src, dst]):
+            try:
+                st = _stat(fn)
+            except OSError:
+                # File most likely does not exist
+                pass
+            else:
+                # XXX What about other special files? (sockets, devices...)
+                if stat.S_ISFIFO(st.st_mode):
+                    fn = fn.path if isinstance(fn, os.DirEntry) else fn
+                    raise SpecialFileError("`%s` is a named pipe" % fn)
+                if _WINDOWS and i == 0:
+                    file_size = st.st_size
+    
+        if not follow_symlinks and _islink(src):
+            os.symlink(os.readlink(src), dst)
+        else:
+>           with open(src, 'rb') as fsrc:
+E           FileNotFoundError: [Errno 2] No such file or directory: 'D:\\baize_thesis-main\\baize_thesis-main\\scripts\\run_balancing.py'
+
+C:\Users\hossa\anaconda3\Lib\shutil.py:260: FileNotFoundError
+_ ERROR at setup of test_comparison_rejects_mismatched_data_or_evaluation_rules[features-value1] _
+
+tmp_path_factory = TempPathFactory(_given_basetemp=WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _...h('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def runs(tmp_path_factory):
+        root = tmp_path_factory.mktemp("strategy-runs")
+        csv_path = root / "raw.csv"
+        with csv_path.open("w", newline="") as stream:
+            writer = csv.writer(stream)
+            for domain in range(1600):
+                for page in range(3):
+                    writer.writerow([f"{domain:06}-{page}", f"https://example{domain}.com/{page}",
+                                     ("Adult", "Arts", "Business", "Health")[domain % 4]])
+        source = root / "cleaned"
+>       prepare_clients(csv_path, source, PreprocessingConfig(n_features=64))
+
+tests\test_partition_strategies.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+baize\data\preprocessing.py:374: in prepare_clients
+    reproduction = _snapshot_reproduction(ready)
+baize\data\preprocessing.py:233: in _snapshot_reproduction
+    shutil.copyfile(path, destination)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+src = WindowsPath('D:/baize_thesis-main/baize_thesis-main/scripts/run_balancing.py')
+dst = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/strategy-runs0/.preparing-wg9mgdq0/ready/code_snapshot/scripts/run_balancing.py')
+
+    def copyfile(src, dst, *, follow_symlinks=True):
+        """Copy data from src to dst in the most efficient way possible.
+    
+        If follow_symlinks is not set and src is a symbolic link, a new
+        symlink will be created instead of copying the file it points to.
+    
+        """
+        sys.audit("shutil.copyfile", src, dst)
+    
+        if _samefile(src, dst):
+            raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+    
+        file_size = 0
+        for i, fn in enumerate([src, dst]):
+            try:
+                st = _stat(fn)
+            except OSError:
+                # File most likely does not exist
+                pass
+            else:
+                # XXX What about other special files? (sockets, devices...)
+                if stat.S_ISFIFO(st.st_mode):
+                    fn = fn.path if isinstance(fn, os.DirEntry) else fn
+                    raise SpecialFileError("`%s` is a named pipe" % fn)
+                if _WINDOWS and i == 0:
+                    file_size = st.st_size
+    
+        if not follow_symlinks and _islink(src):
+            os.symlink(os.readlink(src), dst)
+        else:
+>           with open(src, 'rb') as fsrc:
+E           FileNotFoundError: [Errno 2] No such file or directory: 'D:\\baize_thesis-main\\baize_thesis-main\\scripts\\run_balancing.py'
+
+C:\Users\hossa\anaconda3\Lib\shutil.py:260: FileNotFoundError
+_ ERROR at setup of test_comparison_rejects_mismatched_data_or_evaluation_rules[population_sha256-changed] _
+
+tmp_path_factory = TempPathFactory(_given_basetemp=WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _...h('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def runs(tmp_path_factory):
+        root = tmp_path_factory.mktemp("strategy-runs")
+        csv_path = root / "raw.csv"
+        with csv_path.open("w", newline="") as stream:
+            writer = csv.writer(stream)
+            for domain in range(1600):
+                for page in range(3):
+                    writer.writerow([f"{domain:06}-{page}", f"https://example{domain}.com/{page}",
+                                     ("Adult", "Arts", "Business", "Health")[domain % 4]])
+        source = root / "cleaned"
+>       prepare_clients(csv_path, source, PreprocessingConfig(n_features=64))
+
+tests\test_partition_strategies.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+baize\data\preprocessing.py:374: in prepare_clients
+    reproduction = _snapshot_reproduction(ready)
+baize\data\preprocessing.py:233: in _snapshot_reproduction
+    shutil.copyfile(path, destination)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+src = WindowsPath('D:/baize_thesis-main/baize_thesis-main/scripts/run_balancing.py')
+dst = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/strategy-runs0/.preparing-wg9mgdq0/ready/code_snapshot/scripts/run_balancing.py')
+
+    def copyfile(src, dst, *, follow_symlinks=True):
+        """Copy data from src to dst in the most efficient way possible.
+    
+        If follow_symlinks is not set and src is a symbolic link, a new
+        symlink will be created instead of copying the file it points to.
+    
+        """
+        sys.audit("shutil.copyfile", src, dst)
+    
+        if _samefile(src, dst):
+            raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+    
+        file_size = 0
+        for i, fn in enumerate([src, dst]):
+            try:
+                st = _stat(fn)
+            except OSError:
+                # File most likely does not exist
+                pass
+            else:
+                # XXX What about other special files? (sockets, devices...)
+                if stat.S_ISFIFO(st.st_mode):
+                    fn = fn.path if isinstance(fn, os.DirEntry) else fn
+                    raise SpecialFileError("`%s` is a named pipe" % fn)
+                if _WINDOWS and i == 0:
+                    file_size = st.st_size
+    
+        if not follow_symlinks and _islink(src):
+            os.symlink(os.readlink(src), dst)
+        else:
+>           with open(src, 'rb') as fsrc:
+E           FileNotFoundError: [Errno 2] No such file or directory: 'D:\\baize_thesis-main\\baize_thesis-main\\scripts\\run_balancing.py'
+
+C:\Users\hossa\anaconda3\Lib\shutil.py:260: FileNotFoundError
+_ ERROR at setup of test_comparison_rejects_mismatched_data_or_evaluation_rules[n_clients-6] _
+
+tmp_path_factory = TempPathFactory(_given_basetemp=WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _...h('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def runs(tmp_path_factory):
+        root = tmp_path_factory.mktemp("strategy-runs")
+        csv_path = root / "raw.csv"
+        with csv_path.open("w", newline="") as stream:
+            writer = csv.writer(stream)
+            for domain in range(1600):
+                for page in range(3):
+                    writer.writerow([f"{domain:06}-{page}", f"https://example{domain}.com/{page}",
+                                     ("Adult", "Arts", "Business", "Health")[domain % 4]])
+        source = root / "cleaned"
+>       prepare_clients(csv_path, source, PreprocessingConfig(n_features=64))
+
+tests\test_partition_strategies.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+baize\data\preprocessing.py:374: in prepare_clients
+    reproduction = _snapshot_reproduction(ready)
+baize\data\preprocessing.py:233: in _snapshot_reproduction
+    shutil.copyfile(path, destination)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+src = WindowsPath('D:/baize_thesis-main/baize_thesis-main/scripts/run_balancing.py')
+dst = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/strategy-runs0/.preparing-wg9mgdq0/ready/code_snapshot/scripts/run_balancing.py')
+
+    def copyfile(src, dst, *, follow_symlinks=True):
+        """Copy data from src to dst in the most efficient way possible.
+    
+        If follow_symlinks is not set and src is a symbolic link, a new
+        symlink will be created instead of copying the file it points to.
+    
+        """
+        sys.audit("shutil.copyfile", src, dst)
+    
+        if _samefile(src, dst):
+            raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+    
+        file_size = 0
+        for i, fn in enumerate([src, dst]):
+            try:
+                st = _stat(fn)
+            except OSError:
+                # File most likely does not exist
+                pass
+            else:
+                # XXX What about other special files? (sockets, devices...)
+                if stat.S_ISFIFO(st.st_mode):
+                    fn = fn.path if isinstance(fn, os.DirEntry) else fn
+                    raise SpecialFileError("`%s` is a named pipe" % fn)
+                if _WINDOWS and i == 0:
+                    file_size = st.st_size
+    
+        if not follow_symlinks and _islink(src):
+            os.symlink(os.readlink(src), dst)
+        else:
+>           with open(src, 'rb') as fsrc:
+E           FileNotFoundError: [Errno 2] No such file or directory: 'D:\\baize_thesis-main\\baize_thesis-main\\scripts\\run_balancing.py'
+
+C:\Users\hossa\anaconda3\Lib\shutil.py:260: FileNotFoundError
+_ ERROR at setup of test_common_cli_uses_config_and_wont_replace_an_existing_run _
+
+tmp_path_factory = TempPathFactory(_given_basetemp=WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _...h('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def runs(tmp_path_factory):
+        root = tmp_path_factory.mktemp("strategy-runs")
+        csv_path = root / "raw.csv"
+        with csv_path.open("w", newline="") as stream:
+            writer = csv.writer(stream)
+            for domain in range(1600):
+                for page in range(3):
+                    writer.writerow([f"{domain:06}-{page}", f"https://example{domain}.com/{page}",
+                                     ("Adult", "Arts", "Business", "Health")[domain % 4]])
+        source = root / "cleaned"
+>       prepare_clients(csv_path, source, PreprocessingConfig(n_features=64))
+
+tests\test_partition_strategies.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+baize\data\preprocessing.py:374: in prepare_clients
+    reproduction = _snapshot_reproduction(ready)
+baize\data\preprocessing.py:233: in _snapshot_reproduction
+    shutil.copyfile(path, destination)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+src = WindowsPath('D:/baize_thesis-main/baize_thesis-main/scripts/run_balancing.py')
+dst = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/strategy-runs0/.preparing-wg9mgdq0/ready/code_snapshot/scripts/run_balancing.py')
+
+    def copyfile(src, dst, *, follow_symlinks=True):
+        """Copy data from src to dst in the most efficient way possible.
+    
+        If follow_symlinks is not set and src is a symbolic link, a new
+        symlink will be created instead of copying the file it points to.
+    
+        """
+        sys.audit("shutil.copyfile", src, dst)
+    
+        if _samefile(src, dst):
+            raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+    
+        file_size = 0
+        for i, fn in enumerate([src, dst]):
+            try:
+                st = _stat(fn)
+            except OSError:
+                # File most likely does not exist
+                pass
+            else:
+                # XXX What about other special files? (sockets, devices...)
+                if stat.S_ISFIFO(st.st_mode):
+                    fn = fn.path if isinstance(fn, os.DirEntry) else fn
+                    raise SpecialFileError("`%s` is a named pipe" % fn)
+                if _WINDOWS and i == 0:
+                    file_size = st.st_size
+    
+        if not follow_symlinks and _islink(src):
+            os.symlink(os.readlink(src), dst)
+        else:
+>           with open(src, 'rb') as fsrc:
+E           FileNotFoundError: [Errno 2] No such file or directory: 'D:\\baize_thesis-main\\baize_thesis-main\\scripts\\run_balancing.py'
+
+C:\Users\hossa\anaconda3\Lib\shutil.py:260: FileNotFoundError
+_ ERROR at setup of test_missing_client_class_fails_without_retries_or_partial_output _
+
+tmp_path_factory = TempPathFactory(_given_basetemp=WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _...h('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def runs(tmp_path_factory):
+        root = tmp_path_factory.mktemp("strategy-runs")
+        csv_path = root / "raw.csv"
+        with csv_path.open("w", newline="") as stream:
+            writer = csv.writer(stream)
+            for domain in range(1600):
+                for page in range(3):
+                    writer.writerow([f"{domain:06}-{page}", f"https://example{domain}.com/{page}",
+                                     ("Adult", "Arts", "Business", "Health")[domain % 4]])
+        source = root / "cleaned"
+>       prepare_clients(csv_path, source, PreprocessingConfig(n_features=64))
+
+tests\test_partition_strategies.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+baize\data\preprocessing.py:374: in prepare_clients
+    reproduction = _snapshot_reproduction(ready)
+baize\data\preprocessing.py:233: in _snapshot_reproduction
+    shutil.copyfile(path, destination)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+src = WindowsPath('D:/baize_thesis-main/baize_thesis-main/scripts/run_balancing.py')
+dst = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/strategy-runs0/.preparing-wg9mgdq0/ready/code_snapshot/scripts/run_balancing.py')
+
+    def copyfile(src, dst, *, follow_symlinks=True):
+        """Copy data from src to dst in the most efficient way possible.
+    
+        If follow_symlinks is not set and src is a symbolic link, a new
+        symlink will be created instead of copying the file it points to.
+    
+        """
+        sys.audit("shutil.copyfile", src, dst)
+    
+        if _samefile(src, dst):
+            raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+    
+        file_size = 0
+        for i, fn in enumerate([src, dst]):
+            try:
+                st = _stat(fn)
+            except OSError:
+                # File most likely does not exist
+                pass
+            else:
+                # XXX What about other special files? (sockets, devices...)
+                if stat.S_ISFIFO(st.st_mode):
+                    fn = fn.path if isinstance(fn, os.DirEntry) else fn
+                    raise SpecialFileError("`%s` is a named pipe" % fn)
+                if _WINDOWS and i == 0:
+                    file_size = st.st_size
+    
+        if not follow_symlinks and _islink(src):
+            os.symlink(os.readlink(src), dst)
+        else:
+>           with open(src, 'rb') as fsrc:
+E           FileNotFoundError: [Errno 2] No such file or directory: 'D:\\baize_thesis-main\\baize_thesis-main\\scripts\\run_balancing.py'
+
+C:\Users\hossa\anaconda3\Lib\shutil.py:260: FileNotFoundError
+_ ERROR at setup of test_declared_plan_survives_shared_pipeline_without_splitting_or_balancing[label_skew-plan0] _
+
+tmp_path_factory = TempPathFactory(_given_basetemp=WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _...h('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def cleaned_source(tmp_path_factory):
+        root = tmp_path_factory.mktemp("planned-source")
+        path = root / "input.csv"
+        with path.open("w", newline="") as stream:
+            writer = csv.writer(stream)
+            for domain in range(300):
+                for page in range(2):
+                    writer.writerow([f"id-{domain}-{page}", f"https://site{domain}.com/{page}",
+                                     ("Adult", "Arts", "Health")[domain % 3]])
+        source = root / "cleaned"
+>       prepare_clients(path, source, PreprocessingConfig(n_features=64))
+
+tests\test_sampling_policy.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+baize\data\preprocessing.py:374: in prepare_clients
+    reproduction = _snapshot_reproduction(ready)
+baize\data\preprocessing.py:233: in _snapshot_reproduction
+    shutil.copyfile(path, destination)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+src = WindowsPath('D:/baize_thesis-main/baize_thesis-main/scripts/run_balancing.py')
+dst = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/planned-source0/.preparing-b1__lzdn/ready/code_snapshot/scripts/run_balancing.py')
+
+    def copyfile(src, dst, *, follow_symlinks=True):
+        """Copy data from src to dst in the most efficient way possible.
+    
+        If follow_symlinks is not set and src is a symbolic link, a new
+        symlink will be created instead of copying the file it points to.
+    
+        """
+        sys.audit("shutil.copyfile", src, dst)
+    
+        if _samefile(src, dst):
+            raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+    
+        file_size = 0
+        for i, fn in enumerate([src, dst]):
+            try:
+                st = _stat(fn)
+            except OSError:
+                # File most likely does not exist
+                pass
+            else:
+                # XXX What about other special files? (sockets, devices...)
+                if stat.S_ISFIFO(st.st_mode):
+                    fn = fn.path if isinstance(fn, os.DirEntry) else fn
+                    raise SpecialFileError("`%s` is a named pipe" % fn)
+                if _WINDOWS and i == 0:
+                    file_size = st.st_size
+    
+        if not follow_symlinks and _islink(src):
+            os.symlink(os.readlink(src), dst)
+        else:
+>           with open(src, 'rb') as fsrc:
+E           FileNotFoundError: [Errno 2] No such file or directory: 'D:\\baize_thesis-main\\baize_thesis-main\\scripts\\run_balancing.py'
+
+C:\Users\hossa\anaconda3\Lib\shutil.py:260: FileNotFoundError
+_ ERROR at setup of test_declared_plan_survives_shared_pipeline_without_splitting_or_balancing[category_skew-plan1] _
+
+tmp_path_factory = TempPathFactory(_given_basetemp=WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _...h('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def cleaned_source(tmp_path_factory):
+        root = tmp_path_factory.mktemp("planned-source")
+        path = root / "input.csv"
+        with path.open("w", newline="") as stream:
+            writer = csv.writer(stream)
+            for domain in range(300):
+                for page in range(2):
+                    writer.writerow([f"id-{domain}-{page}", f"https://site{domain}.com/{page}",
+                                     ("Adult", "Arts", "Health")[domain % 3]])
+        source = root / "cleaned"
+>       prepare_clients(path, source, PreprocessingConfig(n_features=64))
+
+tests\test_sampling_policy.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+baize\data\preprocessing.py:374: in prepare_clients
+    reproduction = _snapshot_reproduction(ready)
+baize\data\preprocessing.py:233: in _snapshot_reproduction
+    shutil.copyfile(path, destination)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+src = WindowsPath('D:/baize_thesis-main/baize_thesis-main/scripts/run_balancing.py')
+dst = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/planned-source0/.preparing-b1__lzdn/ready/code_snapshot/scripts/run_balancing.py')
+
+    def copyfile(src, dst, *, follow_symlinks=True):
+        """Copy data from src to dst in the most efficient way possible.
+    
+        If follow_symlinks is not set and src is a symbolic link, a new
+        symlink will be created instead of copying the file it points to.
+    
+        """
+        sys.audit("shutil.copyfile", src, dst)
+    
+        if _samefile(src, dst):
+            raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+    
+        file_size = 0
+        for i, fn in enumerate([src, dst]):
+            try:
+                st = _stat(fn)
+            except OSError:
+                # File most likely does not exist
+                pass
+            else:
+                # XXX What about other special files? (sockets, devices...)
+                if stat.S_ISFIFO(st.st_mode):
+                    fn = fn.path if isinstance(fn, os.DirEntry) else fn
+                    raise SpecialFileError("`%s` is a named pipe" % fn)
+                if _WINDOWS and i == 0:
+                    file_size = st.st_size
+    
+        if not follow_symlinks and _islink(src):
+            os.symlink(os.readlink(src), dst)
+        else:
+>           with open(src, 'rb') as fsrc:
+E           FileNotFoundError: [Errno 2] No such file or directory: 'D:\\baize_thesis-main\\baize_thesis-main\\scripts\\run_balancing.py'
+
+C:\Users\hossa\anaconda3\Lib\shutil.py:260: FileNotFoundError
+================================== FAILURES ===================================
+_______________ test_all_rows_accounted_and_domains_owned_once ________________
+
+tmp_path = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/test_all_rows_accounted_and_do0')
+
+    def test_all_rows_accounted_and_domains_owned_once(tmp_path):
+        source = corpus(tmp_path, [
+            ["duplicate", "http://site1.com/page0", "Adult"],
+            ["conflict", "http://site2.com/page0", "Adult"],
+            ["unknown", "https://unknown.com/", "NotACategory"],
+            ["missing", "", "Adult"],
+            ["unlabelled", "https://unlabelled.com/", ""],
+            ["bad"],
+            ["invalid", "https://alice@TOPSECRET@localhost/", "Adult"],
+        ])
+        root = tmp_path / "clients"
+>       report = prepare_clients(source, root, PreprocessingConfig(n_clients=3, n_features=32))
+
+tests\test_preprocessing.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+baize\data\preprocessing.py:374: in prepare_clients
+    reproduction = _snapshot_reproduction(ready)
+baize\data\preprocessing.py:233: in _snapshot_reproduction
+    shutil.copyfile(path, destination)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+src = WindowsPath('D:/baize_thesis-main/baize_thesis-main/scripts/run_balancing.py')
+dst = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/test_all_rows_accounted_and_do0/.preparing-2dllcaz4/ready/code_snapshot/scripts/run_balancing.py')
+
+    def copyfile(src, dst, *, follow_symlinks=True):
+        """Copy data from src to dst in the most efficient way possible.
+    
+        If follow_symlinks is not set and src is a symbolic link, a new
+        symlink will be created instead of copying the file it points to.
+    
+        """
+        sys.audit("shutil.copyfile", src, dst)
+    
+        if _samefile(src, dst):
+            raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+    
+        file_size = 0
+        for i, fn in enumerate([src, dst]):
+            try:
+                st = _stat(fn)
+            except OSError:
+                # File most likely does not exist
+                pass
+            else:
+                # XXX What about other special files? (sockets, devices...)
+                if stat.S_ISFIFO(st.st_mode):
+                    fn = fn.path if isinstance(fn, os.DirEntry) else fn
+                    raise SpecialFileError("`%s` is a named pipe" % fn)
+                if _WINDOWS and i == 0:
+                    file_size = st.st_size
+    
+        if not follow_symlinks and _islink(src):
+            os.symlink(os.readlink(src), dst)
+        else:
+>           with open(src, 'rb') as fsrc:
+E           FileNotFoundError: [Errno 2] No such file or directory: 'D:\\baize_thesis-main\\baize_thesis-main\\scripts\\run_balancing.py'
+
+C:\Users\hossa\anaconda3\Lib\shutil.py:260: FileNotFoundError
+___________________ test_deterministic_and_source_unchanged ___________________
+
+tmp_path = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/test_deterministic_and_source_0')
+
+    def test_deterministic_and_source_unchanged(tmp_path):
+        source = corpus(tmp_path)
+        original = source.read_bytes()
+        cfg = PreprocessingConfig(n_clients=3)
+>       a = prepare_clients(source, tmp_path / "a", cfg)
+
+tests\test_preprocessing.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+baize\data\preprocessing.py:374: in prepare_clients
+    reproduction = _snapshot_reproduction(ready)
+baize\data\preprocessing.py:233: in _snapshot_reproduction
+    shutil.copyfile(path, destination)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+src = WindowsPath('D:/baize_thesis-main/baize_thesis-main/scripts/run_balancing.py')
+dst = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/test_deterministic_and_source_0/.preparing-avyfvlxl/ready/code_snapshot/scripts/run_balancing.py')
+
+    def copyfile(src, dst, *, follow_symlinks=True):
+        """Copy data from src to dst in the most efficient way possible.
+    
+        If follow_symlinks is not set and src is a symbolic link, a new
+        symlink will be created instead of copying the file it points to.
+    
+        """
+        sys.audit("shutil.copyfile", src, dst)
+    
+        if _samefile(src, dst):
+            raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+    
+        file_size = 0
+        for i, fn in enumerate([src, dst]):
+            try:
+                st = _stat(fn)
+            except OSError:
+                # File most likely does not exist
+                pass
+            else:
+                # XXX What about other special files? (sockets, devices...)
+                if stat.S_ISFIFO(st.st_mode):
+                    fn = fn.path if isinstance(fn, os.DirEntry) else fn
+                    raise SpecialFileError("`%s` is a named pipe" % fn)
+                if _WINDOWS and i == 0:
+                    file_size = st.st_size
+    
+        if not follow_symlinks and _islink(src):
+            os.symlink(os.readlink(src), dst)
+        else:
+>           with open(src, 'rb') as fsrc:
+E           FileNotFoundError: [Errno 2] No such file or directory: 'D:\\baize_thesis-main\\baize_thesis-main\\scripts\\run_balancing.py'
+
+C:\Users\hossa\anaconda3\Lib\shutil.py:260: FileNotFoundError
+________________ test_client_features_and_protected_evaluation ________________
+
+tmp_path = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/test_client_features_and_prote0')
+
+    def test_client_features_and_protected_evaluation(tmp_path):
+        root = tmp_path / "clients"
+>       prepare_clients(corpus(tmp_path), root, PreprocessingConfig(n_clients=3, n_features=64))
+
+tests\test_preprocessing.py:89: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+baize\data\preprocessing.py:374: in prepare_clients
+    reproduction = _snapshot_reproduction(ready)
+baize\data\preprocessing.py:233: in _snapshot_reproduction
+    shutil.copyfile(path, destination)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+src = WindowsPath('D:/baize_thesis-main/baize_thesis-main/scripts/run_balancing.py')
+dst = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/test_client_features_and_prote0/.preparing-alaafzfq/ready/code_snapshot/scripts/run_balancing.py')
+
+    def copyfile(src, dst, *, follow_symlinks=True):
+        """Copy data from src to dst in the most efficient way possible.
+    
+        If follow_symlinks is not set and src is a symbolic link, a new
+        symlink will be created instead of copying the file it points to.
+    
+        """
+        sys.audit("shutil.copyfile", src, dst)
+    
+        if _samefile(src, dst):
+            raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+    
+        file_size = 0
+        for i, fn in enumerate([src, dst]):
+            try:
+                st = _stat(fn)
+            except OSError:
+                # File most likely does not exist
+                pass
+            else:
+                # XXX What about other special files? (sockets, devices...)
+                if stat.S_ISFIFO(st.st_mode):
+                    fn = fn.path if isinstance(fn, os.DirEntry) else fn
+                    raise SpecialFileError("`%s` is a named pipe" % fn)
+                if _WINDOWS and i == 0:
+                    file_size = st.st_size
+    
+        if not follow_symlinks and _islink(src):
+            os.symlink(os.readlink(src), dst)
+        else:
+>           with open(src, 'rb') as fsrc:
+E           FileNotFoundError: [Errno 2] No such file or directory: 'D:\\baize_thesis-main\\baize_thesis-main\\scripts\\run_balancing.py'
+
+C:\Users\hossa\anaconda3\Lib\shutil.py:260: FileNotFoundError
+_ test_client_splits_and_loads_without_access_to_global_or_other_client_files _
+
+tmp_path = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/test_client_splits_and_loads_w0')
+
+    def test_client_splits_and_loads_without_access_to_global_or_other_client_files(tmp_path):
+        root = tmp_path / "provisioned"
+>       prepare_clients(corpus(tmp_path), root, PreprocessingConfig(n_clients=3, n_features=32))
+
+tests\test_preprocessing.py:143: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+baize\data\preprocessing.py:374: in prepare_clients
+    reproduction = _snapshot_reproduction(ready)
+baize\data\preprocessing.py:233: in _snapshot_reproduction
+    shutil.copyfile(path, destination)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+src = WindowsPath('D:/baize_thesis-main/baize_thesis-main/scripts/run_balancing.py')
+dst = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/test_client_splits_and_loads_w0/.preparing-ltt0eitm/ready/code_snapshot/scripts/run_balancing.py')
+
+    def copyfile(src, dst, *, follow_symlinks=True):
+        """Copy data from src to dst in the most efficient way possible.
+    
+        If follow_symlinks is not set and src is a symbolic link, a new
+        symlink will be created instead of copying the file it points to.
+    
+        """
+        sys.audit("shutil.copyfile", src, dst)
+    
+        if _samefile(src, dst):
+            raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+    
+        file_size = 0
+        for i, fn in enumerate([src, dst]):
+            try:
+                st = _stat(fn)
+            except OSError:
+                # File most likely does not exist
+                pass
+            else:
+                # XXX What about other special files? (sockets, devices...)
+                if stat.S_ISFIFO(st.st_mode):
+                    fn = fn.path if isinstance(fn, os.DirEntry) else fn
+                    raise SpecialFileError("`%s` is a named pipe" % fn)
+                if _WINDOWS and i == 0:
+                    file_size = st.st_size
+    
+        if not follow_symlinks and _islink(src):
+            os.symlink(os.readlink(src), dst)
+        else:
+>           with open(src, 'rb') as fsrc:
+E           FileNotFoundError: [Errno 2] No such file or directory: 'D:\\baize_thesis-main\\baize_thesis-main\\scripts\\run_balancing.py'
+
+C:\Users\hossa\anaconda3\Lib\shutil.py:260: FileNotFoundError
+__________________ test_unsplit_tampering_blocks_local_split __________________
+
+tmp_path = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/test_unsplit_tampering_blocks_0')
+
+    def test_unsplit_tampering_blocks_local_split(tmp_path):
+        root = tmp_path / "clients"
+>       prepare_clients(corpus(tmp_path), root, PreprocessingConfig(n_clients=3))
+
+tests\test_preprocessing.py:160: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+baize\data\preprocessing.py:374: in prepare_clients
+    reproduction = _snapshot_reproduction(ready)
+baize\data\preprocessing.py:233: in _snapshot_reproduction
+    shutil.copyfile(path, destination)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+src = WindowsPath('D:/baize_thesis-main/baize_thesis-main/scripts/run_balancing.py')
+dst = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/test_unsplit_tampering_blocks_0/.preparing-449go04i/ready/code_snapshot/scripts/run_balancing.py')
+
+    def copyfile(src, dst, *, follow_symlinks=True):
+        """Copy data from src to dst in the most efficient way possible.
+    
+        If follow_symlinks is not set and src is a symbolic link, a new
+        symlink will be created instead of copying the file it points to.
+    
+        """
+        sys.audit("shutil.copyfile", src, dst)
+    
+        if _samefile(src, dst):
+            raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+    
+        file_size = 0
+        for i, fn in enumerate([src, dst]):
+            try:
+                st = _stat(fn)
+            except OSError:
+                # File most likely does not exist
+                pass
+            else:
+                # XXX What about other special files? (sockets, devices...)
+                if stat.S_ISFIFO(st.st_mode):
+                    fn = fn.path if isinstance(fn, os.DirEntry) else fn
+                    raise SpecialFileError("`%s` is a named pipe" % fn)
+                if _WINDOWS and i == 0:
+                    file_size = st.st_size
+    
+        if not follow_symlinks and _islink(src):
+            os.symlink(os.readlink(src), dst)
+        else:
+>           with open(src, 'rb') as fsrc:
+E           FileNotFoundError: [Errno 2] No such file or directory: 'D:\\baize_thesis-main\\baize_thesis-main\\scripts\\run_balancing.py'
+
+C:\Users\hossa\anaconda3\Lib\shutil.py:260: FileNotFoundError
+__________ test_local_class_coverage_failure_does_not_publish_splits __________
+
+tmp_path = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/test_local_class_coverage_fail0')
+
+    def test_local_class_coverage_failure_does_not_publish_splits(tmp_path):
+        source = tmp_path / "input.csv"
+        source.write_text("\n".join(
+            [f"{i},https://adult.com/{i},Adult" for i in range(30)] +
+            [f"{i},https://negative{i}.com/,Arts" for i in range(30)]))
+        root = tmp_path / "clients"
+>       prepare_clients(source, root, PreprocessingConfig(n_clients=1))
+
+tests\test_preprocessing.py:175: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+baize\data\preprocessing.py:374: in prepare_clients
+    reproduction = _snapshot_reproduction(ready)
+baize\data\preprocessing.py:233: in _snapshot_reproduction
+    shutil.copyfile(path, destination)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+src = WindowsPath('D:/baize_thesis-main/baize_thesis-main/scripts/run_balancing.py')
+dst = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/test_local_class_coverage_fail0/.preparing-bynm5hus/ready/code_snapshot/scripts/run_balancing.py')
+
+    def copyfile(src, dst, *, follow_symlinks=True):
+        """Copy data from src to dst in the most efficient way possible.
+    
+        If follow_symlinks is not set and src is a symbolic link, a new
+        symlink will be created instead of copying the file it points to.
+    
+        """
+        sys.audit("shutil.copyfile", src, dst)
+    
+        if _samefile(src, dst):
+            raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+    
+        file_size = 0
+        for i, fn in enumerate([src, dst]):
+            try:
+                st = _stat(fn)
+            except OSError:
+                # File most likely does not exist
+                pass
+            else:
+                # XXX What about other special files? (sockets, devices...)
+                if stat.S_ISFIFO(st.st_mode):
+                    fn = fn.path if isinstance(fn, os.DirEntry) else fn
+                    raise SpecialFileError("`%s` is a named pipe" % fn)
+                if _WINDOWS and i == 0:
+                    file_size = st.st_size
+    
+        if not follow_symlinks and _islink(src):
+            os.symlink(os.readlink(src), dst)
+        else:
+>           with open(src, 'rb') as fsrc:
+E           FileNotFoundError: [Errno 2] No such file or directory: 'D:\\baize_thesis-main\\baize_thesis-main\\scripts\\run_balancing.py'
+
+C:\Users\hossa\anaconda3\Lib\shutil.py:260: FileNotFoundError
+_________ test_ids_original_categories_and_complete_exclusion_ledger __________
+
+tmp_path = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/test_ids_original_categories_a0')
+
+    def test_ids_original_categories_and_complete_exclusion_ledger(tmp_path):
+        source = corpus(tmp_path, [
+            ["repeat-id", "http://site1.com/page0", " Adult "],
+            ["conflict-id", "http://site2.com/page0", "Adult"],
+            ["repeated-conflict-id", "http://site2.com/page0", "Health"],
+            ["", "", ""],
+            ["missing-label", "https://unlabelled.com/", ""],
+        ])
+        root = tmp_path / "prepared"
+>       report = prepare_clients(source, root, PreprocessingConfig(n_clients=3))
+
+tests\test_preprocessing.py:191: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+baize\data\preprocessing.py:374: in prepare_clients
+    reproduction = _snapshot_reproduction(ready)
+baize\data\preprocessing.py:233: in _snapshot_reproduction
+    shutil.copyfile(path, destination)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+src = WindowsPath('D:/baize_thesis-main/baize_thesis-main/scripts/run_balancing.py')
+dst = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/test_ids_original_categories_a0/.preparing-zf_xoazz/ready/code_snapshot/scripts/run_balancing.py')
+
+    def copyfile(src, dst, *, follow_symlinks=True):
+        """Copy data from src to dst in the most efficient way possible.
+    
+        If follow_symlinks is not set and src is a symbolic link, a new
+        symlink will be created instead of copying the file it points to.
+    
+        """
+        sys.audit("shutil.copyfile", src, dst)
+    
+        if _samefile(src, dst):
+            raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+    
+        file_size = 0
+        for i, fn in enumerate([src, dst]):
+            try:
+                st = _stat(fn)
+            except OSError:
+                # File most likely does not exist
+                pass
+            else:
+                # XXX What about other special files? (sockets, devices...)
+                if stat.S_ISFIFO(st.st_mode):
+                    fn = fn.path if isinstance(fn, os.DirEntry) else fn
+                    raise SpecialFileError("`%s` is a named pipe" % fn)
+                if _WINDOWS and i == 0:
+                    file_size = st.st_size
+    
+        if not follow_symlinks and _islink(src):
+            os.symlink(os.readlink(src), dst)
+        else:
+>           with open(src, 'rb') as fsrc:
+E           FileNotFoundError: [Errno 2] No such file or directory: 'D:\\baize_thesis-main\\baize_thesis-main\\scripts\\run_balancing.py'
+
+C:\Users\hossa\anaconda3\Lib\shutil.py:260: FileNotFoundError
+_________ test_reordered_named_columns_preserve_exact_source_identity _________
+
+tmp_path = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/test_reordered_named_columns_p0')
+
+    def test_reordered_named_columns_preserve_exact_source_identity(tmp_path):
+        source = corpus(tmp_path)
+        rows = list(csv.reader(source.open()))
+        with source.open("w", newline="") as f:
+            writer = csv.writer(f)
+            writer.writerow(["label", "id", "url"])
+            for record_id, url, label in rows:
+                writer.writerow([f" {label} ", f"ID-{record_id}", url])
+        root = tmp_path / "prepared"
+>       report = prepare_clients(source, root, PreprocessingConfig(header="present", n_clients=3))
+
+tests\test_preprocessing.py:230: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+baize\data\preprocessing.py:374: in prepare_clients
+    reproduction = _snapshot_reproduction(ready)
+baize\data\preprocessing.py:233: in _snapshot_reproduction
+    shutil.copyfile(path, destination)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+src = WindowsPath('D:/baize_thesis-main/baize_thesis-main/scripts/run_balancing.py')
+dst = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/test_reordered_named_columns_p0/.preparing-46t5auhu/ready/code_snapshot/scripts/run_balancing.py')
+
+    def copyfile(src, dst, *, follow_symlinks=True):
+        """Copy data from src to dst in the most efficient way possible.
+    
+        If follow_symlinks is not set and src is a symbolic link, a new
+        symlink will be created instead of copying the file it points to.
+    
+        """
+        sys.audit("shutil.copyfile", src, dst)
+    
+        if _samefile(src, dst):
+            raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+    
+        file_size = 0
+        for i, fn in enumerate([src, dst]):
+            try:
+                st = _stat(fn)
+            except OSError:
+                # File most likely does not exist
+                pass
+            else:
+                # XXX What about other special files? (sockets, devices...)
+                if stat.S_ISFIFO(st.st_mode):
+                    fn = fn.path if isinstance(fn, os.DirEntry) else fn
+                    raise SpecialFileError("`%s` is a named pipe" % fn)
+                if _WINDOWS and i == 0:
+                    file_size = st.st_size
+    
+        if not follow_symlinks and _islink(src):
+            os.symlink(os.readlink(src), dst)
+        else:
+>           with open(src, 'rb') as fsrc:
+E           FileNotFoundError: [Errno 2] No such file or directory: 'D:\\baize_thesis-main\\baize_thesis-main\\scripts\\run_balancing.py'
+
+C:\Users\hossa\anaconda3\Lib\shutil.py:260: FileNotFoundError
+___________ test_exact_source_snapshot_and_runtime_lock_are_written ___________
+
+tmp_path = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/test_exact_source_snapshot_and0')
+
+    def test_exact_source_snapshot_and_runtime_lock_are_written(tmp_path):
+        import hashlib
+        root = tmp_path / "prepared"
+>       report = prepare_clients(corpus(tmp_path), root, PreprocessingConfig(n_clients=3))
+
+tests\test_preprocessing.py:241: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+baize\data\preprocessing.py:374: in prepare_clients
+    reproduction = _snapshot_reproduction(ready)
+baize\data\preprocessing.py:233: in _snapshot_reproduction
+    shutil.copyfile(path, destination)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+src = WindowsPath('D:/baize_thesis-main/baize_thesis-main/scripts/run_balancing.py')
+dst = WindowsPath('D:/baize_thesis-main/baize_thesis-main/data/test-remove-numerical-01/test_exact_source_snapshot_and0/.preparing-u6_lgmc5/ready/code_snapshot/scripts/run_balancing.py')
+
+    def copyfile(src, dst, *, follow_symlinks=True):
+        """Copy data from src to dst in the most efficient way possible.
+    
+        If follow_symlinks is not set and src is a symbolic link, a new
+        symlink will be created instead of copying the file it points to.
+    
+        """
+        sys.audit("shutil.copyfile", src, dst)
+    
+        if _samefile(src, dst):
+            raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+    
+        file_size = 0
+        for i, fn in enumerate([src, dst]):
+            try:
+                st = _stat(fn)
+            except OSError:
+                # File most likely does not exist
+                pass
+            else:
+                # XXX What about other special files? (sockets, devices...)
+                if stat.S_ISFIFO(st.st_mode):
+                    fn = fn.path if isinstance(fn, os.DirEntry) else fn
+                    raise SpecialFileError("`%s` is a named pipe" % fn)
+                if _WINDOWS and i == 0:
+                    file_size = st.st_size
+    
+        if not follow_symlinks and _islink(src):
+            os.symlink(os.readlink(src), dst)
+        else:
+>           with open(src, 'rb') as fsrc:
+E           FileNotFoundError: [Errno 2] No such file or directory: 'D:\\baize_thesis-main\\baize_thesis-main\\scripts\\run_balancing.py'
+
+C:\Users\hossa\anaconda3\Lib\shutil.py:260: FileNotFoundError
+============================== warnings summary ===============================
+tests/test_balancing.py::test_smote_generates_only_floating_numerical_training_vectors[1:1]
+  C:\Users\hossa\AppData\Roaming\Python\Python313\site-packages\joblib\externals\loky\backend\context.py:131: UserWarning: Could not find the number of physical cores for the following reason:
+  [WinError 2] The system cannot find the file specified
+  Returning the number of logical cores instead. You can silence this warning by setting LOKY_MAX_CPU_COUNT to the number of cores you want to use.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_preprocessing.py::test_all_rows_accounted_and_domains_owned_once
+FAILED tests/test_preprocessing.py::test_deterministic_and_source_unchanged
+FAILED tests/test_preprocessing.py::test_client_features_and_protected_evaluation
+FAILED tests/test_preprocessing.py::test_client_splits_and_loads_without_access_to_global_or_other_client_files
+FAILED tests/test_preprocessing.py::test_unsplit_tampering_blocks_local_split
+FAILED tests/test_preprocessing.py::test_local_class_coverage_failure_does_not_publish_splits
+FAILED tests/test_preprocessing.py::test_ids_original_categories_and_complete_exclusion_ledger
+FAILED tests/test_preprocessing.py::test_reordered_named_columns_preserve_exact_source_identity
+FAILED tests/test_preprocessing.py::test_exact_source_snapshot_and_runtime_lock_are_written
+ERROR tests/test_client_data.py::test_public_reader_protects_holdout_labels_and_checks_file_hashes
+ERROR tests/test_iid_partitioning.py::test_real_pipeline_is_url_iid_and_clients_split_without_global_files
+ERROR tests/test_iid_partitioning.py::test_artifacts_reproduce_and_input_tampering_blocks_publication
+ERROR tests/test_iid_partitioning.py::test_unknown_shared_split_policy_is_rejected
+ERROR tests/test_iid_partitioning.py::test_client_cannot_silently_change_the_shared_split_rule
+ERROR tests/test_non_iid_scenarios.py::test_full_record_verifier_checks_both_independent_scenarios[label_skew]
+ERROR tests/test_non_iid_scenarios.py::test_full_record_verifier_checks_both_independent_scenarios[category_skew]
+ERROR tests/test_partition_strategies.py::test_same_pipeline_loader_and_evaluation_population_for_both_strategies
+ERROR tests/test_partition_strategies.py::test_comparison_rejects_mismatched_data_or_evaluation_rules[split_policy-value0]
+ERROR tests/test_partition_strategies.py::test_comparison_rejects_mismatched_data_or_evaluation_rules[features-value1]
+ERROR tests/test_partition_strategies.py::test_comparison_rejects_mismatched_data_or_evaluation_rules[population_sha256-changed]
+ERROR tests/test_partition_strategies.py::test_comparison_rejects_mismatched_data_or_evaluation_rules[n_clients-6]
+ERROR tests/test_partition_strategies.py::test_common_cli_uses_config_and_wont_replace_an_existing_run
+ERROR tests/test_partition_strategies.py::test_missing_client_class_fails_without_retries_or_partial_output
+ERROR tests/test_sampling_policy.py::test_declared_plan_survives_shared_pipeline_without_splitting_or_balancing[label_skew-plan0]
+ERROR tests/test_sampling_policy.py::test_declared_plan_survives_shared_pipeline_without_splitting_or_balancing[category_skew-plan1]
+9 failed, 217 passed, 1 skipped, 3 deselected, 1 warning, 16 errors in 88.99s (0:01:28)
+<sys>:0: DeprecationWarning: builtin type swigvarlink has no __module__ attribute

@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "scope": "one full pretrained model on six synthetic training examples, not full FL or detection quality",
+  "model": "microsoft/deberta-v3-base",
+  "revision": "8ccc9b6f36199bec6961081d44eb72fb3f7353f3",
+  "corpus_or_holdouts_read": false,
+  "pretrained_files_modified": false,
+  "training_protocol": "encoder_embeddings",
+  "warmup_examples_processed": 6,
+  "examples_processed": 14,
+  "sampling": {
+    "method": "smote",
+    "split": "train",
+    "config": {
+      "method": "smote",
+      "adult_to_non_adult": "1:1",
+      "seed": 42,
+      "ensemble_members": 5,
+      "k_neighbors": 5,
+      "insufficient_minority": "adjust"
+    },
+    "before": {
+      "Adult": 2,
+      "Non-adult": 4
+    },
+    "after": {
+      "Adult": 4,
+      "Non-adult": 4
+    },
+    "achieved_adult_to_non_adult": 1.0,
+    "status": "adjusted_k",
+    "duplicated_examples": 0,
+    "synthetic_examples": 2,
+    "removed_training_examples": 0,
+    "effective_k_neighbors": 1,
+    "requested_k_neighbors": 5,
+    "backend": "standard_smote_encoder_embeddings_v1",
+    "feature_dimension": 768,
+    "feature_scaling": "none",
+    "training_provenance": "synthetic-training-only",
+    "generated_urls": false,
+    "plan_sha256": "d50ee35905a9227b60874faae896b82f898d874eb791f2b0a026f607714ee7dc"
+  },
+  "optimization_loss": 0.699344916003091,
+  "seconds": 14.003829799999949,
+  "test_config_overrides": {
+    "batch_size": 2,
+    "max_length": 16
+  },
+  "encoder_and_head_changed": true,
+  "temporary_embedding_cache_removed": true
+}

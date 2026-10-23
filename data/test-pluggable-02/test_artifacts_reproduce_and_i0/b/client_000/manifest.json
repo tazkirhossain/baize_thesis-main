@@ -1,0 +1,20 @@
+{
+  "client_id": 0,
+  "state": "allocated_unsplit",
+  "dataset": {
+    "n_records": 480,
+    "class_counts": {
+      "0": 360,
+      "1": 120
+    },
+    "positive_rate": 0.25,
+    "category_counts": {
+      "adult": 120,
+      "arts": 120,
+      "business": 120,
+      "health": 120
+    },
+    "sha256": "6edeb6c5f15734be5321283f55df102e63f1112543ca9102181ddcbedcbe039f"
+  },
+  "preprocessing_sha256": "d33c5432e1df8cb82686b24539db81904e03b5462a1165f0af350319132b8995"
+}

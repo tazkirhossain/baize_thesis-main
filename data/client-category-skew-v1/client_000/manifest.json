@@ -1,0 +1,20 @@
+{
+  "client_id": 0,
+  "state": "allocated_unsplit",
+  "dataset": {
+    "n_records": 293649,
+    "class_counts": {
+      "0": 286686,
+      "1": 6963
+    },
+    "positive_rate": 0.023711982673191464,
+    "category_counts": {
+      "adult": 6963,
+      "arts": 123039,
+      "computers": 111101,
+      "games": 52546
+    },
+    "sha256": "0b25f4863e8364ce8308995e3168830aa2a8f6a74c3cf74ce45ecc821f9c3ac7"
+  },
+  "preprocessing_sha256": "97a0acb25682f9c2ae26dc21dd6f8bfbef1d6402a16fd5d2824126d62a768880"
+}

@@ -1,0 +1,230 @@
+{
+  "status": "PASS",
+  "scenario": "category_skew",
+  "configured_fractions": {
+    "train": 0.7,
+    "val": 0.15,
+    "test": 0.15
+  },
+  "split_policy": {
+    "type": "shared_domain_hash_v1",
+    "seed": 0
+  },
+  "n_clients": 5,
+  "n_records": 1468243,
+  "clients": [
+    {
+      "client": 1,
+      "client_id": 0,
+      "n_records": 293649,
+      "splits": {
+        "train": {
+          "n_records": 212733,
+          "class_counts": {
+            "1": 5025,
+            "0": 207708
+          },
+          "actual_fraction": 0.7244465331058508,
+          "n_domains": 104284
+        },
+        "val": {
+          "n_records": 35792,
+          "class_counts": {
+            "1": 990,
+            "0": 34802
+          },
+          "actual_fraction": 0.12188701476933346,
+          "n_domains": 22420
+        },
+        "test": {
+          "n_records": 45124,
+          "class_counts": {
+            "1": 948,
+            "0": 44176
+          },
+          "actual_fraction": 0.1536664521248157,
+          "n_domains": 22118
+        }
+      }
+    },
+    {
+      "client": 2,
+      "client_id": 1,
+      "n_records": 293649,
+      "splits": {
+        "train": {
+          "n_records": 212646,
+          "class_counts": {
+            "1": 5016,
+            "0": 207630
+          },
+          "actual_fraction": 0.7241502610259187,
+          "n_domains": 110845
+        },
+        "val": {
+          "n_records": 39027,
+          "class_counts": {
+            "1": 953,
+            "0": 38074
+          },
+          "actual_fraction": 0.1329035685461214,
+          "n_domains": 23813
+        },
+        "test": {
+          "n_records": 41976,
+          "class_counts": {
+            "1": 993,
+            "0": 40983
+          },
+          "actual_fraction": 0.1429461704279599,
+          "n_domains": 23644
+        }
+      }
+    },
+    {
+      "client": 3,
+      "client_id": 2,
+      "n_records": 293649,
+      "splits": {
+        "train": {
+          "n_records": 209079,
+          "class_counts": {
+            "1": 5036,
+            "0": 204043
+          },
+          "actual_fraction": 0.7120031057487,
+          "n_domains": 121063
+        },
+        "val": {
+          "n_records": 41838,
+          "class_counts": {
+            "1": 962,
+            "0": 40876
+          },
+          "actual_fraction": 0.1424762216115158,
+          "n_domains": 25630
+        },
+        "test": {
+          "n_records": 42732,
+          "class_counts": {
+            "1": 964,
+            "0": 41768
+          },
+          "actual_fraction": 0.14552067263978424,
+          "n_domains": 25689
+        }
+      }
+    },
+    {
+      "client": 4,
+      "client_id": 3,
+      "n_records": 293648,
+      "splits": {
+        "train": {
+          "n_records": 213960,
+          "class_counts": {
+            "1": 5032,
+            "0": 208928
+          },
+          "actual_fraction": 0.7286274723478451,
+          "n_domains": 119888
+        },
+        "val": {
+          "n_records": 36165,
+          "class_counts": {
+            "1": 976,
+            "0": 35189
+          },
+          "actual_fraction": 0.12315765814853158,
+          "n_domains": 25436
+        },
+        "test": {
+          "n_records": 43523,
+          "class_counts": {
+            "1": 954,
+            "0": 42569
+          },
+          "actual_fraction": 0.1482148695036234,
+          "n_domains": 25705
+        }
+      }
+    },
+    {
+      "client": 5,
+      "client_id": 4,
+      "n_records": 293648,
+      "splits": {
+        "train": {
+          "n_records": 208291,
+          "class_counts": {
+            "1": 5028,
+            "0": 203263
+          },
+          "actual_fraction": 0.709322045442162,
+          "n_domains": 184384
+        },
+        "val": {
+          "n_records": 41818,
+          "class_counts": {
+            "1": 935,
+            "0": 40883
+          },
+          "actual_fraction": 0.14240859804936523,
+          "n_domains": 39455
+        },
+        "test": {
+          "n_records": 43539,
+          "class_counts": {
+            "1": 999,
+            "0": 42540
+          },
+          "actual_fraction": 0.14826935650847273,
+          "n_domains": 39507
+        }
+      }
+    }
+  ],
+  "totals": {
+    "train": 1056709,
+    "val": 194640,
+    "test": 216894
+  },
+  "class_counts_by_split": {
+    "train": {
+      "1": 25137,
+      "0": 1031572
+    },
+    "val": {
+      "1": 4816,
+      "0": 189824
+    },
+    "test": {
+      "1": 4858,
+      "0": 212036
+    }
+  },
+  "feature_check": {
+    "client": 1,
+    "split": "val",
+    "shape": [
+      35792,
+      65536
+    ],
+    "l2_normalized": true,
+    "labels_protected": true
+  },
+  "allocation_report_sha256": "93e5233b52706ef7e63aae7f429f6060b1d41b845c994245a576394befe006ce",
+  "verification_script_sha256": "83aebce38eab97e8bb2dc40627b7f4c1ae6aa591d8048a5f7f9551d372bf7c47",
+  "checks": {
+    "all_15_local_split_files_verified": true,
+    "complete_original_record_bytes_preserved": true,
+    "unique_source_row_coverage": true,
+    "no_cross_split_domain_leakage": true,
+    "shared_policy_config_checksums": true,
+    "both_classes_in_every_local_split": true,
+    "unsplit_client_datasets_unchanged": true,
+    "same_global_evaluation_records_across_scenarios": true
+  },
+  "global_domain_role_conflicts": 0,
+  "global_domains_verified": 864157
+}

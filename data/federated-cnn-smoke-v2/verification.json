@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "scope": "synthetic actual-CNN Flower smoke, not real-data performance",
+  "n_clients": 5,
+  "rounds": 2,
+  "local_fit_calls": 10,
+  "validation_calls": 10,
+  "unchanged_local_split_files": 15,
+  "weighting_policy": "original_training",
+  "final_hash": "9b00ab14a321c41d69754ca9a2cb21dae77e6204cef9ae927583386276e2681d",
+  "checks": {
+    "global_model_changes": true,
+    "round_hash_chain": true,
+    "class_balance_training_only": true,
+    "no_test_evaluation": true,
+    "only_coarse_statistics_in_round_reports": true,
+    "checkpoint_schema_and_hash": true,
+    "integer_buffers_preserved": true,
+    "source_and_runtime_snapshots": true
+  }
+}

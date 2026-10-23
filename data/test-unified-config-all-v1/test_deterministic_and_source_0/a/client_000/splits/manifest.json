@@ -1,0 +1,49 @@
+{
+  "client_id": 0,
+  "state": "split_locally",
+  "source_sha256": "a47e7fc438cf095bd630b756576fdb8dc6fd48cb63975dce0bc1b7d921b6d0d1",
+  "splits": {
+    "train": {
+      "n_records": 56,
+      "class_counts": {
+        "0": 28,
+        "1": 28
+      },
+      "positive_rate": 0.5,
+      "n_domains": 28,
+      "category_counts": {
+        "health": 28,
+        "adult": 28
+      },
+      "sha256": "89a963e51ed0a7103842a56d73aa4f4b653496fe6cd525cb9d69c6304535c8fe"
+    },
+    "val": {
+      "n_records": 12,
+      "class_counts": {
+        "0": 6,
+        "1": 6
+      },
+      "positive_rate": 0.5,
+      "n_domains": 6,
+      "category_counts": {
+        "health": 6,
+        "adult": 6
+      },
+      "sha256": "b204ebda9eaa9a0602c03b2ac736bed4913c5db17df98843cf974f43337e3563"
+    },
+    "test": {
+      "n_records": 12,
+      "class_counts": {
+        "0": 6,
+        "1": 6
+      },
+      "positive_rate": 0.5,
+      "n_domains": 6,
+      "category_counts": {
+        "health": 6,
+        "adult": 6
+      },
+      "sha256": "87f41cf34f04e7b70baab4278f9d5e2c243bac866028e263b84fd9a7dfeb506b"
+    }
+  }
+}

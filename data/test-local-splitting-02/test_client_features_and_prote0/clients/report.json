@@ -1,0 +1,94 @@
+{
+  "status": "PASS",
+  "source_sha256": "675fa659c3ee0dfd3741934df9d432771d73881493170ed44b779b2391efaa44",
+  "environment": {
+    "git_commit": "NO_GIT_REPO - results are not tied to a code version",
+    "timestamp_utc": "2026-10-17T17:32:58Z",
+    "python": "3.13.5",
+    "numpy": "2.2.3",
+    "scipy": "1.15.3",
+    "sklearn": "1.7.0",
+    "tldextract": "5.1.2",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "ingestion": {
+    "input_rows": 240,
+    "accepted_before_dedup": 240
+  },
+  "source_category_counts": {
+    "health": 120,
+    "adult": 120
+  },
+  "rejected_rows": 0,
+  "duplicate_rows_removed": 0,
+  "conflicting_urls_removed": 0,
+  "conflicting_source_rows": 0,
+  "retained_records": 240,
+  "clients": [
+    {
+      "client_id": 0,
+      "state": "allocated_unsplit",
+      "dataset": {
+        "n_records": 80,
+        "class_counts": {
+          "0": 40,
+          "1": 40
+        },
+        "positive_rate": 0.5,
+        "n_domains": 40,
+        "category_counts": {
+          "health": 40,
+          "adult": 40
+        },
+        "sha256": "de541aafcc11f540a56d4cb74216367bebe5bdd0de33c5cee0f13d223c89371a"
+      }
+    },
+    {
+      "client_id": 1,
+      "state": "allocated_unsplit",
+      "dataset": {
+        "n_records": 80,
+        "class_counts": {
+          "0": 40,
+          "1": 40
+        },
+        "positive_rate": 0.5,
+        "n_domains": 40,
+        "category_counts": {
+          "adult": 40,
+          "health": 40
+        },
+        "sha256": "853e6c79aba1e46db4dbf3445df3a3ba79fcbb237ca3ea80cc4c15d3e3aff36e"
+      }
+    },
+    {
+      "client_id": 2,
+      "state": "allocated_unsplit",
+      "dataset": {
+        "n_records": 80,
+        "class_counts": {
+          "0": 40,
+          "1": 40
+        },
+        "positive_rate": 0.5,
+        "n_domains": 40,
+        "category_counts": {
+          "health": 40,
+          "adult": 40
+        },
+        "sha256": "4c908a3f8ba2dfef2575fcddc0fba2ac93e85bfbd4b53c28ac823f6c23f97dbd"
+      }
+    }
+  ],
+  "checks": {
+    "row_accounting": true,
+    "all_clients_have_both_classes": true,
+    "unique_domain_ownership": true,
+    "record_coverage": true
+  },
+  "notes": [
+    "Class/category proportions and split fractions are approximate because domains are indivisible.",
+    "Quarantine is excluded from all training and evaluation; labels are never guessed.",
+    "No sitemap, robots.txt, metadata fetching or LLM labelling has been performed."
+  ]
+}

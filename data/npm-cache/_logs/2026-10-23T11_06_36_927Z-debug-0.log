@@ -1,0 +1,68 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Users\hossa\AppData\Roaming\npm\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.1.0
+2 info using node@v22.14.0
+3 silly config load:file:C:\Users\hossa\AppData\Roaming\npm\node_modules\npm\npmrc
+4 silly config load:file:D:\baize_thesis-main\baize_thesis-main\dashboard\.npmrc
+5 silly config load:file:C:\Users\hossa\.npmrc
+6 silly config load:file:C:\Users\hossa\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm audit
+8 verbose argv "audit" "--omit" "dev" "--json" "--cache" "../data/npm-cache"
+9 verbose logfile logs-max:10 dir:D:\baize_thesis-main\baize_thesis-main\data\npm-cache\_logs\2026-10-23T11_06_36_927Z-
+10 verbose logfile D:\baize_thesis-main\baize_thesis-main\data\npm-cache\_logs\2026-10-23T11_06_36_927Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+13 silly audit bulk request {
+13 silly audit   '@reduxjs/toolkit': [ '2.13.0' ],
+13 silly audit   immer: [ '11.2.9', '10.2.0' ],
+13 silly audit   '@standard-schema/spec': [ '1.1.0' ],
+13 silly audit   '@standard-schema/utils': [ '0.3.0' ],
+13 silly audit   '@types/d3-array': [ '3.2.2' ],
+13 silly audit   '@types/d3-color': [ '3.1.3' ],
+13 silly audit   '@types/d3-ease': [ '3.0.2' ],
+13 silly audit   '@types/d3-interpolate': [ '3.0.4' ],
+13 silly audit   '@types/d3-path': [ '3.1.1' ],
+13 silly audit   '@types/d3-scale': [ '4.0.9' ],
+13 silly audit   '@types/d3-shape': [ '3.2.0' ],
+13 silly audit   '@types/d3-time': [ '3.0.4' ],
+13 silly audit   '@types/d3-timer': [ '3.0.2' ],
+13 silly audit   '@types/react': [ '19.0.3' ],
+13 silly audit   '@types/use-sync-external-store': [ '0.0.6' ],
+13 silly audit   clsx: [ '2.1.1' ],
+13 silly audit   csstype: [ '3.2.3' ],
+13 silly audit   'd3-array': [ '3.2.4' ],
+13 silly audit   'd3-color': [ '3.1.0' ],
+13 silly audit   'd3-ease': [ '3.0.1' ],
+13 silly audit   'd3-format': [ '3.1.2' ],
+13 silly audit   'd3-interpolate': [ '3.0.1' ],
+13 silly audit   'd3-path': [ '3.1.0' ],
+13 silly audit   'd3-scale': [ '4.0.2' ],
+13 silly audit   'd3-shape': [ '3.2.0' ],
+13 silly audit   'd3-time': [ '3.1.0' ],
+13 silly audit   'd3-time-format': [ '4.1.0' ],
+13 silly audit   'd3-timer': [ '3.0.1' ],
+13 silly audit   'decimal.js-light': [ '2.5.1' ],
+13 silly audit   'es-toolkit': [ '1.52.0' ],
+13 silly audit   eventemitter3: [ '5.0.4' ],
+13 silly audit   internmap: [ '2.0.3' ],
+13 silly audit   'lucide-react': [ '0.468.0' ],
+13 silly audit   react: [ '19.0.0' ],
+13 silly audit   'react-dom': [ '19.0.0' ],
+13 silly audit   'react-is': [ '19.3.1' ],
+13 silly audit   'react-redux': [ '9.3.0' ],
+13 silly audit   recharts: [ '3.3.0' ],
+13 silly audit   redux: [ '5.0.1' ],
+13 silly audit   'redux-thunk': [ '3.1.0' ],
+13 silly audit   reselect: [ '5.1.1' ],
+13 silly audit   scheduler: [ '0.25.0' ],
+13 silly audit   'tiny-invariant': [ '1.3.3' ],
+13 silly audit   'use-sync-external-store': [ '1.7.0' ],
+13 silly audit   'victory-vendor': [ '37.3.6' ]
+13 silly audit }
+14 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 353ms
+15 silly audit report {}
+16 verbose cwd D:\baize_thesis-main\baize_thesis-main\dashboard
+17 verbose os Windows_NT 10.0.26300
+18 verbose node v22.14.0
+19 verbose npm  v11.1.0
+20 verbose exit 0
+21 info ok

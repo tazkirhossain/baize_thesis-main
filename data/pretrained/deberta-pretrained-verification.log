@@ -1,0 +1,6 @@
+PASS: downloaded file hashes verified before offline loading
+PASS: full pretrained encoder loaded offline; 184,423,682 parameters
+Some weights of DebertaV3BaseClassifier were not initialized from the model checkpoint at D:\baize_thesis-main\baize_thesis-main\data\pretrained\deberta-v3-base and are newly initialized: ['classifier.bias', 'classifier.weight', 'pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+PASS: production client collator and full-checkpoint inference
+PASS: full encoder/head forward, backward and SGD step; loss=0.784133

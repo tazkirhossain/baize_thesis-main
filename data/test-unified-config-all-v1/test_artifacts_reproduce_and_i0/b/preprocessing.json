@@ -1,0 +1,67 @@
+{
+  "schema_version": 3,
+  "config": {
+    "n_clients": 5,
+    "fractions": [
+      0.7,
+      0.15,
+      0.15
+    ],
+    "seed": 19,
+    "n_features": 64,
+    "ngram_range": [
+      3,
+      5
+    ],
+    "min_per_class": 1,
+    "header": "auto"
+  },
+  "label_mapping": {
+    "Adult": 1,
+    "Non-adult": 0
+  },
+  "target_policy": "source category Adult -> Adult; 14 other known categories -> Non-adult",
+  "features": {
+    "kind": "hashing",
+    "analyzer": "char_wb",
+    "lowercase": true,
+    "n_features": 64,
+    "ngram_range": [
+      3,
+      5
+    ],
+    "norm": "l2",
+    "alternate_sign": false
+  },
+  "scaling": "per-record L2 normalization; no fitted corpus statistics",
+  "sampling": "all retained records exactly once; seeded permutation without replacement",
+  "evaluation": "client-owned validation and test; no server dataset",
+  "domain_policy": "domains may span clients, but have one shared split role",
+  "partitioning": {
+    "strategy": "stratified_url_iid",
+    "balanced_margins": true,
+    "strata": [
+      "binary_label",
+      "normalized_original_category"
+    ],
+    "name": "iid",
+    "parameters": {},
+    "n_clients": 5,
+    "sampling_policy": "binary_shuffled_pools_sequential_v1",
+    "client_assignment_order": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "seed": 19,
+    "rng": "numpy.PCG64",
+    "replacement": false,
+    "population_order": "ascending original source_row"
+  },
+  "split_policy": {
+    "type": "shared_domain_hash_v1",
+    "seed": 0
+  }
+}

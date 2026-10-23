@@ -1,0 +1,145 @@
+{
+  "status": "PASS",
+  "retained_records": 1468243,
+  "clients": [
+    {
+      "client_id": 0,
+      "n_records": 293649,
+      "class_counts": {
+        "1": 12000,
+        "0": 281649
+      },
+      "category_counts": {
+        "adult": 12000,
+        "arts": 46640,
+        "business": 46428,
+        "computers": 21756,
+        "games": 10348,
+        "health": 11396,
+        "home": 5177,
+        "kids": 7233,
+        "news": 1596,
+        "recreation": 20203,
+        "reference": 10617,
+        "science": 19459,
+        "shopping": 18253,
+        "society": 44459,
+        "sports": 18084
+      }
+    },
+    {
+      "client_id": 1,
+      "n_records": 293649,
+      "class_counts": {
+        "1": 8500,
+        "0": 285149
+      },
+      "category_counts": {
+        "adult": 8500,
+        "arts": 47225,
+        "business": 47064,
+        "computers": 21869,
+        "games": 10393,
+        "health": 11486,
+        "home": 5283,
+        "kids": 7495,
+        "news": 1660,
+        "recreation": 20250,
+        "reference": 10605,
+        "science": 19536,
+        "shopping": 18719,
+        "society": 44922,
+        "sports": 18642
+      }
+    },
+    {
+      "client_id": 2,
+      "n_records": 293649,
+      "class_counts": {
+        "1": 6500,
+        "0": 287149
+      },
+      "category_counts": {
+        "adult": 6500,
+        "arts": 47589,
+        "business": 46817,
+        "computers": 22524,
+        "games": 10513,
+        "health": 11678,
+        "home": 5449,
+        "kids": 7329,
+        "news": 1680,
+        "recreation": 20588,
+        "reference": 10771,
+        "science": 19423,
+        "shopping": 18651,
+        "society": 45557,
+        "sports": 18580
+      }
+    },
+    {
+      "client_id": 3,
+      "n_records": 293648,
+      "class_counts": {
+        "1": 4500,
+        "0": 289148
+      },
+      "category_counts": {
+        "adult": 4500,
+        "arts": 48044,
+        "business": 47135,
+        "computers": 22516,
+        "games": 10719,
+        "health": 11639,
+        "home": 5450,
+        "kids": 7554,
+        "news": 1759,
+        "recreation": 20486,
+        "reference": 10741,
+        "science": 19679,
+        "shopping": 18691,
+        "society": 45999,
+        "sports": 18736
+      }
+    },
+    {
+      "client_id": 4,
+      "n_records": 293648,
+      "class_counts": {
+        "1": 3311,
+        "0": 290337
+      },
+      "category_counts": {
+        "adult": 3311,
+        "arts": 48306,
+        "business": 47961,
+        "computers": 22436,
+        "games": 10573,
+        "health": 11824,
+        "home": 5527,
+        "kids": 7466,
+        "news": 1678,
+        "recreation": 20896,
+        "reference": 10920,
+        "science": 19666,
+        "shopping": 18919,
+        "society": 45435,
+        "sports": 18730
+      }
+    }
+  ],
+  "allocation_report_sha256": "462005319293716267e87ec7eaf4fc862b774a5b8345af7d75accc40313c0c89",
+  "population_sha256": "bb9c300e97364f989f5a866cf0b8e3cdd449865e134342fdf3f37fd65fe1d726",
+  "local_split_directories": 0,
+  "checks": {
+    "canonical_url_uniqueness": true,
+    "disjoint_client_ownership": true,
+    "every_eligible_original_record_exactly_once": true,
+    "complete_original_record_bytes_preserved": true,
+    "seeded_membership_replay": true,
+    "actual_label_and_category_counts": true,
+    "shared_local_preprocessing_contract": true,
+    "source_audit_unchanged": true,
+    "saved_preparation_code_fingerprints": true
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "model": "microsoft/deberta-v3-base",
+  "revision": "8ccc9b6f36199bec6961081d44eb72fb3f7353f3",
+  "scope": "one full pretrained model, one synthetic example; not federation or model quality",
+  "dataset_read": false,
+  "checkpoint_modified": false,
+  "offline_loading": true,
+  "parameter_count": 184423682,
+  "loading_audit": {
+    "source": "D:\\baize_thesis-main\\baize_thesis-main\\data\\pretrained\\deberta-v3-base",
+    "revision": null,
+    "seed": 42,
+    "pretrained_encoder": true,
+    "new_head_keys": [
+      "classifier.bias",
+      "classifier.weight",
+      "pooler.dense.bias",
+      "pooler.dense.weight"
+    ],
+    "unused_checkpoint_keys": [
+      "lm_predictions.lm_head.LayerNorm.bias",
+      "lm_predictions.lm_head.LayerNorm.weight",
+      "lm_predictions.lm_head.bias",
+      "lm_predictions.lm_head.dense.bias",
+      "lm_predictions.lm_head.dense.weight",
+      "mask_predictions.LayerNorm.bias",
+      "mask_predictions.LayerNorm.weight",
+      "mask_predictions.classifier.bias",
+      "mask_predictions.classifier.weight",
+      "mask_predictions.dense.bias",
+      "mask_predictions.dense.weight"
+    ],
+    "adult_non_adult_finetuning_performed": false
+  },
+  "model_architecture": {
+    "hidden_size": 768,
+    "num_hidden_layers": 12,
+    "num_attention_heads": 12,
+    "intermediate_size": 3072,
+    "vocab_size": 128100,
+    "max_position_embeddings": 512,
+    "relative_attention": true,
+    "position_biased_input": false
+  },
+  "synthetic_batch_size": 1,
+  "smoke_max_length": 16,
+  "production_max_length_unchanged": 256,
+  "all_parameters_trainable": true,
+  "optimizer": "SGD",
+  "learning_rate": 2e-05,
+  "loss": 0.7841334342956543,
+  "encoder_probe": "deberta.encoder.layer.0.attention.self.query_proj.weight",
+  "encoder_max_update": 2.9802322387695312e-08,
+  "classifier_max_update": 1.2707896530628204e-05,
+  "load_seconds": 1.6960603999978048,
+  "step_seconds": 1.2910988999974506,
+  "device": "cpu",
+  "torch": "2.8.0+cpu"
+}

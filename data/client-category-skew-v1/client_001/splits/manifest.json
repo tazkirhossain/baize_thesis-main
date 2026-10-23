@@ -1,0 +1,66 @@
+{
+  "client_id": 1,
+  "state": "split_locally",
+  "source_sha256": "cba9f0c7b46213fb17b1397655f9b8343d9f58f7b926fe2d30587c027dade184",
+  "splits": {
+    "train": {
+      "n_records": 212646,
+      "class_counts": {
+        "0": 207630,
+        "1": 5016
+      },
+      "positive_rate": 0.02358849919584662,
+      "n_domains": 110845,
+      "category_counts": {
+        "adult": 5016,
+        "arts": 87097,
+        "health": 40904,
+        "home": 17949,
+        "news": 5881,
+        "sports": 55799
+      },
+      "sha256": "f5f3644502d7b7e358da97bcd77f9cf0380718bc58a89c70786b3586a047dfb2"
+    },
+    "val": {
+      "n_records": 39027,
+      "class_counts": {
+        "0": 38074,
+        "1": 953
+      },
+      "positive_rate": 0.024418991979911344,
+      "n_domains": 23813,
+      "category_counts": {
+        "adult": 953,
+        "arts": 12202,
+        "health": 8495,
+        "home": 5264,
+        "news": 1245,
+        "sports": 10868
+      },
+      "sha256": "8a7c2d4e6e9ce7ae4dd97f59c20b375da98cd9d9be0ca1766102d9cddf559bf3"
+    },
+    "test": {
+      "n_records": 41976,
+      "class_counts": {
+        "0": 40983,
+        "1": 993
+      },
+      "positive_rate": 0.02365637507146941,
+      "n_domains": 23644,
+      "category_counts": {
+        "adult": 993,
+        "arts": 15466,
+        "health": 8624,
+        "home": 3673,
+        "news": 1247,
+        "sports": 11973
+      },
+      "sha256": "730645a70f32a526928b991152c9abf30b40fbc8716641753ccbf57c8e9354ee"
+    }
+  },
+  "preprocessing_sha256": "97a0acb25682f9c2ae26dc21dd6f8bfbef1d6402a16fd5d2824126d62a768880",
+  "split_policy": {
+    "type": "shared_domain_hash_v1",
+    "seed": 0
+  }
+}

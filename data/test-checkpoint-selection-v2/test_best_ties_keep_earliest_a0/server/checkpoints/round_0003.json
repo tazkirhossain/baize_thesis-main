@@ -1,0 +1,166 @@
+{
+  "round": 3,
+  "status": "evaluated",
+  "configuration": {
+    "n_clients": 5,
+    "rounds": 2,
+    "clients_per_round": 5,
+    "local_epochs": 1,
+    "batch_size": 8,
+    "learning_rate": 0.001,
+    "seed": 42,
+    "model": {
+      "family": "character_cnn",
+      "characters": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~:/?#[]@!$&'()*+,;=%",
+      "sequence_length": 16,
+      "dropout_input": 0.1
+    },
+    "balancing": {
+      "method": "undersampling",
+      "adult_to_non_adult": "1:1",
+      "seed": 42,
+      "ensemble_members": 2,
+      "k_neighbors": 5,
+      "insufficient_minority": "adjust"
+    },
+    "aggregation_weight": "original_training",
+    "threshold": 0.5,
+    "evaluate_final_test": true,
+    "evaluate_training": true,
+    "experiment": {
+      "partition_strategy": "unknown",
+      "data_kind": "real",
+      "evaluation_population_id": "client-datasets-v3:shared_domain_hash_v1:seed=0"
+    },
+    "progress_interval_seconds": 0,
+    "model_selection": {
+      "source": "training_selection",
+      "fraction": 0.1,
+      "metric": "adult_f1"
+    }
+  },
+  "contract": "05de36c2ecdba4fe3e728d2b68891d600f677e88d968a4ac19271544ad14b972",
+  "schema": [
+    [
+      0,
+      "bn.weight",
+      [
+        86
+      ],
+      "<f4"
+    ],
+    [
+      0,
+      "bn.bias",
+      [
+        86
+      ],
+      "<f4"
+    ],
+    [
+      0,
+      "bn.running_mean",
+      [
+        86
+      ],
+      "<f4"
+    ],
+    [
+      0,
+      "bn.running_var",
+      [
+        86
+      ],
+      "<f4"
+    ],
+    [
+      0,
+      "bn.num_batches_tracked",
+      [],
+      "<i8"
+    ],
+    [
+      0,
+      "fc.weight",
+      [
+        2,
+        86
+      ],
+      "<f4"
+    ],
+    [
+      0,
+      "fc.bias",
+      [
+        2
+      ],
+      "<f4"
+    ]
+  ],
+  "schema_hash": "4b09b4a07b83e696b87f35bc8173be540b631c152d668e7d8d959fafcb0e2a95",
+  "global_hash": "5f48ac0b9f8b2ad5656fc2c9cd1ce1fbc93236138389878bcfa6bc2fc1f7310a",
+  "client_data_contracts": {},
+  "metrics": {
+    "selection": {
+      "adult_precision": 1.0,
+      "adult_recall": 0.2,
+      "adult_f1": 0.3333333333333333,
+      "non_adult_precision": 0.5555555555555556,
+      "non_adult_recall": 1.0,
+      "non_adult_f1": 0.7142857142857143,
+      "macro_f1": 0.5238095238095238,
+      "balanced_accuracy": 0.6,
+      "accuracy": 0.6,
+      "confusion_matrix": [
+        [
+          10,
+          0
+        ],
+        [
+          8,
+          2
+        ]
+      ],
+      "confusion_matrix_order": [
+        "Non-adult",
+        "Adult"
+      ],
+      "n_records": 20,
+      "adult_count": 10,
+      "non_adult_count": 10,
+      "adult_prevalence": 0.5,
+      "loss": 0.5
+    },
+    "val": {
+      "adult_precision": 0.8181818181818182,
+      "adult_recall": 0.9,
+      "adult_f1": 0.8571428571428571,
+      "non_adult_precision": 0.8888888888888888,
+      "non_adult_recall": 0.8,
+      "non_adult_f1": 0.8421052631578947,
+      "macro_f1": 0.849624060150376,
+      "balanced_accuracy": 0.8500000000000001,
+      "accuracy": 0.85,
+      "confusion_matrix": [
+        [
+          8,
+          2
+        ],
+        [
+          1,
+          9
+        ]
+      ],
+      "confusion_matrix_order": [
+        "Non-adult",
+        "Adult"
+      ],
+      "n_records": 20,
+      "adult_count": 10,
+      "non_adult_count": 10,
+      "adult_prevalence": 0.5,
+      "loss": 0.2
+    }
+  },
+  "purpose": "global model weights; includes all ensemble members; not a complete resumable training session"
+}

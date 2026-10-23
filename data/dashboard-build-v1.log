@@ -1,0 +1,18 @@
+
+> federated-url-research-dashboard@1.0.0 build
+> tsc -b && vite build
+
+vite v6.4.1 building for production...
+transforming...
+✓ 2318 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.66 kB │ gzip:   0.39 kB
+dist/assets/index-Bz_H096J.css   23.03 kB │ gzip:   5.92 kB
+dist/assets/index-DvqTBJvK.js   580.44 kB │ gzip: 176.77 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 6.89s

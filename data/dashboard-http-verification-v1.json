@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "route": "/api/health",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "route": "/api/experiments",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "route": "/",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "route": "/favicon.svg",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "route": "/data/raw/url.csv",
+      "expected": 404,
+      "actual": 404
+    },
+    {
+      "route": "/api/files",
+      "expected": 404,
+      "actual": 404
+    },
+    {
+      "route": "/%2e%2e/data/raw/url.csv",
+      "expected": 404,
+      "actual": 404
+    },
+    {
+      "route": "/..%5cdata%5craw%5curl.csv",
+      "expected": 404,
+      "actual": 404
+    },
+    {
+      "route": "POST /api/experiments",
+      "expected": 501,
+      "actual": 501
+    }
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "status": "PASS",
+  "source_sha256": "79e32aeafc74a5c875add374d1ea5d163f867ee9109a47907c99271bb76002a4",
+  "environment": {
+    "git_commit": "NO_GIT_REPO - results are not tied to a code version",
+    "timestamp_utc": "2026-10-17T17:34:56Z",
+    "python": "3.13.5",
+    "numpy": "2.2.3",
+    "scipy": "1.15.3",
+    "sklearn": "1.7.0",
+    "tldextract": "5.1.2",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "ingestion": {
+    "input_rows": 1562978,
+    "accepted_before_dedup": 1561931,
+    "invalid_url:unsupported_scheme:ftp": 389,
+    "invalid_url:no_registrable_domain": 575,
+    "invalid_url:unsupported_scheme:gopher": 23,
+    "invalid_url:unsupported_scheme:news": 1,
+    "missing_url": 3,
+    "invalid_url:host_without_dot": 5,
+    "invalid_url:unsupported_scheme:telnet": 4,
+    "invalid_url:unsupported_scheme:irc": 1,
+    "invalid_url:unsupported_scheme:sherlock": 46
+  },
+  "source_category_counts": {
+    "adult": 35316,
+    "arts": 253744,
+    "business": 240107,
+    "computers": 117635,
+    "games": 56445,
+    "health": 60077,
+    "home": 28264,
+    "kids": 46122,
+    "news": 8987,
+    "recreation": 106539,
+    "reference": 58204,
+    "science": 110143,
+    "shopping": 95263,
+    "society": 243792,
+    "sports": 101293
+  },
+  "rejected_rows": 1047,
+  "duplicate_rows_removed": 89385,
+  "conflicting_urls_removed": 148,
+  "conflicting_source_rows": 4303,
+  "retained_records": 1468243,
+  "clients": [
+    {
+      "client_id": 0,
+      "state": "allocated_unsplit",
+      "dataset": {
+        "n_records": 293650,
+        "class_counts": {
+          "0": 286687,
+          "1": 6963
+        },
+        "positive_rate": 0.023711901924059253,
+        "n_domains": 172839,
+        "category_counts": {
+          "adult": 6963,
+          "arts": 49574,
+          "business": 47235,
+          "computers": 21193,
+          "games": 9595,
+          "health": 11667,
+          "home": 5180,
+          "kids": 6962,
+          "news": 1662,
+          "recreation": 23780,
+          "reference": 10680,
+          "science": 17335,
+          "shopping": 18794,
+          "society": 44599,
+          "sports": 18431
+        },
+        "sha256": "3e24eb715fc3f177c772472c5eb732458eb3dec300b6a269635ffa1120641479"
+      }
+    },
+    {
+      "client_id": 1,
+      "state": "allocated_unsplit",
+      "dataset": {
+        "n_records": 293649,
+        "class_counts": {
+          "0": 286687,
+          "1": 6962
+        },
+        "positive_rate": 0.023708577246985347,
+        "n_domains": 172861,
+        "category_counts": {
+          "adult": 6962,
+          "arts": 44511,
+          "business": 48047,
+          "computers": 20420,
+          "games": 11234,
+          "health": 11129,
+          "home": 5359,
+          "kids": 7126,
+          "news": 1664,
+          "recreation": 20154,
+          "reference": 10938,
+          "science": 20507,
+          "shopping": 19172,
+          "society": 45790,
+          "sports": 20636
+        },
+        "sha256": "e05853510b4e17e16d0d3d7a1e3b8625968b8aedb6414effd28338899389750e"
+      }
+    },
+    {
+      "client_id": 2,
+      "state": "allocated_unsplit",
+      "dataset": {
+        "n_records": 293648,
+        "class_counts": {
+          "0": 286686,
+          "1": 6962
+        },
+        "positive_rate": 0.02370865798507056,
+        "n_domains": 172842,
+        "category_counts": {
+          "adult": 6962,
+          "arts": 47195,
+          "business": 47278,
+          "computers": 22753,
+          "games": 13406,
+          "health": 11573,
+          "home": 6647,
+          "kids": 6938,
+          "news": 1680,
+          "recreation": 20156,
+          "reference": 9782,
+          "science": 20014,
+          "shopping": 18799,
+          "society": 42735,
+          "sports": 17730
+        },
+        "sha256": "5630bab082cf9b87918b14456f09053e0cf0bb02f3a31967e9f8097252e9d7c3"
+      }
+    },
+    {
+      "client_id": 3,
+      "state": "allocated_unsplit",
+      "dataset": {
+        "n_records": 293648,
+        "class_counts": {
+          "0": 286686,
+          "1": 6962
+        },
+        "positive_rate": 0.02370865798507056,
+        "n_domains": 172824,
+        "category_counts": {
+          "adult": 6962,
+          "arts": 44438,
+          "business": 46591,
+          "computers": 21360,
+          "games": 8138,
+          "health": 10630,
+          "home": 4345,
+          "kids": 8358,
+          "news": 1708,
+          "recreation": 19779,
+          "reference": 10338,
+          "science": 20108,
+          "shopping": 18519,
+          "society": 53197,
+          "sports": 19177
+        },
+        "sha256": "66c4d6b2cbc68ee3b4eea0586bcd7451b6caf86e256fb8f2dc81cf6abf0d2f2c"
+      }
+    },
+    {
+      "client_id": 4,
+      "state": "allocated_unsplit",
+      "dataset": {
+        "n_records": 293648,
+        "class_counts": {
+          "0": 286686,
+          "1": 6962
+        },
+        "positive_rate": 0.02370865798507056,
+        "n_domains": 172791,
+        "category_counts": {
+          "adult": 6962,
+          "arts": 52086,
+          "business": 46254,
+          "computers": 25375,
+          "games": 10173,
+          "health": 13024,
+          "home": 5355,
+          "kids": 7693,
+          "news": 1659,
+          "recreation": 18554,
+          "reference": 11916,
+          "science": 19799,
+          "shopping": 17949,
+          "society": 40051,
+          "sports": 16798
+        },
+        "sha256": "e76f419a4e919b0e64592f17e3af475ec62677a7baac58399af81cb9f9f4b3bb"
+      }
+    }
+  ],
+  "checks": {
+    "row_accounting": true,
+    "all_clients_have_both_classes": true,
+    "unique_domain_ownership": true,
+    "record_coverage": true
+  },
+  "notes": [
+    "Class/category proportions and split fractions are approximate because domains are indivisible.",
+    "Quarantine is excluded from all training and evaluation; labels are never guessed.",
+    "No sitemap, robots.txt, metadata fetching or LLM labelling has been performed."
+  ]
+}

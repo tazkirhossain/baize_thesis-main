@@ -1,0 +1,12 @@
+{"category": "health", "domain": "site0.com", "label": 0, "source_row": 1, "url": "https://site0.com/page0"}
+{"category": "health", "domain": "site0.com", "label": 0, "source_row": 2, "url": "https://site0.com/page1"}
+{"category": "adult", "domain": "site3.com", "label": 1, "source_row": 7, "url": "https://site3.com/page0"}
+{"category": "adult", "domain": "site3.com", "label": 1, "source_row": 8, "url": "https://site3.com/page1"}
+{"category": "adult", "domain": "site11.com", "label": 1, "source_row": 23, "url": "https://site11.com/page0"}
+{"category": "adult", "domain": "site11.com", "label": 1, "source_row": 24, "url": "https://site11.com/page1"}
+{"category": "health", "domain": "site52.com", "label": 0, "source_row": 105, "url": "https://site52.com/page0"}
+{"category": "health", "domain": "site52.com", "label": 0, "source_row": 106, "url": "https://site52.com/page1"}
+{"category": "health", "domain": "site72.com", "label": 0, "source_row": 145, "url": "https://site72.com/page0"}
+{"category": "health", "domain": "site72.com", "label": 0, "source_row": 146, "url": "https://site72.com/page1"}
+{"category": "adult", "domain": "site101.com", "label": 1, "source_row": 203, "url": "https://site101.com/page0"}
+{"category": "adult", "domain": "site101.com", "label": 1, "source_row": 204, "url": "https://site101.com/page1"}

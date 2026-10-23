@@ -1,0 +1,24 @@
+{
+  "source": "synthetic",
+  "n_train": 2536,
+  "positive_rate": 0.2582807570977918,
+  "class_counts": {
+    "0": 1881,
+    "1": 655
+  },
+  "n_features": 65536,
+  "ngram_range": [
+    3,
+    5
+  ],
+  "epochs": 14,
+  "lr": 8.0,
+  "batch_size": 256,
+  "l2": 1e-07,
+  "final_loss": 0.22342699321606582,
+  "git_commit": "NO_GIT_REPO - results are not tied to a code version",
+  "limitations": "Trained on the synthetic fixture (abstract markers, not real adult vocabulary). It will not classify real websites. Place the corpus at data/raw/url.csv and restart to train a local corpus demo. That still is not the thesis 2^18-feature / 35-epoch model.",
+  "fetches_pages": false,
+  "dataset_name": "synthetic-demo",
+  "dataset_fingerprint": "8854f735993d2ac9587efb90b04da11522a1f8516d960ae6ec1c5c208eefd893"
+}

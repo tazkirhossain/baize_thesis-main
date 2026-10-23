@@ -1,0 +1,217 @@
+Model: character_cnn | Distribution: iid | Balancing: oversampling
+Protocol: end_to_end | Rounds: 10 | Local epochs: 1 | Batch: 64 | LR: 0.001
+Device: cpu | Threads: 8 | FedAvg weights: original_training
+Checkpoint selection: 10% of original training domains; Adult F1; earliest round wins ties. Selection rows are excluded from all optimization/balancing. FedAvg original_training weights count the remaining original optimization records.
+SMOKE overrides: synthetic fixtures, unknown distribution, rounds=2, batch_size=8, sequence_length=32, CPU. Configured local_epochs is retained.
+New run output: D:\baize_thesis-main\baize_thesis-main\data\checkpoint-selection-smoke-v1
+INFO :      [INIT]
+INFO :      Using initial global parameters provided by strategy
+INFO :      Starting evaluation of initial global parameters
+INFO :      Evaluation returned no results (`None`)
+INFO :      
+INFO :      [ROUND 1]
+Client 1 training-only selection: assigned=40; optimization=33; selection=7. Original validation/test unchanged.
+Client 2 training-only selection: assigned=40; optimization=36; selection=4. Original validation/test unchanged.
+Client 3 training-only selection: assigned=40; optimization=34; selection=6. Original validation/test unchanged.
+Client 4 training-only selection: assigned=40; optimization=35; selection=5. Original validation/test unchanged.
+Client 5 training-only selection: assigned=40; optimization=34; selection=6. Original validation/test unchanged.
+INFO :      configure_fit: strategy sampled 5 clients (out of 5)
+Client 1, round 1, member 1
+oversampling [applied] seed=1896493428 target Adult:Non-adult=1:1
+  BEFORE: Adult=7, Non-adult=26
+  AFTER:  Adult=26, Non-adult=26; duplicated=19, synthetic=0, unused originals=0
+[Client 1 | round 1 | member 1 | training view] START: 52 examples; 1 epoch(s); 7 batches. Progress after completed batches every ~30s.
+[Client 1 | round 1 | member 1 | training view] PROGRESS: epoch 1/1; batch 1/7 (14.3%); examples 8/52; running loss=6.5620; elapsed=00:00:00; 27.4 examples/s; phase ETA~00:00:01
+[Client 1 | round 1 | member 1 | training view] DONE: epoch 1/1; batch 7/7 (100.0%); examples 52/52; running loss=2.8549; elapsed=00:00:00; 76.8 examples/s; phase ETA~00:00:00
+Client 2, round 1, member 1
+oversampling [applied] seed=2134191843 target Adult:Non-adult=1:1
+  BEFORE: Adult=9, Non-adult=27
+  AFTER:  Adult=27, Non-adult=27; duplicated=18, synthetic=0, unused originals=0
+[Client 2 | round 1 | member 1 | training view] START: 54 examples; 1 epoch(s); 7 batches. Progress after completed batches every ~30s.
+[Client 2 | round 1 | member 1 | training view] PROGRESS: epoch 1/1; batch 1/7 (14.3%); examples 8/54; running loss=15.2130; elapsed=00:00:00; 90.2 examples/s; phase ETA~00:00:00
+[Client 2 | round 1 | member 1 | training view] DONE: epoch 1/1; batch 7/7 (100.0%); examples 54/54; running loss=5.4840; elapsed=00:00:00; 99.5 examples/s; phase ETA~00:00:00
+Client 3, round 1, member 1
+oversampling [applied] seed=1385871029 target Adult:Non-adult=1:1
+  BEFORE: Adult=9, Non-adult=25
+  AFTER:  Adult=25, Non-adult=25; duplicated=16, synthetic=0, unused originals=0
+[Client 3 | round 1 | member 1 | training view] START: 50 examples; 1 epoch(s); 7 batches. Progress after completed batches every ~30s.
+[Client 3 | round 1 | member 1 | training view] PROGRESS: epoch 1/1; batch 1/7 (14.3%); examples 8/50; running loss=8.4883; elapsed=00:00:00; 80.0 examples/s; phase ETA~00:00:00
+[Client 3 | round 1 | member 1 | training view] DONE: epoch 1/1; batch 7/7 (100.0%); examples 50/50; running loss=4.3890; elapsed=00:00:00; 100.8 examples/s; phase ETA~00:00:00
+Client 4, round 1, member 1
+oversampling [applied] seed=2958905532 target Adult:Non-adult=1:1
+  BEFORE: Adult=13, Non-adult=22
+  AFTER:  Adult=22, Non-adult=22; duplicated=9, synthetic=0, unused originals=0
+[Client 4 | round 1 | member 1 | training view] START: 44 examples; 1 epoch(s); 6 batches. Progress after completed batches every ~30s.
+[Client 4 | round 1 | member 1 | training view] PROGRESS: epoch 1/1; batch 1/6 (16.7%); examples 8/44; running loss=11.5851; elapsed=00:00:00; 96.6 examples/s; phase ETA~00:00:00
+[Client 4 | round 1 | member 1 | training view] DONE: epoch 1/1; batch 6/6 (100.0%); examples 44/44; running loss=11.0008; elapsed=00:00:00; 114.1 examples/s; phase ETA~00:00:00
+Client 5, round 1, member 1
+oversampling [applied] seed=4104139034 target Adult:Non-adult=1:1
+  BEFORE: Adult=13, Non-adult=21
+  AFTER:  Adult=21, Non-adult=21; duplicated=8, synthetic=0, unused originals=0
+[Client 5 | round 1 | member 1 | training view] START: 42 examples; 1 epoch(s); 6 batches. Progress after completed batches every ~30s.
+[Client 5 | round 1 | member 1 | training view] PROGRESS: epoch 1/1; batch 1/6 (16.7%); examples 8/42; running loss=11.2076; elapsed=00:00:00; 69.9 examples/s; phase ETA~00:00:00
+[Client 5 | round 1 | member 1 | training view] DONE: epoch 1/1; batch 6/6 (100.0%); examples 42/42; running loss=7.8070; elapsed=00:00:00; 91.9 examples/s; phase ETA~00:00:00
+INFO :      aggregate_fit: received 5 results and 0 failures
+Saved global checkpoint: round 1, aggregated_pending_evaluation: D:\baize_thesis-main\baize_thesis-main\data\checkpoint-selection-smoke-v1\server\checkpoints\round_0001.npz
+INFO :      configure_evaluate: strategy sampled 5 clients (out of 5)
+[Client 1 | round 1 | original val evaluation] START: 4 examples; 1 epoch(s); 1 batches. Progress after completed batches every ~30s.
+[Client 1 | round 1 | original val evaluation] DONE: epoch 1/1; batch 1/1 (100.0%); examples 4/4; running loss=4.9371; elapsed=00:00:00; 85.7 examples/s; phase ETA~00:00:00
+[Client 1 | round 1 | original train evaluation] START: 33 examples; 1 epoch(s); 5 batches. Progress after completed batches every ~30s.
+[Client 1 | round 1 | original train evaluation] PROGRESS: epoch 1/1; batch 1/5 (20.0%); examples 8/33; running loss=1.2716; elapsed=00:00:00; 285.5 examples/s; phase ETA~00:00:00
+[Client 1 | round 1 | original train evaluation] DONE: epoch 1/1; batch 5/5 (100.0%); examples 33/33; running loss=7.4533; elapsed=00:00:00; 271.0 examples/s; phase ETA~00:00:00
+[Client 1 | round 1 | original selection evaluation] START: 7 examples; 1 epoch(s); 1 batches. Progress after completed batches every ~30s.
+[Client 1 | round 1 | original selection evaluation] DONE: epoch 1/1; batch 1/1 (100.0%); examples 7/7; running loss=5.7370; elapsed=00:00:00; 216.3 examples/s; phase ETA~00:00:00
+[Client 2 | round 1 | original val evaluation] START: 4 examples; 1 epoch(s); 1 batches. Progress after completed batches every ~30s.
+[Client 2 | round 1 | original val evaluation] DONE: epoch 1/1; batch 1/1 (100.0%); examples 4/4; running loss=5.3871; elapsed=00:00:00; 180.0 examples/s; phase ETA~00:00:00
+[Client 2 | round 1 | original train evaluation] START: 36 examples; 1 epoch(s); 5 batches. Progress after completed batches every ~30s.
+[Client 2 | round 1 | original train evaluation] PROGRESS: epoch 1/1; batch 1/5 (20.0%); examples 8/36; running loss=0.0000; elapsed=00:00:00; 273.4 examples/s; phase ETA~00:00:00
+[Client 2 | round 1 | original train evaluation] DONE: epoch 1/1; batch 5/5 (100.0%); examples 36/36; running loss=7.5073; elapsed=00:00:00; 241.9 examples/s; phase ETA~00:00:00
+[Client 2 | round 1 | original selection evaluation] START: 4 examples; 1 epoch(s); 1 batches. Progress after completed batches every ~30s.
+[Client 2 | round 1 | original selection evaluation] DONE: epoch 1/1; batch 1/1 (100.0%); examples 4/4; running loss=5.1402; elapsed=00:00:00; 176.8 examples/s; phase ETA~00:00:00
+[Client 3 | round 1 | original val evaluation] START: 4 examples; 1 epoch(s); 1 batches. Progress after completed batches every ~30s.
+[Client 3 | round 1 | original val evaluation] DONE: epoch 1/1; batch 1/1 (100.0%); examples 4/4; running loss=4.9557; elapsed=00:00:00; 205.5 examples/s; phase ETA~00:00:00
+[Client 3 | round 1 | original train evaluation] START: 34 examples; 1 epoch(s); 5 batches. Progress after completed batches every ~30s.
+[Client 3 | round 1 | original train evaluation] PROGRESS: epoch 1/1; batch 1/5 (20.0%); examples 8/34; running loss=0.0000; elapsed=00:00:00; 248.7 examples/s; phase ETA~00:00:00
+[Client 3 | round 1 | original train evaluation] DONE: epoch 1/1; batch 5/5 (100.0%); examples 34/34; running loss=7.1025; elapsed=00:00:00; 256.4 examples/s; phase ETA~00:00:00
+[Client 3 | round 1 | original selection evaluation] START: 6 examples; 1 epoch(s); 1 batches. Progress after completed batches every ~30s.
+[Client 3 | round 1 | original selection evaluation] DONE: epoch 1/1; batch 1/1 (100.0%); examples 6/6; running loss=4.9054; elapsed=00:00:00; 266.9 examples/s; phase ETA~00:00:00
+[Client 4 | round 1 | original val evaluation] START: 4 examples; 1 epoch(s); 1 batches. Progress after completed batches every ~30s.
+[Client 4 | round 1 | original val evaluation] DONE: epoch 1/1; batch 1/1 (100.0%); examples 4/4; running loss=5.1088; elapsed=00:00:00; 234.0 examples/s; phase ETA~00:00:00
+[Client 4 | round 1 | original train evaluation] START: 35 examples; 1 epoch(s); 5 batches. Progress after completed batches every ~30s.
+[Client 4 | round 1 | original train evaluation] PROGRESS: epoch 1/1; batch 1/5 (20.0%); examples 8/35; running loss=0.0000; elapsed=00:00:00; 311.9 examples/s; phase ETA~00:00:00
+[Client 4 | round 1 | original train evaluation] DONE: epoch 1/1; batch 5/5 (100.0%); examples 35/35; running loss=6.1480; elapsed=00:00:00; 280.1 examples/s; phase ETA~00:00:00
+[Client 4 | round 1 | original selection evaluation] START: 5 examples; 1 epoch(s); 1 batches. Progress after completed batches every ~30s.
+[Client 4 | round 1 | original selection evaluation] DONE: epoch 1/1; batch 1/1 (100.0%); examples 5/5; running loss=9.7703; elapsed=00:00:00; 186.7 examples/s; phase ETA~00:00:00
+[Client 5 | round 1 | original val evaluation] START: 4 examples; 1 epoch(s); 1 batches. Progress after completed batches every ~30s.
+[Client 5 | round 1 | original val evaluation] DONE: epoch 1/1; batch 1/1 (100.0%); examples 4/4; running loss=5.1905; elapsed=00:00:00; 226.6 examples/s; phase ETA~00:00:00
+[Client 5 | round 1 | original train evaluation] START: 34 examples; 1 epoch(s); 5 batches. Progress after completed batches every ~30s.
+[Client 5 | round 1 | original train evaluation] PROGRESS: epoch 1/1; batch 1/5 (20.0%); examples 8/34; running loss=0.0000; elapsed=00:00:00; 57.7 examples/s; phase ETA~00:00:00
+[Client 5 | round 1 | original train evaluation] DONE: epoch 1/1; batch 5/5 (100.0%); examples 34/34; running loss=6.1448; elapsed=00:00:00; 142.9 examples/s; phase ETA~00:00:00
+[Client 5 | round 1 | original selection evaluation] START: 6 examples; 1 epoch(s); 1 batches. Progress after completed batches every ~30s.
+[Client 5 | round 1 | original selection evaluation] DONE: epoch 1/1; batch 1/1 (100.0%); examples 6/6; running loss=7.8499; elapsed=00:00:00; 279.2 examples/s; phase ETA~00:00:00
+INFO :      aggregate_evaluate: received 5 results and 0 failures
+Saved global checkpoint: round 1, evaluated: D:\baize_thesis-main\baize_thesis-main\data\checkpoint-selection-smoke-v1\server\checkpoints\round_0001.npz
+BEST CHECKPOINT: round 1, training-selection Adult F1=0.4865; validation/test not used for selection.
+
+=== GLOBAL EVALUATION: round 1/2 | val ===
+Updated global model; original local data; summed confusion counts across five clients.
+Split                     N      Loss  Accuracy  Balanced  Macro-F1
+Train pool              172    6.8710    0.2965    0.5000    0.2287
+  Adult:     precision=0.2965  recall=1.0000  F1=0.4574
+  Non-adult: precision=0.0000  recall=0.0000  F1=0.0000
+  Confusion [[TN, FP], [FN, TP]]: [[0, 121], [0, 51]]
+Train selection          28    6.6465    0.3214    0.5000    0.2432
+  Adult:     precision=0.3214  recall=1.0000  F1=0.4865
+  Non-adult: precision=0.0000  recall=0.0000  F1=0.0000
+  Confusion [[TN, FP], [FN, TP]]: [[0, 19], [0, 9]]
+Validation               20    5.1158    0.5000    0.5000    0.3333
+  Adult:     precision=0.5000  recall=1.0000  F1=0.6667
+  Non-adult: precision=0.0000  recall=0.0000  F1=0.0000
+  Confusion [[TN, FP], [FN, TP]]: [[0, 10], [0, 10]]
+  Round wall time: 21.2s; summed client training: 13.6s
+  Serialized application payload: 178.62 MiB
+Rates are fractions (0 to 1). Validation/test do not select checkpoints or change thresholds.
+
+INFO :      
+INFO :      [ROUND 2]
+INFO :      configure_fit: strategy sampled 5 clients (out of 5)
+Client 1, round 2, member 1
+oversampling [applied] seed=697079281 target Adult:Non-adult=1:1
+  BEFORE: Adult=7, Non-adult=26
+  AFTER:  Adult=26, Non-adult=26; duplicated=19, synthetic=0, unused originals=0
+[Client 1 | round 2 | member 1 | training view] START: 52 examples; 1 epoch(s); 7 batches. Progress after completed batches every ~30s.
+[Client 1 | round 2 | member 1 | training view] PROGRESS: epoch 1/1; batch 1/7 (14.3%); examples 8/52; running loss=0.0038; elapsed=00:00:00; 87.8 examples/s; phase ETA~00:00:00
+[Client 1 | round 2 | member 1 | training view] DONE: epoch 1/1; batch 7/7 (100.0%); examples 52/52; running loss=0.9522; elapsed=00:00:00; 90.2 examples/s; phase ETA~00:00:00
+Client 2, round 2, member 1
+oversampling [applied] seed=2436437895 target Adult:Non-adult=1:1
+  BEFORE: Adult=9, Non-adult=27
+  AFTER:  Adult=27, Non-adult=27; duplicated=18, synthetic=0, unused originals=0
+[Client 2 | round 2 | member 1 | training view] START: 54 examples; 1 epoch(s); 7 batches. Progress after completed batches every ~30s.
+[Client 2 | round 2 | member 1 | training view] PROGRESS: epoch 1/1; batch 1/7 (14.3%); examples 8/54; running loss=0.0000; elapsed=00:00:00; 89.4 examples/s; phase ETA~00:00:00
+[Client 2 | round 2 | member 1 | training view] DONE: epoch 1/1; batch 7/7 (100.0%); examples 54/54; running loss=0.2512; elapsed=00:00:00; 114.4 examples/s; phase ETA~00:00:00
+Client 3, round 2, member 1
+oversampling [applied] seed=1939820029 target Adult:Non-adult=1:1
+  BEFORE: Adult=9, Non-adult=25
+  AFTER:  Adult=25, Non-adult=25; duplicated=16, synthetic=0, unused originals=0
+[Client 3 | round 2 | member 1 | training view] START: 50 examples; 1 epoch(s); 7 batches. Progress after completed batches every ~30s.
+[Client 3 | round 2 | member 1 | training view] PROGRESS: epoch 1/1; batch 1/7 (14.3%); examples 8/50; running loss=0.0001; elapsed=00:00:00; 87.7 examples/s; phase ETA~00:00:00
+[Client 3 | round 2 | member 1 | training view] DONE: epoch 1/1; batch 7/7 (100.0%); examples 50/50; running loss=3.4585; elapsed=00:00:00; 101.9 examples/s; phase ETA~00:00:00
+Client 4, round 2, member 1
+oversampling [applied] seed=2547676586 target Adult:Non-adult=1:1
+  BEFORE: Adult=13, Non-adult=22
+  AFTER:  Adult=22, Non-adult=22; duplicated=9, synthetic=0, unused originals=0
+[Client 4 | round 2 | member 1 | training view] START: 44 examples; 1 epoch(s); 6 batches. Progress after completed batches every ~30s.
+[Client 4 | round 2 | member 1 | training view] PROGRESS: epoch 1/1; batch 1/6 (16.7%); examples 8/44; running loss=2.0802; elapsed=00:00:00; 100.1 examples/s; phase ETA~00:00:00
+[Client 4 | round 2 | member 1 | training view] DONE: epoch 1/1; batch 6/6 (100.0%); examples 44/44; running loss=0.9247; elapsed=00:00:00; 111.8 examples/s; phase ETA~00:00:00
+Client 5, round 2, member 1
+oversampling [applied] seed=2353232201 target Adult:Non-adult=1:1
+  BEFORE: Adult=13, Non-adult=21
+  AFTER:  Adult=21, Non-adult=21; duplicated=8, synthetic=0, unused originals=0
+[Client 5 | round 2 | member 1 | training view] START: 42 examples; 1 epoch(s); 6 batches. Progress after completed batches every ~30s.
+[Client 5 | round 2 | member 1 | training view] PROGRESS: epoch 1/1; batch 1/6 (16.7%); examples 8/42; running loss=0.8752; elapsed=00:00:00; 101.4 examples/s; phase ETA~00:00:00
+[Client 5 | round 2 | member 1 | training view] DONE: epoch 1/1; batch 6/6 (100.0%); examples 42/42; running loss=0.7152; elapsed=00:00:00; 119.7 examples/s; phase ETA~00:00:00
+INFO :      aggregate_fit: received 5 results and 0 failures
+Saved global checkpoint: round 2, aggregated_pending_evaluation: D:\baize_thesis-main\baize_thesis-main\data\checkpoint-selection-smoke-v1\server\checkpoints\round_0002.npz
+INFO :      configure_evaluate: strategy sampled 5 clients (out of 5)
+[Client 1 | round 2 | original val evaluation] START: 4 examples; 1 epoch(s); 1 batches. Progress after completed batches every ~30s.
+[Client 1 | round 2 | original val evaluation] DONE: epoch 1/1; batch 1/1 (100.0%); examples 4/4; running loss=2.6236; elapsed=00:00:00; 163.8 examples/s; phase ETA~00:00:00
+[Client 1 | round 2 | original train evaluation] START: 33 examples; 1 epoch(s); 5 batches. Progress after completed batches every ~30s.
+[Client 1 | round 2 | original train evaluation] PROGRESS: epoch 1/1; batch 1/5 (20.0%); examples 8/33; running loss=0.6982; elapsed=00:00:00; 253.1 examples/s; phase ETA~00:00:00
+[Client 1 | round 2 | original train evaluation] DONE: epoch 1/1; batch 5/5 (100.0%); examples 33/33; running loss=3.4982; elapsed=00:00:00; 232.8 examples/s; phase ETA~00:00:00
+[Client 1 | round 2 | original selection evaluation] START: 7 examples; 1 epoch(s); 1 batches. Progress after completed batches every ~30s.
+[Client 1 | round 2 | original selection evaluation] DONE: epoch 1/1; batch 1/1 (100.0%); examples 7/7; running loss=2.8289; elapsed=00:00:00; 219.4 examples/s; phase ETA~00:00:00
+[Client 2 | round 2 | original val evaluation] START: 4 examples; 1 epoch(s); 1 batches. Progress after completed batches every ~30s.
+[Client 2 | round 2 | original val evaluation] DONE: epoch 1/1; batch 1/1 (100.0%); examples 4/4; running loss=3.1994; elapsed=00:00:00; 180.3 examples/s; phase ETA~00:00:00
+[Client 2 | round 2 | original train evaluation] START: 36 examples; 1 epoch(s); 5 batches. Progress after completed batches every ~30s.
+[Client 2 | round 2 | original train evaluation] PROGRESS: epoch 1/1; batch 1/5 (20.0%); examples 8/36; running loss=0.0001; elapsed=00:00:00; 269.0 examples/s; phase ETA~00:00:00
+[Client 2 | round 2 | original train evaluation] DONE: epoch 1/1; batch 5/5 (100.0%); examples 36/36; running loss=3.5970; elapsed=00:00:00; 256.2 examples/s; phase ETA~00:00:00
+[Client 2 | round 2 | original selection evaluation] START: 4 examples; 1 epoch(s); 1 batches. Progress after completed batches every ~30s.
+[Client 2 | round 2 | original selection evaluation] DONE: epoch 1/1; batch 1/1 (100.0%); examples 4/4; running loss=2.5455; elapsed=00:00:00; 205.1 examples/s; phase ETA~00:00:00
+[Client 3 | round 2 | original val evaluation] START: 4 examples; 1 epoch(s); 1 batches. Progress after completed batches every ~30s.
+[Client 3 | round 2 | original val evaluation] DONE: epoch 1/1; batch 1/1 (100.0%); examples 4/4; running loss=2.8281; elapsed=00:00:00; 196.3 examples/s; phase ETA~00:00:00
+[Client 3 | round 2 | original train evaluation] START: 34 examples; 1 epoch(s); 5 batches. Progress after completed batches every ~30s.
+[Client 3 | round 2 | original train evaluation] PROGRESS: epoch 1/1; batch 1/5 (20.0%); examples 8/34; running loss=0.0001; elapsed=00:00:00; 307.4 examples/s; phase ETA~00:00:00
+[Client 3 | round 2 | original train evaluation] DONE: epoch 1/1; batch 5/5 (100.0%); examples 34/34; running loss=3.6743; elapsed=00:00:00; 297.1 examples/s; phase ETA~00:00:00
+[Client 3 | round 2 | original selection evaluation] START: 6 examples; 1 epoch(s); 1 batches. Progress after completed batches every ~30s.
+[Client 3 | round 2 | original selection evaluation] DONE: epoch 1/1; batch 1/1 (100.0%); examples 6/6; running loss=2.5819; elapsed=00:00:00; 283.9 examples/s; phase ETA~00:00:00
+[Client 4 | round 2 | original val evaluation] START: 4 examples; 1 epoch(s); 1 batches. Progress after completed batches every ~30s.
+[Client 4 | round 2 | original val evaluation] DONE: epoch 1/1; batch 1/1 (100.0%); examples 4/4; running loss=2.8014; elapsed=00:00:00; 205.0 examples/s; phase ETA~00:00:00
+[Client 4 | round 2 | original train evaluation] START: 35 examples; 1 epoch(s); 5 batches. Progress after completed batches every ~30s.
+[Client 4 | round 2 | original train evaluation] PROGRESS: epoch 1/1; batch 1/5 (20.0%); examples 8/35; running loss=0.0002; elapsed=00:00:00; 279.8 examples/s; phase ETA~00:00:00
+[Client 4 | round 2 | original train evaluation] DONE: epoch 1/1; batch 5/5 (100.0%); examples 35/35; running loss=2.9734; elapsed=00:00:00; 288.9 examples/s; phase ETA~00:00:00
+[Client 4 | round 2 | original selection evaluation] START: 5 examples; 1 epoch(s); 1 batches. Progress after completed batches every ~30s.
+[Client 4 | round 2 | original selection evaluation] DONE: epoch 1/1; batch 1/1 (100.0%); examples 5/5; running loss=4.8067; elapsed=00:00:00; 244.0 examples/s; phase ETA~00:00:00
+[Client 5 | round 2 | original val evaluation] START: 4 examples; 1 epoch(s); 1 batches. Progress after completed batches every ~30s.
+[Client 5 | round 2 | original val evaluation] DONE: epoch 1/1; batch 1/1 (100.0%); examples 4/4; running loss=2.9081; elapsed=00:00:00; 158.3 examples/s; phase ETA~00:00:00
+[Client 5 | round 2 | original train evaluation] START: 34 examples; 1 epoch(s); 5 batches. Progress after completed batches every ~30s.
+[Client 5 | round 2 | original train evaluation] PROGRESS: epoch 1/1; batch 1/5 (20.0%); examples 8/34; running loss=0.0001; elapsed=00:00:00; 129.6 examples/s; phase ETA~00:00:00
+[Client 5 | round 2 | original train evaluation] DONE: epoch 1/1; batch 5/5 (100.0%); examples 34/34; running loss=3.2004; elapsed=00:00:00; 176.0 examples/s; phase ETA~00:00:00
+[Client 5 | round 2 | original selection evaluation] START: 6 examples; 1 epoch(s); 1 batches. Progress after completed batches every ~30s.
+[Client 5 | round 2 | original selection evaluation] DONE: epoch 1/1; batch 1/1 (100.0%); examples 6/6; running loss=3.9387; elapsed=00:00:00; 128.7 examples/s; phase ETA~00:00:00
+INFO :      aggregate_evaluate: received 5 results and 0 failures
+Saved global checkpoint: round 2, evaluated: D:\baize_thesis-main\baize_thesis-main\data\checkpoint-selection-smoke-v1\server\checkpoints\round_0002.npz
+Best checkpoint remains round 1: selection Adult F1=0.4865
+
+=== GLOBAL EVALUATION: round 2/2 | val ===
+Updated global model; original local data; summed confusion counts across five clients.
+Split                     N      Loss  Accuracy  Balanced  Macro-F1
+Train pool              172    3.3881    0.2965    0.5000    0.2287
+  Adult:     precision=0.2965  recall=1.0000  F1=0.4574
+  Non-adult: precision=0.0000  recall=0.0000  F1=0.0000
+  Confusion [[TN, FP], [FN, TP]]: [[0, 121], [0, 51]]
+Train selection          28    3.3265    0.3214    0.5000    0.2432
+  Adult:     precision=0.3214  recall=1.0000  F1=0.4865
+  Non-adult: precision=0.0000  recall=0.0000  F1=0.0000
+  Confusion [[TN, FP], [FN, TP]]: [[0, 19], [0, 9]]
+Validation               20    2.8721    0.5000    0.5000    0.3333
+  Adult:     precision=0.5000  recall=1.0000  F1=0.6667
+  Non-adult: precision=0.0000  recall=0.0000  F1=0.0000
+  Confusion [[TN, FP], [FN, TP]]: [[0, 10], [0, 10]]
+  Round wall time: 9.6s; summed client training: 2.3s
+  Serialized application payload: 178.62 MiB
+Rates are fractions (0 to 1). Validation/test do not select checkpoints or change thresholds.
+
+Completed 2 Flower rounds, five clients, in 31.05s; artifacts: D:\baize_thesis-main\baize_thesis-main\data\checkpoint-selection-smoke-v1
+Saved 4 measured metric rows and 6 plot files to D:\baize_thesis-main\baize_thesis-main\data\checkpoint-selection-smoke-v1\report
+No best method selected; missing experiments remain explicitly not measured.
+Matplotlib figures and measured metrics: D:\baize_thesis-main\baize_thesis-main\data\checkpoint-selection-smoke-v1\report

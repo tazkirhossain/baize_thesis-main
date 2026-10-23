@@ -1,0 +1,322 @@
+{
+  "status": "PASS",
+  "source_sha256": "79e32aeafc74a5c875add374d1ea5d163f867ee9109a47907c99271bb76002a4",
+  "environment": {
+    "git_commit": "NO_GIT_REPO - results are not tied to a code version",
+    "timestamp_utc": "2026-10-18T15:50:19Z",
+    "python": "3.13.5",
+    "numpy": "2.2.3",
+    "scipy": "1.15.3",
+    "sklearn": "1.7.0",
+    "tldextract": "5.1.2",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "ingestion": {
+    "input_rows": 1562978,
+    "accepted_before_dedup": 1561931,
+    "invalid_url:unsupported_scheme:ftp": 389,
+    "invalid_url:no_registrable_domain": 575,
+    "invalid_url:unsupported_scheme:gopher": 23,
+    "invalid_url:unsupported_scheme:news": 1,
+    "missing_url": 3,
+    "invalid_url:host_without_dot": 5,
+    "invalid_url:unsupported_scheme:telnet": 4,
+    "invalid_url:unsupported_scheme:irc": 1,
+    "invalid_url:unsupported_scheme:sherlock": 46
+  },
+  "reproduction": {
+    "source_files_sha256": {
+      "baize/__init__.py": "2495d69ef3e276b47ab84e06952fb2534d0c0e4548039e7b8c5bf5e5c7969350",
+      "baize/data/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "baize/data/dataset.py": "b9a4b67bb1696f0c882a343a006880c11f7b852dffcd6fb4d782b4e62e2b77f1",
+      "baize/data/features.py": "80242ca28d6fa328592066aed615fd8306f337eb88504e27180674d154ddd0ad",
+      "baize/data/loaders.py": "6462f78255a55a18953f3d72a7f79b93b8bdf3a8e8a4cb8abd7541984a128526",
+      "baize/data/noise.py": "c13bd00ecd9b012b40c08366d77d38cddd939e5411d8f5aaa5de9084f031b4e4",
+      "baize/data/partition.py": "c6c52573bf1097878e508fa11fc94f4fb8645d297c3ac206f530dd565f7e377e",
+      "baize/data/preprocessing.py": "995bb69241eebdc8bf2ded9e531e6b52106a60bd6ab88ce7596a343b858f92f2",
+      "baize/data/splits.py": "051a8ff33693eecfac55d53d6a3efa9f86d6b53ae95fe4c60e10575263bccb1f",
+      "baize/data/url.py": "8ad5ff48a3d1a831178ae70bc761e48ecb6106bb556c053b7a89535752f1bc0e",
+      "baize/data/validation.py": "44d9097ea55715f0a9350ae346fb846e37de513b7d6c5894a0e07c62384df2a6",
+      "baize/demo_server.py": "34aee5d5e675c3d36f8f73658d9e5cfb56bae35f2dbb803e8d337a88c2d594dd",
+      "baize/evaluation/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "baize/evaluation/budget.py": "c8c116f8374a588627659638df5c34373ff2f93b3ef3a9ea3f37284785bb2a64",
+      "baize/evaluation/convergence.py": "6814c1363f012ebb6bbaee8a072bfdd325edd6e666cef72d111d325dfb817511",
+      "baize/evaluation/metrics.py": "a7cc280a4877ae8c5a209c92bf92fa7c89fec47e6287b60979ecc23995fb201e",
+      "baize/evaluation/selection.py": "468a0db772cd0878c4a7bfe5aea9b26f60f885a0596a89e3fb83b40c9b9805df",
+      "baize/experiments/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "baize/experiments/runner.py": "87f2701a4e0bd3cee81018fc2c4871e5e9aa116bc57695b69d70ebf4d1c9c150",
+      "baize/federated/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "baize/federated/aggregation.py": "b483fff1328b9564e306bbc8f4b89f2e5206f69fe8a594c0dec5956b91db22e8",
+      "baize/federated/client.py": "d28865aa1bf98ceee1801312a7d6987f60dcbcf0dec8a9fef0b52bd2b524559f",
+      "baize/federated/simulator.py": "0e040adf1e7f1eca7e50e3190b6ad2ce63ef43bdc3bd586a74d7596c0019b030",
+      "baize/hparams.py": "48ecfd8e8ea76f1679fdbb89be5ab3a57065197a1a55d6b9187cf2e977a2f928",
+      "baize/inference.py": "46baeda0c5a3ee5386ac4785fa0d6e360bbca894d15164a9688a8c9052a342c7",
+      "baize/models/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "baize/models/linear.py": "e8f6ee5ec10fab6d1924932e5f5d1a006ab85521d23ab41eb15e997e501a1f72",
+      "baize/provenance.py": "0226929c24251112fd2677fa4dfe7d29405ba26236e315539e8365237d0ff0d9",
+      "baize/research_snapshot.py": "7ed69c8e5b2561bb6e592e23c2f3610ce8d9f5b721a609ebfc2931a4e3a43aa1",
+      "scripts/prepare_clients.py": "8f4ca28a1a674e30502ef0e2f7ec04d6f28c1b139a6fb0ef5cc00e69474ef7d6",
+      "scripts/split_client.py": "6fe1dec9d9b4cfadfd151957fd85c8e744594de126f2ddf30452375524904048",
+      "scripts/check_repository_safety.py": "ee9df7cf7472baf63e4eaf3ca2a94e96faf461e33cbc7fc175c7ac85055cccb0",
+      ".gitignore": "4b297a80b8ec7304cc6a392564f9cf95d21026f2428f9a9072814537bb18c955",
+      "requirements.txt": "81c6526a50957cd62fa1a746560795e64de6318b10c4cdf0ec581482d4dee037",
+      "pyproject.toml": "5693dba9f482d296be8e511743ebad44a8e20210467f19eb9bc33b82eab078e6",
+      "docs/PREPROCESSING.md": "8cc2ab154c9ec1f5ad71dab04a447ba16588ee53ab8bc5447c30c6600edc3883"
+    },
+    "source_tree_sha256": "e8f8653ae7cca3d30ed62a6769dd6e191f2ac1d166d44d368db73a4ba81c5810",
+    "runtime_requirements_sha256": "a6552649214474ea066b3d0410f55e304c1576af19e0ed904659965af1fe2741",
+    "cold_environment_reproduction_verified": false
+  },
+  "input_schema": {
+    "header_mode": "absent",
+    "header_detected": false,
+    "columns": [
+      "id",
+      "url",
+      "label"
+    ]
+  },
+  "missing_values": {
+    "id": 0,
+    "url": 3,
+    "label": 0
+  },
+  "rejection_reason_counts": {
+    "invalid_url:unsupported_scheme:ftp": 389,
+    "invalid_url:no_registrable_domain": 575,
+    "invalid_url:unsupported_scheme:gopher": 23,
+    "invalid_url:unsupported_scheme:news": 1,
+    "missing_url": 3,
+    "invalid_url:host_without_dot": 5,
+    "invalid_url:unsupported_scheme:telnet": 4,
+    "invalid_url:unsupported_scheme:irc": 1,
+    "invalid_url:unsupported_scheme:sherlock": 46
+  },
+  "raw_source_category_counts": {
+    "Adult": 35325,
+    "Arts": 253840,
+    "Business": 240177,
+    "Computers": 117962,
+    "Games": 56477,
+    "Health": 60097,
+    "Home": 28269,
+    "Kids": 46182,
+    "News": 8989,
+    "Recreation": 106586,
+    "Reference": 58247,
+    "Science": 110286,
+    "Shopping": 95270,
+    "Society": 243943,
+    "Sports": 101328
+  },
+  "accepted_category_counts_before_dedup": {
+    "adult": 35316,
+    "arts": 253744,
+    "business": 240107,
+    "computers": 117635,
+    "games": 56445,
+    "health": 60077,
+    "home": 28264,
+    "kids": 46122,
+    "news": 8987,
+    "recreation": 106539,
+    "reference": 58204,
+    "science": 110143,
+    "shopping": 95263,
+    "society": 243792,
+    "sports": 101293
+  },
+  "rejected_rows": 1047,
+  "duplicate_rows_removed": 89385,
+  "conflicting_urls_removed": 148,
+  "conflicting_source_rows": 4303,
+  "excluded_records": {
+    "n_records": 94735,
+    "reason_counts": {
+      "invalid_url:unsupported_scheme:ftp": 389,
+      "invalid_url:no_registrable_domain": 575,
+      "invalid_url:unsupported_scheme:gopher": 23,
+      "invalid_url:unsupported_scheme:news": 1,
+      "missing_url": 3,
+      "invalid_url:host_without_dot": 5,
+      "invalid_url:unsupported_scheme:telnet": 4,
+      "invalid_url:unsupported_scheme:irc": 1,
+      "invalid_url:unsupported_scheme:sherlock": 46,
+      "label_conflict": 4303,
+      "duplicate_url": 89385
+    },
+    "file": "exclusions.jsonl",
+    "sha256": "13a32f8f48fe1c73519c76b578c7369bf4b0dda56bbce5a0b74cf45c74b24fee"
+  },
+  "quarantine_sha256": "a38cce1001dbf2d0c3460cbc8edd631c0cb4318d6fb7488981174bb9b5cb80cf",
+  "retained_records": 1468243,
+  "clients": [
+    {
+      "client_id": 0,
+      "state": "allocated_unsplit",
+      "dataset": {
+        "n_records": 293650,
+        "class_counts": {
+          "0": 286687,
+          "1": 6963
+        },
+        "positive_rate": 0.023711901924059253,
+        "n_domains": 172839,
+        "category_counts": {
+          "adult": 6963,
+          "arts": 49574,
+          "business": 47235,
+          "computers": 21193,
+          "games": 9595,
+          "health": 11667,
+          "home": 5180,
+          "kids": 6962,
+          "news": 1662,
+          "recreation": 23780,
+          "reference": 10680,
+          "science": 17335,
+          "shopping": 18794,
+          "society": 44599,
+          "sports": 18431
+        },
+        "sha256": "96fc5fd2e6c59754c5ed1b926d10c8807422008eeb0315064c2989cf8a52d36d"
+      }
+    },
+    {
+      "client_id": 1,
+      "state": "allocated_unsplit",
+      "dataset": {
+        "n_records": 293649,
+        "class_counts": {
+          "0": 286687,
+          "1": 6962
+        },
+        "positive_rate": 0.023708577246985347,
+        "n_domains": 172861,
+        "category_counts": {
+          "adult": 6962,
+          "arts": 44511,
+          "business": 48047,
+          "computers": 20420,
+          "games": 11234,
+          "health": 11129,
+          "home": 5359,
+          "kids": 7126,
+          "news": 1664,
+          "recreation": 20154,
+          "reference": 10938,
+          "science": 20507,
+          "shopping": 19172,
+          "society": 45790,
+          "sports": 20636
+        },
+        "sha256": "9755b8ed76b9d1b558df68ab4900afab7a5b4412ab9bc97b966b5fede6360536"
+      }
+    },
+    {
+      "client_id": 2,
+      "state": "allocated_unsplit",
+      "dataset": {
+        "n_records": 293648,
+        "class_counts": {
+          "0": 286686,
+          "1": 6962
+        },
+        "positive_rate": 0.02370865798507056,
+        "n_domains": 172842,
+        "category_counts": {
+          "adult": 6962,
+          "arts": 47195,
+          "business": 47278,
+          "computers": 22753,
+          "games": 13406,
+          "health": 11573,
+          "home": 6647,
+          "kids": 6938,
+          "news": 1680,
+          "recreation": 20156,
+          "reference": 9782,
+          "science": 20014,
+          "shopping": 18799,
+          "society": 42735,
+          "sports": 17730
+        },
+        "sha256": "969ef26225f8a584e53af695c65375c25d824bf73fdb5773795df915b4f661af"
+      }
+    },
+    {
+      "client_id": 3,
+      "state": "allocated_unsplit",
+      "dataset": {
+        "n_records": 293648,
+        "class_counts": {
+          "0": 286686,
+          "1": 6962
+        },
+        "positive_rate": 0.02370865798507056,
+        "n_domains": 172824,
+        "category_counts": {
+          "adult": 6962,
+          "arts": 44438,
+          "business": 46591,
+          "computers": 21360,
+          "games": 8138,
+          "health": 10630,
+          "home": 4345,
+          "kids": 8358,
+          "news": 1708,
+          "recreation": 19779,
+          "reference": 10338,
+          "science": 20108,
+          "shopping": 18519,
+          "society": 53197,
+          "sports": 19177
+        },
+        "sha256": "0e557c211be6178be889d2bfbe07e32353fe7a9a6679bdf393a2da3eea9e6b31"
+      }
+    },
+    {
+      "client_id": 4,
+      "state": "allocated_unsplit",
+      "dataset": {
+        "n_records": 293648,
+        "class_counts": {
+          "0": 286686,
+          "1": 6962
+        },
+        "positive_rate": 0.02370865798507056,
+        "n_domains": 172791,
+        "category_counts": {
+          "adult": 6962,
+          "arts": 52086,
+          "business": 46254,
+          "computers": 25375,
+          "games": 10173,
+          "health": 13024,
+          "home": 5355,
+          "kids": 7693,
+          "news": 1659,
+          "recreation": 18554,
+          "reference": 11916,
+          "science": 19799,
+          "shopping": 17949,
+          "society": 40051,
+          "sports": 16798
+        },
+        "sha256": "867d64b1aada1855b9d2b1c2a6cc3f645ad1a68ef9b9c88f5a9d5097466ae911"
+      }
+    }
+  ],
+  "checks": {
+    "row_accounting": true,
+    "all_clients_have_both_classes": true,
+    "unique_domain_ownership": true,
+    "record_coverage": true,
+    "complete_exclusion_ledger": true
+  },
+  "notes": [
+    "Class/category proportions and split fractions are approximate because domains are indivisible.",
+    "Quarantine is excluded from all training and evaluation; labels are never guessed.",
+    "No sitemap, robots.txt, metadata fetching or LLM labelling has been performed."
+  ]
+}

@@ -1,0 +1,71 @@
+# Root-anchored local datasets; keep source under src/data/ versionable.
+/data/, silently
+# excluding the data-processing package. Caught by cloning the bundle and
+# running the tests from the clone.
+/data/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.pkl
+logs_*.txt
+CLAUDE.md
+.venv/
+
+# Local datasets, exports and sensitive artifacts, including custom output paths.
+*.csv
+*.tsv
+*.parquet
+*.arrow
+*.xlsx
+*.xls
+*.jsonl
+*.sqlite
+*.sqlite3
+*.db
+*.zip
+*.7z
+*.tar
+*.gz
+*.npz
+*.npy
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.h5
+*.hdf5
+*.joblib
+**/client_*/
+**/code_snapshot/
+**/checkpoints/
+/models/
+/artifacts/
+/outputs/
+/runs/
+/logs/
+.preparing-*/
+.splitting-*/
+
+# Credentials and private keys. Only deliberately sanitized examples are allowed.
+.env
+.env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+id_rsa
+id_ed25519
+.aws/
+.ssh/
+.azure/
+credentials.json
+credentials.*.json
+secrets.json
+secrets.yaml
+secrets.yml
+secrets.toml

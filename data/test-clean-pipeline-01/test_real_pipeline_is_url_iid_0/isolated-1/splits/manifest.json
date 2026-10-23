@@ -1,0 +1,60 @@
+{
+  "client_id": 1,
+  "state": "split_locally",
+  "source_sha256": "9d88fad93c0723f45117c9c23923e602c18e27d6258f44c09ca3627b9dc31904",
+  "splits": {
+    "train": {
+      "n_records": 333,
+      "class_counts": {
+        "0": 262,
+        "1": 71
+      },
+      "positive_rate": 0.2132132132132132,
+      "n_domains": 272,
+      "category_counts": {
+        "adult": 71,
+        "health": 85,
+        "arts": 85,
+        "business": 92
+      },
+      "sha256": "30fe4a652785d864c0c1fa92c73b26f045883a33da0b5e17f18649031fedaa98"
+    },
+    "val": {
+      "n_records": 59,
+      "class_counts": {
+        "0": 39,
+        "1": 20
+      },
+      "positive_rate": 0.3389830508474576,
+      "n_domains": 50,
+      "category_counts": {
+        "health": 18,
+        "adult": 20,
+        "arts": 10,
+        "business": 11
+      },
+      "sha256": "c15f4783abe60868ad6e46301bd9705d61a408084d6fc69c1d4a82ea0b4883a3"
+    },
+    "test": {
+      "n_records": 88,
+      "class_counts": {
+        "0": 59,
+        "1": 29
+      },
+      "positive_rate": 0.32954545454545453,
+      "n_domains": 69,
+      "category_counts": {
+        "arts": 25,
+        "health": 17,
+        "business": 17,
+        "adult": 29
+      },
+      "sha256": "64f86b615195a1ba04f906d9514fd3fb090ebe75f29f0fa44384e23434493683"
+    }
+  },
+  "preprocessing_sha256": "d1be84506b102488443c53eecb08acae61e8ed76154b3f7df824a10e305b6fc8",
+  "split_policy": {
+    "type": "shared_domain_hash_v1",
+    "seed": 0
+  }
+}

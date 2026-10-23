@@ -1,0 +1,60 @@
+INFO :      [INIT]
+INFO :      Using initial global parameters provided by strategy
+INFO :      Starting evaluation of initial global parameters
+INFO :      Evaluation returned no results (`None`)
+INFO :      
+INFO :      [ROUND 1]
+INFO :      configure_fit: strategy sampled 5 clients (out of 5)
+Client 1, round 1, member 1
+undersampling [applied] seed=1896493428 target Adult:Non-adult=1:1
+  BEFORE: Adult=2, Non-adult=10
+  AFTER:  Adult=2, Non-adult=2; duplicated=0, synthetic=0, unused originals=8
+Client 2, round 1, member 1
+undersampling [applied] seed=2134191843 target Adult:Non-adult=1:1
+  BEFORE: Adult=3, Non-adult=9
+  AFTER:  Adult=3, Non-adult=3; duplicated=0, synthetic=0, unused originals=6
+Client 3, round 1, member 1
+undersampling [applied] seed=1385871029 target Adult:Non-adult=1:1
+  BEFORE: Adult=4, Non-adult=8
+  AFTER:  Adult=4, Non-adult=4; duplicated=0, synthetic=0, unused originals=4
+Client 4, round 1, member 1
+undersampling [applied] seed=2958905532 target Adult:Non-adult=1:1
+  BEFORE: Adult=5, Non-adult=7
+  AFTER:  Adult=5, Non-adult=5; duplicated=0, synthetic=0, unused originals=2
+Client 5, round 1, member 1
+undersampling [unchanged_already_at_or_above_target] seed=4104139034 target Adult:Non-adult=1:1
+  BEFORE: Adult=6, Non-adult=6
+  AFTER:  Adult=6, Non-adult=6; duplicated=0, synthetic=0, unused originals=0
+INFO :      aggregate_fit: received 5 results and 0 failures
+INFO :      configure_evaluate: strategy sampled 5 clients (out of 5)
+INFO :      aggregate_evaluate: received 5 results and 0 failures
+Round 1 global val: Adult F1=0.6429, balanced accuracy=0.5000
+INFO :      
+INFO :      [ROUND 2]
+INFO :      configure_fit: strategy sampled 5 clients (out of 5)
+Client 1, round 2, member 1
+undersampling [applied] seed=697079281 target Adult:Non-adult=1:1
+  BEFORE: Adult=2, Non-adult=10
+  AFTER:  Adult=2, Non-adult=2; duplicated=0, synthetic=0, unused originals=8
+Client 2, round 2, member 1
+undersampling [applied] seed=2436437895 target Adult:Non-adult=1:1
+  BEFORE: Adult=3, Non-adult=9
+  AFTER:  Adult=3, Non-adult=3; duplicated=0, synthetic=0, unused originals=6
+Client 3, round 2, member 1
+undersampling [applied] seed=1939820029 target Adult:Non-adult=1:1
+  BEFORE: Adult=4, Non-adult=8
+  AFTER:  Adult=4, Non-adult=4; duplicated=0, synthetic=0, unused originals=4
+Client 4, round 2, member 1
+undersampling [applied] seed=2547676586 target Adult:Non-adult=1:1
+  BEFORE: Adult=5, Non-adult=7
+  AFTER:  Adult=5, Non-adult=5; duplicated=0, synthetic=0, unused originals=2
+Client 5, round 2, member 1
+undersampling [unchanged_already_at_or_above_target] seed=2353232201 target Adult:Non-adult=1:1
+  BEFORE: Adult=6, Non-adult=6
+  AFTER:  Adult=6, Non-adult=6; duplicated=0, synthetic=0, unused originals=0
+INFO :      aggregate_fit: received 5 results and 0 failures
+INFO :      configure_evaluate: strategy sampled 5 clients (out of 5)
+INFO :      aggregate_evaluate: received 5 results and 0 failures
+Round 2 global val: Adult F1=0.0000, balanced accuracy=0.5000
+Round 2 global test: Adult F1=0.0000, balanced accuracy=0.5000
+Completed 2 Flower rounds, five clients, in 9.79s; artifacts: D:\baize_thesis-main\baize_thesis-main\data\federated-cnn-evaluation-v3

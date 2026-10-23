@@ -1,0 +1,60 @@
+{
+  "client_id": 3,
+  "state": "split_locally",
+  "source_sha256": "3c17bc148f812b235f532341db1dc7f6641eac528eaa63a3153962fb0c949462",
+  "splits": {
+    "train": {
+      "n_records": 213960,
+      "class_counts": {
+        "0": 208928,
+        "1": 5032
+      },
+      "positive_rate": 0.023518414656945222,
+      "n_domains": 119888,
+      "category_counts": {
+        "adult": 5032,
+        "recreation": 37498,
+        "reference": 6495,
+        "society": 164935
+      },
+      "sha256": "f4e2cb59d447fd58ce9709a180adff4f65447341da221d9a2c34e6b3cac7bdf9"
+    },
+    "val": {
+      "n_records": 36165,
+      "class_counts": {
+        "0": 35189,
+        "1": 976
+      },
+      "positive_rate": 0.02698741877505876,
+      "n_domains": 25436,
+      "category_counts": {
+        "adult": 976,
+        "recreation": 6305,
+        "reference": 1396,
+        "society": 27488
+      },
+      "sha256": "3a9a46aea098803752a0e92426d967d4d77c52c9a6c73c117069407e782d90a3"
+    },
+    "test": {
+      "n_records": 43523,
+      "class_counts": {
+        "0": 42569,
+        "1": 954
+      },
+      "positive_rate": 0.021919444891206948,
+      "n_domains": 25705,
+      "category_counts": {
+        "adult": 954,
+        "recreation": 7339,
+        "reference": 1281,
+        "society": 33949
+      },
+      "sha256": "fdb62ca44e443a1c77ff7c4fedc1dde1dbe66a4c327e657e2f6eee2cd0cbb800"
+    }
+  },
+  "preprocessing_sha256": "97a0acb25682f9c2ae26dc21dd6f8bfbef1d6402a16fd5d2824126d62a768880",
+  "split_policy": {
+    "type": "shared_domain_hash_v1",
+    "seed": 0
+  }
+}

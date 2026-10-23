@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "baize"
+version = "0.1.0"
+description = "Privacy-conscious adult-URL detection under federated learning with noisy labels"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+    "numpy==2.4.4",
+    "scipy==1.17.1",
+    "scikit-learn==1.8.0",
+    "pandas==3.0.2",
+    "tldextract==5.3.1",
+    "PyYAML==6.0.3",
+    "packaging==24.2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==9.1.1"]
+
+[tool.setuptools.packages.find]
+include = ["baize*", "src*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

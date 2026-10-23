@@ -1,0 +1,196 @@
+{
+  "status": "PASS",
+  "source_sha256": "675fa659c3ee0dfd3741934df9d432771d73881493170ed44b779b2391efaa44",
+  "environment": {
+    "git_commit": "NO_GIT_REPO - results are not tied to a code version",
+    "timestamp_utc": "2026-10-23T10:16:25Z",
+    "python": "3.13.5",
+    "numpy": "2.2.3",
+    "scipy": "1.15.3",
+    "sklearn": "1.7.0",
+    "tldextract": "5.1.2",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "ingestion": {
+    "input_rows": 240,
+    "accepted_before_dedup": 240
+  },
+  "reproduction": {
+    "source_files_sha256": {
+      "src/__init__.py": "cf92cb85f16eda9d283cf7967fa1ceb94424fea49c83fe33b0317ce345499d1d",
+      "src/client/__init__.py": "b5dda78be0bd21bfeceb6152cdbd05a66b066160776540ab8598fbebdbe39ee9",
+      "src/client/data.py": "f0061ac5cb2d5bb165182db1089df0f84232487c0c15405602297934c1618fc0",
+      "src/client/embedding_training.py": "0c9348dadb6807df57b0bed46a4f03fdd6b6db56de826d41842ec0d56f96a45d",
+      "src/client/flower_client.py": "33c6b43c62d6220cad0bdd6d0f78438c0ea5c7cbd3c39207d56bfb648d079315",
+      "src/client/neural_data.py": "d42c9583608bad1ab822571fc437baa99c115de8a7826477e2efb5c0922904dd",
+      "src/data/__init__.py": "d964608c07144fe039d702c3c2b1d2db84224132a31d2229b0751cc93d674eb1",
+      "src/data/allocation_plans.py": "4a2314b272753d760e1d5f6b3345aabcee2b4520cbcaa4cbaf0510ffde646784",
+      "src/data/balancing.py": "89d774cfb08fc242c1d2b50428a1ede6de8e0c59bd70b612c8b2758bdf389fdc",
+      "src/data/comparison.py": "afd55cbe4f419da73782c4936c50ccb0e29b0101c3e6dd7239915dc92977f463",
+      "src/data/embedding_smote.py": "8939d2d9aba842909a02d29f7e96feebda02b1d121659b0a65ae8c370e627ecd",
+      "src/data/features.py": "b5262f3350f72d93c9a7e8b44366245807ac7289984225563e17208c182e6755",
+      "src/data/iid_partitioning.py": "5e05812031159e7d2890185bfddedd5657834ef879aa71b5b624918e9acdd067",
+      "src/data/non_iid_partitioning.py": "654c45cd946621ed28d8afa50a452cf68f6fd2ff69cfa2b53d920aba9bc309f4",
+      "src/data/numerical_features.py": "39ffafa83953d073165152eeab5d20784d27bd48fdafc6aae74fd4ede2e1f66d",
+      "src/data/partitioning.py": "57c4d308616e2dc32c76fa02320aace358992757d912aef09f3d2fbc64cfe691",
+      "src/data/planned_partitioning.py": "02d75cc7753e1ee8bd76b63281f83556ee5fa5abde73d638eaf8756600c46875",
+      "src/data/preprocessing.py": "a48758af755175e53f4fbcd8539e1c039cda37d2c7fd966bf231c987e6440de9",
+      "src/data/protection.py": "4b77ac428b0d8d9e895cb13d56d7b04059f2c44470102bd4ae5a734f22ac86e6",
+      "src/data/sampling.py": "c6e380f348b06190d0b50206a6a9e764e96a420cc1d13b89b799ca93e2fa79ea",
+      "src/data/schema.py": "a6e9d098d097901c167540b7124868a80a8498184fe128ca5895fd1fe307f35a",
+      "src/data/smote.py": "bb29c667fe54dd5d21f3406920f47ef347a62d74d3e923b121215206aeb07e06",
+      "src/data/split_policy.py": "169a05b68b9268288556f90c16a5991ebb4ca02fadf7417146a387f40012a9fa",
+      "src/data/strategies.py": "5efd91c725da8fe0c8a0dabf5e0fb7f56f3363d782b00636c815eeef29d49b41",
+      "src/data/url.py": "d2ccf54faa2f8d12baddf9104dfd37ce8825139db6bc23a228e927c6c2a1a21d",
+      "src/data/verification.py": "c9b7bb6d6f9aeb2b1547059beab9bc5577afb34920ffb1efc2649c4df22a1112",
+      "src/evaluation/__init__.py": "1def2bd6991c9adc661faada3ead82895c1d110a88cf7c3e2def933dd8ae9bbf",
+      "src/evaluation/balancing_comparison.py": "e539bb116f2925f8db974f332e9a823a87f5a2f9de46c49e4bcc1a0db6d40146",
+      "src/evaluation/balancing_metrics.py": "38bde307979d163cea548829e61265d7a93266cbf0502411f32562d169fd3339",
+      "src/evaluation/classification.py": "6c94b531108a751cf9ae38d2194dcf0b796073529f1d575e73bdb35214c0c244",
+      "src/evaluation/federated.py": "2687af7f1652d1ee7d0dd105d6e8fbf162c06b7494dce0012fbec377f9653d91",
+      "src/evaluation/plots.py": "864e0d92a0225960d3afe08f596357c3ae590e2922c041843a1d477039512aa2",
+      "src/evaluation/reporting.py": "b763263d1e9d36db4549037206a8b9a59cca2bb57d832e4f52c7d5fa279c5280",
+      "src/models/__init__.py": "79bf1db281f1dffe622d0b923d0ed5c3111249bb399b6660e422cabef19826bc",
+      "src/models/character_cnn/__init__.py": "d935026a052516727a11aa01b4142080e309ff8ac0cc1b2c1828cb1e530a614a",
+      "src/models/character_cnn/model.py": "0cfd92bbca1a486f0bd623f326db8df6aa1b6d40922e9507fd5cd6de47e479be",
+      "src/models/deberta_v3_base/__init__.py": "6544de6766a3c0967636e5a83c88423185cedd7baa685b01e71f857f55d74c4b",
+      "src/models/deberta_v3_base/model.py": "b10a9ebca5cc1c1ed6264fe161f87fdb1bed20a448f42e0d99f0225601265e5e",
+      "src/models/federated_state.py": "9d0a4e8cb35158a50837e2d5f920c214546af520c5c4e2224b3a9e45db9adb17",
+      "src/provenance.py": "cefcfd72ad1ba81ecdff35003d833209d7289a87cf854a3d467c752f020038d0",
+      "src/server/__init__.py": "8ad275d20de8215b25df058dc2b8de6b5b5adf559fb7e19fb6f8d24c90f7e567",
+      "src/server/config.py": "ad090b93a279d591546d3d7f18142ba46d92b33bdcd042243d86cf9e0499fd1e",
+      "src/server/flower_strategy.py": "e2dd05349fd72ea55e88538c0e170e06ede252fff475e8ca02f7711118b14274",
+      "src/server/local_transport.py": "16f9085d009dc0566bbee78da0bb007f062f09dd911366b2de42a86a416b7993",
+      "src/transport.py": "d62bbd50c0acb041f1fb1befce41c52ad3698d57238e405facdb4bb6a6ff9fc9",
+      "config/five_client_iid.json": "2dad6d3dcd2150bdb018930a2fcf0d4d1bbf019270169dae4aa058a7ebf28d79",
+      "config/five_client_non_iid.json": "0113874bcbb8b080664624890fa9dba281f2f88ba6616e64c0d2520fd3a06759",
+      "config/five_client_label_skew.json": "0113874bcbb8b080664624890fa9dba281f2f88ba6616e64c0d2520fd3a06759",
+      "config/five_client_category_skew.json": "81ed3b08f582bf1b51b49ebe0a561771c0546ef116d4ed21d70034e96e54dca2",
+      "config/five_client_dirichlet.json": "e244346c6e1fdb13177253221e5276edb33b1e11dbc9fa15539a6bb1c73fab4d",
+      "config/balancing/undersampling.json": "6ae08243b4b35c0f1f1c16de93793142ec6228049ff8a1c854dbdad38d2606ad",
+      "config/balancing/oversampling.json": "b4b3cd9f34521478182a6c13affaf2ad9389372835921b34936bf8c1eb86c305",
+      "config/balancing/smote.json": "f22b06c2cb43d7f7f60c09006d862c3a5e9bb5351f1ffd706ca4dfe3f6436e5d",
+      "config/balancing/ensemble_undersampling.json": "5426e7c401d70d48e19aead0d40519d1c07c5781694d7c9f001f2a1ce0f11f51",
+      "scripts/prepare_clients.py": "6fc20c93e221bbf458a3cde928ea5156f5888c009b7520f5dc790d920be74e65",
+      "scripts/split_client.py": "d0fec1b79aec6b6b756d97764e15d499bd2de23961b1ef04e026626c9f3c1a28",
+      "scripts/check_repository_safety.py": "730fd972948c091436bb8aaf61e387f79e00122256699113c51967200b3eb395",
+      "scripts/partition_iid.py": "3fcd2ec17e460a5dd9401623ea145ae9f488628d6948536c334312f471b58640",
+      "scripts/partition_clients.py": "d0cf08d8e8b08c7e801d3811478105aa509abbee4bc9071182fa392b2754c550",
+      "scripts/compare_partitions.py": "1100e2692787a31d86b4c866e62c5d22a05933517b34e4bc7b2d1da7f089f925",
+      "scripts/create_category_skew_config.py": "0268998e10ac84a86d18c71ebe01c1a5282b3bdc1ab0554bec80d2579dcadb59",
+      "scripts/verify_partitions.py": "f81da768d779ae45b964edd7ec98396222ecff78ad861d2dab14b8b2b0d7830a",
+      "scripts/prepare_deberta.py": "ffee776b5dd49e12a6f388377828049f261816ff270731f79b898c36fd4735f7",
+      "config/models/deberta_v3_base.json": "7a52c61e8cc7b5f9df329ddcdd0a6990d2ba34afbdde05cf691dc0ac6754aaef",
+      ".gitignore": "c6fe2aad7cc78c1195c07c0f922af71b91d01c733ac60fb168da7b0b0ad6635e",
+      "requirements.txt": "cbfee971ad5b53efd14bb210efaed2115f1984cd3427d8935638e4040b584a34",
+      "pyproject.toml": "d9ff5e62d24591b7f9cb36969e37f4f552fdc97d29b38a12dc2bad86bebdb1fd",
+      "docs/PREPROCESSING.md": "a50fa8c07ebe5daa53c99a7f135cc7b73974a79439f5a646d67f96c421662cde"
+    },
+    "source_tree_sha256": "c86b11696f814cc6657c8a7e41a48442afadab90598cb4883e4d9bce0d1aceee",
+    "runtime_requirements_sha256": "58b676c6d28e1ac0201e8aa3a0693e5996e875dcae7bee6e658ec6c0d0cb848c",
+    "cold_environment_reproduction_verified": false
+  },
+  "input_schema": {
+    "header_mode": "auto",
+    "header_detected": false,
+    "columns": [
+      "id",
+      "url",
+      "label"
+    ]
+  },
+  "missing_values": {
+    "id": 0,
+    "url": 0,
+    "label": 0
+  },
+  "rejection_reason_counts": {},
+  "raw_source_category_counts": {
+    "Health": 120,
+    "Adult": 120
+  },
+  "accepted_category_counts_before_dedup": {
+    "health": 120,
+    "adult": 120
+  },
+  "rejected_rows": 0,
+  "duplicate_rows_removed": 0,
+  "conflicting_urls_removed": 0,
+  "conflicting_source_rows": 0,
+  "excluded_records": {
+    "n_records": 0,
+    "reason_counts": {},
+    "file": "exclusions.jsonl",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "quarantine_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "retained_records": 240,
+  "clients": [
+    {
+      "client_id": 0,
+      "state": "allocated_unsplit",
+      "dataset": {
+        "n_records": 80,
+        "class_counts": {
+          "0": 40,
+          "1": 40
+        },
+        "positive_rate": 0.5,
+        "n_domains": 40,
+        "category_counts": {
+          "health": 40,
+          "adult": 40
+        },
+        "sha256": "a47e7fc438cf095bd630b756576fdb8dc6fd48cb63975dce0bc1b7d921b6d0d1"
+      }
+    },
+    {
+      "client_id": 1,
+      "state": "allocated_unsplit",
+      "dataset": {
+        "n_records": 80,
+        "class_counts": {
+          "0": 40,
+          "1": 40
+        },
+        "positive_rate": 0.5,
+        "n_domains": 40,
+        "category_counts": {
+          "adult": 40,
+          "health": 40
+        },
+        "sha256": "e4a6d4d61ca6c9ea72b3bfa394a470e7cab5f6cd28c4bc27e8d0c7a4f4da7cd1"
+      }
+    },
+    {
+      "client_id": 2,
+      "state": "allocated_unsplit",
+      "dataset": {
+        "n_records": 80,
+        "class_counts": {
+          "0": 40,
+          "1": 40
+        },
+        "positive_rate": 0.5,
+        "n_domains": 40,
+        "category_counts": {
+          "health": 40,
+          "adult": 40
+        },
+        "sha256": "fe5362ccbb57df44402df6ee9ccab4431e0460a0fd3de4a950807be87097b019"
+      }
+    }
+  ],
+  "checks": {
+    "row_accounting": true,
+    "all_clients_have_both_classes": true,
+    "unique_domain_ownership": true,
+    "record_coverage": true,
+    "complete_exclusion_ledger": true
+  },
+  "notes": [
+    "Class/category proportions and split fractions are approximate because domains are indivisible.",
+    "Quarantine is excluded from all training and evaluation; labels are never guessed.",
+    "No sitemap, robots.txt, metadata fetching or LLM labelling has been performed."
+  ]
+}

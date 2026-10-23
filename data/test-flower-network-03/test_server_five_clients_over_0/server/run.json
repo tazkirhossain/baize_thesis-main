@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "configuration": {
+    "n_clients": 5,
+    "rounds": 1,
+    "clients_per_round": 5,
+    "local_epochs": 1,
+    "batch_size": 8,
+    "learning_rate": 0.001,
+    "seed": 42,
+    "model": {
+      "family": "character_cnn",
+      "characters": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~:/?#[]@!$&'()*+,;=%",
+      "sequence_length": 16,
+      "dropout_input": 0.1
+    },
+    "balancing": {
+      "method": "undersampling",
+      "adult_to_non_adult": "1:1",
+      "seed": 42,
+      "ensemble_members": 5,
+      "k_neighbors": 5,
+      "insufficient_minority": "adjust"
+    },
+    "aggregation_weight": "original_training",
+    "threshold": 0.5,
+    "evaluate_final_test": false
+  },
+  "contract": "5eb0f25e15b5092b277a0c9408ef990cf71d31d3f58300282cff7004051005e6",
+  "schema": [
+    [
+      0,
+      "linear.weight",
+      [
+        2,
+        86
+      ],
+      "<f4"
+    ],
+    [
+      0,
+      "linear.bias",
+      [
+        2
+      ],
+      "<f4"
+    ]
+  ],
+  "schema_hash": "fa14c1e6d16a30c106426e5e52838253307b75fa35bf9ea17d28187138eec66f",
+  "initial_global_hash": "02b57767f5029e3120f217223932a7f934cbec32b9ba6ace49076fff2f0520b8",
+  "global_hash": "84796037c3555e95b6aab59a9cc205e50970c6a48bdbfa9f8b7614ca4186caa1",
+  "completed_rounds": 1,
+  "privacy": "model states and aggregate statistics only; no DP or secure aggregation",
+  "selection": "fixed final round, no holdout-driven tuning"
+}

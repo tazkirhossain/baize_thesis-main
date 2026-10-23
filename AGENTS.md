@@ -87,10 +87,15 @@ opt-in. Existing snapshots, original data and past aggregate reports are immutab
 keep them readable as history, not active model implementations. A verified local
 recovery archive is in `data/cleanup-2026-10-23/`.
 
-Keep data, exports, raw IDs/URLs, credentials, private keys, checkpoints, caches
-and sensitive generated artifacts ignored. Only sanitized aggregate reports go
-in `results/`. Keep the repository safety check and CI. No dataset upload or
-notification workflow is authorized. The user requested publishing on
+Publication policy changed explicitly by the user on 23 October 2026: publish
+the whole data folder and remove ignore patterns. This supersedes earlier
+dataset/artifact exclusions. Actual credentials/private keys remain prohibited;
+the updated repository safety check and CI enforce that. Data, exports, model
+states, caches, dependencies and historical artifacts are authorized for this
+publication. Use Git LFS for large files and preserve nested test-repo .git
+metadata in the documented archive, never as submodules. Do not publish the
+root repository's .git metadata. No notification workflow is authorized.
+The user requested publishing on
 codex/federated-url-pipeline, keeping main untouched. The authorized origin is
 https://github.com/tazkirhossain/baize_thesis-main.git. The destination was empty
 when inspected before the first push. Preserve any remote history on later pushes.

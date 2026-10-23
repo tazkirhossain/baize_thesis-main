@@ -1,0 +1,31 @@
+{
+  "method": "ensemble_undersampling",
+  "split": "train",
+  "config": {
+    "method": "undersampling",
+    "adult_to_non_adult": "1:1",
+    "seed": 3338804745,
+    "ensemble_members": 2,
+    "k_neighbors": 5,
+    "insufficient_minority": "adjust"
+  },
+  "before": {
+    "Adult": 3,
+    "Non-adult": 9
+  },
+  "after": {
+    "Adult": 3,
+    "Non-adult": 3
+  },
+  "achieved_adult_to_non_adult": 1.0,
+  "status": "applied",
+  "duplicated_examples": 0,
+  "synthetic_examples": 0,
+  "removed_training_examples": 6,
+  "selection_sha256": "7b571a0a097c41fd83112820e678d4a5eb65bee3dc9577e02c8f036afad9f7f2",
+  "member": 0,
+  "member_seed": 3338804745,
+  "ensemble_seed": 2134191843,
+  "round": 1,
+  "warmup_examples_processed": 12
+}

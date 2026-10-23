@@ -1,0 +1,19 @@
+{
+  "policy": "shared-training-selection-domain-v1",
+  "optimization": {
+    "n_records": 35,
+    "adult": 13,
+    "non_adult": 22,
+    "membership_sha256": "6932aa749d1be69e69f149e2c15b06888cfaddd3f048ed11989ed5fca015828b"
+  },
+  "selection": {
+    "n_records": 5,
+    "adult": 0,
+    "non_adult": 5,
+    "membership_sha256": "ac8b4d8cd5921e656e4a3f85000a72c2aa779650910dea81dc6a02184baec60a"
+  },
+  "fraction": 0.1,
+  "seed": 42,
+  "parent_train_sha256": "86e768eebb057e4f11cf16ac80d994036d4d724ebb938c8682248cf08fb98e11",
+  "contract": "e50241854011fa03d74b54966a0dfc573f751050941e6e8bbf1e95e73f6a0934"
+}

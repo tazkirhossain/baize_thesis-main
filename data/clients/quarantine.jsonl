@@ -1,0 +1,1195 @@
+{"source_row": 1018, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1588, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 2364, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 3109, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 4865, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 31031, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 34676, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 34678, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 34682, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 36538, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 45415, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 45418, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 45419, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 45420, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 45424, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 51060, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 52209, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 52791, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 52792, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 62945, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 68904, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 73378, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 73992, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 76528, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 82333, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 85791, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 85848, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 93786, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 93828, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 93830, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 94106, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 95400, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 95401, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 96394, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 97441, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 97887, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 99342, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 104485, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 104499, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 104526, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 104544, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 104574, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 104589, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 131144, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 138170, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 139131, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 139390, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 146614, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 146982, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 147529, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 147541, "reason": "invalid_url:unsupported_scheme:gopher"}
+{"source_row": 147552, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 147641, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 147644, "reason": "invalid_url:unsupported_scheme:gopher"}
+{"source_row": 153211, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 153765, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 153999, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 155167, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 156660, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 157174, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 159733, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 166711, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 171535, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 173351, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 183361, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 189316, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 194096, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 194533, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 195899, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 195971, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 196111, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 200775, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 200822, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 215583, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 217660, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 223318, "reason": "invalid_url:unsupported_scheme:news"}
+{"source_row": 233512, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 236390, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 238598, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 243857, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 246249, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 251607, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 252399, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 253315, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 254533, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 258684, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 258986, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 264775, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 265028, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 266629, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 266633, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 267360, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 268582, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 269711, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 271144, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 272943, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 274585, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 278795, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 280859, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 281445, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 281472, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 282806, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 284216, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 286987, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 289000, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 289176, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 289980, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 302643, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 306271, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 308409, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 310268, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 331698, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 334315, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 338654, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 339632, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 340090, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 340694, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 340892, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 347246, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 348262, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 348764, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 353926, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 360709, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 364215, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 369399, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 373632, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 374687, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 375505, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 380745, "reason": "missing_url"}
+{"source_row": 390228, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 394892, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 399364, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 402386, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 402946, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 403058, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 403079, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 403080, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 412408, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 417699, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 417729, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 419369, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 422825, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 424023, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 428566, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 428970, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 433514, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 435145, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 438334, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 450028, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 450768, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 451765, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 462605, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 477255, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 478021, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 482856, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 487309, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 495352, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 495870, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 496381, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 496549, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 496833, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 501342, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 501808, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 504127, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 504230, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 504571, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 511125, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 512067, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 512301, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 512563, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 513038, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 517143, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 518146, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 518260, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 525597, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 529979, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 530265, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 530515, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 531005, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 531264, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 534646, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 537724, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 538628, "reason": "invalid_url:host_without_dot"}
+{"source_row": 538629, "reason": "invalid_url:host_without_dot"}
+{"source_row": 538630, "reason": "invalid_url:host_without_dot"}
+{"source_row": 538631, "reason": "invalid_url:host_without_dot"}
+{"source_row": 538632, "reason": "invalid_url:host_without_dot"}
+{"source_row": 539855, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 541100, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 543363, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 543853, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 543964, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 544865, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 548682, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 549305, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 549307, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 549310, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 549311, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 550444, "reason": "invalid_url:unsupported_scheme:gopher"}
+{"source_row": 550814, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 553614, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 555634, "reason": "invalid_url:unsupported_scheme:gopher"}
+{"source_row": 555637, "reason": "invalid_url:unsupported_scheme:gopher"}
+{"source_row": 555638, "reason": "invalid_url:unsupported_scheme:gopher"}
+{"source_row": 555640, "reason": "invalid_url:unsupported_scheme:gopher"}
+{"source_row": 555644, "reason": "invalid_url:unsupported_scheme:gopher"}
+{"source_row": 555648, "reason": "invalid_url:unsupported_scheme:gopher"}
+{"source_row": 555649, "reason": "invalid_url:unsupported_scheme:gopher"}
+{"source_row": 555650, "reason": "invalid_url:unsupported_scheme:gopher"}
+{"source_row": 555651, "reason": "invalid_url:unsupported_scheme:gopher"}
+{"source_row": 555652, "reason": "invalid_url:unsupported_scheme:gopher"}
+{"source_row": 555653, "reason": "invalid_url:unsupported_scheme:gopher"}
+{"source_row": 555654, "reason": "invalid_url:unsupported_scheme:gopher"}
+{"source_row": 555658, "reason": "invalid_url:unsupported_scheme:gopher"}
+{"source_row": 555659, "reason": "invalid_url:unsupported_scheme:gopher"}
+{"source_row": 555660, "reason": "invalid_url:unsupported_scheme:gopher"}
+{"source_row": 555661, "reason": "invalid_url:unsupported_scheme:gopher"}
+{"source_row": 555664, "reason": "invalid_url:unsupported_scheme:gopher"}
+{"source_row": 558398, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 558589, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 558915, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 558948, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 559098, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 559172, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 559174, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 559216, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 559217, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 559218, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 559219, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 562831, "reason": "invalid_url:unsupported_scheme:telnet"}
+{"source_row": 562832, "reason": "invalid_url:unsupported_scheme:telnet"}
+{"source_row": 562833, "reason": "invalid_url:unsupported_scheme:telnet"}
+{"source_row": 562834, "reason": "invalid_url:unsupported_scheme:telnet"}
+{"source_row": 563114, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 564630, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 570353, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 573714, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 574201, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 574789, "reason": "missing_url"}
+{"source_row": 582855, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 583035, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 583740, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 583743, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 584968, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 585912, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 587001, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 587020, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 587041, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 587170, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 587318, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 587757, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 588811, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 588816, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 588843, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 589187, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 589326, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 589327, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 589328, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 589356, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 589357, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 589372, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 589455, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 590637, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 590691, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 590739, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 591589, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 591897, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 591916, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 591941, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 592719, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 592788, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 592812, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 592922, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 593327, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 593525, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 593527, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 593528, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 593638, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 593663, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 594007, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 594073, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 594091, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 594177, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 594191, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 594195, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 594216, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 594255, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 594270, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 594280, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 594324, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 594395, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 594489, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 594733, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 594768, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 596594, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 597830, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 597883, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 597885, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 598001, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 598116, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 598132, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 598155, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 598156, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 598192, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 598219, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 598220, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 598221, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 598222, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 598255, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 598307, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 598308, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 598323, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 598536, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 598570, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 598577, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 598673, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 600131, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 600311, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 601093, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 601113, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 601173, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 601199, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 601201, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 602002, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 602028, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 602410, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 602412, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 602512, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 602564, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 602617, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 602684, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 602685, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 602703, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 602744, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 602745, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 602874, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 602875, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 603564, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 603920, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 603923, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 603924, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 603968, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 603969, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 604321, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 606049, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 606050, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 606051, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 606053, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 606055, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 606065, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 611101, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 611996, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 612010, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 612021, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 614168, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 614739, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 618316, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 618855, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 619509, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 619797, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 620101, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 620102, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 620103, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 620246, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 620247, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 620248, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 620249, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 620250, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 620251, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 620252, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 620253, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 622257, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 625300, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 625307, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 625644, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 625645, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 626152, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 626776, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 627005, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 627008, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 627622, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 627634, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 627635, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 627636, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 630650, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 630796, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 632097, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 633472, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 633473, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 633570, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 633963, "reason": "invalid_url:unsupported_scheme:irc"}
+{"source_row": 634115, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 634245, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634246, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634247, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634248, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634249, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634250, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634251, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634252, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634253, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634254, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634255, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634256, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634257, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634258, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634259, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634260, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634261, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634262, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634263, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634264, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634265, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634266, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634267, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634268, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634269, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634270, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634271, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634272, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634273, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634274, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634275, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634276, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634277, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634278, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634280, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634281, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634282, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634285, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634286, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634287, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634288, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634289, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634290, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634291, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634292, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634293, "reason": "invalid_url:unsupported_scheme:sherlock"}
+{"source_row": 634633, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 634912, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 635000, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 635001, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 635736, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 635813, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 636047, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 636373, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 636394, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 636399, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 636698, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 636718, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 637026, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 637049, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 637069, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 637094, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 637111, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 637112, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 637133, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 637187, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 637205, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 637218, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 637247, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 637367, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 637369, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 637436, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 640628, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 641308, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 641333, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 641969, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 641991, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 643105, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 643108, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 643395, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 643400, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 643536, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 643554, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 644108, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 644236, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 644237, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 644240, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 644241, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 644242, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 644329, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 644330, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 644331, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 644438, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 644663, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 644664, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 644667, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 644668, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 644673, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 645229, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 645728, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 645729, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 646380, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 646432, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 646435, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 646483, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 646484, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 646521, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 646665, "reason": "invalid_url:unsupported_scheme:gopher"}
+{"source_row": 646772, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 646814, "reason": "invalid_url:unsupported_scheme:gopher"}
+{"source_row": 647828, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 647962, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 647972, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 647974, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 647980, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 647981, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 647989, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 647992, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 648050, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 648396, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 655319, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 655323, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 655328, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 655382, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 658145, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 658453, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 658523, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 659557, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 659746, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 668092, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 671702, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 680030, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 680059, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 680069, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 680114, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 680118, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 685799, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 688575, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 695342, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 700630, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 700978, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 702368, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 706366, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 711489, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 719460, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 719612, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 719684, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 719741, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 723973, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 725650, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 727974, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 728056, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 728612, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 735936, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 746993, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 749593, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 749639, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 749925, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 756698, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 758031, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 761939, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 762364, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 764079, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 764207, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 771660, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 781196, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 790350, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 793410, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 796221, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 802078, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 803600, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 803764, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 803779, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 803789, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 803810, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 803825, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 803839, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 803893, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 803913, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 803914, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 803922, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 804026, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 804055, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 804066, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 806576, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 807463, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 807795, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 810702, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 810703, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 811004, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 817258, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 817261, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 817262, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 817263, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 817266, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 817267, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 817268, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 817270, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 817271, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 817273, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 817274, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 817275, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 817276, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 817277, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 817278, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 817279, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 817281, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 817282, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 817283, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 817284, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 817285, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 817293, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 817294, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 817297, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 817298, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 817299, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 818742, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 819045, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 821759, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 821763, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 823639, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 826645, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 830663, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 830701, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 830735, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 836181, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 838088, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 839521, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 841143, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 847514, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 856201, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 858576, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 858592, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 861283, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 864913, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 866772, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 868606, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 869414, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 876784, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 879669, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 886748, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 891291, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 894423, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 894632, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 894633, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 894634, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 894635, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 902406, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 902473, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 902482, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 902486, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 903764, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 904525, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 906456, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 909871, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 911082, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 913925, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 919078, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 922635, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 923807, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 928112, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 928247, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 929018, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 934545, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 934626, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 934694, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 934729, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 935832, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 936678, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 940002, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 944224, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 945277, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 949630, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 950397, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 951570, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 953538, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 954097, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 954223, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 955745, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 955748, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 955749, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 955773, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 956482, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 959984, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 960214, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 960215, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 960216, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 960217, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 960218, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 960219, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 960220, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 962587, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 966123, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 968032, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 969744, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 969752, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 971090, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 971651, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 979929, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 985527, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 992075, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 993459, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 993472, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 993981, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 993989, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 994175, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1002550, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1003072, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1003224, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1003249, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1004000, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1004315, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1005048, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1005082, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1007735, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1010237, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1010749, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1011452, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1011698, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1013474, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1015004, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1015536, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1017133, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1020326, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1021101, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1021984, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1022993, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1023290, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1023825, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1024414, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1024596, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1027480, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1027527, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1027805, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1027831, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1032154, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1035150, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1035192, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1035206, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1035207, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1035208, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1035209, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1035210, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1035225, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1035226, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1035227, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1035232, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1035237, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1035238, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1035239, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1035240, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1036701, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1038304, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1042230, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1042303, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1043324, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1043325, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1043326, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1045632, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1046557, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1046923, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1046924, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1048089, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1048733, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1049174, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1050931, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1051514, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1053347, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1053945, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1055710, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1055806, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1056500, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1057390, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1058413, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1058508, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1058885, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1059014, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1059071, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1059749, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1062179, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1064376, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1064959, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1064965, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1064969, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1064970, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1064996, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1065010, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1065093, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1070040, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1072420, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1072528, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1073443, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1073713, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1073963, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1074178, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1074700, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1074912, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1076147, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1076552, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1076861, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1077097, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1077685, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1077734, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1077857, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1078468, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1079436, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1079442, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1079445, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1080963, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1081124, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1081274, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1082740, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1083560, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1083570, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1083612, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1083697, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1086228, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1086725, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1086764, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1087266, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1087291, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1087301, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1087942, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1089863, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1090741, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1091641, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1092297, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1092946, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1093118, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1093119, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1093120, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1093121, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1093123, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1093124, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1093125, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1093127, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1093128, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1093129, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1093536, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1094566, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1095541, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1096868, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1096967, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1099318, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1100846, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1102103, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1102104, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1102143, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1103243, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1104201, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1108303, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1108501, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1108911, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1109349, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1112642, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1114354, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1120899, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1121194, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1121373, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1121525, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1121533, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1121933, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1126717, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1138477, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1151022, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1151280, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1192618, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1206135, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1214150, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1219878, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1220835, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220877, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220878, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220879, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220880, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220909, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220910, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220911, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220912, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220913, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220914, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220915, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220916, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220917, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220918, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220919, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220920, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220921, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220922, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220923, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220924, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220925, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220926, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220927, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220928, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220929, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220930, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220931, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220932, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220933, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220934, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220935, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220936, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220937, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220938, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220939, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220940, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220941, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220942, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1220960, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1226724, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1226755, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1226850, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1226851, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1226852, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1226853, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1226859, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1226860, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1226861, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1226862, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1227135, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1227710, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1229975, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1230319, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1240612, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1240701, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1240750, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1240950, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1240966, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1241281, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1241311, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1241312, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1242389, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1243378, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1243572, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1243822, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1246396, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1246878, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1249294, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1250660, "reason": "invalid_url:unsupported_scheme:gopher"}
+{"source_row": 1250723, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1266967, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1267839, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1268520, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1270097, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1272274, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1273992, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1274021, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1274117, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1274287, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1277044, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1277052, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1280841, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1299219, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1306315, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1309431, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1311168, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1312238, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1312240, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1312241, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1312242, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1312327, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1312831, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1313218, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1318874, "reason": "missing_url"}
+{"source_row": 1320483, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1323533, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1330798, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1334769, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1335986, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1337040, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1337921, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1338599, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1340476, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1340755, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1344014, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1356617, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1356618, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1356620, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1356621, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1356622, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1356623, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1356624, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1356625, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1356626, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1356627, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1356628, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1356634, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1356638, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1356641, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1362115, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1362391, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1367820, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1370966, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1380696, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1395916, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1395923, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1395927, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1395938, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1395947, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1395953, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1400431, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1401191, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1406946, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1409406, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1409482, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1409630, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1410027, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1410226, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1410245, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1410720, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1410964, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1413896, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1414060, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1419453, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1429306, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1429323, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1436447, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1448543, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1454705, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1462761, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1469099, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1469112, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1470359, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1470616, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1472742, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1480791, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1483034, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1487973, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1495648, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1495653, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1508659, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1510670, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1511822, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1514830, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1517986, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1518737, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1519224, "reason": "invalid_url:unsupported_scheme:ftp"}
+{"source_row": 1519271, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1522595, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1525060, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1527950, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1529987, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1537693, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1537696, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1542468, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1542949, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1543049, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1543127, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1544154, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1546092, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1548006, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1552202, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1553514, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 1562081, "reason": "invalid_url:no_registrable_domain"}
+{"source_row": 19, "url": "http://e.webring.com/hub", "domain": "webring.com", "occurrences": 58, "reason": "label_conflict"}
+{"source_row": 69, "url": "http://m.webring.com/hub", "domain": "webring.com", "occurrences": 55, "reason": "label_conflict"}
+{"source_row": 246, "url": "http://www.animerica.com/", "domain": "animerica.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 274, "url": "http://www.geocities.com/area51/shadowlands/3932/fake.html", "domain": "geocities.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 277, "url": "http://www.fandomination.net/", "domain": "fandomination.net", "occurrences": 5, "reason": "label_conflict"}
+{"source_row": 461, "url": "http://www.bettiepage.com/", "domain": "bettiepage.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 464, "url": "http://n.webring.com/hub", "domain": "webring.com", "occurrences": 43, "reason": "label_conflict"}
+{"source_row": 494, "url": "http://www.geocities.com/triplezeroplatoon/", "domain": "geocities.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 505, "url": "http://www.savvieandlacey.com/", "domain": "savvieandlacey.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 518, "url": "http://venusenvy.comicgenesis.com/", "domain": "comicgenesis.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 725, "url": "http://www.susannahindigo.com", "domain": "susannahindigo.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 728, "url": "http://www.wendywootton.co.uk/", "domain": "wendywootton.co.uk", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 736, "url": "http://susiebright.blogs.com", "domain": "blogs.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 739, "url": "http://www.circlet.com/", "domain": "circlet.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 741, "url": "http://www.cleispress.com/", "domain": "cleispress.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 742, "url": "http://www.booklocker.com/", "domain": "booklocker.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 743, "url": "http://renebooks.com", "domain": "renebooks.com", "occurrences": 3, "reason": "label_conflict"}
+{"source_row": 747, "url": "http://www.glbpubs.com", "domain": "glbpubs.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 780, "url": "http://www.gayvnawards.com/", "domain": "gayvnawards.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 805, "url": "http://apolloguide.com/mov_revtemp.asp", "domain": "apolloguide.com", "occurrences": 1443, "reason": "label_conflict"}
+{"source_row": 1176, "url": "http://kissgirltalk.tripod.com", "domain": "tripod.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 1185, "url": "http://www.ringsurf.com/netring", "domain": "ringsurf.com", "occurrences": 104, "reason": "label_conflict"}
+{"source_row": 1201, "url": "http://www.webring.com/hub", "domain": "webring.com", "occurrences": 695, "reason": "label_conflict"}
+{"source_row": 1230, "url": "http://i.webring.com/hub", "domain": "webring.com", "occurrences": 66, "reason": "label_conflict"}
+{"source_row": 1231, "url": "http://www.knightwriter.org/", "domain": "knightwriter.org", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 1233, "url": "http://www.agentwithstyle.com", "domain": "agentwithstyle.com", "occurrences": 3, "reason": "label_conflict"}
+{"source_row": 1238, "url": "http://www.cairdean.com/zinezone/index.html", "domain": "cairdean.com", "occurrences": 3, "reason": "label_conflict"}
+{"source_row": 1240, "url": "http://www.geocities.com/falconprss/falcon.html", "domain": "geocities.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 1299, "url": "http://b.webring.com/hub", "domain": "webring.com", "occurrences": 62, "reason": "label_conflict"}
+{"source_row": 1309, "url": "http://www.haldirs-whores.org/", "domain": "haldirs-whores.org", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 1413, "url": "http://g.webring.com/hub", "domain": "webring.com", "occurrences": 44, "reason": "label_conflict"}
+{"source_row": 1535, "url": "http://www.geocities.com/jerkysfan/comeonbaby.html", "domain": "geocities.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 1554, "url": "http://www.ateamfanfic.org", "domain": "ateamfanfic.org", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 1587, "url": "http://www.allaboutspike.com", "domain": "allaboutspike.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 1642, "url": "http://www.sinister-attraction.org", "domain": "sinister-attraction.org", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 1717, "url": "http://u.webring.com/hub", "domain": "webring.com", "occurrences": 43, "reason": "label_conflict"}
+{"source_row": 1718, "url": "http://k.webring.com/hub", "domain": "webring.com", "occurrences": 62, "reason": "label_conflict"}
+{"source_row": 1752, "url": "http://www.geocities.com/sitamasters/", "domain": "geocities.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 1818, "url": "http://www.stellarpath.net/jenga/", "domain": "stellarpath.net", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 1875, "url": "http://h.webring.com/hub", "domain": "webring.com", "occurrences": 53, "reason": "label_conflict"}
+{"source_row": 1942, "url": "http://allyourtrekarebelongto.us", "domain": "allyourtrekarebelongto.us", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 2016, "url": "http://c.webring.com/hub", "domain": "webring.com", "occurrences": 53, "reason": "label_conflict"}
+{"source_row": 2048, "url": "http://f.webring.com/hub", "domain": "webring.com", "occurrences": 60, "reason": "label_conflict"}
+{"source_row": 2058, "url": "http://x.webring.com/hub", "domain": "webring.com", "occurrences": 47, "reason": "label_conflict"}
+{"source_row": 2188, "url": "http://t.webring.com/hub", "domain": "webring.com", "occurrences": 52, "reason": "label_conflict"}
+{"source_row": 2190, "url": "http://a.webring.com/hub", "domain": "webring.com", "occurrences": 48, "reason": "label_conflict"}
+{"source_row": 2191, "url": "http://o.webring.com/hub", "domain": "webring.com", "occurrences": 47, "reason": "label_conflict"}
+{"source_row": 2192, "url": "http://v.webring.com/hub", "domain": "webring.com", "occurrences": 86, "reason": "label_conflict"}
+{"source_row": 2193, "url": "http://r.webring.com/hub", "domain": "webring.com", "occurrences": 48, "reason": "label_conflict"}
+{"source_row": 2201, "url": "http://www.tiggster.net/", "domain": "tiggster.net", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 2220, "url": "http://www.geocities.com/tyrlair/", "domain": "geocities.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 2223, "url": "http://www.sfgate.com/cgi-bin/article.cgi", "domain": "sfgate.com", "occurrences": 194, "reason": "label_conflict"}
+{"source_row": 2232, "url": "http://e.webring.com/webring", "domain": "webring.com", "occurrences": 4, "reason": "label_conflict"}
+{"source_row": 2253, "url": "http://www.lediableblanc.com", "domain": "lediableblanc.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 2357, "url": "http://www.nifty.org/", "domain": "nifty.org", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 2430, "url": "http://www.eunuch.org/", "domain": "eunuch.org", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 2622, "url": "http://www.livejournal.com/userinfo.bml", "domain": "livejournal.com", "occurrences": 9, "reason": "label_conflict"}
+{"source_row": 2688, "url": "http://www.mostembarrassingmoment.com/", "domain": "mostembarrassingmoment.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 2721, "url": "http://j.webring.com/hub", "domain": "webring.com", "occurrences": 51, "reason": "label_conflict"}
+{"source_row": 2722, "url": "http://p.webring.com/hub", "domain": "webring.com", "occurrences": 58, "reason": "label_conflict"}
+{"source_row": 2723, "url": "http://l.webring.com/hub", "domain": "webring.com", "occurrences": 51, "reason": "label_conflict"}
+{"source_row": 2725, "url": "http://w.webring.com/hub", "domain": "webring.com", "occurrences": 61, "reason": "label_conflict"}
+{"source_row": 2993, "url": "http://www.bigburlesque.com/", "domain": "bigburlesque.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 3058, "url": "http://www.jimgalante.com/", "domain": "jimgalante.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 3081, "url": "http://www.glenmitchell.com/", "domain": "glenmitchell.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 3112, "url": "http://www.infinitee-designs.com/", "domain": "infinitee-designs.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 3242, "url": "http://sharonsheley.50megs.com/", "domain": "50megs.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 3247, "url": "http://members.tripod.com/~ten_ten/index.html", "domain": "tripod.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 3252, "url": "http://www.stefanblondal.com/", "domain": "stefanblondal.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 3267, "url": "http://www.markbode.com/", "domain": "markbode.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 3282, "url": "http://www.gaylinkcontent.com/", "domain": "gaylinkcontent.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 3303, "url": "http://www.sex-lexis.com/", "domain": "sex-lexis.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 3311, "url": "http://www.freespeechcoalition.com/", "domain": "freespeechcoalition.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 3338, "url": "http://www.nationalpublicist.com/", "domain": "nationalpublicist.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 3381, "url": "http://www.webring.com/cgi-bin/navcgi", "domain": "webring.com", "occurrences": 6, "reason": "label_conflict"}
+{"source_row": 3674, "url": "http://www.dworldonline.com/elec.htm", "domain": "dworldonline.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 3839, "url": "http://slashdot.org/article.pl", "domain": "slashdot.org", "occurrences": 39, "reason": "label_conflict"}
+{"source_row": 4331, "url": "http://www.asacp.org/", "domain": "asacp.org", "occurrences": 3, "reason": "label_conflict"}
+{"source_row": 4389, "url": "http://www.worlddatingpartners.com/", "domain": "worlddatingpartners.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 4867, "url": "http://www.simslice.com", "domain": "simslice.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 4902, "url": "http://www.dickshouse.com", "domain": "dickshouse.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 4908, "url": "http://www.newgrounds.com", "domain": "newgrounds.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 12758, "url": "http://www.gayontherange.com", "domain": "gayontherange.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 20253, "url": "http://gaytoday.badpuppy.com/", "domain": "badpuppy.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 20256, "url": "http://www.dazereader.com", "domain": "dazereader.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 20295, "url": "http://www.furnitureporn.com/", "domain": "furnitureporn.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 20358, "url": "http://www.cruel.com/", "domain": "cruel.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 20359, "url": "http://www.easymidget.com", "domain": "easymidget.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 20361, "url": "http://www.thewritingworks.com/outrage.html", "domain": "thewritingworks.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 20371, "url": "http://www.newworldodour.co.uk", "domain": "newworldodour.co.uk", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 20616, "url": "http://www.bulgayria.com/", "domain": "bulgayria.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 20640, "url": "http://www.pragueglamour.com/", "domain": "pragueglamour.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 20929, "url": "http://www.revisef65.org/", "domain": "revisef65.org", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 21726, "url": "http://www.gayindex.co.uk/", "domain": "gayindex.co.uk", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 21749, "url": "http://www.innerspiritphoto.com/", "domain": "innerspiritphoto.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 21775, "url": "http://lupercalia-edmonton.com", "domain": "lupercalia-edmonton.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 21948, "url": "http://groups.yahoo.com/adultconf", "domain": "yahoo.com", "occurrences": 21, "reason": "label_conflict"}
+{"source_row": 21958, "url": "http://www.sexwork.com/", "domain": "sexwork.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 22086, "url": "http://www.stjamesinfirmary.org/", "domain": "stjamesinfirmary.org", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 22144, "url": "http://www.cmhurt.com", "domain": "cmhurt.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 22226, "url": "http://www.nopockets.com/", "domain": "nopockets.com", "occurrences": 3, "reason": "label_conflict"}
+{"source_row": 22591, "url": "http://www.sfdefenders.org/", "domain": "sfdefenders.org", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 22655, "url": "http://www.bluebonnetnudistpark.com/", "domain": "bluebonnetnudistpark.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 22656, "url": "http://www.bbshideaway.com/", "domain": "bbshideaway.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 22673, "url": "http://www.hrcouples.com/", "domain": "hrcouples.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 22718, "url": "http://www.centaurmc.org/", "domain": "centaurmc.org", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 22816, "url": "http://wickedweasel.com", "domain": "wickedweasel.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 22818, "url": "http://www.highheels.com.au/", "domain": "highheels.com.au", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 22984, "url": "http://www.findsomeone.co.nz/", "domain": "findsomeone.co.nz", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 23043, "url": "http://gayguide.net/", "domain": "gayguide.net", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 23063, "url": "http://www.nbmpub.com/", "domain": "nbmpub.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 23115, "url": "http://www.animenation.com/", "domain": "animenation.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 23118, "url": "http://www.transformation.co.uk/", "domain": "transformation.co.uk", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 23205, "url": "http://www.gaelyn.com/", "domain": "gaelyn.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 23276, "url": "http://www.morganafemmecouture.com/", "domain": "morganafemmecouture.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 24186, "url": "http://www.taschen.com", "domain": "taschen.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 24268, "url": "http://www.allexperts.com/browse.cgi", "domain": "allexperts.com", "occurrences": 91, "reason": "label_conflict"}
+{"source_row": 24274, "url": "http://www.well.com/user/cynsa/newbutt.html", "domain": "well.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 24291, "url": "http://www.datingfast.com/", "domain": "datingfast.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 24294, "url": "http://www.topdatingtips.com", "domain": "topdatingtips.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 24304, "url": "http://www.ejhs.org/", "domain": "ejhs.org", "occurrences": 3, "reason": "label_conflict"}
+{"source_row": 24311, "url": "http://www.welcomed.com", "domain": "welcomed.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 24320, "url": "http://sfsi.org/wiki/main_page", "domain": "sfsi.org", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 24371, "url": "http://www.indiana.edu/~kinsey/", "domain": "indiana.edu", "occurrences": 3, "reason": "label_conflict"}
+{"source_row": 24506, "url": "http://www.area51newmexico.com/page2.php", "domain": "area51newmexico.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 24634, "url": "http://www.vaginalady.com/", "domain": "vaginalady.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 24638, "url": "http://www.amysbettersextutorial.com/", "domain": "amysbettersextutorial.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 24649, "url": "http://www.brightlightsfilm.com/16/annie.html", "domain": "brightlightsfilm.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 24664, "url": "http://www.thesexdictionary.com/", "domain": "thesexdictionary.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 25182, "url": "http://mama.indstate.edu/users/nizrael/grafenberg.html", "domain": "indstate.edu", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 25214, "url": "http://www.medem.com/medlb/article_detaillb.cfm", "domain": "medem.com", "occurrences": 5, "reason": "label_conflict"}
+{"source_row": 25219, "url": "http://www.worldnetdaily.com/news/article.asp", "domain": "worldnetdaily.com", "occurrences": 20, "reason": "label_conflict"}
+{"source_row": 25246, "url": "http://www.angelfire.com/wrestling/violetflame/home.html", "domain": "angelfire.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 25303, "url": "http://www.sexyshoes.com/", "domain": "sexyshoes.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 25351, "url": "http://sixftlion.com/", "domain": "sixftlion.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 25385, "url": "http://d.webring.com/hub", "domain": "webring.com", "occurrences": 72, "reason": "label_conflict"}
+{"source_row": 25389, "url": "http://www.webring.com/cgi-bin/webring", "domain": "webring.com", "occurrences": 9, "reason": "label_conflict"}
+{"source_row": 25391, "url": "http://webring.com/hub", "domain": "webring.com", "occurrences": 115, "reason": "label_conflict"}
+{"source_row": 25431, "url": "http://www.dykediva.com/", "domain": "dykediva.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 25505, "url": "http://www.smack.co.uk/", "domain": "smack.co.uk", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 25517, "url": "http://nav.webring.com/cgi-bin/navcgi", "domain": "webring.com", "occurrences": 96, "reason": "label_conflict"}
+{"source_row": 25576, "url": "http://www.geocities.com/westhollywood/4298/", "domain": "geocities.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 26536, "url": "http://www.vtipy.fun-online.sk/", "domain": "fun-online.sk", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 26960, "url": "http://www.gayforum.com/", "domain": "gayforum.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 29662, "url": "http://pagesperso-orange.fr/jean-pierre.ceytaire/", "domain": "pagesperso-orange.fr", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 29665, "url": "http://www.comxtrip.com/", "domain": "comxtrip.com", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 29741, "url": "http://gabinaf.free.fr", "domain": "free.fr", "occurrences": 2, "reason": "label_conflict"}
+{"source_row": 31478, "url": "http://web.tiscali.it/marcoaquiliofoto/", "domain": "tiscali.it", "occurrences": 2, "reason": "label_conflict"}

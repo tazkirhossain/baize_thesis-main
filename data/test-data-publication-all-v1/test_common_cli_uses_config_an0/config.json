@@ -1,0 +1,1 @@
+{"source": "D:\\baize_thesis-main\\baize_thesis-main\\data\\test-data-publication-all-v1\\strategy-runs0\\cleaned", "output": "D:\\baize_thesis-main\\baize_thesis-main\\data\\test-data-publication-all-v1\\test_common_cli_uses_config_an0\\cli-output", "strategy": "dirichlet", "parameters": {"alpha": 2.0, "stratify_on": "category"}, "n_clients": 5, "seed": 0, "split_seed": 0}

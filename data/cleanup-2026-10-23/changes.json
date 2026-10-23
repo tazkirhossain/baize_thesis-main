@@ -1,0 +1,58 @@
+{
+  "removed_directories": [
+    "baize",
+    "web",
+    "experiments",
+    "results/evaluation_reporting_v1",
+    "results/evaluation_reporting_v2",
+    "results/evaluation_reporting_v3"
+  ],
+  "removed_files": [
+    "scripts/notify_discord.py",
+    "scripts/fedavg_run.py",
+    "scripts/e2_aggregate.py",
+    "scripts/e1_multiseed.py",
+    "scripts/e1_aggregate.py",
+    "scripts/prepare_cache.py",
+    "scripts/phase3_probe.py",
+    "scripts/phase2_baseline.py",
+    "scripts/phase1_report.py",
+    "scripts/smoke.py",
+    "scripts/serve.py",
+    "tests/test_pipeline.py",
+    "tests/test_frontend.py",
+    ".github/workflows/notify_discord.yml",
+    "PUSH.md",
+    "RESULTS.md",
+    "docs/DECISIONS.md",
+    "docs/RESEARCH.md",
+    "docs/THREAT_MODEL.md",
+    "docs/LABELING_POLICY.md",
+    "docs/PRIVACY.md"
+  ],
+  "migrated_helpers": [
+    "src.data.preprocessing",
+    "src.data.url",
+    "src.data.features",
+    "src.data.schema",
+    "src.data.schema",
+    "src.data.protection",
+    "src.provenance"
+  ],
+  "archive": "before-cleanup.zip",
+  "removed_generated_cache_directories": [
+    "__pycache__",
+    ".pytest_cache",
+    "src/__pycache__",
+    "src/client/__pycache__",
+    "src/data/__pycache__",
+    "src/evaluation/__pycache__",
+    "src/models/__pycache__",
+    "src/server/__pycache__",
+    "src/models/character_cnn/__pycache__",
+    "src/models/deberta_v3_base/__pycache__",
+    "scripts/__pycache__",
+    "tests/__pycache__"
+  ],
+  "verification": "verification.json"
+}

@@ -132,9 +132,14 @@ python scripts/check_repository_safety.py
 ```
 
 The real localhost Flower test is opt-in; see `docs/FEDERATED_TRAINING.md`.
-Datasets, credentials, private keys, checkpoints and recovery archives stay under
-ignored local storage. There are no legacy JSONL dataset exceptions. Only
-sanitized aggregate reports belong in `results/`. The project uses branch
+The owner explicitly authorized publishing the complete data/artifact tree on
+23 October 2026. Root ignore patterns were removed. Actual credentials and
+private keys remain blocked by the repository safety check. Large files use
+Git LFS; initialize LFS and run `git lfs pull` after cloning to obtain actual
+datasets/pretrained weights rather than pointer files. Included Windows runtime
+packages are historical local artifacts; install dependencies appropriate to
+your own machine. See [published data guide](docs/PUBLISHED_DATA.md).
+The project uses branch
 `codex/federated-url-pipeline` at
 [tazkirhossain/baize_thesis-main](https://github.com/tazkirhossain/baize_thesis-main),
 as requested by the user; publishing does not target `main`. `LICENSE` retains the

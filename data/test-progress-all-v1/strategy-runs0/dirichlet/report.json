@@ -1,0 +1,374 @@
+{
+  "status": "PASS",
+  "comparison_contract": {
+    "sampling_policy": "binary_shuffled_pools_sequential_v1",
+    "population_sha256": "52fb33314ce4c45299acdb79edc38012b5c30e5a20f65e754b4d66d3d2b508b2",
+    "source_sha256": "4d2dce4f1a8c5597c1b2d605d91f7757bd7f9e7430d5e45cfa4611bd06251936",
+    "retained_records": 4800,
+    "n_clients": 5,
+    "split_policy": {
+      "type": "shared_domain_hash_v1",
+      "seed": 0
+    },
+    "fractions": [
+      0.7,
+      0.15,
+      0.15
+    ],
+    "features": {
+      "kind": "hashing",
+      "analyzer": "char_wb",
+      "lowercase": true,
+      "n_features": 64,
+      "ngram_range": [
+        3,
+        5
+      ],
+      "norm": "l2",
+      "alternate_sign": false
+    }
+  },
+  "partitioning": {
+    "strategy": "dirichlet_url_non_iid",
+    "balanced_margins": false,
+    "strata": [
+      "normalized_original_category"
+    ],
+    "name": "dirichlet",
+    "parameters": {
+      "alpha": 2.0,
+      "stratify_on": "category"
+    },
+    "n_clients": 5,
+    "sampling_policy": "binary_shuffled_pools_sequential_v1",
+    "client_assignment_order": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "seed": 0,
+    "rng": "numpy.PCG64",
+    "replacement": false,
+    "population_order": "ascending original source_row"
+  },
+  "split_policy": {
+    "type": "shared_domain_hash_v1",
+    "seed": 0
+  },
+  "source_sha256": "4d2dce4f1a8c5597c1b2d605d91f7757bd7f9e7430d5e45cfa4611bd06251936",
+  "prepared_source_report_sha256": "2ea9b913f6cdf3d79b39010007809e50cae4074d79d3a48b38aedd041c3a6b55",
+  "ingestion": {
+    "input_rows": 4800,
+    "accepted_before_dedup": 4800
+  },
+  "input_schema": {
+    "header_mode": "auto",
+    "header_detected": false,
+    "columns": [
+      "id",
+      "url",
+      "label"
+    ]
+  },
+  "retained_records": 4800,
+  "clients": [
+    {
+      "client_id": 0,
+      "state": "allocated_unsplit",
+      "dataset": {
+        "n_records": 1288,
+        "class_counts": {
+          "0": 655,
+          "1": 633
+        },
+        "positive_rate": 0.49145962732919257,
+        "category_counts": {
+          "adult": 633,
+          "arts": 61,
+          "business": 210,
+          "health": 384
+        },
+        "sha256": "9f0e83decf995ae7e38511a793935fdf19cbd4f208eacf3acc8a00d0eb5fa4af"
+      },
+      "preprocessing_sha256": "838f622544783af2c3b4fcad98a4aab7aa022bf769215fb4973de2089600a8e3"
+    },
+    {
+      "client_id": 1,
+      "state": "allocated_unsplit",
+      "dataset": {
+        "n_records": 1412,
+        "class_counts": {
+          "0": 1364,
+          "1": 48
+        },
+        "positive_rate": 0.0339943342776204,
+        "category_counts": {
+          "adult": 48,
+          "arts": 589,
+          "business": 303,
+          "health": 472
+        },
+        "sha256": "441792c58a4f2a1e3d8e825c9825ab47d2f84fd5d9eab5496adb720a1f8bb761"
+      },
+      "preprocessing_sha256": "838f622544783af2c3b4fcad98a4aab7aa022bf769215fb4973de2089600a8e3"
+    },
+    {
+      "client_id": 2,
+      "state": "allocated_unsplit",
+      "dataset": {
+        "n_records": 446,
+        "class_counts": {
+          "0": 394,
+          "1": 52
+        },
+        "positive_rate": 0.11659192825112108,
+        "category_counts": {
+          "adult": 52,
+          "arts": 25,
+          "business": 249,
+          "health": 120
+        },
+        "sha256": "7586f4e3c2669e82f1eab57d4c32166f6ea6a65ddd3a41880d6b02a34dbb88c9"
+      },
+      "preprocessing_sha256": "838f622544783af2c3b4fcad98a4aab7aa022bf769215fb4973de2089600a8e3"
+    },
+    {
+      "client_id": 3,
+      "state": "allocated_unsplit",
+      "dataset": {
+        "n_records": 1117,
+        "class_counts": {
+          "0": 703,
+          "1": 414
+        },
+        "positive_rate": 0.37063563115487913,
+        "category_counts": {
+          "adult": 414,
+          "arts": 109,
+          "business": 400,
+          "health": 194
+        },
+        "sha256": "3a9a5455cf30130e6c989edf8f81d21f084a441cc73a0a664b13ec41d11c9277"
+      },
+      "preprocessing_sha256": "838f622544783af2c3b4fcad98a4aab7aa022bf769215fb4973de2089600a8e3"
+    },
+    {
+      "client_id": 4,
+      "state": "allocated_unsplit",
+      "dataset": {
+        "n_records": 537,
+        "class_counts": {
+          "0": 484,
+          "1": 53
+        },
+        "positive_rate": 0.09869646182495345,
+        "category_counts": {
+          "adult": 53,
+          "arts": 416,
+          "business": 38,
+          "health": 30
+        },
+        "sha256": "0ead280714b3cbf99f1a314eb78f7a0ac6e4b3ff196b9a840d7a97d2a1738e22"
+      },
+      "preprocessing_sha256": "838f622544783af2c3b4fcad98a4aab7aa022bf769215fb4973de2089600a8e3"
+    }
+  ],
+  "distribution_spreads": {
+    "n_records": {
+      "min": 446,
+      "max": 1412,
+      "spread": 966
+    },
+    "adult": {
+      "min": 48,
+      "max": 633,
+      "spread": 585
+    },
+    "non_adult": {
+      "min": 394,
+      "max": 1364,
+      "spread": 970
+    },
+    "arts": {
+      "min": 25,
+      "max": 589,
+      "spread": 564
+    },
+    "business": {
+      "min": 38,
+      "max": 400,
+      "spread": 362
+    },
+    "computers": {
+      "min": 0,
+      "max": 0,
+      "spread": 0
+    },
+    "games": {
+      "min": 0,
+      "max": 0,
+      "spread": 0
+    },
+    "health": {
+      "min": 30,
+      "max": 472,
+      "spread": 442
+    },
+    "home": {
+      "min": 0,
+      "max": 0,
+      "spread": 0
+    },
+    "kids": {
+      "min": 0,
+      "max": 0,
+      "spread": 0
+    },
+    "news": {
+      "min": 0,
+      "max": 0,
+      "spread": 0
+    },
+    "recreation": {
+      "min": 0,
+      "max": 0,
+      "spread": 0
+    },
+    "reference": {
+      "min": 0,
+      "max": 0,
+      "spread": 0
+    },
+    "science": {
+      "min": 0,
+      "max": 0,
+      "spread": 0
+    },
+    "shopping": {
+      "min": 0,
+      "max": 0,
+      "spread": 0
+    },
+    "society": {
+      "min": 0,
+      "max": 0,
+      "spread": 0
+    },
+    "sports": {
+      "min": 0,
+      "max": 0,
+      "spread": 0
+    }
+  },
+  "environment": {
+    "git_commit": "NO_GIT_REPO - results are not tied to a code version",
+    "timestamp_utc": "2026-10-23T13:29:19Z",
+    "python": "3.13.5",
+    "numpy": "2.2.3",
+    "scipy": "1.15.3",
+    "sklearn": "1.7.0",
+    "tldextract": "5.1.2",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "reproduction": {
+    "source_files_sha256": {
+      "src/__init__.py": "cf92cb85f16eda9d283cf7967fa1ceb94424fea49c83fe33b0317ce345499d1d",
+      "src/client/__init__.py": "b5dda78be0bd21bfeceb6152cdbd05a66b066160776540ab8598fbebdbe39ee9",
+      "src/client/data.py": "f0061ac5cb2d5bb165182db1089df0f84232487c0c15405602297934c1618fc0",
+      "src/client/embedding_training.py": "8e48dba517a0c72c5af51791afb32df040fd40c2382258e301b68c8cd2e6afe4",
+      "src/client/flower_client.py": "17e6fb6a20b035450098ded57fa641df4c46bc25abbb6ea567aab21a30b09ef7",
+      "src/client/neural_data.py": "d42c9583608bad1ab822571fc437baa99c115de8a7826477e2efb5c0922904dd",
+      "src/client/progress.py": "ce2bab7ea04b5b3ff6fecb74ce9d4c4a58ebb0ebbcda3d856021ce9ea9591bb1",
+      "src/data/__init__.py": "d964608c07144fe039d702c3c2b1d2db84224132a31d2229b0751cc93d674eb1",
+      "src/data/allocation_plans.py": "4a2314b272753d760e1d5f6b3345aabcee2b4520cbcaa4cbaf0510ffde646784",
+      "src/data/balancing.py": "89d774cfb08fc242c1d2b50428a1ede6de8e0c59bd70b612c8b2758bdf389fdc",
+      "src/data/comparison.py": "afd55cbe4f419da73782c4936c50ccb0e29b0101c3e6dd7239915dc92977f463",
+      "src/data/embedding_smote.py": "8939d2d9aba842909a02d29f7e96feebda02b1d121659b0a65ae8c370e627ecd",
+      "src/data/features.py": "b5262f3350f72d93c9a7e8b44366245807ac7289984225563e17208c182e6755",
+      "src/data/iid_partitioning.py": "5e05812031159e7d2890185bfddedd5657834ef879aa71b5b624918e9acdd067",
+      "src/data/non_iid_partitioning.py": "654c45cd946621ed28d8afa50a452cf68f6fd2ff69cfa2b53d920aba9bc309f4",
+      "src/data/numerical_features.py": "39ffafa83953d073165152eeab5d20784d27bd48fdafc6aae74fd4ede2e1f66d",
+      "src/data/partitioning.py": "57c4d308616e2dc32c76fa02320aace358992757d912aef09f3d2fbc64cfe691",
+      "src/data/planned_partitioning.py": "02d75cc7753e1ee8bd76b63281f83556ee5fa5abde73d638eaf8756600c46875",
+      "src/data/preprocessing.py": "a48758af755175e53f4fbcd8539e1c039cda37d2c7fd966bf231c987e6440de9",
+      "src/data/protection.py": "4b77ac428b0d8d9e895cb13d56d7b04059f2c44470102bd4ae5a734f22ac86e6",
+      "src/data/sampling.py": "c6e380f348b06190d0b50206a6a9e764e96a420cc1d13b89b799ca93e2fa79ea",
+      "src/data/schema.py": "a6e9d098d097901c167540b7124868a80a8498184fe128ca5895fd1fe307f35a",
+      "src/data/smote.py": "bb29c667fe54dd5d21f3406920f47ef347a62d74d3e923b121215206aeb07e06",
+      "src/data/split_policy.py": "169a05b68b9268288556f90c16a5991ebb4ca02fadf7417146a387f40012a9fa",
+      "src/data/strategies.py": "5efd91c725da8fe0c8a0dabf5e0fb7f56f3363d782b00636c815eeef29d49b41",
+      "src/data/url.py": "d2ccf54faa2f8d12baddf9104dfd37ce8825139db6bc23a228e927c6c2a1a21d",
+      "src/data/verification.py": "c9b7bb6d6f9aeb2b1547059beab9bc5577afb34920ffb1efc2649c4df22a1112",
+      "src/evaluation/__init__.py": "1def2bd6991c9adc661faada3ead82895c1d110a88cf7c3e2def933dd8ae9bbf",
+      "src/evaluation/balancing_comparison.py": "e539bb116f2925f8db974f332e9a823a87f5a2f9de46c49e4bcc1a0db6d40146",
+      "src/evaluation/balancing_metrics.py": "38bde307979d163cea548829e61265d7a93266cbf0502411f32562d169fd3339",
+      "src/evaluation/classification.py": "6c94b531108a751cf9ae38d2194dcf0b796073529f1d575e73bdb35214c0c244",
+      "src/evaluation/console.py": "0ccc2e36818e1a1d1843494b732b73f3d6b40b18fd68e18b5dc7828dec727beb",
+      "src/evaluation/dashboard.py": "dd5a649a36e2c34e3a16704b683cd4234bf9e2e7cf7c3419d73336d47d8c2aa8",
+      "src/evaluation/federated.py": "2687af7f1652d1ee7d0dd105d6e8fbf162c06b7494dce0012fbec377f9653d91",
+      "src/evaluation/plots.py": "6a5770477329c65a1f93275d8fca383b47f9c60631183da104fec725b78a6a28",
+      "src/evaluation/reporting.py": "b763263d1e9d36db4549037206a8b9a59cca2bb57d832e4f52c7d5fa279c5280",
+      "src/models/__init__.py": "79bf1db281f1dffe622d0b923d0ed5c3111249bb399b6660e422cabef19826bc",
+      "src/models/character_cnn/__init__.py": "d935026a052516727a11aa01b4142080e309ff8ac0cc1b2c1828cb1e530a614a",
+      "src/models/character_cnn/model.py": "0cfd92bbca1a486f0bd623f326db8df6aa1b6d40922e9507fd5cd6de47e479be",
+      "src/models/deberta_v3_base/__init__.py": "6544de6766a3c0967636e5a83c88423185cedd7baa685b01e71f857f55d74c4b",
+      "src/models/deberta_v3_base/model.py": "b10a9ebca5cc1c1ed6264fe161f87fdb1bed20a448f42e0d99f0225601265e5e",
+      "src/models/federated_state.py": "9d0a4e8cb35158a50837e2d5f920c214546af520c5c4e2224b3a9e45db9adb17",
+      "src/provenance.py": "cefcfd72ad1ba81ecdff35003d833209d7289a87cf854a3d467c752f020038d0",
+      "src/server/__init__.py": "8ad275d20de8215b25df058dc2b8de6b5b5adf559fb7e19fb6f8d24c90f7e567",
+      "src/server/config.py": "16c621e0c20df9c67e058f59f0cd7e148cda1b93f28c9352d6f23034f76747e2",
+      "src/server/experiment_config.py": "fc6fa6404cb1e4bfc3e82b5be4c274b73b720c05abffb78dc85fe3db12444d37",
+      "src/server/flower_strategy.py": "428c18a352155b0045e5144270201a22ca6056bd7d500bf5292c1f5234c49431",
+      "src/server/local_transport.py": "16f9085d009dc0566bbee78da0bb007f062f09dd911366b2de42a86a416b7993",
+      "src/transport.py": "5b2add122bfd902bbf13437368777464b24a771589922ead661acad19f0433fb",
+      "config/five_client_iid.json": "2dad6d3dcd2150bdb018930a2fcf0d4d1bbf019270169dae4aa058a7ebf28d79",
+      "config/five_client_non_iid.json": "0113874bcbb8b080664624890fa9dba281f2f88ba6616e64c0d2520fd3a06759",
+      "config/five_client_label_skew.json": "0113874bcbb8b080664624890fa9dba281f2f88ba6616e64c0d2520fd3a06759",
+      "config/five_client_category_skew.json": "81ed3b08f582bf1b51b49ebe0a561771c0546ef116d4ed21d70034e96e54dca2",
+      "config/five_client_dirichlet.json": "e244346c6e1fdb13177253221e5276edb33b1e11dbc9fa15539a6bb1c73fab4d",
+      "config/balancing/undersampling.json": "6ae08243b4b35c0f1f1c16de93793142ec6228049ff8a1c854dbdad38d2606ad",
+      "config/balancing/oversampling.json": "b4b3cd9f34521478182a6c13affaf2ad9389372835921b34936bf8c1eb86c305",
+      "config/balancing/smote.json": "f22b06c2cb43d7f7f60c09006d862c3a5e9bb5351f1ffd706ca4dfe3f6436e5d",
+      "config/balancing/ensemble_undersampling.json": "5426e7c401d70d48e19aead0d40519d1c07c5781694d7c9f001f2a1ce0f11f51",
+      "scripts/prepare_clients.py": "6fc20c93e221bbf458a3cde928ea5156f5888c009b7520f5dc790d920be74e65",
+      "scripts/split_client.py": "d0fec1b79aec6b6b756d97764e15d499bd2de23961b1ef04e026626c9f3c1a28",
+      "scripts/check_repository_safety.py": "730fd972948c091436bb8aaf61e387f79e00122256699113c51967200b3eb395",
+      "scripts/partition_iid.py": "3fcd2ec17e460a5dd9401623ea145ae9f488628d6948536c334312f471b58640",
+      "scripts/partition_clients.py": "d0cf08d8e8b08c7e801d3811478105aa509abbee4bc9071182fa392b2754c550",
+      "scripts/compare_partitions.py": "1100e2692787a31d86b4c866e62c5d22a05933517b34e4bc7b2d1da7f089f925",
+      "scripts/create_category_skew_config.py": "0268998e10ac84a86d18c71ebe01c1a5282b3bdc1ab0554bec80d2579dcadb59",
+      "scripts/verify_partitions.py": "f81da768d779ae45b964edd7ec98396222ecff78ad861d2dab14b8b2b0d7830a",
+      "scripts/prepare_deberta.py": "ffee776b5dd49e12a6f388377828049f261816ff270731f79b898c36fd4735f7",
+      "config/models/deberta_v3_base.json": "7a52c61e8cc7b5f9df329ddcdd0a6990d2ba34afbdde05cf691dc0ac6754aaef",
+      ".gitignore": "661740d3fdb42a17a353c7f88f2b37970dc58765cae32a346fd40c8234f981fe",
+      "requirements.txt": "cbfee971ad5b53efd14bb210efaed2115f1984cd3427d8935638e4040b584a34",
+      "pyproject.toml": "d9ff5e62d24591b7f9cb36969e37f4f552fdc97d29b38a12dc2bad86bebdb1fd",
+      "docs/PREPROCESSING.md": "a50fa8c07ebe5daa53c99a7f135cc7b73974a79439f5a646d67f96c421662cde"
+    },
+    "source_tree_sha256": "847b3c76214ac828e34d41ddcf5dca510cbd5879f96e17486e6ad852367dc868",
+    "runtime_requirements_sha256": "58b676c6d28e1ac0201e8aa3a0693e5996e875dcae7bee6e658ec6c0d0cb848c",
+    "cold_environment_reproduction_verified": false
+  },
+  "excluded_records": {
+    "n_records": 0,
+    "reason_counts": {},
+    "file": "exclusions.jsonl",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "quarantine_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "checks": {
+    "exactly_five_clients": true,
+    "sampling_without_replacement": true,
+    "complete_record_coverage": true,
+    "unique_source_rows": true,
+    "unique_canonical_urls": true,
+    "all_clients_have_both_classes": true
+  },
+  "notes": [
+    "No records were added, removed, relabelled or resampled.",
+    "Domains can span clients. Every client must use shared_domain_hash_v1 for local splitting.",
+    "Local split fractions are approximate because domains stay in one shared role."
+  ]
+}

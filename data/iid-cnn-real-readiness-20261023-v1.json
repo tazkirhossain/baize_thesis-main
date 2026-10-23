@@ -1,0 +1,337 @@
+{
+  "status": "PASS",
+  "scope": "immutable full IID splits and bounded real training batches; not full training or quality evaluation",
+  "configuration": {
+    "n_clients": 5,
+    "rounds": 2,
+    "clients_per_round": 5,
+    "local_epochs": 1,
+    "batch_size": 8,
+    "learning_rate": 0.001,
+    "seed": 42,
+    "model": {
+      "family": "character_cnn",
+      "characters": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~:/?#[]@!$&'()*+,;=%",
+      "sequence_length": 256,
+      "dropout_input": 0.1
+    },
+    "balancing": {
+      "method": "oversampling",
+      "adult_to_non_adult": "1:1",
+      "seed": 42,
+      "ensemble_members": 5,
+      "k_neighbors": 5,
+      "insufficient_minority": "adjust"
+    },
+    "aggregation_weight": "original_training",
+    "threshold": 0.5,
+    "evaluate_final_test": false,
+    "evaluate_training": true,
+    "experiment": {
+      "partition_strategy": "iid",
+      "data_kind": "real",
+      "evaluation_population_id": "client-datasets-v3:shared_domain_hash_v1:seed=0"
+    }
+  },
+  "clients": [
+    {
+      "client": 1,
+      "splits": {
+        "train": {
+          "n_records": 211166,
+          "Non-adult": 206064,
+          "Adult": 5102,
+          "sha256": "f14772e831bc603aa4f4521995482127e68a2d6933169550a30fbcb78a5eb4f9"
+        },
+        "val": {
+          "n_records": 38987,
+          "Non-adult": 38067,
+          "Adult": 920,
+          "sha256": "78e316c34254f28b4504f3a2059430771123b40692e01a3437f41d4170e8319c"
+        },
+        "test": {
+          "n_records": 43495,
+          "Non-adult": 42555,
+          "Adult": 940,
+          "sha256": "4fed443ad4ea55c141f69e8276e3d2c71f4bd415f8851475f4d670668721d3b4"
+        }
+      },
+      "balancing": {
+        "method": "oversampling",
+        "split": "train",
+        "config": {
+          "method": "oversampling",
+          "adult_to_non_adult": "1:1",
+          "seed": 42,
+          "ensemble_members": 5,
+          "k_neighbors": 5,
+          "insufficient_minority": "adjust"
+        },
+        "before": {
+          "Adult": 5102,
+          "Non-adult": 206064
+        },
+        "after": {
+          "Adult": 206064,
+          "Non-adult": 206064
+        },
+        "achieved_adult_to_non_adult": 1.0,
+        "status": "applied",
+        "duplicated_examples": 200962,
+        "synthetic_examples": 0,
+        "removed_training_examples": 0,
+        "selection_sha256": "cd1dbbb55a34cba669583e428683ac7341b4202799e7fd70c6865fd5422c57fc"
+      },
+      "one_batch_check": {
+        "n_examples": 8,
+        "sequence_length": 256,
+        "loss": 9.466561317443848,
+        "finite_gradients": true,
+        "weights_changed": true
+      }
+    },
+    {
+      "client": 2,
+      "splits": {
+        "train": {
+          "n_records": 211249,
+          "Non-adult": 206277,
+          "Adult": 4972,
+          "sha256": "713c8da5b5b20287a2bc47f9f800c66b38d5927057e5ba367a7ca375be4a84c5"
+        },
+        "val": {
+          "n_records": 39109,
+          "Non-adult": 38110,
+          "Adult": 999,
+          "sha256": "96fa6005a8264f641b36f9ab80e237ddbca59869100638e3be963c6b4a33bb11"
+        },
+        "test": {
+          "n_records": 43290,
+          "Non-adult": 42299,
+          "Adult": 991,
+          "sha256": "fab1eb0ee5fae79ea732b053c10e3edb10b9d1fc4150dd08efb95b5b4517db9b"
+        }
+      },
+      "balancing": {
+        "method": "oversampling",
+        "split": "train",
+        "config": {
+          "method": "oversampling",
+          "adult_to_non_adult": "1:1",
+          "seed": 42,
+          "ensemble_members": 5,
+          "k_neighbors": 5,
+          "insufficient_minority": "adjust"
+        },
+        "before": {
+          "Adult": 4972,
+          "Non-adult": 206277
+        },
+        "after": {
+          "Adult": 206277,
+          "Non-adult": 206277
+        },
+        "achieved_adult_to_non_adult": 1.0,
+        "status": "applied",
+        "duplicated_examples": 201305,
+        "synthetic_examples": 0,
+        "removed_training_examples": 0,
+        "selection_sha256": "43088a8dbee5d48f08f207f24636207f69dd9e43fb0df1d45bf5edd21ed757f5"
+      },
+      "one_batch_check": {
+        "n_examples": 8,
+        "sequence_length": 256,
+        "loss": 4.799831867218018,
+        "finite_gradients": true,
+        "weights_changed": true
+      }
+    },
+    {
+      "client": 3,
+      "splits": {
+        "train": {
+          "n_records": 211377,
+          "Non-adult": 206351,
+          "Adult": 5026,
+          "sha256": "0ae34742bd1685c95f82dee9758c44d8393e037965a6b866810d62da6e8d4290"
+        },
+        "val": {
+          "n_records": 38992,
+          "Non-adult": 38016,
+          "Adult": 976,
+          "sha256": "bf07527faf5fa6963bbb1bdf98ec5a21519394c36ec1eded9d8ff46facad090e"
+        },
+        "test": {
+          "n_records": 43280,
+          "Non-adult": 42320,
+          "Adult": 960,
+          "sha256": "d46c53648e80afd6e6a311692488cc20d6bbea3d95ef34a430c6c97deeecd078"
+        }
+      },
+      "balancing": {
+        "method": "oversampling",
+        "split": "train",
+        "config": {
+          "method": "oversampling",
+          "adult_to_non_adult": "1:1",
+          "seed": 42,
+          "ensemble_members": 5,
+          "k_neighbors": 5,
+          "insufficient_minority": "adjust"
+        },
+        "before": {
+          "Adult": 5026,
+          "Non-adult": 206351
+        },
+        "after": {
+          "Adult": 206351,
+          "Non-adult": 206351
+        },
+        "achieved_adult_to_non_adult": 1.0,
+        "status": "applied",
+        "duplicated_examples": 201325,
+        "synthetic_examples": 0,
+        "removed_training_examples": 0,
+        "selection_sha256": "dc50bda3ae94819bf64e51f1da90255ac271823e7f59db3b096c01e80a1eddb7"
+      },
+      "one_batch_check": {
+        "n_examples": 8,
+        "sequence_length": 256,
+        "loss": 4.345689296722412,
+        "finite_gradients": true,
+        "weights_changed": true
+      }
+    },
+    {
+      "client": 4,
+      "splits": {
+        "train": {
+          "n_records": 211989,
+          "Non-adult": 206978,
+          "Adult": 5011,
+          "sha256": "f8cd50b2be48c44ad500383b73c262486e7bb048af9b1f86e6d84b5c59cf11db"
+        },
+        "val": {
+          "n_records": 38460,
+          "Non-adult": 37513,
+          "Adult": 947,
+          "sha256": "61b944420cafd45d2b04344406cc787f284c66f7f780a28606ad43d9c53e9e11"
+        },
+        "test": {
+          "n_records": 43200,
+          "Non-adult": 42195,
+          "Adult": 1005,
+          "sha256": "df8d43966b29b6112e837171033437319c783697b5ce4db596c685241a560465"
+        }
+      },
+      "balancing": {
+        "method": "oversampling",
+        "split": "train",
+        "config": {
+          "method": "oversampling",
+          "adult_to_non_adult": "1:1",
+          "seed": 42,
+          "ensemble_members": 5,
+          "k_neighbors": 5,
+          "insufficient_minority": "adjust"
+        },
+        "before": {
+          "Adult": 5011,
+          "Non-adult": 206978
+        },
+        "after": {
+          "Adult": 206978,
+          "Non-adult": 206978
+        },
+        "achieved_adult_to_non_adult": 1.0,
+        "status": "applied",
+        "duplicated_examples": 201967,
+        "synthetic_examples": 0,
+        "removed_training_examples": 0,
+        "selection_sha256": "82a26c5d758cbd4704d570b5fb6894b661252114a4ae9fe1e0fe25a63fe424c8"
+      },
+      "one_batch_check": {
+        "n_examples": 8,
+        "sequence_length": 256,
+        "loss": 7.9627838134765625,
+        "finite_gradients": true,
+        "weights_changed": true
+      }
+    },
+    {
+      "client": 5,
+      "splits": {
+        "train": {
+          "n_records": 210928,
+          "Non-adult": 205902,
+          "Adult": 5026,
+          "sha256": "1f28f2572a6210fa4c7083b249fefc6eece7a2f98fc1391ca642c5c226d4be8c"
+        },
+        "val": {
+          "n_records": 39092,
+          "Non-adult": 38118,
+          "Adult": 974,
+          "sha256": "939dd9ad6fcd310d5fff5ac696f6244029a304154cb584aaa263ebf4ebd9b02b"
+        },
+        "test": {
+          "n_records": 43629,
+          "Non-adult": 42667,
+          "Adult": 962,
+          "sha256": "23128cc718ab50cb7747fb3384df4d5c810ef2f99a9a5cb20e336d750517f85c"
+        }
+      },
+      "balancing": {
+        "method": "oversampling",
+        "split": "train",
+        "config": {
+          "method": "oversampling",
+          "adult_to_non_adult": "1:1",
+          "seed": 42,
+          "ensemble_members": 5,
+          "k_neighbors": 5,
+          "insufficient_minority": "adjust"
+        },
+        "before": {
+          "Adult": 5026,
+          "Non-adult": 205902
+        },
+        "after": {
+          "Adult": 205902,
+          "Non-adult": 205902
+        },
+        "achieved_adult_to_non_adult": 1.0,
+        "status": "applied",
+        "duplicated_examples": 200876,
+        "synthetic_examples": 0,
+        "removed_training_examples": 0,
+        "selection_sha256": "18c36987d5e82d767e9b1f7234179c1d1f4b524ccffcd383f69105f1e24f4961"
+      },
+      "one_batch_check": {
+        "n_examples": 8,
+        "sequence_length": 256,
+        "loss": 5.169431209564209,
+        "finite_gradients": true,
+        "weights_changed": true
+      }
+    }
+  ],
+  "runtime": {
+    "torch": "2.8.0",
+    "flwr": "1.22.0",
+    "numpy": "2.2.3",
+    "matplotlib": "3.10.3"
+  },
+  "cuda_available": false,
+  "test_evaluated": false,
+  "totals": {
+    "train": 1056709,
+    "val": 194640,
+    "test": 216894
+  },
+  "eligible_records": 1468243,
+  "elapsed_seconds": 16.916628099999798,
+  "limitations": [
+    "Existing domain/URL leakage audit retained by exact verified file hashes; no new split was created.",
+    "One batch per client is a compatibility check, not a complete epoch or measured validation/test result."
+  ]
+}

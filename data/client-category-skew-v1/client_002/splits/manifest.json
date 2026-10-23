@@ -1,0 +1,66 @@
+{
+  "client_id": 2,
+  "state": "split_locally",
+  "source_sha256": "e43c8b7d3905893cef83ad5d293c9d2155c536ff80c095f25f88eca809196376",
+  "splits": {
+    "train": {
+      "n_records": 209079,
+      "class_counts": {
+        "0": 204043,
+        "1": 5036
+      },
+      "positive_rate": 0.024086589279650277,
+      "n_domains": 121063,
+      "category_counts": {
+        "adult": 5036,
+        "kids": 26479,
+        "reference": 31702,
+        "science": 69897,
+        "shopping": 66078,
+        "sports": 9887
+      },
+      "sha256": "3d0518a2fbe650494c3b0c0b024117773bda98bde92ed47a3ee0b2741f98c4c7"
+    },
+    "val": {
+      "n_records": 41838,
+      "class_counts": {
+        "0": 40876,
+        "1": 962
+      },
+      "positive_rate": 0.022993450929776758,
+      "n_domains": 25630,
+      "category_counts": {
+        "adult": 962,
+        "kids": 5384,
+        "reference": 6910,
+        "science": 13271,
+        "shopping": 13301,
+        "sports": 2010
+      },
+      "sha256": "0f083313a13929261788e5cbe0f84edf0923298a552c1f61919230208c28eed6"
+    },
+    "test": {
+      "n_records": 42732,
+      "class_counts": {
+        "0": 41768,
+        "1": 964
+      },
+      "positive_rate": 0.022559206215482543,
+      "n_domains": 25689,
+      "category_counts": {
+        "adult": 964,
+        "kids": 5214,
+        "reference": 5870,
+        "science": 14595,
+        "shopping": 13854,
+        "sports": 2235
+      },
+      "sha256": "09a5b774650041fb770fc1cac3178d8afd5997850eb362e4bf85bb665f5ec0ce"
+    }
+  },
+  "preprocessing_sha256": "97a0acb25682f9c2ae26dc21dd6f8bfbef1d6402a16fd5d2824126d62a768880",
+  "split_policy": {
+    "type": "shared_domain_hash_v1",
+    "seed": 0
+  }
+}

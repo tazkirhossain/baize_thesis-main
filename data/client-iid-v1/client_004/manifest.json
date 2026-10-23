@@ -1,0 +1,31 @@
+{
+  "client_id": 4,
+  "state": "allocated_unsplit",
+  "dataset": {
+    "n_records": 293649,
+    "class_counts": {
+      "0": 286687,
+      "1": 6962
+    },
+    "positive_rate": 0.023708577246985347,
+    "category_counts": {
+      "adult": 6962,
+      "arts": 47561,
+      "business": 47081,
+      "computers": 22220,
+      "games": 10510,
+      "health": 11604,
+      "home": 5377,
+      "kids": 7416,
+      "news": 1674,
+      "recreation": 20485,
+      "reference": 10731,
+      "science": 19553,
+      "shopping": 18647,
+      "society": 45274,
+      "sports": 18554
+    },
+    "sha256": "625d1e8fac9625927f202b857f5e46745a0bedb4734caab0d5f4565926925766"
+  },
+  "preprocessing_sha256": "09ada78915e9a82a02d898593593d124792aab0632304966d996608210121d70"
+}

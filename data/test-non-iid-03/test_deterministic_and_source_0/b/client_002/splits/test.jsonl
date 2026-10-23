@@ -1,0 +1,12 @@
+{"category": "health", "domain": "site2.com", "label": 0, "original_category": "Health", "record_id": "2", "source_row": 5, "target": "Non-adult", "url": "https://site2.com/page0"}
+{"category": "health", "domain": "site2.com", "label": 0, "original_category": "Health", "record_id": "2", "source_row": 6, "target": "Non-adult", "url": "https://site2.com/page1"}
+{"category": "adult", "domain": "site7.com", "label": 1, "original_category": "Adult", "record_id": "7", "source_row": 15, "target": "Adult", "url": "https://site7.com/page0"}
+{"category": "adult", "domain": "site7.com", "label": 1, "original_category": "Adult", "record_id": "7", "source_row": 16, "target": "Adult", "url": "https://site7.com/page1"}
+{"category": "adult", "domain": "site59.com", "label": 1, "original_category": "Adult", "record_id": "59", "source_row": 119, "target": "Adult", "url": "https://site59.com/page0"}
+{"category": "adult", "domain": "site59.com", "label": 1, "original_category": "Adult", "record_id": "59", "source_row": 120, "target": "Adult", "url": "https://site59.com/page1"}
+{"category": "health", "domain": "site60.com", "label": 0, "original_category": "Health", "record_id": "60", "source_row": 121, "target": "Non-adult", "url": "https://site60.com/page0"}
+{"category": "health", "domain": "site60.com", "label": 0, "original_category": "Health", "record_id": "60", "source_row": 122, "target": "Non-adult", "url": "https://site60.com/page1"}
+{"category": "health", "domain": "site90.com", "label": 0, "original_category": "Health", "record_id": "90", "source_row": 181, "target": "Non-adult", "url": "https://site90.com/page0"}
+{"category": "health", "domain": "site90.com", "label": 0, "original_category": "Health", "record_id": "90", "source_row": 182, "target": "Non-adult", "url": "https://site90.com/page1"}
+{"category": "adult", "domain": "site93.com", "label": 1, "original_category": "Adult", "record_id": "93", "source_row": 187, "target": "Adult", "url": "https://site93.com/page0"}
+{"category": "adult", "domain": "site93.com", "label": 1, "original_category": "Adult", "record_id": "93", "source_row": 188, "target": "Adult", "url": "https://site93.com/page1"}

@@ -1,0 +1,22 @@
+{
+  "client_id": 1,
+  "state": "allocated_unsplit",
+  "dataset": {
+    "n_records": 293649,
+    "class_counts": {
+      "0": 286687,
+      "1": 6962
+    },
+    "positive_rate": 0.023708577246985347,
+    "category_counts": {
+      "adult": 6962,
+      "arts": 114765,
+      "health": 58023,
+      "home": 26886,
+      "news": 8373,
+      "sports": 78640
+    },
+    "sha256": "cba9f0c7b46213fb17b1397655f9b8343d9f58f7b926fe2d30587c027dade184"
+  },
+  "preprocessing_sha256": "97a0acb25682f9c2ae26dc21dd6f8bfbef1d6402a16fd5d2824126d62a768880"
+}

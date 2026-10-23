@@ -1,0 +1,60 @@
+{
+  "client_id": 0,
+  "state": "split_locally",
+  "source_sha256": "0b25f4863e8364ce8308995e3168830aa2a8f6a74c3cf74ce45ecc821f9c3ac7",
+  "splits": {
+    "train": {
+      "n_records": 212733,
+      "class_counts": {
+        "0": 207708,
+        "1": 5025
+      },
+      "positive_rate": 0.023621158917516323,
+      "n_domains": 104284,
+      "category_counts": {
+        "adult": 5025,
+        "arts": 93335,
+        "computers": 78763,
+        "games": 35610
+      },
+      "sha256": "15fc80d7569d68564db8363261a22191797211f6bf7bff2888f3ecd82bb6fa96"
+    },
+    "val": {
+      "n_records": 35792,
+      "class_counts": {
+        "0": 34802,
+        "1": 990
+      },
+      "positive_rate": 0.02765981224854716,
+      "n_domains": 22420,
+      "category_counts": {
+        "adult": 990,
+        "arts": 13214,
+        "computers": 14625,
+        "games": 6963
+      },
+      "sha256": "a52343066af018fd3e0722e7f9408be200a176ba5c6b09f58980fa15bba4c719"
+    },
+    "test": {
+      "n_records": 45124,
+      "class_counts": {
+        "0": 44176,
+        "1": 948
+      },
+      "positive_rate": 0.021008775817746652,
+      "n_domains": 22118,
+      "category_counts": {
+        "adult": 948,
+        "arts": 16490,
+        "computers": 17713,
+        "games": 9973
+      },
+      "sha256": "e9f0a02beab521b367ba1f8ef24703a933b1573106b0c7ce29d3812d531c24d5"
+    }
+  },
+  "preprocessing_sha256": "97a0acb25682f9c2ae26dc21dd6f8bfbef1d6402a16fd5d2824126d62a768880",
+  "split_policy": {
+    "type": "shared_domain_hash_v1",
+    "seed": 0
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "round": 1,
+  "weighting_policy": "original_training",
+  "clients": [
+    {
+      "client_id": 0,
+      "round": 1,
+      "contract": "0a09de4615df12debf0a8648d74f6c748a805d0a3dafc5f5193da12a2f4e008d",
+      "schema": "a5553ead6fd029fc652f3a4042f2c6e7c1a43b642854b46c5385d38f1d94edda",
+      "base_hash": "27ee273865fc1378c4b20b0b9683f67648e533085e92b807dd7dc6853ce95c45",
+      "original_train": 12,
+      "resampled_train": 4,
+      "original_adult": 2,
+      "original_non_adult": 10,
+      "used_adult": 2,
+      "used_non_adult": 2,
+      "duplicated": 0,
+      "ensemble_members": 1,
+      "examples_processed": 4,
+      "train_loss": 14.508991241455078,
+      "aggregation_weight": 12
+    },
+    {
+      "client_id": 1,
+      "round": 1,
+      "contract": "0a09de4615df12debf0a8648d74f6c748a805d0a3dafc5f5193da12a2f4e008d",
+      "schema": "a5553ead6fd029fc652f3a4042f2c6e7c1a43b642854b46c5385d38f1d94edda",
+      "base_hash": "27ee273865fc1378c4b20b0b9683f67648e533085e92b807dd7dc6853ce95c45",
+      "original_train": 12,
+      "resampled_train": 6,
+      "original_adult": 3,
+      "original_non_adult": 9,
+      "used_adult": 3,
+      "used_non_adult": 3,
+      "duplicated": 0,
+      "ensemble_members": 1,
+      "examples_processed": 6,
+      "train_loss": 6.6653289794921875,
+      "aggregation_weight": 12
+    },
+    {
+      "client_id": 2,
+      "round": 1,
+      "contract": "0a09de4615df12debf0a8648d74f6c748a805d0a3dafc5f5193da12a2f4e008d",
+      "schema": "a5553ead6fd029fc652f3a4042f2c6e7c1a43b642854b46c5385d38f1d94edda",
+      "base_hash": "27ee273865fc1378c4b20b0b9683f67648e533085e92b807dd7dc6853ce95c45",
+      "original_train": 12,
+      "resampled_train": 8,
+      "original_adult": 4,
+      "original_non_adult": 8,
+      "used_adult": 4,
+      "used_non_adult": 4,
+      "duplicated": 0,
+      "ensemble_members": 1,
+      "examples_processed": 8,
+      "train_loss": 3.415052652359009,
+      "aggregation_weight": 12
+    },
+    {
+      "client_id": 3,
+      "round": 1,
+      "contract": "0a09de4615df12debf0a8648d74f6c748a805d0a3dafc5f5193da12a2f4e008d",
+      "schema": "a5553ead6fd029fc652f3a4042f2c6e7c1a43b642854b46c5385d38f1d94edda",
+      "base_hash": "27ee273865fc1378c4b20b0b9683f67648e533085e92b807dd7dc6853ce95c45",
+      "original_train": 12,
+      "resampled_train": 10,
+      "original_adult": 5,
+      "original_non_adult": 7,
+      "used_adult": 5,
+      "used_non_adult": 5,
+      "duplicated": 0,
+      "ensemble_members": 1,
+      "examples_processed": 10,
+      "train_loss": 4.654018402099609,
+      "aggregation_weight": 12
+    },
+    {
+      "client_id": 4,
+      "round": 1,
+      "contract": "0a09de4615df12debf0a8648d74f6c748a805d0a3dafc5f5193da12a2f4e008d",
+      "schema": "a5553ead6fd029fc652f3a4042f2c6e7c1a43b642854b46c5385d38f1d94edda",
+      "base_hash": "27ee273865fc1378c4b20b0b9683f67648e533085e92b807dd7dc6853ce95c45",
+      "original_train": 12,
+      "resampled_train": 12,
+      "original_adult": 6,
+      "original_non_adult": 6,
+      "used_adult": 6,
+      "used_non_adult": 6,
+      "duplicated": 0,
+      "ensemble_members": 1,
+      "examples_processed": 12,
+      "train_loss": 7.679388840993245,
+      "aggregation_weight": 12
+    }
+  ],
+  "global_hash": "8805e734d7b3e51050616c9825f86128a362330f506d4f94216c709caa268a0c",
+  "val": {
+    "adult_precision": 0.5,
+    "adult_recall": 0.9,
+    "adult_f1": 0.6428571428571429,
+    "macro_f1": 0.40476190476190477,
+    "balanced_accuracy": 0.5,
+    "accuracy": 0.5,
+    "confusion_matrix": [
+      [
+        1,
+        9
+      ],
+      [
+        1,
+        9
+      ]
+    ],
+    "n_records": 20,
+    "loss": 0.7722979068756104
+  }
+}

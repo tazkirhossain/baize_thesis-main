@@ -1,0 +1,744 @@
+{
+  "files": 82842,
+  "total_bytes": 4644760918,
+  "groups": {
+    "data/client-category-skew-v1": {
+      "files": 106,
+      "bytes": 646585107
+    },
+    "data/client-label-skew-v1": {
+      "files": 106,
+      "bytes": 646576377
+    },
+    "data/client-iid-v1": {
+      "files": 90,
+      "bytes": 646543861
+    },
+    "data/client-datasets-v3": {
+      "files": 82,
+      "bytes": 646487106
+    },
+    "data/client-datasets": {
+      "files": 43,
+      "bytes": 388081352
+    },
+    "data/pretrained": {
+      "files": 18,
+      "bytes": 373628847
+    },
+    "data/npm-cache": {
+      "files": 580,
+      "bytes": 201411587
+    },
+    "data/clients": {
+      "files": 23,
+      "bytes": 194099204
+    },
+    "dashboard/node_modules": {
+      "files": 12266,
+      "bytes": 119218981
+    },
+    "data/flower-runtime": {
+      "files": 4588,
+      "bytes": 108508676
+    },
+    "data/raw": {
+      "files": 1,
+      "bytes": 82721050
+    },
+    "data/checkpoint-selection-smoke-v1": {
+      "files": 149,
+      "bytes": 50898440
+    },
+    "data/test-evaluation-regression-03": {
+      "files": 3868,
+      "bytes": 24599647
+    },
+    "data/test-checkpoints-all-v1": {
+      "files": 4150,
+      "bytes": 24056296
+    },
+    "data/test-remove-numerical-02": {
+      "files": 3633,
+      "bytes": 23638724
+    },
+    "data/test-flower-regression-04": {
+      "files": 3777,
+      "bytes": 23151912
+    },
+    "data/test-progress-all-v1": {
+      "files": 3719,
+      "bytes": 22522683
+    },
+    "data/test-unified-config-all-v1": {
+      "files": 3586,
+      "bytes": 22196630
+    },
+    "data/test-dashboard-all-v1": {
+      "files": 3489,
+      "bytes": 21807277
+    },
+    "data/test-readiness-visualizations-all-20261023-v1": {
+      "files": 3440,
+      "bytes": 21476472
+    },
+    "data/test-balancing-05": {
+      "files": 3266,
+      "bytes": 21476453
+    },
+    "data/test-balancing-03": {
+      "files": 3237,
+      "bytes": 21339786
+    },
+    "data/test-all-neural-balancing-01": {
+      "files": 3438,
+      "bytes": 21320358
+    },
+    "data/test-clean-pipeline-01": {
+      "files": 2984,
+      "bytes": 19852982
+    },
+    "data/test-non-iid-03": {
+      "files": 2511,
+      "bytes": 18259216
+    },
+    "data/test-pools-02": {
+      "files": 2112,
+      "bytes": 16926718
+    },
+    "data/cleanup-2026-10-23": {
+      "files": 119,
+      "bytes": 15832781
+    },
+    "data/test-pluggable-04": {
+      "files": 1857,
+      "bytes": 15685445
+    },
+    "data/unified-config-smoke-20261023-v1": {
+      "files": 132,
+      "bytes": 13365870
+    },
+    "data/cnn-over-smoke-20261023-163747": {
+      "files": 125,
+      "bytes": 13321691
+    },
+    "data/iid-oversampling-cnn-smoke-20261023-v1": {
+      "files": 124,
+      "bytes": 13072141
+    },
+    "data/cnn-embedding-smote-v2": {
+      "files": 133,
+      "bytes": 13065625
+    },
+    "data/cnn-embedding-smote-v1": {
+      "files": 125,
+      "bytes": 13049522
+    },
+    "data/federated-cnn-evaluation-v4": {
+      "files": 132,
+      "bytes": 12899909
+    },
+    "data/federated-cnn-evaluation-v3": {
+      "files": 132,
+      "bytes": 12896000
+    },
+    "data/federated-cnn-smoke-v2": {
+      "files": 130,
+      "bytes": 12856713
+    },
+    "data/federated-cnn-smoke-v1": {
+      "files": 128,
+      "bytes": 12853659
+    },
+    "data/test-pools-01": {
+      "files": 817,
+      "bytes": 12210725
+    },
+    "data/test-pluggable-02": {
+      "files": 797,
+      "bytes": 12124017
+    },
+    "data/test-pluggable-03": {
+      "files": 1344,
+      "bytes": 10753404
+    },
+    "data/test-iid-02": {
+      "files": 1409,
+      "bytes": 8599594
+    },
+    "data/test-pluggable-01": {
+      "files": 456,
+      "bytes": 5240152
+    },
+    "data/test-iid-01": {
+      "files": 357,
+      "bytes": 4478329
+    },
+    "data/test-audit-v3-03": {
+      "files": 929,
+      "bytes": 3236768
+    },
+    "data/test-audit-v3-02": {
+      "files": 858,
+      "bytes": 3037940
+    },
+    "data/neural-runtime": {
+      "files": 21,
+      "bytes": 2601245
+    },
+    "data/test-balancing-equal-02": {
+      "files": 287,
+      "bytes": 2110268
+    },
+    "data/test-balancing-equal-01": {
+      "files": 287,
+      "bytes": 2109392
+    },
+    "data/test-balancing-02": {
+      "files": 281,
+      "bytes": 2089036
+    },
+    "data/test-remove-numerical-01": {
+      "files": 550,
+      "bytes": 1892587
+    },
+    "data/test-audit-v3-01": {
+      "files": 398,
+      "bytes": 1861619
+    },
+    "data/balancing-four-methods-equal-v2": {
+      "files": 95,
+      "bytes": 1651491
+    },
+    "data/balancing-four-methods-v1": {
+      "files": 94,
+      "bytes": 1614285
+    },
+    "data/test-checkpoint-selection-v2": {
+      "files": 370,
+      "bytes": 1228999
+    },
+    "data/test-non-iid-01": {
+      "files": 231,
+      "bytes": 1127489
+    },
+    "data/test-checkpoints-existing-v1": {
+      "files": 671,
+      "bytes": 937333
+    },
+    "data/test-embedding-support-01": {
+      "files": 318,
+      "bytes": 805026
+    },
+    "data/test-evaluation-02": {
+      "files": 167,
+      "bytes": 776353
+    },
+    "data/test-deberta-assets-01": {
+      "files": 360,
+      "bytes": 723779
+    },
+    "dashboard/dist": {
+      "files": 5,
+      "bytes": 603906
+    },
+    "data/test-progress-focused-v2": {
+      "files": 577,
+      "bytes": 602335
+    },
+    "data/test-iid-cnn-ready-20261023-v1": {
+      "files": 164,
+      "bytes": 600632
+    },
+    "data/test-progress-focused-v1": {
+      "files": 541,
+      "bytes": 562194
+    },
+    "data/test-checkpoint-selection-v1": {
+      "files": 263,
+      "bytes": 517378
+    },
+    "data/test-local-splitting-02": {
+      "files": 151,
+      "bytes": 503973
+    },
+    "data/test-local-splitting-01": {
+      "files": 146,
+      "bytes": 441697
+    },
+    "data/test-neural-support-01": {
+      "files": 163,
+      "bytes": 371792
+    },
+    "data/iid_oversampling_character_cnn_20261023T125946_903731Z_75f438": {
+      "files": 90,
+      "bytes": 319725
+    },
+    "data/iid_oversampling_character_cnn_20261023T141902_155624Z_1347ec": {
+      "files": 87,
+      "bytes": 306500
+    },
+    "data/test-deberta-02": {
+      "files": 5,
+      "bytes": 285921
+    },
+    "data/test-deberta-01": {
+      "files": 4,
+      "bytes": 285210
+    },
+    "data/test-deberta-snapshot-01": {
+      "files": 80,
+      "bytes": 281214
+    },
+    "data/test-preprocessing-02": {
+      "files": 72,
+      "bytes": 276499
+    },
+    "data/test-preprocessing-01": {
+      "files": 67,
+      "bytes": 214419
+    },
+    "data/dashboard-full-preview-20261023.png": {
+      "files": 1,
+      "bytes": 173114
+    },
+    "data/test-neural-wire-01": {
+      "files": 104,
+      "bytes": 151331
+    },
+    "data/test-neural-final-contracts-01": {
+      "files": 158,
+      "bytes": 86507
+    },
+    "data/test-flower-02": {
+      "files": 188,
+      "bytes": 80706
+    },
+    "data/test-remove-numerical-01-console.log": {
+      "files": 1,
+      "bytes": 78251
+    },
+    "data/test-evaluation-01": {
+      "files": 128,
+      "bytes": 73700
+    },
+    "data/test-flower-01": {
+      "files": 128,
+      "bytes": 60900
+    },
+    "data/balancing-equal-v2-console.log": {
+      "files": 1,
+      "bytes": 58660
+    },
+    "data/test-progress-focused-v1.log": {
+      "files": 1,
+      "bytes": 51599
+    },
+    "data/dashboard-preview-20261023.png": {
+      "files": 1,
+      "bytes": 33424
+    },
+    "data/checkpoint-selection-smoke-v1.log": {
+      "files": 1,
+      "bytes": 23925
+    },
+    "data/test-evaluation-network-04": {
+      "files": 33,
+      "bytes": 21682
+    },
+    "data/test-flower-network-03": {
+      "files": 33,
+      "bytes": 16393
+    },
+    "data/test-dashboard-adapter-final": {
+      "files": 21,
+      "bytes": 13849
+    },
+    "data/test-dashboard-adapter-v1": {
+      "files": 21,
+      "bytes": 13849
+    },
+    "data/test-flower-02-console.log": {
+      "files": 1,
+      "bytes": 10993
+    },
+    "data/iid-cnn-real-readiness-20261023-v1.json": {
+      "files": 1,
+      "bytes": 10115
+    },
+    "data/verify_non_iid_local_splits.py": {
+      "files": 1,
+      "bytes": 7731
+    },
+    "data/flower-install.log": {
+      "files": 1,
+      "bytes": 7616
+    },
+    "data/verify_iid_run.py": {
+      "files": 1,
+      "bytes": 7102
+    },
+    "data/check_iid_cnn_readiness_20261023.py": {
+      "files": 1,
+      "bytes": 6593
+    },
+    "data/cnn-embedding-smote-v1.log": {
+      "files": 1,
+      "bytes": 6139
+    },
+    "data/cnn-embedding-smote-v2.log": {
+      "files": 1,
+      "bytes": 6139
+    },
+    "data/verify_balancing_equal_v2.py": {
+      "files": 1,
+      "bytes": 5764
+    },
+    "data/verify_balancing_runs.py": {
+      "files": 1,
+      "bytes": 5679
+    },
+    "data/verify_evaluation_reporting_v4.py": {
+      "files": 1,
+      "bytes": 5024
+    },
+    "data/verify_neural_balancing_support.py": {
+      "files": 1,
+      "bytes": 4464
+    },
+    "data/verify_checkpoint_selection_v1.py": {
+      "files": 1,
+      "bytes": 4372
+    },
+    "data/unified-config-smoke-20261023-v1.log": {
+      "files": 1,
+      "bytes": 3991
+    },
+    "data/verify_federated_smoke_v2.py": {
+      "files": 1,
+      "bytes": 3905
+    },
+    "data/test-unified-experiment-config-v1": {
+      "files": 39,
+      "bytes": 3844
+    },
+    "data/federated-cnn-evaluation-v4-console.log": {
+      "files": 1,
+      "bytes": 3272
+    },
+    "data/federated-cnn-evaluation-v3-console.log": {
+      "files": 1,
+      "bytes": 3271
+    },
+    "data/iid-oversampling-cnn-smoke-20261023-v1.log": {
+      "files": 1,
+      "bytes": 3213
+    },
+    "data/federated-cnn-smoke-v1-console.log": {
+      "files": 1,
+      "bytes": 3203
+    },
+    "data/federated-cnn-smoke-v2-console.log": {
+      "files": 1,
+      "bytes": 3203
+    },
+    "data/test-evaluation-01-console.log": {
+      "files": 1,
+      "bytes": 2168
+    },
+    "data/dashboard-verification-20261023.json": {
+      "files": 1,
+      "bytes": 1729
+    },
+    "data/verify_dashboard_http_v1.py": {
+      "files": 1,
+      "bytes": 1727
+    },
+    "data/checkpoint-config-check-v1.log": {
+      "files": 1,
+      "bytes": 1656
+    },
+    "data/progress-config-check-v1.log": {
+      "files": 1,
+      "bytes": 1303
+    },
+    "data/neural-balancing-support-verification.json": {
+      "files": 1,
+      "bytes": 1284
+    },
+    "data/unified-experiment-check-final.log": {
+      "files": 1,
+      "bytes": 1263
+    },
+    "data/unified-experiment-check-v1.log": {
+      "files": 1,
+      "bytes": 1263
+    },
+    "data/test-checkpoints-all-v1.log": {
+      "files": 1,
+      "bytes": 1212
+    },
+    "data/test-evaluation-regression-03-console.log": {
+      "files": 1,
+      "bytes": 1146
+    },
+    "data/test-flower-regression-04-console.log": {
+      "files": 1,
+      "bytes": 1146
+    },
+    "data/test-remove-numerical-02-console.log": {
+      "files": 1,
+      "bytes": 1145
+    },
+    "data/test-progress-all-v1.log": {
+      "files": 1,
+      "bytes": 1132
+    },
+    "data/test-unified-config-all-v1.log": {
+      "files": 1,
+      "bytes": 1131
+    },
+    "data/unified-config-real-preflight-v1.json": {
+      "files": 1,
+      "bytes": 1054
+    },
+    "data/test-all-neural-balancing-01.log": {
+      "files": 1,
+      "bytes": 1051
+    },
+    "data/test-dashboard-all-v1.log": {
+      "files": 1,
+      "bytes": 1051
+    },
+    "data/test-readiness-visualizations-all-20261023-v1.log": {
+      "files": 1,
+      "bytes": 1051
+    },
+    "data/dashboard-http-verification-v1.json": {
+      "files": 1,
+      "bytes": 904
+    },
+    "data/launcher-config-ydupcq7c": {
+      "files": 1,
+      "bytes": 898
+    },
+    "data/test-checkpoints-existing-v1.log": {
+      "files": 1,
+      "bytes": 880
+    },
+    "data/test-progress-focused-v2.log": {
+      "files": 1,
+      "bytes": 880
+    },
+    "data/test-evaluation-02-console.log": {
+      "files": 1,
+      "bytes": 866
+    },
+    "data/evaluation-smoke-config.json": {
+      "files": 1,
+      "bytes": 865
+    },
+    "data/test-checkpoint-selection-v2.log": {
+      "files": 1,
+      "bytes": 840
+    },
+    "data/test-checkpoint-selection-v1.log": {
+      "files": 1,
+      "bytes": 830
+    },
+    "data/test-embedding-support-01.log": {
+      "files": 1,
+      "bytes": 798
+    },
+    "data/dashboard-build-v1.log": {
+      "files": 1,
+      "bytes": 755
+    },
+    "data/dashboard-build-v2.log": {
+      "files": 1,
+      "bytes": 755
+    },
+    "data/dashboard-frontend-tests-final.log": {
+      "files": 1,
+      "bytes": 732
+    },
+    "data/dashboard-frontend-tests-v1.log": {
+      "files": 1,
+      "bytes": 731
+    },
+    "data/iid-cnn-real-readiness-20261023-v1.log": {
+      "files": 1,
+      "bytes": 690
+    },
+    "data/dashboard-build-final.log": {
+      "files": 1,
+      "bytes": 580
+    },
+    "data/dashboard-build-final-v2.log": {
+      "files": 1,
+      "bytes": 481
+    },
+    "data/test-unified-experiment-config-v1.log": {
+      "files": 1,
+      "bytes": 473
+    },
+    "data/test-dashboard-adapter-final.log": {
+      "files": 1,
+      "bytes": 391
+    },
+    "data/test-dashboard-adapter-v1.log": {
+      "files": 1,
+      "bytes": 391
+    },
+    "data/dashboard-npm-audit.json": {
+      "files": 1,
+      "bytes": 386
+    },
+    "data/cnn-over-smoke-20261023-163747-visualizations.log": {
+      "files": 1,
+      "bytes": 179
+    },
+    "data/iid-oversampling-cnn-smoke-20261023-v1-report.log": {
+      "files": 1,
+      "bytes": 179
+    },
+    "data/cnn-embedding-smote-report.log": {
+      "files": 1,
+      "bytes": 163
+    },
+    "data/cnn-embedding-smote-v2-report.log": {
+      "files": 1,
+      "bytes": 163
+    },
+    "data/test-flower-01-console.log": {
+      "files": 1,
+      "bytes": 102
+    },
+    "data/test-iid-cnn-ready-20261023-v1.log": {
+      "files": 1,
+      "bytes": 102
+    },
+    "data/test-neural-final-contracts-01.log": {
+      "files": 1,
+      "bytes": 102
+    },
+    "data/test-neural-support-01.log": {
+      "files": 1,
+      "bytes": 102
+    },
+    "data/test-evaluation-network-04-console.log": {
+      "files": 1,
+      "bytes": 101
+    },
+    "data/test-flower-network-03-console.log": {
+      "files": 1,
+      "bytes": 101
+    },
+    "data/test-neural-wire-01.log": {
+      "files": 1,
+      "bytes": 101
+    },
+    "data/dashboard-npm-install-network.log": {
+      "files": 1,
+      "bytes": 29
+    },
+    "data/test-non-iid-02": {
+      "files": 1,
+      "bytes": 9
+    },
+    "data/dashboard-npm-install.log": {
+      "files": 1,
+      "bytes": 0
+    }
+  },
+  "files_at_least_50_MiB": [
+    {
+      "file": "data/pretrained/deberta-v3-base/pytorch_model.bin",
+      "bytes": 371146213
+    },
+    {
+      "file": "data/raw/url.csv",
+      "bytes": 82721050
+    },
+    {
+      "file": "data/client-category-skew-v1/client_003/data.jsonl",
+      "bytes": 62582854
+    },
+    {
+      "file": "data/client-category-skew-v1/client_002/data.jsonl",
+      "bytes": 62195071
+    },
+    {
+      "file": "data/client-datasets-v3/client_000/data.jsonl",
+      "bytes": 61814058
+    },
+    {
+      "file": "data/client-datasets-v3/client_003/data.jsonl",
+      "bytes": 61799758
+    },
+    {
+      "file": "data/client-datasets-v3/client_002/data.jsonl",
+      "bytes": 61745007
+    },
+    {
+      "file": "data/client-label-skew-v1/client_004/data.jsonl",
+      "bytes": 61724314
+    },
+    {
+      "file": "data/client-label-skew-v1/client_002/data.jsonl",
+      "bytes": 61710111
+    },
+    {
+      "file": "data/client-iid-v1/client_004/data.jsonl",
+      "bytes": 61706238
+    },
+    {
+      "file": "data/client-label-skew-v1/client_003/data.jsonl",
+      "bytes": 61706139
+    },
+    {
+      "file": "data/client-iid-v1/client_000/data.jsonl",
+      "bytes": 61701669
+    },
+    {
+      "file": "data/client-iid-v1/client_002/data.jsonl",
+      "bytes": 61693260
+    },
+    {
+      "file": "data/client-iid-v1/client_003/data.jsonl",
+      "bytes": 61692548
+    },
+    {
+      "file": "data/client-iid-v1/client_001/data.jsonl",
+      "bytes": 61690128
+    },
+    {
+      "file": "data/client-label-skew-v1/client_001/data.jsonl",
+      "bytes": 61678371
+    },
+    {
+      "file": "data/client-label-skew-v1/client_000/data.jsonl",
+      "bytes": 61664908
+    },
+    {
+      "file": "data/client-datasets-v3/client_001/data.jsonl",
+      "bytes": 61604544
+    },
+    {
+      "file": "data/client-datasets-v3/client_004/data.jsonl",
+      "bytes": 61520476
+    },
+    {
+      "file": "data/client-category-skew-v1/client_000/data.jsonl",
+      "bytes": 61393148
+    },
+    {
+      "file": "data/client-category-skew-v1/client_001/data.jsonl",
+      "bytes": 61315321
+    },
+    {
+      "file": "data/client-category-skew-v1/client_004/data.jsonl",
+      "bytes": 60997449
+    }
+  ]
+}

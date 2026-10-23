@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "data_kind": "synthetic",
+  "model": "actual Character CNN",
+  "rounds": 2,
+  "clients": 5,
+  "round_checkpoints": 2,
+  "best_checkpoint_round": 1,
+  "best_selection_adult_f1": 0.4864864864864865,
+  "selection_only": true,
+  "all_client_files_hash_verified": true,
+  "trained_and_selection_records_disjoint": true,
+  "assigned_training_per_round": 200,
+  "optimization_per_round": 172,
+  "selection_per_round": 28,
+  "test_evaluated": false,
+  "balanced_adult_per_round": 121,
+  "balanced_non_adult_per_round": 121,
+  "best_and_final_checksums_verified": true,
+  "automatic_report_rows": 4,
+  "plot_files": 6,
+  "quality_claim": "execution/integrity evidence only; not real-corpus model quality"
+}

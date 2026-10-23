@@ -1,0 +1,93 @@
+{
+  "client_id": 0,
+  "state": "split_locally",
+  "source_sha256": "751054535bf799e58760886725ffd496c1790f026543078f4e8416cfe0bf97f2",
+  "splits": {
+    "train": {
+      "n_records": 211166,
+      "class_counts": {
+        "0": 206064,
+        "1": 5102
+      },
+      "positive_rate": 0.024161086538552607,
+      "n_domains": 133951,
+      "category_counts": {
+        "adult": 5102,
+        "arts": 36094,
+        "business": 32991,
+        "computers": 15691,
+        "games": 7069,
+        "health": 8199,
+        "home": 3545,
+        "kids": 5284,
+        "news": 1183,
+        "recreation": 15089,
+        "reference": 7612,
+        "science": 13947,
+        "shopping": 13189,
+        "society": 33065,
+        "sports": 13106
+      },
+      "sha256": "f14772e831bc603aa4f4521995482127e68a2d6933169550a30fbcb78a5eb4f9"
+    },
+    "val": {
+      "n_records": 38987,
+      "class_counts": {
+        "0": 38067,
+        "1": 920
+      },
+      "positive_rate": 0.023597609459563445,
+      "n_domains": 28657,
+      "category_counts": {
+        "adult": 920,
+        "arts": 5089,
+        "business": 6888,
+        "computers": 2912,
+        "games": 1386,
+        "health": 1678,
+        "home": 1108,
+        "kids": 1069,
+        "news": 261,
+        "recreation": 2536,
+        "reference": 1688,
+        "science": 2666,
+        "shopping": 2704,
+        "society": 5481,
+        "sports": 2601
+      },
+      "sha256": "78e316c34254f28b4504f3a2059430771123b40692e01a3437f41d4170e8319c"
+    },
+    "test": {
+      "n_records": 43495,
+      "class_counts": {
+        "0": 42555,
+        "1": 940
+      },
+      "positive_rate": 0.021611679503391195,
+      "n_domains": 28778,
+      "category_counts": {
+        "adult": 940,
+        "arts": 6378,
+        "business": 7202,
+        "computers": 3617,
+        "games": 2054,
+        "health": 1727,
+        "home": 724,
+        "kids": 1062,
+        "news": 231,
+        "recreation": 2859,
+        "reference": 1431,
+        "science": 2940,
+        "shopping": 2753,
+        "society": 6729,
+        "sports": 2848
+      },
+      "sha256": "4fed443ad4ea55c141f69e8276e3d2c71f4bd415f8851475f4d670668721d3b4"
+    }
+  },
+  "preprocessing_sha256": "09ada78915e9a82a02d898593593d124792aab0632304966d996608210121d70",
+  "split_policy": {
+    "type": "shared_domain_hash_v1",
+    "seed": 0
+  }
+}

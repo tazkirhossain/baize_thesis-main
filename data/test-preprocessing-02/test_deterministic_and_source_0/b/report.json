@@ -1,0 +1,181 @@
+{
+  "status": "PASS",
+  "source_sha256": "675fa659c3ee0dfd3741934df9d432771d73881493170ed44b779b2391efaa44",
+  "environment": {
+    "git_commit": "NO_GIT_REPO - results are not tied to a code version",
+    "timestamp_utc": "2026-10-17T17:11:30Z",
+    "python": "3.13.5",
+    "numpy": "2.2.3",
+    "scipy": "1.15.3",
+    "sklearn": "1.7.0",
+    "tldextract": "5.1.2",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "ingestion": {
+    "input_rows": 240,
+    "accepted_before_dedup": 240
+  },
+  "source_category_counts": {
+    "health": 120,
+    "adult": 120
+  },
+  "rejected_rows": 0,
+  "duplicate_rows_removed": 0,
+  "conflicting_urls_removed": 0,
+  "conflicting_source_rows": 0,
+  "retained_records": 240,
+  "clients": [
+    {
+      "client_id": 0,
+      "splits": {
+        "train": {
+          "n_records": 56,
+          "class_counts": {
+            "0": 28,
+            "1": 28
+          },
+          "positive_rate": 0.5,
+          "n_domains": 28,
+          "category_counts": {
+            "health": 28,
+            "adult": 28
+          },
+          "sha256": "630d11ebd7826063540442ecea33b5aa3e1b9b15cac5f90ad854ead5212c0aa0"
+        },
+        "val": {
+          "n_records": 12,
+          "class_counts": {
+            "0": 6,
+            "1": 6
+          },
+          "positive_rate": 0.5,
+          "n_domains": 6,
+          "category_counts": {
+            "health": 6,
+            "adult": 6
+          },
+          "sha256": "2059baa358364c556ee76dc6c7441ee5e9b0dd0ff13006e8d45200ec6b6a39ac"
+        },
+        "test": {
+          "n_records": 12,
+          "class_counts": {
+            "0": 6,
+            "1": 6
+          },
+          "positive_rate": 0.5,
+          "n_domains": 6,
+          "category_counts": {
+            "health": 6,
+            "adult": 6
+          },
+          "sha256": "4e82fff8c50d308429e3070bd343960f58e682e03697d663c0491f82ce9c24c5"
+        }
+      }
+    },
+    {
+      "client_id": 1,
+      "splits": {
+        "train": {
+          "n_records": 56,
+          "class_counts": {
+            "0": 28,
+            "1": 28
+          },
+          "positive_rate": 0.5,
+          "n_domains": 28,
+          "category_counts": {
+            "adult": 28,
+            "health": 28
+          },
+          "sha256": "f465129c6a7892dd2eceefee89da064700bbd54d8915f94dd55d9b2441fddb72"
+        },
+        "val": {
+          "n_records": 12,
+          "class_counts": {
+            "0": 6,
+            "1": 6
+          },
+          "positive_rate": 0.5,
+          "n_domains": 6,
+          "category_counts": {
+            "adult": 6,
+            "health": 6
+          },
+          "sha256": "768c4cabd3be965689c32cbf6b52882a780df0b99ace079ce0745b2000d9460a"
+        },
+        "test": {
+          "n_records": 12,
+          "class_counts": {
+            "0": 6,
+            "1": 6
+          },
+          "positive_rate": 0.5,
+          "n_domains": 6,
+          "category_counts": {
+            "health": 6,
+            "adult": 6
+          },
+          "sha256": "a6884f753d25c014836c446f1d9346b0815fff5963ff12c863c34d54ae382499"
+        }
+      }
+    },
+    {
+      "client_id": 2,
+      "splits": {
+        "train": {
+          "n_records": 56,
+          "class_counts": {
+            "0": 28,
+            "1": 28
+          },
+          "positive_rate": 0.5,
+          "n_domains": 28,
+          "category_counts": {
+            "health": 28,
+            "adult": 28
+          },
+          "sha256": "b0e663d7a59eb2b002571b8a87a7e57257627d3e93eaf87f71e6faabca72c4ef"
+        },
+        "val": {
+          "n_records": 12,
+          "class_counts": {
+            "0": 6,
+            "1": 6
+          },
+          "positive_rate": 0.5,
+          "n_domains": 6,
+          "category_counts": {
+            "health": 6,
+            "adult": 6
+          },
+          "sha256": "8275f5f74c5df21e562f01c60586afd0eba216cbc52571ad4bc53e1c65e8b560"
+        },
+        "test": {
+          "n_records": 12,
+          "class_counts": {
+            "0": 6,
+            "1": 6
+          },
+          "positive_rate": 0.5,
+          "n_domains": 6,
+          "category_counts": {
+            "health": 6,
+            "adult": 6
+          },
+          "sha256": "a49590df912a6302b7c20b1ac62aafd8f8bbb4f8e6de467bcceb468edacf4e55"
+        }
+      }
+    }
+  ],
+  "checks": {
+    "row_accounting": true,
+    "all_splits_have_both_classes": true,
+    "unique_domain_ownership": true,
+    "record_coverage": true
+  },
+  "notes": [
+    "Class/category proportions and split fractions are approximate because domains are indivisible.",
+    "Quarantine is excluded from all training and evaluation; labels are never guessed.",
+    "No sitemap, robots.txt, metadata fetching or LLM labelling has been performed."
+  ]
+}

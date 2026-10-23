@@ -1,0 +1,99 @@
+{
+  "status": "PASS",
+  "source_sha256": "e42a8e910b94eeae4b9e108c9ad4b484aa3b168b1531223871ebc98a0ff20d6c",
+  "environment": {
+    "git_commit": "NO_GIT_REPO - results are not tied to a code version",
+    "timestamp_utc": "2026-10-17T17:32:57Z",
+    "python": "3.13.5",
+    "numpy": "2.2.3",
+    "scipy": "1.15.3",
+    "sklearn": "1.7.0",
+    "tldextract": "5.1.2",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "ingestion": {
+    "input_rows": 247,
+    "accepted_before_dedup": 242,
+    "unknown_category": 1,
+    "missing_url": 1,
+    "unlabelled": 1,
+    "malformed_columns": 1,
+    "invalid_url:host_without_dot": 1
+  },
+  "source_category_counts": {
+    "health": 120,
+    "adult": 122
+  },
+  "rejected_rows": 5,
+  "duplicate_rows_removed": 1,
+  "conflicting_urls_removed": 1,
+  "conflicting_source_rows": 2,
+  "retained_records": 239,
+  "clients": [
+    {
+      "client_id": 0,
+      "state": "allocated_unsplit",
+      "dataset": {
+        "n_records": 80,
+        "class_counts": {
+          "0": 40,
+          "1": 40
+        },
+        "positive_rate": 0.5,
+        "n_domains": 40,
+        "category_counts": {
+          "health": 40,
+          "adult": 40
+        },
+        "sha256": "005cb6de79c2326f0ba3b2975fb50022db6fad46928faac29b4849f2bca3fe21"
+      }
+    },
+    {
+      "client_id": 1,
+      "state": "allocated_unsplit",
+      "dataset": {
+        "n_records": 80,
+        "class_counts": {
+          "0": 40,
+          "1": 40
+        },
+        "positive_rate": 0.5,
+        "n_domains": 40,
+        "category_counts": {
+          "adult": 40,
+          "health": 40
+        },
+        "sha256": "8f71e43678ab98000d784992ec8ef458ebf326f6890a7828cc9c156789866b61"
+      }
+    },
+    {
+      "client_id": 2,
+      "state": "allocated_unsplit",
+      "dataset": {
+        "n_records": 79,
+        "class_counts": {
+          "0": 39,
+          "1": 40
+        },
+        "positive_rate": 0.5063291139240507,
+        "n_domains": 40,
+        "category_counts": {
+          "health": 39,
+          "adult": 40
+        },
+        "sha256": "acd3627c5e621faced964f60e74e5f895094b840fff80eb40b01fba718351741"
+      }
+    }
+  ],
+  "checks": {
+    "row_accounting": true,
+    "all_clients_have_both_classes": true,
+    "unique_domain_ownership": true,
+    "record_coverage": true
+  },
+  "notes": [
+    "Class/category proportions and split fractions are approximate because domains are indivisible.",
+    "Quarantine is excluded from all training and evaluation; labels are never guessed.",
+    "No sitemap, robots.txt, metadata fetching or LLM labelling has been performed."
+  ]
+}

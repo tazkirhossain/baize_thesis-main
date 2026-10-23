@@ -1,0 +1,36 @@
+{
+  "method": "smote",
+  "split": "train",
+  "config": {
+    "method": "smote",
+    "adult_to_non_adult": "1:1",
+    "seed": 1385871029,
+    "ensemble_members": 2,
+    "k_neighbors": 5,
+    "insufficient_minority": "adjust"
+  },
+  "before": {
+    "Adult": 4,
+    "Non-adult": 8
+  },
+  "after": {
+    "Adult": 8,
+    "Non-adult": 8
+  },
+  "achieved_adult_to_non_adult": 1.0,
+  "status": "adjusted_k",
+  "duplicated_examples": 0,
+  "synthetic_examples": 4,
+  "removed_training_examples": 0,
+  "effective_k_neighbors": 3,
+  "requested_k_neighbors": 5,
+  "backend": "standard_smote_encoder_embeddings_v1",
+  "feature_dimension": 8,
+  "feature_scaling": "none",
+  "training_provenance": "a9ff44db9fe9975d410f19c6e4f8f0edf697d080f585eb86a223222dbd3b8c5e",
+  "generated_urls": false,
+  "plan_sha256": "debe5002a9cda6e64bb6e2961cd0e73859638668a091d3769c9ef358833f8468",
+  "round": 1,
+  "member": 0,
+  "warmup_examples_processed": 12
+}

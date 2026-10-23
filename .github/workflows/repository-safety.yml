@@ -1,4 +1,4 @@
-name: Repository data and credential safety
+name: Repository publication safety
 
 on: [push, pull_request]
 
@@ -10,5 +10,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Check tracked files for prohibited artifacts
+      - name: Check credentials, private keys and GitHub file limits
         run: python3 scripts/check_repository_safety.py

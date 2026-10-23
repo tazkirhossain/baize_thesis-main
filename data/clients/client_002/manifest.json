@@ -1,0 +1,86 @@
+{
+  "client_id": 2,
+  "splits": {
+    "train": {
+      "n_records": 205554,
+      "class_counts": {
+        "0": 200680,
+        "1": 4874
+      },
+      "positive_rate": 0.023711530789962736,
+      "n_domains": 120991,
+      "category_counts": {
+        "adult": 4874,
+        "arts": 35994,
+        "business": 33130,
+        "computers": 14395,
+        "games": 7598,
+        "health": 8627,
+        "home": 3183,
+        "kids": 5085,
+        "news": 1203,
+        "recreation": 14508,
+        "reference": 6906,
+        "science": 13549,
+        "shopping": 13162,
+        "society": 30735,
+        "sports": 12605
+      },
+      "sha256": "b6b38bcc200aac7219d78720473d377ffa7f89b19d15a3ded6dc2d75c16e7146"
+    },
+    "val": {
+      "n_records": 44047,
+      "class_counts": {
+        "0": 43003,
+        "1": 1044
+      },
+      "positive_rate": 0.023701954730174585,
+      "n_domains": 25928,
+      "category_counts": {
+        "adult": 1044,
+        "arts": 5734,
+        "business": 6950,
+        "computers": 2969,
+        "games": 4684,
+        "health": 1403,
+        "home": 591,
+        "kids": 962,
+        "news": 213,
+        "recreation": 2980,
+        "reference": 1587,
+        "science": 3697,
+        "shopping": 2804,
+        "society": 6326,
+        "sports": 2103
+      },
+      "sha256": "129d54d9709cadede70723c2afb1da8474bf19ee99a7fef048de98638ea3bc5b"
+    },
+    "test": {
+      "n_records": 44047,
+      "class_counts": {
+        "0": 43003,
+        "1": 1044
+      },
+      "positive_rate": 0.023701954730174585,
+      "n_domains": 25923,
+      "category_counts": {
+        "adult": 1044,
+        "arts": 5467,
+        "business": 7198,
+        "computers": 5389,
+        "games": 1124,
+        "health": 1543,
+        "home": 2873,
+        "kids": 891,
+        "news": 264,
+        "recreation": 2668,
+        "reference": 1289,
+        "science": 2768,
+        "shopping": 2833,
+        "society": 5674,
+        "sports": 3022
+      },
+      "sha256": "be43acf58289b1f8aeb3dc892a83b65456a52cee331d9474495792eaec6d5ac8"
+    }
+  }
+}

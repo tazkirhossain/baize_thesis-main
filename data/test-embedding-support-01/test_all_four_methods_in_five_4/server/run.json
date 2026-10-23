@@ -1,0 +1,159 @@
+{
+  "status": "PASS",
+  "configuration": {
+    "n_clients": 5,
+    "rounds": 1,
+    "clients_per_round": 5,
+    "local_epochs": 1,
+    "batch_size": 4,
+    "learning_rate": 0.001,
+    "seed": 42,
+    "model": {
+      "family": "character_cnn",
+      "characters": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~:/?#[]@!$&'()*+,;=%",
+      "sequence_length": 16,
+      "dropout_input": 0.1
+    },
+    "balancing": {
+      "method": "smote",
+      "adult_to_non_adult": "1:1",
+      "seed": 42,
+      "ensemble_members": 2,
+      "k_neighbors": 5,
+      "insufficient_minority": "adjust"
+    },
+    "aggregation_weight": "original_training",
+    "threshold": 0.5,
+    "evaluate_final_test": true,
+    "evaluate_training": true,
+    "experiment": {
+      "partition_strategy": "unknown",
+      "data_kind": "real",
+      "evaluation_population_id": "client-datasets-v3:shared_domain_hash_v1:seed=0"
+    },
+    "representation": {
+      "mode": "encoder_embeddings",
+      "warmup_epochs": 1
+    },
+    "transport": {
+      "chunk_bytes": 1024,
+      "max_transfer_bytes": 17179869184
+    }
+  },
+  "contract": "bb8c0a2c68c9ed0c3992166deee56fde8f4c0c8a0c3d6bedb7af3d89d19808d7",
+  "schema": [
+    [
+      0,
+      "encoder.weight",
+      [
+        8,
+        86
+      ],
+      "<f4"
+    ],
+    [
+      0,
+      "encoder.bias",
+      [
+        8
+      ],
+      "<f4"
+    ],
+    [
+      0,
+      "fc.weight",
+      [
+        2,
+        8
+      ],
+      "<f4"
+    ],
+    [
+      0,
+      "fc.bias",
+      [
+        2
+      ],
+      "<f4"
+    ]
+  ],
+  "schema_hash": "1c1e2af57ac280c8e0f99673881e0f2bc59366dc6133eaff9760bad214c33700",
+  "initial_global_hash": "9222f3945214a90d5be5d651a21019a84cebd0775ecbc7056ad6e92c1c3557e0",
+  "client_data_contracts": {
+    "0": {
+      "train_sha256": "112b4b1a6e1534ca7099e51709e8c95fad5c60c6930b4520423bd4204d2df516",
+      "val_sha256": "59f9210f94b56aa0f99a425a95427507d7007b14ee396e9b368d03bac28dacd0",
+      "test_sha256": "92327b5265d72d58d1bf4bb982aaf83626ff00eb9e99524c0a912e07b5e4dc70",
+      "partition_strategy": "unknown",
+      "data_kind": "synthetic"
+    },
+    "1": {
+      "train_sha256": "3a3aee626c0fa1957dc2f8f0e0e8960597f05a6222f94bc7a967e47bddde6bda",
+      "val_sha256": "c412be7b7a979013accca5a66438cbca769921d607d6605d8b44468118183e24",
+      "test_sha256": "683155bddbea39e95226b340d9a4254a6f3318da5f388f6ae744c2f79e01c8ff",
+      "partition_strategy": "unknown",
+      "data_kind": "synthetic"
+    },
+    "2": {
+      "train_sha256": "a9ff44db9fe9975d410f19c6e4f8f0edf697d080f585eb86a223222dbd3b8c5e",
+      "val_sha256": "44e28af2cc428221b09d35dd88a8a3a6bca957fc3481b8068b83617eedf1aabf",
+      "test_sha256": "60973601ca4d57578a041001a4c4e6f8cd07deea2e20943191165c4568a0f529",
+      "partition_strategy": "unknown",
+      "data_kind": "synthetic"
+    },
+    "3": {
+      "train_sha256": "bcacffa568e3483d2681c2407d6d5a8c5b5a01327f066892f256aaea1d7dd2fc",
+      "val_sha256": "a640802d6125bcf33d9f9d77c4b864543577c3817cc800e9eb0a4c313fd8421c",
+      "test_sha256": "b475fe550584b2d69b1bfa11438590bb17ed574687ee054c242a1984f3e3ed3d",
+      "partition_strategy": "unknown",
+      "data_kind": "synthetic"
+    },
+    "4": {
+      "train_sha256": "38feb807a1b9cabee2c555c167d1d1ccdffb44fd432452602f5c7cad693320c3",
+      "val_sha256": "7d996a2d957030a11f38f62f91d5cbd014b8b27a61550c6ced7c2d8beb83250d",
+      "test_sha256": "16dc21cee6155e924aaa1d88e5d3fccd7d7bb3a75c4e3707c19fa107d914a711",
+      "partition_strategy": "unknown",
+      "data_kind": "synthetic"
+    }
+  },
+  "client_runtime": {
+    "0": {
+      "device": "cpu",
+      "torch_threads": 2,
+      "cuda_runtime": "none"
+    },
+    "1": {
+      "device": "cpu",
+      "torch_threads": 2,
+      "cuda_runtime": "none"
+    },
+    "2": {
+      "device": "cpu",
+      "torch_threads": 2,
+      "cuda_runtime": "none"
+    },
+    "3": {
+      "device": "cpu",
+      "torch_threads": 2,
+      "cuda_runtime": "none"
+    },
+    "4": {
+      "device": "cpu",
+      "torch_threads": 2,
+      "cuda_runtime": "none"
+    }
+  },
+  "server_runtime": {
+    "platform": "Windows-11-10.0.26300-SP0",
+    "processor": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel"
+  },
+  "experiment": {
+    "partition_strategy": "unknown",
+    "data_kind": "real",
+    "evaluation_population_id": "client-datasets-v3:shared_domain_hash_v1:seed=0"
+  },
+  "global_hash": "0439e1e873b8f9a1fd028b0242faf6c77786fc0200e0b117c0895a3e767f4908",
+  "completed_rounds": 1,
+  "privacy": "model states and aggregate statistics only; no DP or secure aggregation",
+  "selection": "fixed final round, no holdout-driven tuning"
+}

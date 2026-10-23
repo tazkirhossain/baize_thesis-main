@@ -1,0 +1,40 @@
+{
+  "schema_version": 3,
+  "config": {
+    "n_clients": 5,
+    "fractions": [
+      0.7,
+      0.15,
+      0.15
+    ],
+    "seed": 0,
+    "n_features": 65536,
+    "ngram_range": [
+      3,
+      5
+    ],
+    "min_per_class": 10,
+    "header": "absent"
+  },
+  "label_mapping": {
+    "Adult": 1,
+    "Non-adult": 0
+  },
+  "target_policy": "source category Adult -> Adult; 14 other known categories -> Non-adult",
+  "features": {
+    "kind": "hashing",
+    "analyzer": "char_wb",
+    "lowercase": true,
+    "n_features": 65536,
+    "ngram_range": [
+      3,
+      5
+    ],
+    "norm": "l2",
+    "alternate_sign": false
+  },
+  "scaling": "per-record L2 normalization; no fitted corpus statistics",
+  "sampling": "all valid unique labelled records; no balancing or resampling",
+  "evaluation": "client-owned validation and test; no server dataset",
+  "domain_policy": "one registrable domain per client; local domain-disjoint splits"
+}

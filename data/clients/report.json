@@ -1,0 +1,492 @@
+{
+  "status": "PASS",
+  "source_sha256": "79e32aeafc74a5c875add374d1ea5d163f867ee9109a47907c99271bb76002a4",
+  "environment": {
+    "git_commit": "NO_GIT_REPO - results are not tied to a code version",
+    "timestamp_utc": "2026-10-17T17:16:44Z",
+    "python": "3.13.5",
+    "numpy": "2.2.3",
+    "scipy": "1.15.3",
+    "sklearn": "1.7.0",
+    "tldextract": "5.1.2",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "ingestion": {
+    "input_rows": 1562978,
+    "accepted_before_dedup": 1561931,
+    "invalid_url:unsupported_scheme:ftp": 389,
+    "invalid_url:no_registrable_domain": 575,
+    "invalid_url:unsupported_scheme:gopher": 23,
+    "invalid_url:unsupported_scheme:news": 1,
+    "missing_url": 3,
+    "invalid_url:host_without_dot": 5,
+    "invalid_url:unsupported_scheme:telnet": 4,
+    "invalid_url:unsupported_scheme:irc": 1,
+    "invalid_url:unsupported_scheme:sherlock": 46
+  },
+  "source_category_counts": {
+    "adult": 35316,
+    "arts": 253744,
+    "business": 240107,
+    "computers": 117635,
+    "games": 56445,
+    "health": 60077,
+    "home": 28264,
+    "kids": 46122,
+    "news": 8987,
+    "recreation": 106539,
+    "reference": 58204,
+    "science": 110143,
+    "shopping": 95263,
+    "society": 243792,
+    "sports": 101293
+  },
+  "rejected_rows": 1047,
+  "duplicate_rows_removed": 89385,
+  "conflicting_urls_removed": 148,
+  "conflicting_source_rows": 4303,
+  "retained_records": 1468243,
+  "clients": [
+    {
+      "client_id": 0,
+      "splits": {
+        "train": {
+          "n_records": 205555,
+          "class_counts": {
+            "0": 200681,
+            "1": 4874
+          },
+          "positive_rate": 0.023711415436257936,
+          "n_domains": 120896,
+          "category_counts": {
+            "adult": 4874,
+            "arts": 37679,
+            "business": 33158,
+            "computers": 13952,
+            "games": 6650,
+            "health": 7564,
+            "home": 3554,
+            "kids": 5000,
+            "news": 1133,
+            "recreation": 18592,
+            "reference": 5142,
+            "science": 9832,
+            "shopping": 13196,
+            "society": 31833,
+            "sports": 13396
+          },
+          "sha256": "9793bed6c9c98e483ec0fd8cf39c34c4ffe402cb1c37181feea5f962d41e323c"
+        },
+        "val": {
+          "n_records": 44048,
+          "class_counts": {
+            "0": 43003,
+            "1": 1045
+          },
+          "positive_rate": 0.02372411914275336,
+          "n_domains": 25971,
+          "category_counts": {
+            "adult": 1045,
+            "arts": 5867,
+            "business": 6988,
+            "computers": 3614,
+            "games": 1353,
+            "health": 2157,
+            "home": 1081,
+            "kids": 1020,
+            "news": 235,
+            "recreation": 2526,
+            "reference": 2452,
+            "science": 3601,
+            "shopping": 2864,
+            "society": 6518,
+            "sports": 2727
+          },
+          "sha256": "8201eb604d7dc25a754a90ae3f768d46a3e3c70622994449d38658123a3ed5e6"
+        },
+        "test": {
+          "n_records": 44047,
+          "class_counts": {
+            "0": 43003,
+            "1": 1044
+          },
+          "positive_rate": 0.023701954730174585,
+          "n_domains": 25972,
+          "category_counts": {
+            "adult": 1044,
+            "arts": 6028,
+            "business": 7089,
+            "computers": 3627,
+            "games": 1592,
+            "health": 1946,
+            "home": 545,
+            "kids": 942,
+            "news": 294,
+            "recreation": 2662,
+            "reference": 3086,
+            "science": 3902,
+            "shopping": 2734,
+            "society": 6248,
+            "sports": 2308
+          },
+          "sha256": "78a18e6e2657e5edfb72813f69dce2343a061d55bc0beaeccdfd094b62f08331"
+        }
+      }
+    },
+    {
+      "client_id": 1,
+      "splits": {
+        "train": {
+          "n_records": 205555,
+          "class_counts": {
+            "0": 200681,
+            "1": 4874
+          },
+          "positive_rate": 0.023711415436257936,
+          "n_domains": 121006,
+          "category_counts": {
+            "adult": 4874,
+            "arts": 30662,
+            "business": 33733,
+            "computers": 14087,
+            "games": 6846,
+            "health": 7952,
+            "home": 4232,
+            "kids": 4826,
+            "news": 1202,
+            "recreation": 14745,
+            "reference": 7772,
+            "science": 13980,
+            "shopping": 13563,
+            "society": 33351,
+            "sports": 13730
+          },
+          "sha256": "eb24622a474db6adeb93c7d814679393875c3d7447d337f165543a1a91cb0937"
+        },
+        "val": {
+          "n_records": 44047,
+          "class_counts": {
+            "0": 43003,
+            "1": 1044
+          },
+          "positive_rate": 0.023701954730174585,
+          "n_domains": 25930,
+          "category_counts": {
+            "adult": 1044,
+            "arts": 8232,
+            "business": 7088,
+            "computers": 3246,
+            "games": 725,
+            "health": 1512,
+            "home": 645,
+            "kids": 1305,
+            "news": 241,
+            "recreation": 2736,
+            "reference": 1558,
+            "science": 3634,
+            "shopping": 2854,
+            "society": 6930,
+            "sports": 2297
+          },
+          "sha256": "1e16c3d55abb0d32ed4fba4b5d6219b3008fbfdaff0fdd72f37863822429482a"
+        },
+        "test": {
+          "n_records": 44047,
+          "class_counts": {
+            "0": 43003,
+            "1": 1044
+          },
+          "positive_rate": 0.023701954730174585,
+          "n_domains": 25925,
+          "category_counts": {
+            "adult": 1044,
+            "arts": 5617,
+            "business": 7226,
+            "computers": 3087,
+            "games": 3663,
+            "health": 1665,
+            "home": 482,
+            "kids": 995,
+            "news": 221,
+            "recreation": 2673,
+            "reference": 1608,
+            "science": 2893,
+            "shopping": 2755,
+            "society": 5509,
+            "sports": 4609
+          },
+          "sha256": "c8d78a99d80d867be944ba0768a155793e91e1ff6579b4cfb2cbf2bac398ec02"
+        }
+      }
+    },
+    {
+      "client_id": 2,
+      "splits": {
+        "train": {
+          "n_records": 205554,
+          "class_counts": {
+            "0": 200680,
+            "1": 4874
+          },
+          "positive_rate": 0.023711530789962736,
+          "n_domains": 120991,
+          "category_counts": {
+            "adult": 4874,
+            "arts": 35994,
+            "business": 33130,
+            "computers": 14395,
+            "games": 7598,
+            "health": 8627,
+            "home": 3183,
+            "kids": 5085,
+            "news": 1203,
+            "recreation": 14508,
+            "reference": 6906,
+            "science": 13549,
+            "shopping": 13162,
+            "society": 30735,
+            "sports": 12605
+          },
+          "sha256": "b6b38bcc200aac7219d78720473d377ffa7f89b19d15a3ded6dc2d75c16e7146"
+        },
+        "val": {
+          "n_records": 44047,
+          "class_counts": {
+            "0": 43003,
+            "1": 1044
+          },
+          "positive_rate": 0.023701954730174585,
+          "n_domains": 25928,
+          "category_counts": {
+            "adult": 1044,
+            "arts": 5734,
+            "business": 6950,
+            "computers": 2969,
+            "games": 4684,
+            "health": 1403,
+            "home": 591,
+            "kids": 962,
+            "news": 213,
+            "recreation": 2980,
+            "reference": 1587,
+            "science": 3697,
+            "shopping": 2804,
+            "society": 6326,
+            "sports": 2103
+          },
+          "sha256": "129d54d9709cadede70723c2afb1da8474bf19ee99a7fef048de98638ea3bc5b"
+        },
+        "test": {
+          "n_records": 44047,
+          "class_counts": {
+            "0": 43003,
+            "1": 1044
+          },
+          "positive_rate": 0.023701954730174585,
+          "n_domains": 25923,
+          "category_counts": {
+            "adult": 1044,
+            "arts": 5467,
+            "business": 7198,
+            "computers": 5389,
+            "games": 1124,
+            "health": 1543,
+            "home": 2873,
+            "kids": 891,
+            "news": 264,
+            "recreation": 2668,
+            "reference": 1289,
+            "science": 2768,
+            "shopping": 2833,
+            "society": 5674,
+            "sports": 3022
+          },
+          "sha256": "be43acf58289b1f8aeb3dc892a83b65456a52cee331d9474495792eaec6d5ac8"
+        }
+      }
+    },
+    {
+      "client_id": 3,
+      "splits": {
+        "train": {
+          "n_records": 205554,
+          "class_counts": {
+            "0": 200680,
+            "1": 4874
+          },
+          "positive_rate": 0.023711530789962736,
+          "n_domains": 120985,
+          "category_counts": {
+            "adult": 4874,
+            "arts": 30829,
+            "business": 32619,
+            "computers": 14642,
+            "games": 4656,
+            "health": 7471,
+            "home": 2937,
+            "kids": 5275,
+            "news": 1166,
+            "recreation": 13561,
+            "reference": 7842,
+            "science": 14001,
+            "shopping": 13058,
+            "society": 40020,
+            "sports": 12603
+          },
+          "sha256": "68d4993235c57d22db1405ea4453acc626388b8a642951087a4d81f6e822aaa7"
+        },
+        "val": {
+          "n_records": 44047,
+          "class_counts": {
+            "0": 43003,
+            "1": 1044
+          },
+          "positive_rate": 0.023701954730174585,
+          "n_domains": 25917,
+          "category_counts": {
+            "adult": 1044,
+            "arts": 6614,
+            "business": 6969,
+            "computers": 3509,
+            "games": 1176,
+            "health": 1567,
+            "home": 559,
+            "kids": 1473,
+            "news": 263,
+            "recreation": 2834,
+            "reference": 1294,
+            "science": 3887,
+            "shopping": 2641,
+            "society": 6690,
+            "sports": 3527
+          },
+          "sha256": "7aee69016ea2aa9a6261fb7e64e2a087c743ac9188b984c967cc099ed933d0ff"
+        },
+        "test": {
+          "n_records": 44047,
+          "class_counts": {
+            "0": 43003,
+            "1": 1044
+          },
+          "positive_rate": 0.023701954730174585,
+          "n_domains": 25922,
+          "category_counts": {
+            "adult": 1044,
+            "arts": 6995,
+            "business": 7003,
+            "computers": 3209,
+            "games": 2306,
+            "health": 1592,
+            "home": 849,
+            "kids": 1610,
+            "news": 279,
+            "recreation": 3384,
+            "reference": 1202,
+            "science": 2220,
+            "shopping": 2820,
+            "society": 6487,
+            "sports": 3047
+          },
+          "sha256": "0e0328d633bdb33b7aef634ce1e8ae6033480a7f56a7ef448195c06cd51dd833"
+        }
+      }
+    },
+    {
+      "client_id": 4,
+      "splits": {
+        "train": {
+          "n_records": 205554,
+          "class_counts": {
+            "0": 200680,
+            "1": 4874
+          },
+          "positive_rate": 0.023711530789962736,
+          "n_domains": 120960,
+          "category_counts": {
+            "adult": 4874,
+            "arts": 39264,
+            "business": 32356,
+            "computers": 15681,
+            "games": 7937,
+            "health": 9116,
+            "home": 3434,
+            "kids": 5662,
+            "news": 1095,
+            "recreation": 12528,
+            "reference": 7905,
+            "science": 13558,
+            "shopping": 12514,
+            "society": 27642,
+            "sports": 11988
+          },
+          "sha256": "c644855df871b25d39706bc0f2e692f1f69ae6928f8c6974be602630b4a5350a"
+        },
+        "val": {
+          "n_records": 44047,
+          "class_counts": {
+            "0": 43003,
+            "1": 1044
+          },
+          "positive_rate": 0.023701954730174585,
+          "n_domains": 25918,
+          "category_counts": {
+            "adult": 1044,
+            "arts": 6597,
+            "business": 6983,
+            "computers": 3256,
+            "games": 1007,
+            "health": 1845,
+            "home": 888,
+            "kids": 907,
+            "news": 351,
+            "recreation": 3395,
+            "reference": 2209,
+            "science": 3695,
+            "shopping": 2746,
+            "society": 6657,
+            "sports": 2467
+          },
+          "sha256": "6d679230d50989d1cae16319b7d3bbf9b7a48e7168b0e83e1b8cd9481627f624"
+        },
+        "test": {
+          "n_records": 44047,
+          "class_counts": {
+            "0": 43003,
+            "1": 1044
+          },
+          "positive_rate": 0.023701954730174585,
+          "n_domains": 25913,
+          "category_counts": {
+            "adult": 1044,
+            "arts": 6225,
+            "business": 6915,
+            "computers": 6438,
+            "games": 1229,
+            "health": 2063,
+            "home": 1033,
+            "kids": 1124,
+            "news": 213,
+            "recreation": 2631,
+            "reference": 1802,
+            "science": 2546,
+            "shopping": 2689,
+            "society": 5752,
+            "sports": 2343
+          },
+          "sha256": "5a67a162dc3fb0c33bd3c4fb89673962fa901d3c7f40de03c6e6f4a70babec02"
+        }
+      }
+    }
+  ],
+  "checks": {
+    "row_accounting": true,
+    "all_splits_have_both_classes": true,
+    "unique_domain_ownership": true,
+    "record_coverage": true
+  },
+  "notes": [
+    "Class/category proportions and split fractions are approximate because domains are indivisible.",
+    "Quarantine is excluded from all training and evaluation; labels are never guessed.",
+    "No sitemap, robots.txt, metadata fetching or LLM labelling has been performed."
+  ]
+}

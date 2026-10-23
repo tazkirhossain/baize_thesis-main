@@ -1,0 +1,13 @@
+{
+  "mode": "smoke",
+  "request_sha256": "a19ef15e29a8a9d00a538cd4143a70221df2c99996679b3d1f572525164b6fd2",
+  "model_defaults": "config/federated/character_cnn.json",
+  "model_defaults_sha256": "6a570d8369bf8462b2077f3952968f052609c5f9c49227ccb5cf17919a5814a7",
+  "source_sha256": {
+    "scripts/run_experiment.py": "3ebdb2a7a35026b8e9ea47128e2daa76214d7fc4d4d1a52ec2e3311aa0edd44c",
+    "src/server/experiment_config.py": "ce91ddb5c8624f5554d864fa06ca953e822edab7fe061029c3b87f96033a2b44",
+    "config/federated/character_cnn.json": "6a570d8369bf8462b2077f3952968f052609c5f9c49227ccb5cf17919a5814a7"
+  },
+  "effective_configuration": "experiment.json",
+  "partition_root": null
+}

@@ -1,0 +1,256 @@
+{
+  "round": 1,
+  "weighting_policy": "original_training",
+  "clients": [
+    {
+      "client_id": 0,
+      "round": 1,
+      "contract": "e04968c3c0836e0c278b63aa747162d1123081cd956bd944241cb4543fe6cd2f",
+      "schema": "b857b56fdc12d2dfd111e41658969e5d71f56609b752dd962118d20ebdb5b247",
+      "base_hash": "bca1cc5e26d028696a9eeee65d279000d7252b1c30692099733ddea348e9d72a",
+      "original_train": 12,
+      "resampled_train": 4,
+      "original_adult": 2,
+      "original_non_adult": 10,
+      "used_adult": 2,
+      "used_non_adult": 2,
+      "duplicated": 0,
+      "ensemble_members": 2,
+      "examples_processed": 32,
+      "train_loss": 0.6938529089093208,
+      "train_seconds": 0.09034980000069481,
+      "fit_seconds": 0.09889789999942877,
+      "warmup_examples_processed": 24,
+      "synthetic": 0,
+      "smote_effective_k": 0,
+      "balancing_status": "applied",
+      "feature_space": "encoder_embeddings",
+      "aggregation_weight": 12
+    },
+    {
+      "client_id": 1,
+      "round": 1,
+      "contract": "e04968c3c0836e0c278b63aa747162d1123081cd956bd944241cb4543fe6cd2f",
+      "schema": "b857b56fdc12d2dfd111e41658969e5d71f56609b752dd962118d20ebdb5b247",
+      "base_hash": "bca1cc5e26d028696a9eeee65d279000d7252b1c30692099733ddea348e9d72a",
+      "original_train": 12,
+      "resampled_train": 6,
+      "original_adult": 3,
+      "original_non_adult": 9,
+      "used_adult": 3,
+      "used_non_adult": 3,
+      "duplicated": 0,
+      "ensemble_members": 2,
+      "examples_processed": 36,
+      "train_loss": 0.6936612327893575,
+      "train_seconds": 0.11394389999986743,
+      "fit_seconds": 0.12450620000163326,
+      "warmup_examples_processed": 24,
+      "synthetic": 0,
+      "smote_effective_k": 0,
+      "balancing_status": "applied",
+      "feature_space": "encoder_embeddings",
+      "aggregation_weight": 12
+    },
+    {
+      "client_id": 2,
+      "round": 1,
+      "contract": "e04968c3c0836e0c278b63aa747162d1123081cd956bd944241cb4543fe6cd2f",
+      "schema": "b857b56fdc12d2dfd111e41658969e5d71f56609b752dd962118d20ebdb5b247",
+      "base_hash": "bca1cc5e26d028696a9eeee65d279000d7252b1c30692099733ddea348e9d72a",
+      "original_train": 12,
+      "resampled_train": 8,
+      "original_adult": 4,
+      "original_non_adult": 8,
+      "used_adult": 4,
+      "used_non_adult": 4,
+      "duplicated": 0,
+      "ensemble_members": 2,
+      "examples_processed": 40,
+      "train_loss": 0.6934381306171418,
+      "train_seconds": 0.08620829999927082,
+      "fit_seconds": 0.09715719999803696,
+      "warmup_examples_processed": 24,
+      "synthetic": 0,
+      "smote_effective_k": 0,
+      "balancing_status": "applied",
+      "feature_space": "encoder_embeddings",
+      "aggregation_weight": 12
+    },
+    {
+      "client_id": 3,
+      "round": 1,
+      "contract": "e04968c3c0836e0c278b63aa747162d1123081cd956bd944241cb4543fe6cd2f",
+      "schema": "b857b56fdc12d2dfd111e41658969e5d71f56609b752dd962118d20ebdb5b247",
+      "base_hash": "bca1cc5e26d028696a9eeee65d279000d7252b1c30692099733ddea348e9d72a",
+      "original_train": 12,
+      "resampled_train": 10,
+      "original_adult": 5,
+      "original_non_adult": 7,
+      "used_adult": 5,
+      "used_non_adult": 5,
+      "duplicated": 0,
+      "ensemble_members": 2,
+      "examples_processed": 44,
+      "train_loss": 0.6933621113950555,
+      "train_seconds": 0.08155389999956242,
+      "fit_seconds": 0.08889220000128262,
+      "warmup_examples_processed": 24,
+      "synthetic": 0,
+      "smote_effective_k": 0,
+      "balancing_status": "applied",
+      "feature_space": "encoder_embeddings",
+      "aggregation_weight": 12
+    },
+    {
+      "client_id": 4,
+      "round": 1,
+      "contract": "e04968c3c0836e0c278b63aa747162d1123081cd956bd944241cb4543fe6cd2f",
+      "schema": "b857b56fdc12d2dfd111e41658969e5d71f56609b752dd962118d20ebdb5b247",
+      "base_hash": "bca1cc5e26d028696a9eeee65d279000d7252b1c30692099733ddea348e9d72a",
+      "original_train": 12,
+      "resampled_train": 12,
+      "original_adult": 6,
+      "original_non_adult": 6,
+      "used_adult": 6,
+      "used_non_adult": 6,
+      "duplicated": 0,
+      "ensemble_members": 2,
+      "examples_processed": 48,
+      "train_loss": 0.6931072920560837,
+      "train_seconds": 0.07889619999696151,
+      "fit_seconds": 0.08679259999917122,
+      "warmup_examples_processed": 24,
+      "synthetic": 0,
+      "smote_effective_k": 0,
+      "balancing_status": "unchanged_already_at_or_above_target",
+      "feature_space": "encoder_embeddings",
+      "aggregation_weight": 12
+    }
+  ],
+  "global_hash": "dfcca995dcfab77fa4da89d85c18dae5cbde83d89455d5d855bf4b3356d4f51d",
+  "optimization": {
+    "loss": 0.6934485280513764,
+    "examples_processed": 200,
+    "scope": "original-training encoder warmup plus balanced head views; not global train evaluation"
+  },
+  "balancing": {
+    "training_protocol": "encoder_embeddings",
+    "synthetic_embeddings": 0,
+    "smote_clients_skipped": 0,
+    "smote_clients_adjusted": 0
+  },
+  "timing": {
+    "client_training_seconds_sum": 0.450952099996357,
+    "client_training_seconds_max": 0.11394389999986743,
+    "fit_round_wall_seconds": 1.1479781999987608,
+    "val_client_evaluation_seconds_sum": 0.15552759999991395,
+    "val_phase_wall_seconds": 1.0144265000017185,
+    "round_wall_seconds": 2.1656351999990875,
+    "train_evaluation_seconds_sum": 0.30967530000270926,
+    "test_client_evaluation_seconds_sum": 0.14572430000043823,
+    "test_phase_wall_seconds": 0.7893514999996114
+  },
+  "communication": {
+    "fit_down_bytes": 293890,
+    "fit_up_bytes": 225634,
+    "evaluation_down_bytes": 517545,
+    "evaluation_up_bytes": 5670,
+    "total_bytes": 1042739,
+    "measurement": "serialized Flower Fit/Evaluate and parameter-chunk GetProperties protobuf payloads, both directions; excludes registration/gRPC/TLS/retry overhead"
+  },
+  "val": {
+    "adult_precision": 0.5,
+    "adult_recall": 1.0,
+    "adult_f1": 0.6666666666666666,
+    "non_adult_precision": 0.0,
+    "non_adult_recall": 0.0,
+    "non_adult_f1": 0.0,
+    "macro_f1": 0.3333333333333333,
+    "balanced_accuracy": 0.5,
+    "accuracy": 0.5,
+    "confusion_matrix": [
+      [
+        0,
+        10
+      ],
+      [
+        0,
+        10
+      ]
+    ],
+    "confusion_matrix_order": [
+      "Non-adult",
+      "Adult"
+    ],
+    "n_records": 20,
+    "adult_count": 10,
+    "non_adult_count": 10,
+    "adult_prevalence": 0.5,
+    "loss": 0.6931482553482056,
+    "threshold": 0.5
+  },
+  "train": {
+    "adult_precision": 0.3333333333333333,
+    "adult_recall": 1.0,
+    "adult_f1": 0.5,
+    "non_adult_precision": 0.0,
+    "non_adult_recall": 0.0,
+    "non_adult_f1": 0.0,
+    "macro_f1": 0.25,
+    "balanced_accuracy": 0.5,
+    "accuracy": 0.3333333333333333,
+    "confusion_matrix": [
+      [
+        0,
+        40
+      ],
+      [
+        0,
+        20
+      ]
+    ],
+    "confusion_matrix_order": [
+      "Non-adult",
+      "Adult"
+    ],
+    "n_records": 60,
+    "adult_count": 20,
+    "non_adult_count": 40,
+    "adult_prevalence": 0.3333333333333333,
+    "loss": 0.6936399539311727,
+    "threshold": 0.5,
+    "scope": "updated global model on original local training splits; all five clients"
+  },
+  "test": {
+    "adult_precision": 0.5,
+    "adult_recall": 1.0,
+    "adult_f1": 0.6666666666666666,
+    "non_adult_precision": 0.0,
+    "non_adult_recall": 0.0,
+    "non_adult_f1": 0.0,
+    "macro_f1": 0.3333333333333333,
+    "balanced_accuracy": 0.5,
+    "accuracy": 0.5,
+    "confusion_matrix": [
+      [
+        0,
+        10
+      ],
+      [
+        0,
+        10
+      ]
+    ],
+    "confusion_matrix_order": [
+      "Non-adult",
+      "Adult"
+    ],
+    "n_records": 20,
+    "adult_count": 10,
+    "non_adult_count": 10,
+    "adult_prevalence": 0.5,
+    "loss": 0.6931482553482056,
+    "threshold": 0.5
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "n_clients": 15,
+  "n_method_runs": 60,
+  "n_independent_models_fitted": 120,
+  "original_client_datasets_verified": 15,
+  "original_split_files_verified": 45,
+  "fit_warnings": {
+    "ConvergenceWarning": 74
+  },
+  "summary_sha256": "b6866f2154285e4b74d3335c9b61e49d2a703462ebbd1217ce0ec32cf13d163a",
+  "verification_script_sha256": "28219b2cd3058080d85986fe32a944f7342a2a991c5f0795d279330b748e918c",
+  "checks": {
+    "all_original_input_files_unchanged": true,
+    "training_only_resampling": true,
+    "evaluation_class_distributions_unchanged": true,
+    "four_methods_kept_separate": true,
+    "exact_class_counts_and_generated_counts": true,
+    "training_only_scaler_fit": true,
+    "numerical_neural_experiments_distinguished": true,
+    "independent_ensemble_members": true,
+    "no_class_weight_or_focal_substitution": true,
+    "fixed_predeclared_ratio_seed_and_threshold": true,
+    "code_snapshot_fingerprints": true
+  }
+}

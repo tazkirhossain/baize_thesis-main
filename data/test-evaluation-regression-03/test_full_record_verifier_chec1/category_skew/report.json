@@ -1,0 +1,405 @@
+{
+  "status": "PASS",
+  "comparison_contract": {
+    "sampling_policy": "binary_shuffled_pools_sequential_v1",
+    "population_sha256": "0c25390602a52f43f418b66f4c2519191e34de525fb298c8d9e7f127eb7c3dd1",
+    "source_sha256": "3d9c96a0d23e8d726e2825ff2bfc5dd396f9440af87c1bf6aeb572166c6b3029",
+    "retained_records": 180,
+    "n_clients": 5,
+    "split_policy": {
+      "type": "shared_domain_hash_v1",
+      "seed": 0
+    },
+    "fractions": [
+      0.7,
+      0.15,
+      0.15
+    ],
+    "features": {
+      "kind": "hashing",
+      "analyzer": "char_wb",
+      "lowercase": true,
+      "n_features": 64,
+      "ngram_range": [
+        3,
+        5
+      ],
+      "norm": "l2",
+      "alternate_sign": false
+    }
+  },
+  "partitioning": {
+    "strategy": "planned_category_skew",
+    "balanced_margins": false,
+    "strata": [
+      "normalized_original_category"
+    ],
+    "name": "category_skew",
+    "parameters": {
+      "allocation_plan": {
+        "adult": [
+          12,
+          12,
+          12,
+          12,
+          12
+        ],
+        "arts": [
+          24,
+          24,
+          12,
+          0,
+          0
+        ],
+        "health": [
+          0,
+          0,
+          12,
+          24,
+          24
+        ]
+      }
+    },
+    "n_clients": 5,
+    "sampling_policy": "binary_shuffled_pools_sequential_v1",
+    "client_assignment_order": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "seed": 0,
+    "rng": "numpy.PCG64",
+    "replacement": false,
+    "population_order": "ascending original source_row"
+  },
+  "split_policy": {
+    "type": "shared_domain_hash_v1",
+    "seed": 0
+  },
+  "source_sha256": "3d9c96a0d23e8d726e2825ff2bfc5dd396f9440af87c1bf6aeb572166c6b3029",
+  "prepared_source_report_sha256": "1016875dbfc76c2d17e9a21bc7d01a76c984da80d9d573784a12f5ad909deb41",
+  "ingestion": {
+    "input_rows": 180,
+    "accepted_before_dedup": 180
+  },
+  "input_schema": {
+    "header_mode": "auto",
+    "header_detected": false,
+    "columns": [
+      "id",
+      "url",
+      "label"
+    ]
+  },
+  "retained_records": 180,
+  "clients": [
+    {
+      "client_id": 0,
+      "state": "allocated_unsplit",
+      "dataset": {
+        "n_records": 36,
+        "class_counts": {
+          "0": 24,
+          "1": 12
+        },
+        "positive_rate": 0.3333333333333333,
+        "category_counts": {
+          "adult": 12,
+          "arts": 24
+        },
+        "sha256": "2b7558fa84894834e6f58808eb73d20f3f97abadc126ed9e88497d61af5e541c"
+      },
+      "preprocessing_sha256": "6325014bb3125d919a6f1e1aa3944cb59369001f01e990b348dfbbda2262c28a"
+    },
+    {
+      "client_id": 1,
+      "state": "allocated_unsplit",
+      "dataset": {
+        "n_records": 36,
+        "class_counts": {
+          "0": 24,
+          "1": 12
+        },
+        "positive_rate": 0.3333333333333333,
+        "category_counts": {
+          "adult": 12,
+          "arts": 24
+        },
+        "sha256": "fae60e51e0532bfec08cf95bff4d29d68fa4106cdf320a20ae1c07a8d1e1a610"
+      },
+      "preprocessing_sha256": "6325014bb3125d919a6f1e1aa3944cb59369001f01e990b348dfbbda2262c28a"
+    },
+    {
+      "client_id": 2,
+      "state": "allocated_unsplit",
+      "dataset": {
+        "n_records": 36,
+        "class_counts": {
+          "0": 24,
+          "1": 12
+        },
+        "positive_rate": 0.3333333333333333,
+        "category_counts": {
+          "adult": 12,
+          "arts": 12,
+          "health": 12
+        },
+        "sha256": "c3a1c8b4c506f2aaabd2e71a01baee5bafbff518dfdbc14aac84757ae388f1c9"
+      },
+      "preprocessing_sha256": "6325014bb3125d919a6f1e1aa3944cb59369001f01e990b348dfbbda2262c28a"
+    },
+    {
+      "client_id": 3,
+      "state": "allocated_unsplit",
+      "dataset": {
+        "n_records": 36,
+        "class_counts": {
+          "0": 24,
+          "1": 12
+        },
+        "positive_rate": 0.3333333333333333,
+        "category_counts": {
+          "adult": 12,
+          "health": 24
+        },
+        "sha256": "bda29151a78e6a109dde292615f993ceab6ff8d52531a28dd8b2ab844ad2799e"
+      },
+      "preprocessing_sha256": "6325014bb3125d919a6f1e1aa3944cb59369001f01e990b348dfbbda2262c28a"
+    },
+    {
+      "client_id": 4,
+      "state": "allocated_unsplit",
+      "dataset": {
+        "n_records": 36,
+        "class_counts": {
+          "0": 24,
+          "1": 12
+        },
+        "positive_rate": 0.3333333333333333,
+        "category_counts": {
+          "adult": 12,
+          "health": 24
+        },
+        "sha256": "12c376eb097e45b764b5825e52a6b1bf1725511cf8f766a32d01b5cbdeeee7f8"
+      },
+      "preprocessing_sha256": "6325014bb3125d919a6f1e1aa3944cb59369001f01e990b348dfbbda2262c28a"
+    }
+  ],
+  "distribution_spreads": {
+    "n_records": {
+      "min": 36,
+      "max": 36,
+      "spread": 0
+    },
+    "adult": {
+      "min": 12,
+      "max": 12,
+      "spread": 0
+    },
+    "non_adult": {
+      "min": 24,
+      "max": 24,
+      "spread": 0
+    },
+    "arts": {
+      "min": 0,
+      "max": 24,
+      "spread": 24
+    },
+    "business": {
+      "min": 0,
+      "max": 0,
+      "spread": 0
+    },
+    "computers": {
+      "min": 0,
+      "max": 0,
+      "spread": 0
+    },
+    "games": {
+      "min": 0,
+      "max": 0,
+      "spread": 0
+    },
+    "health": {
+      "min": 0,
+      "max": 24,
+      "spread": 24
+    },
+    "home": {
+      "min": 0,
+      "max": 0,
+      "spread": 0
+    },
+    "kids": {
+      "min": 0,
+      "max": 0,
+      "spread": 0
+    },
+    "news": {
+      "min": 0,
+      "max": 0,
+      "spread": 0
+    },
+    "recreation": {
+      "min": 0,
+      "max": 0,
+      "spread": 0
+    },
+    "reference": {
+      "min": 0,
+      "max": 0,
+      "spread": 0
+    },
+    "science": {
+      "min": 0,
+      "max": 0,
+      "spread": 0
+    },
+    "shopping": {
+      "min": 0,
+      "max": 0,
+      "spread": 0
+    },
+    "society": {
+      "min": 0,
+      "max": 0,
+      "spread": 0
+    },
+    "sports": {
+      "min": 0,
+      "max": 0,
+      "spread": 0
+    }
+  },
+  "environment": {
+    "git_commit": "NO_GIT_REPO - results are not tied to a code version",
+    "timestamp_utc": "2026-10-23T03:21:42Z",
+    "python": "3.13.5",
+    "numpy": "2.2.3",
+    "scipy": "1.15.3",
+    "sklearn": "1.7.0",
+    "tldextract": "5.1.2",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "reproduction": {
+    "source_files_sha256": {
+      "baize/__init__.py": "2495d69ef3e276b47ab84e06952fb2534d0c0e4548039e7b8c5bf5e5c7969350",
+      "baize/data/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "baize/data/dataset.py": "b9a4b67bb1696f0c882a343a006880c11f7b852dffcd6fb4d782b4e62e2b77f1",
+      "baize/data/features.py": "80242ca28d6fa328592066aed615fd8306f337eb88504e27180674d154ddd0ad",
+      "baize/data/loaders.py": "6462f78255a55a18953f3d72a7f79b93b8bdf3a8e8a4cb8abd7541984a128526",
+      "baize/data/noise.py": "c13bd00ecd9b012b40c08366d77d38cddd939e5411d8f5aaa5de9084f031b4e4",
+      "baize/data/partition.py": "c6c52573bf1097878e508fa11fc94f4fb8645d297c3ac206f530dd565f7e377e",
+      "baize/data/preprocessing.py": "63bddda7d0290927744f7c327842cb54432f28fca5317a362310179877d7514d",
+      "baize/data/splits.py": "051a8ff33693eecfac55d53d6a3efa9f86d6b53ae95fe4c60e10575263bccb1f",
+      "baize/data/url.py": "8ad5ff48a3d1a831178ae70bc761e48ecb6106bb556c053b7a89535752f1bc0e",
+      "baize/data/validation.py": "44d9097ea55715f0a9350ae346fb846e37de513b7d6c5894a0e07c62384df2a6",
+      "baize/demo_server.py": "34aee5d5e675c3d36f8f73658d9e5cfb56bae35f2dbb803e8d337a88c2d594dd",
+      "baize/evaluation/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "baize/evaluation/budget.py": "c8c116f8374a588627659638df5c34373ff2f93b3ef3a9ea3f37284785bb2a64",
+      "baize/evaluation/convergence.py": "6814c1363f012ebb6bbaee8a072bfdd325edd6e666cef72d111d325dfb817511",
+      "baize/evaluation/metrics.py": "a7cc280a4877ae8c5a209c92bf92fa7c89fec47e6287b60979ecc23995fb201e",
+      "baize/evaluation/selection.py": "468a0db772cd0878c4a7bfe5aea9b26f60f885a0596a89e3fb83b40c9b9805df",
+      "baize/experiments/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "baize/experiments/runner.py": "87f2701a4e0bd3cee81018fc2c4871e5e9aa116bc57695b69d70ebf4d1c9c150",
+      "baize/federated/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "baize/federated/aggregation.py": "b483fff1328b9564e306bbc8f4b89f2e5206f69fe8a594c0dec5956b91db22e8",
+      "baize/federated/client.py": "d28865aa1bf98ceee1801312a7d6987f60dcbcf0dec8a9fef0b52bd2b524559f",
+      "baize/federated/simulator.py": "0e040adf1e7f1eca7e50e3190b6ad2ce63ef43bdc3bd586a74d7596c0019b030",
+      "baize/hparams.py": "48ecfd8e8ea76f1679fdbb89be5ab3a57065197a1a55d6b9187cf2e977a2f928",
+      "baize/inference.py": "46baeda0c5a3ee5386ac4785fa0d6e360bbca894d15164a9688a8c9052a342c7",
+      "baize/models/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "baize/models/linear.py": "e8f6ee5ec10fab6d1924932e5f5d1a006ab85521d23ab41eb15e997e501a1f72",
+      "baize/provenance.py": "0226929c24251112fd2677fa4dfe7d29405ba26236e315539e8365237d0ff0d9",
+      "baize/research_snapshot.py": "7ed69c8e5b2561bb6e592e23c2f3610ce8d9f5b721a609ebfc2931a4e3a43aa1",
+      "src/__init__.py": "98160b76d443c41109ca1bf2d652744c447f38ee2ca39ae351d1ad025eb39d1a",
+      "src/client/__init__.py": "aaf64132c33e71c30b92adf25ab54c32a00ac0150f99e595a154ee6291038981",
+      "src/client/balancing_experiment.py": "b2cd3878adfc8b650ee1e8eefd94c79e6a409683aae29f2509efcdbdc380dff8",
+      "src/client/data.py": "03911d1bb58fc75b9fd2c9ba82c976725976269b5c896eef52c5d0f9cb4748fa",
+      "src/client/flower_client.py": "b234579799c9f0feb38f4752b46edeb511c38423b2c92d59cca25e26b49fd38d",
+      "src/client/neural_data.py": "6dd67dcf00c0d6b65b38b85f27fd23a23c872abdbc468f1a037a8d9545888b7c",
+      "src/data/__init__.py": "7d58743b1e1d1aec0c024e86a959bf41a33e371f4647c6fae9b3df5d15257174",
+      "src/data/allocation_plans.py": "e83ffeccfb2375cde3e278ea3329f5101a9d9c51dbf19c0b1782fbd01a16ca2c",
+      "src/data/balancing.py": "ff6ecd5a300e67859ebbc3a6f991884fb554e34e5d097ef948a3f5710aa2f8ba",
+      "src/data/comparison.py": "c53fd9b1cf80c4439d00da53c26e1b655fbff3379a7bc3af7c79b8c3e2b11188",
+      "src/data/iid_partitioning.py": "5e05812031159e7d2890185bfddedd5657834ef879aa71b5b624918e9acdd067",
+      "src/data/non_iid_partitioning.py": "d93c8682e9d9effde1cb38c0dc8c2570bcb30473a205fb596c3e39d96fe3aaa7",
+      "src/data/numerical_features.py": "22d9e98e377385050bb947525a82c88473db40fb0c53bc01763de5226e3ab848",
+      "src/data/partitioning.py": "540104ec841d3b4ab6d62ef5303fb25fb040900b91c7790065cfe58c6842c76a",
+      "src/data/planned_partitioning.py": "a25504b70487307f6f79415a47500b1de6821f175254acef71c0e2546c775964",
+      "src/data/sampling.py": "1cbc1540dd574ebbaa431909061a2ad55fa9273a250e29cfcaf21fe5ab17bd24",
+      "src/data/smote.py": "7b9b44ccb02a466d47fa8167d7ab4dceb9c3ebdeaccd42fc8b1a16742038739c",
+      "src/data/split_policy.py": "d62c98f7bfde078dc0c4b47eba1d604d593c3ee83833200a105d1c4ff0d5ed74",
+      "src/data/strategies.py": "12492480500d87c923352d59bc77df9f87870cdf3d0ecbf01f9b8c6058b5a714",
+      "src/data/verification.py": "8bb64d08e36af317de974accc7321370a1b108352d695adea9e2b746062c5889",
+      "src/evaluation/__init__.py": "c72f16c79ba0f02a1ab6b04fee03fc5a7a498a9fcd545a973915ddf7cf0104f9",
+      "src/evaluation/balancing_comparison.py": "a6dab025eb72b4a727ad9d7728e53019cf6e24889357222052a64ca0d7436989",
+      "src/evaluation/balancing_metrics.py": "347eb26153f42cb6d0023e1848c1fcf1c9f75605e940712dd74c0791a708c963",
+      "src/evaluation/classification.py": "665c7d7e5503c2bad472713d4462e7678ca2ae7e6dcdd30edc00d71dd6ff43e4",
+      "src/evaluation/federated.py": "a403dd1402e74829c928ca5373c2a0cbd6dbca97dc271ce982e8487f1b1fd450",
+      "src/evaluation/plots.py": "de016d93041a2cadefaf30a413ea67225db6080dfebefa116afdd37fe04adc5d",
+      "src/evaluation/reporting.py": "0f8eceeca8e5155d50d52356dac6040d4baaed1c87c728067d4d3a49cec6389b",
+      "src/models/__init__.py": "11c8d2204a78e9a031352c29cfcfb389d1cb829697df1ed901da7cabc589f439",
+      "src/models/character_cnn/__init__.py": "223f9908c35cccd651e7ee1542504872639a4c4aa2e23aa0dbf7072f3e0c17aa",
+      "src/models/character_cnn/model.py": "23e1d4758e5e735afd18abc5af1bedae04d20f5bdcb5a673901ddb33aa7ef899",
+      "src/models/deberta_v3_base/__init__.py": "a40e06ae99927109e9fa4e8d01cb22e2a5aa137a2a92422d7cc972c7141f1d79",
+      "src/models/deberta_v3_base/model.py": "1a7ba8fb17700f1aaba9ab0748594f342b533481fe2fbf2a753e95aecece2d3d",
+      "src/models/federated_state.py": "a76e12acef343ec795638ea608cea4749fb96811014aa383d4314797b12515ca",
+      "src/models/numerical_logistic.py": "417ca504bc181301198fc2ad3c9d1142463e7ba36f83e75aaa2b2454e3562782",
+      "src/models/training_audit.py": "d88257541f36a8a5f83b572e28599e98ebdba5961b79e9c92652d2847a558a60",
+      "src/models/undersampling_ensemble.py": "598016b026c83baa2121cd7d783ea9bd9fa1047d0de1ee7bc5a5813a7314d01c",
+      "src/server/__init__.py": "14625b32779b5954945b9d5fcb5adfd48823c4b36a0b4fc14d7a082bdf625d34",
+      "src/server/config.py": "d2906fe315ded627f326ea67ddae4083987a1a199c919c9ec287be4b3f0d6daa",
+      "src/server/flower_strategy.py": "f59fe6e4e24f72a9c1546be9d953eb09cb3935e1c2caf5892e520d4220ddb1c1",
+      "src/server/local_transport.py": "4d345ea09fb4b336f232010f8eac1f0f84f3211325a2b11d15ba763f6d19ab8d",
+      "config/five_client_iid.json": "2dad6d3dcd2150bdb018930a2fcf0d4d1bbf019270169dae4aa058a7ebf28d79",
+      "config/five_client_non_iid.json": "0113874bcbb8b080664624890fa9dba281f2f88ba6616e64c0d2520fd3a06759",
+      "config/five_client_label_skew.json": "0113874bcbb8b080664624890fa9dba281f2f88ba6616e64c0d2520fd3a06759",
+      "config/five_client_category_skew.json": "81ed3b08f582bf1b51b49ebe0a561771c0546ef116d4ed21d70034e96e54dca2",
+      "config/five_client_dirichlet.json": "e244346c6e1fdb13177253221e5276edb33b1e11dbc9fa15539a6bb1c73fab4d",
+      "config/balancing/undersampling.json": "dfa88c00e208c204f44c6c68c175341579dbf219dd41570f83aed4dadd333766",
+      "config/balancing/oversampling.json": "33a17d6d89fe4a198ff06b47639fe5cb7a437ba11bc605c92a02d84571207a24",
+      "config/balancing/smote.json": "f814ab645d9230f3b25d17356677052e3b3985b8a7c79a4364a55135baa5a0c0",
+      "config/balancing/ensemble_undersampling.json": "ba3ea029827af3433eed6c2ea66cb044c51c2c184299c0df95bce137f0963812",
+      "scripts/prepare_clients.py": "8f4ca28a1a674e30502ef0e2f7ec04d6f28c1b139a6fb0ef5cc00e69474ef7d6",
+      "scripts/split_client.py": "6fe1dec9d9b4cfadfd151957fd85c8e744594de126f2ddf30452375524904048",
+      "scripts/check_repository_safety.py": "ee9df7cf7472baf63e4eaf3ca2a94e96faf461e33cbc7fc175c7ac85055cccb0",
+      "scripts/partition_iid.py": "821d9a9aa3d69faa81cc02a953ce97f974206f4c9fe225a4132b0a39cc39d94b",
+      "scripts/partition_clients.py": "499aff698e7a7901cb70c18824656d2161aad756fad27e41c641c22ea82f173c",
+      "scripts/compare_partitions.py": "6ebeef099d38ce725c20ee8074c6f49a8f2cd8b12fb1486eb7742acf6c5f6d96",
+      "scripts/create_category_skew_config.py": "3fece30e8b83d0955c11f217930b36f44d1f86acbed814733c47987a1d978987",
+      "scripts/verify_partitions.py": "575cf2fb6dbffc307efa5785c18fa4c9ed24ec1333e8ba503bd62511339b8bd5",
+      "scripts/run_balancing.py": "42d8253810e7141746d13ba4d2a59c03f84ff2ef304d465887be1097c60e5863",
+      ".gitignore": "4b297a80b8ec7304cc6a392564f9cf95d21026f2428f9a9072814537bb18c955",
+      "requirements.txt": "81c6526a50957cd62fa1a746560795e64de6318b10c4cdf0ec581482d4dee037",
+      "pyproject.toml": "4133e714b397199894060d5bb5b5daccc0ea4261806fec41eee6d6d3eb671735",
+      "docs/PREPROCESSING.md": "15cceb0d9d01a3bea280e238c8c0639d4579ba310ac785015730892cc0c8da96"
+    },
+    "source_tree_sha256": "98437732f3ae7baea4d4a73cae99a63a5c2e56333746f8b486d858122102c5e6",
+    "runtime_requirements_sha256": "897ff9fae902654c5a087d9450613240993b52ae2c5f91c89aca491c7a1fa0a7",
+    "cold_environment_reproduction_verified": false
+  },
+  "excluded_records": {
+    "n_records": 0,
+    "reason_counts": {},
+    "file": "exclusions.jsonl",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "quarantine_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "checks": {
+    "exactly_five_clients": true,
+    "sampling_without_replacement": true,
+    "complete_record_coverage": true,
+    "unique_source_rows": true,
+    "unique_canonical_urls": true,
+    "all_clients_have_both_classes": true
+  },
+  "notes": [
+    "No records were added, removed, relabelled or resampled.",
+    "Domains can span clients. Every client must use shared_domain_hash_v1 for local splitting.",
+    "Local split fractions are approximate because domains stay in one shared role."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "source_records_identity_verified": 1562978,
+  "retained_records": 1468243,
+  "class_counts": {
+    "Adult": 34811,
+    "Non-adult": 1433432
+  },
+  "individually_excluded_records": 94735,
+  "missing_values": {
+    "id": 0,
+    "url": 3,
+    "label": 0
+  },
+  "verified_local_split_files": 15,
+  "zero_cross_client_or_split_domain_overlap": true,
+  "partition_and_URL_content_unchanged_from_v2": true,
+  "source_and_dependency_snapshot_checksums_verified": true
+}

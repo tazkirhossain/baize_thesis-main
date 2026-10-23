@@ -1,0 +1,91 @@
+{
+  "configuration": {
+    "n_clients": 5,
+    "rounds": 2,
+    "clients_per_round": 3,
+    "local_epochs": 1,
+    "batch_size": 4,
+    "learning_rate": 0.001,
+    "seed": 42,
+    "model": {
+      "family": "character_cnn",
+      "characters": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~:/?#[]@!$&'()*+,;=%",
+      "sequence_length": 16,
+      "dropout_input": 0.1
+    },
+    "balancing": {
+      "method": "undersampling",
+      "adult_to_non_adult": "1:1",
+      "seed": 42,
+      "ensemble_members": 5,
+      "k_neighbors": 5,
+      "insufficient_minority": "adjust"
+    },
+    "aggregation_weight": "original_training",
+    "threshold": 0.5,
+    "evaluate_final_test": false
+  },
+  "contract": "3981b62f2a63ccf1bc9d20b0ef36c777659d468f5b4a3905866526e64370ac3b",
+  "schema": [
+    [
+      0,
+      "bn.weight",
+      [
+        86
+      ],
+      "<f4"
+    ],
+    [
+      0,
+      "bn.bias",
+      [
+        86
+      ],
+      "<f4"
+    ],
+    [
+      0,
+      "bn.running_mean",
+      [
+        86
+      ],
+      "<f4"
+    ],
+    [
+      0,
+      "bn.running_var",
+      [
+        86
+      ],
+      "<f4"
+    ],
+    [
+      0,
+      "bn.num_batches_tracked",
+      [],
+      "<i8"
+    ],
+    [
+      0,
+      "fc.weight",
+      [
+        2,
+        86
+      ],
+      "<f4"
+    ],
+    [
+      0,
+      "fc.bias",
+      [
+        2
+      ],
+      "<f4"
+    ]
+  ],
+  "schema_hash": "4b09b4a07b83e696b87f35bc8173be540b631c152d668e7d8d959fafcb0e2a95",
+  "global_hash": "bf02617f43cc1a5cee41e43293975f8f4452f9afd005a5d4a8f3ff4b8308ddb7",
+  "completed_rounds": 2,
+  "privacy": "model states and aggregate statistics only; no DP or secure aggregation",
+  "selection": "fixed final round, no holdout-driven tuning"
+}

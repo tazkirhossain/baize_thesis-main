@@ -1,0 +1,12 @@
+{"category": "adult", "domain": "site3.com", "label": 1, "original_category": "Adult", "record_id": "3", "source_row": 7, "target": "Adult", "url": "https://site3.com/page0"}
+{"category": "adult", "domain": "site3.com", "label": 1, "original_category": "Adult", "record_id": "3", "source_row": 8, "target": "Adult", "url": "https://site3.com/page1"}
+{"category": "health", "domain": "site6.com", "label": 0, "original_category": "Health", "record_id": "6", "source_row": 13, "target": "Non-adult", "url": "https://site6.com/page0"}
+{"category": "health", "domain": "site6.com", "label": 0, "original_category": "Health", "record_id": "6", "source_row": 14, "target": "Non-adult", "url": "https://site6.com/page1"}
+{"category": "adult", "domain": "site11.com", "label": 1, "original_category": "Adult", "record_id": "11", "source_row": 23, "target": "Adult", "url": "https://site11.com/page0"}
+{"category": "adult", "domain": "site11.com", "label": 1, "original_category": "Adult", "record_id": "11", "source_row": 24, "target": "Adult", "url": "https://site11.com/page1"}
+{"category": "health", "domain": "site86.com", "label": 0, "original_category": "Health", "record_id": "86", "source_row": 173, "target": "Non-adult", "url": "https://site86.com/page0"}
+{"category": "health", "domain": "site86.com", "label": 0, "original_category": "Health", "record_id": "86", "source_row": 174, "target": "Non-adult", "url": "https://site86.com/page1"}
+{"category": "adult", "domain": "site101.com", "label": 1, "original_category": "Adult", "record_id": "101", "source_row": 203, "target": "Adult", "url": "https://site101.com/page0"}
+{"category": "adult", "domain": "site101.com", "label": 1, "original_category": "Adult", "record_id": "101", "source_row": 204, "target": "Adult", "url": "https://site101.com/page1"}
+{"category": "health", "domain": "site112.com", "label": 0, "original_category": "Health", "record_id": "112", "source_row": 225, "target": "Non-adult", "url": "https://site112.com/page0"}
+{"category": "health", "domain": "site112.com", "label": 0, "original_category": "Health", "record_id": "112", "source_row": 226, "target": "Non-adult", "url": "https://site112.com/page1"}

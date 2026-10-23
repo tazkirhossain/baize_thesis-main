@@ -1,0 +1,86 @@
+{
+  "client_id": 4,
+  "splits": {
+    "train": {
+      "n_records": 205554,
+      "class_counts": {
+        "0": 200680,
+        "1": 4874
+      },
+      "positive_rate": 0.023711530789962736,
+      "n_domains": 120960,
+      "category_counts": {
+        "adult": 4874,
+        "arts": 39264,
+        "business": 32356,
+        "computers": 15681,
+        "games": 7937,
+        "health": 9116,
+        "home": 3434,
+        "kids": 5662,
+        "news": 1095,
+        "recreation": 12528,
+        "reference": 7905,
+        "science": 13558,
+        "shopping": 12514,
+        "society": 27642,
+        "sports": 11988
+      },
+      "sha256": "c644855df871b25d39706bc0f2e692f1f69ae6928f8c6974be602630b4a5350a"
+    },
+    "val": {
+      "n_records": 44047,
+      "class_counts": {
+        "0": 43003,
+        "1": 1044
+      },
+      "positive_rate": 0.023701954730174585,
+      "n_domains": 25918,
+      "category_counts": {
+        "adult": 1044,
+        "arts": 6597,
+        "business": 6983,
+        "computers": 3256,
+        "games": 1007,
+        "health": 1845,
+        "home": 888,
+        "kids": 907,
+        "news": 351,
+        "recreation": 3395,
+        "reference": 2209,
+        "science": 3695,
+        "shopping": 2746,
+        "society": 6657,
+        "sports": 2467
+      },
+      "sha256": "6d679230d50989d1cae16319b7d3bbf9b7a48e7168b0e83e1b8cd9481627f624"
+    },
+    "test": {
+      "n_records": 44047,
+      "class_counts": {
+        "0": 43003,
+        "1": 1044
+      },
+      "positive_rate": 0.023701954730174585,
+      "n_domains": 25913,
+      "category_counts": {
+        "adult": 1044,
+        "arts": 6225,
+        "business": 6915,
+        "computers": 6438,
+        "games": 1229,
+        "health": 2063,
+        "home": 1033,
+        "kids": 1124,
+        "news": 213,
+        "recreation": 2631,
+        "reference": 1802,
+        "science": 2546,
+        "shopping": 2689,
+        "society": 5752,
+        "sports": 2343
+      },
+      "sha256": "5a67a162dc3fb0c33bd3c4fb89673962fa901d3c7f40de03c6e6f4a70babec02"
+    }
+  }
+}

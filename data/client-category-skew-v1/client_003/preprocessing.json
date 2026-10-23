@@ -1,0 +1,174 @@
+{
+  "schema_version": 3,
+  "config": {
+    "n_clients": 5,
+    "fractions": [
+      0.7,
+      0.15,
+      0.15
+    ],
+    "seed": 0,
+    "n_features": 65536,
+    "ngram_range": [
+      3,
+      5
+    ],
+    "min_per_class": 10,
+    "header": "absent"
+  },
+  "label_mapping": {
+    "Adult": 1,
+    "Non-adult": 0
+  },
+  "target_policy": "source category Adult -> Adult; 14 other known categories -> Non-adult",
+  "features": {
+    "kind": "hashing",
+    "analyzer": "char_wb",
+    "lowercase": true,
+    "n_features": 65536,
+    "ngram_range": [
+      3,
+      5
+    ],
+    "norm": "l2",
+    "alternate_sign": false
+  },
+  "scaling": "per-record L2 normalization; no fitted corpus statistics",
+  "sampling": "all retained records exactly once; seeded permutation without replacement",
+  "evaluation": "client-owned validation and test; no server dataset",
+  "domain_policy": "domains may span clients, but have one shared split role",
+  "partitioning": {
+    "strategy": "planned_category_skew",
+    "balanced_margins": false,
+    "strata": [
+      "normalized_original_category"
+    ],
+    "name": "category_skew",
+    "parameters": {
+      "allocation_plan": {
+        "adult": [
+          6963,
+          6962,
+          6962,
+          6962,
+          6962
+        ],
+        "arts": [
+          123039,
+          114765,
+          0,
+          0,
+          0
+        ],
+        "business": [
+          0,
+          0,
+          0,
+          0,
+          235405
+        ],
+        "computers": [
+          111101,
+          0,
+          0,
+          0,
+          0
+        ],
+        "games": [
+          52546,
+          0,
+          0,
+          0,
+          0
+        ],
+        "health": [
+          0,
+          58023,
+          0,
+          0,
+          0
+        ],
+        "home": [
+          0,
+          26886,
+          0,
+          0,
+          0
+        ],
+        "kids": [
+          0,
+          0,
+          37077,
+          0,
+          0
+        ],
+        "news": [
+          0,
+          8373,
+          0,
+          0,
+          0
+        ],
+        "recreation": [
+          0,
+          0,
+          0,
+          51142,
+          51281
+        ],
+        "reference": [
+          0,
+          0,
+          44482,
+          9172,
+          0
+        ],
+        "science": [
+          0,
+          0,
+          97763,
+          0,
+          0
+        ],
+        "shopping": [
+          0,
+          0,
+          93233,
+          0,
+          0
+        ],
+        "society": [
+          0,
+          0,
+          0,
+          226372,
+          0
+        ],
+        "sports": [
+          0,
+          78640,
+          14132,
+          0,
+          0
+        ]
+      }
+    },
+    "n_clients": 5,
+    "sampling_policy": "binary_shuffled_pools_sequential_v1",
+    "client_assignment_order": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "seed": 0,
+    "rng": "numpy.PCG64",
+    "replacement": false,
+    "population_order": "ascending original source_row"
+  },
+  "split_policy": {
+    "type": "shared_domain_hash_v1",
+    "seed": 0
+  }
+}

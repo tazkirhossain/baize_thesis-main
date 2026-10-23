@@ -1,0 +1,782 @@
+
+##### client-iid-v1 / Client 1 (storage 0) #####
+Local training only: {'Adult': 5102, 'Non-adult': 206064}; numerical features, classifier=sgd_logistic
+
+=== undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+undersampling [applied] seed=42 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,102, Non-adult=206,064
+  AFTER:  Adult=5,102, Non-adult=25,510; duplicated=0, synthetic=0, unused originals=180,554
+  Fit iterations=27; warnings=0
+  val: Adult precision=0.1570, recall=0.1815, F1=0.1683, macro-F1=0.5733, balanced accuracy=0.5790, accuracy=0.9577; confusion=[[37170, 897], [753, 167]]
+  test: Adult precision=0.1909, recall=0.1649, F1=0.1769, macro-F1=0.5800, balanced accuracy=0.5747, accuracy=0.9668; confusion=[[41898, 657], [785, 155]]
+
+=== oversampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+oversampling [applied] seed=42 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,102, Non-adult=206,064
+  AFTER:  Adult=41,213, Non-adult=206,064; duplicated=36,111, synthetic=0, unused originals=0
+  Fit iterations=11; warnings=0
+  val: Adult precision=0.1430, recall=0.1630, F1=0.1524, macro-F1=0.5652, balanced accuracy=0.5697, accuracy=0.9572; confusion=[[37168, 899], [770, 150]]
+  test: Adult precision=0.1895, recall=0.1543, F1=0.1701, macro-F1=0.5767, balanced accuracy=0.5698, accuracy=0.9675; confusion=[[41935, 620], [795, 145]]
+
+=== smote: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+smote [applied] seed=42 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,102, Non-adult=206,064
+  AFTER:  Adult=41,213, Non-adult=206,064; duplicated=0, synthetic=36,111, unused originals=0
+  SMOTE neighbors: requested=5, used=5; status=applied
+  Fit iterations=11; warnings=0
+  val: Adult precision=0.1403, recall=0.1696, F1=0.1535, macro-F1=0.5654, balanced accuracy=0.5722, accuracy=0.9559; confusion=[[37111, 956], [764, 156]]
+  test: Adult precision=0.1868, recall=0.1660, F1=0.1758, macro-F1=0.5793, balanced accuracy=0.5750, accuracy=0.9664; confusion=[[41876, 679], [784, 156]]
+
+=== ensemble_undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+Member 1: ensemble_undersampling [applied] seed=2684470948 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,102, Non-adult=206,064
+  AFTER:  Adult=5,102, Non-adult=25,510; duplicated=0, synthetic=0, unused originals=180,554
+  Fit iterations=29; warnings=0
+Member 2: ensemble_undersampling [applied] seed=4091952314 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,102, Non-adult=206,064
+  AFTER:  Adult=5,102, Non-adult=25,510; duplicated=0, synthetic=0, unused originals=180,554
+  Fit iterations=30; warnings=1
+Member 3: ensemble_undersampling [applied] seed=233227757 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,102, Non-adult=206,064
+  AFTER:  Adult=5,102, Non-adult=25,510; duplicated=0, synthetic=0, unused originals=180,554
+  Fit iterations=27; warnings=0
+Member 4: ensemble_undersampling [applied] seed=3276785861 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,102, Non-adult=206,064
+  AFTER:  Adult=5,102, Non-adult=25,510; duplicated=0, synthetic=0, unused originals=180,554
+  Fit iterations=29; warnings=0
+Member 5: ensemble_undersampling [applied] seed=3644269654 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,102, Non-adult=206,064
+  AFTER:  Adult=5,102, Non-adult=25,510; duplicated=0, synthetic=0, unused originals=180,554
+  Fit iterations=27; warnings=0
+  val: Adult precision=0.1393, recall=0.1891, F1=0.1604, macro-F1=0.5682, balanced accuracy=0.5804, accuracy=0.9533; confusion=[[36992, 1075], [746, 174]]
+  test: Adult precision=0.1600, recall=0.1840, F1=0.1712, macro-F1=0.5757, balanced accuracy=0.5814, accuracy=0.9615; confusion=[[41647, 908], [767, 173]]
+
+##### client-iid-v1 / Client 2 (storage 1) #####
+Local training only: {'Adult': 4972, 'Non-adult': 206277}; numerical features, classifier=sgd_logistic
+
+=== undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+undersampling [applied] seed=43 target Adult:Non-adult=1:5
+  BEFORE: Adult=4,972, Non-adult=206,277
+  AFTER:  Adult=4,972, Non-adult=24,860; duplicated=0, synthetic=0, unused originals=181,417
+  Fit iterations=26; warnings=0
+  val: Adult precision=0.1470, recall=0.1622, F1=0.1542, macro-F1=0.5654, balanced accuracy=0.5687, accuracy=0.9546; confusion=[[37170, 940], [837, 162]]
+  test: Adult precision=0.1926, recall=0.1796, F1=0.1859, macro-F1=0.5837, balanced accuracy=0.5810, accuracy=0.9640; confusion=[[41553, 746], [813, 178]]
+
+=== oversampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+oversampling [applied] seed=43 target Adult:Non-adult=1:5
+  BEFORE: Adult=4,972, Non-adult=206,277
+  AFTER:  Adult=41,256, Non-adult=206,277; duplicated=36,284, synthetic=0, unused originals=0
+  Fit iterations=10; warnings=0
+  val: Adult precision=0.1449, recall=0.1942, F1=0.1660, macro-F1=0.5701, balanced accuracy=0.5821, accuracy=0.9501; confusion=[[36965, 1145], [805, 194]]
+  test: Adult precision=0.1511, recall=0.1847, F1=0.1662, macro-F1=0.5722, balanced accuracy=0.5802, accuracy=0.9576; confusion=[[41271, 1028], [808, 183]]
+
+=== smote: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+smote [applied] seed=43 target Adult:Non-adult=1:5
+  BEFORE: Adult=4,972, Non-adult=206,277
+  AFTER:  Adult=41,256, Non-adult=206,277; duplicated=0, synthetic=36,284, unused originals=0
+  SMOTE neighbors: requested=5, used=5; status=applied
+  Fit iterations=11; warnings=0
+  val: Adult precision=0.1507, recall=0.1672, F1=0.1585, macro-F1=0.5676, balanced accuracy=0.5712, accuracy=0.9547; confusion=[[37169, 941], [832, 167]]
+  test: Adult precision=0.1957, recall=0.1756, F1=0.1851, macro-F1=0.5835, balanced accuracy=0.5793, accuracy=0.9646; confusion=[[41584, 715], [817, 174]]
+
+=== ensemble_undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+Member 1: ensemble_undersampling [applied] seed=3245521287 target Adult:Non-adult=1:5
+  BEFORE: Adult=4,972, Non-adult=206,277
+  AFTER:  Adult=4,972, Non-adult=24,860; duplicated=0, synthetic=0, unused originals=181,417
+  Fit iterations=23; warnings=0
+Member 2: ensemble_undersampling [applied] seed=1692733417 target Adult:Non-adult=1:5
+  BEFORE: Adult=4,972, Non-adult=206,277
+  AFTER:  Adult=4,972, Non-adult=24,860; duplicated=0, synthetic=0, unused originals=181,417
+  Fit iterations=30; warnings=1
+Member 3: ensemble_undersampling [applied] seed=3680399997 target Adult:Non-adult=1:5
+  BEFORE: Adult=4,972, Non-adult=206,277
+  AFTER:  Adult=4,972, Non-adult=24,860; duplicated=0, synthetic=0, unused originals=181,417
+  Fit iterations=17; warnings=0
+Member 4: ensemble_undersampling [applied] seed=3905576545 target Adult:Non-adult=1:5
+  BEFORE: Adult=4,972, Non-adult=206,277
+  AFTER:  Adult=4,972, Non-adult=24,860; duplicated=0, synthetic=0, unused originals=181,417
+  Fit iterations=19; warnings=0
+Member 5: ensemble_undersampling [applied] seed=3758222472 target Adult:Non-adult=1:5
+  BEFORE: Adult=4,972, Non-adult=206,277
+  AFTER:  Adult=4,972, Non-adult=24,860; duplicated=0, synthetic=0, unused originals=181,417
+  Fit iterations=21; warnings=0
+  val: Adult precision=0.1467, recall=0.1702, F1=0.1576, macro-F1=0.5668, balanced accuracy=0.5721, accuracy=0.9535; confusion=[[37121, 989], [829, 170]]
+  test: Adult precision=0.1914, recall=0.1796, F1=0.1853, macro-F1=0.5834, balanced accuracy=0.5809, accuracy=0.9638; confusion=[[41547, 752], [813, 178]]
+
+##### client-iid-v1 / Client 3 (storage 2) #####
+Local training only: {'Adult': 5026, 'Non-adult': 206351}; numerical features, classifier=sgd_logistic
+
+=== undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+undersampling [applied] seed=44 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,026, Non-adult=206,351
+  AFTER:  Adult=5,026, Non-adult=25,130; duplicated=0, synthetic=0, unused originals=181,221
+  Fit iterations=20; warnings=0
+  val: Adult precision=0.1441, recall=0.1711, F1=0.1564, macro-F1=0.5663, balanced accuracy=0.5725, accuracy=0.9538; confusion=[[37024, 992], [809, 167]]
+  test: Adult precision=0.1740, recall=0.1854, F1=0.1795, macro-F1=0.5801, balanced accuracy=0.5827, accuracy=0.9624; confusion=[[41475, 845], [782, 178]]
+
+=== oversampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+oversampling [applied] seed=44 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,026, Non-adult=206,351
+  AFTER:  Adult=41,271, Non-adult=206,351; duplicated=36,245, synthetic=0, unused originals=0
+  Fit iterations=10; warnings=0
+  val: Adult precision=0.1436, recall=0.1732, F1=0.1570, macro-F1=0.5665, balanced accuracy=0.5733, accuracy=0.9535; confusion=[[37008, 1008], [807, 169]]
+  test: Adult precision=0.1913, recall=0.1958, F1=0.1935, macro-F1=0.5875, balanced accuracy=0.5885, accuracy=0.9638; confusion=[[41525, 795], [772, 188]]
+
+=== smote: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+smote [applied] seed=44 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,026, Non-adult=206,351
+  AFTER:  Adult=41,271, Non-adult=206,351; duplicated=0, synthetic=36,245, unused originals=0
+  SMOTE neighbors: requested=5, used=5; status=applied
+  Fit iterations=11; warnings=0
+  val: Adult precision=0.1505, recall=0.1547, F1=0.1526, macro-F1=0.5653, balanced accuracy=0.5662, accuracy=0.9570; confusion=[[37164, 852], [825, 151]]
+  test: Adult precision=0.2028, recall=0.1802, F1=0.1908, macro-F1=0.5868, balanced accuracy=0.5821, accuracy=0.9661; confusion=[[41640, 680], [787, 173]]
+
+=== ensemble_undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+Member 1: ensemble_undersampling [applied] seed=2535795776 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,026, Non-adult=206,351
+  AFTER:  Adult=5,026, Non-adult=25,130; duplicated=0, synthetic=0, unused originals=181,221
+  Fit iterations=25; warnings=0
+Member 2: ensemble_undersampling [applied] seed=2706348293 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,026, Non-adult=206,351
+  AFTER:  Adult=5,026, Non-adult=25,130; duplicated=0, synthetic=0, unused originals=181,221
+  Fit iterations=19; warnings=0
+Member 3: ensemble_undersampling [applied] seed=3767400454 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,026, Non-adult=206,351
+  AFTER:  Adult=5,026, Non-adult=25,130; duplicated=0, synthetic=0, unused originals=181,221
+  Fit iterations=23; warnings=0
+Member 4: ensemble_undersampling [applied] seed=620754375 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,026, Non-adult=206,351
+  AFTER:  Adult=5,026, Non-adult=25,130; duplicated=0, synthetic=0, unused originals=181,221
+  Fit iterations=25; warnings=0
+Member 5: ensemble_undersampling [applied] seed=729707487 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,026, Non-adult=206,351
+  AFTER:  Adult=5,026, Non-adult=25,130; duplicated=0, synthetic=0, unused originals=181,221
+  Fit iterations=20; warnings=0
+  val: Adult precision=0.1528, recall=0.1281, F1=0.1394, macro-F1=0.5595, balanced accuracy=0.5549, accuracy=0.9604; confusion=[[37323, 693], [851, 125]]
+  test: Adult precision=0.2170, recall=0.1490, F1=0.1767, macro-F1=0.5805, balanced accuracy=0.5684, accuracy=0.9692; confusion=[[41804, 516], [817, 143]]
+
+##### client-iid-v1 / Client 4 (storage 3) #####
+Local training only: {'Adult': 5011, 'Non-adult': 206978}; numerical features, classifier=sgd_logistic
+
+=== undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+undersampling [applied] seed=45 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,011, Non-adult=206,978
+  AFTER:  Adult=5,011, Non-adult=25,055; duplicated=0, synthetic=0, unused originals=181,923
+  Fit iterations=24; warnings=0
+  val: Adult precision=0.1328, recall=0.1848, F1=0.1545, macro-F1=0.5644, balanced accuracy=0.5772, accuracy=0.9502; confusion=[[36370, 1143], [772, 175]]
+  test: Adult precision=0.1589, recall=0.2070, F1=0.1798, macro-F1=0.5786, balanced accuracy=0.5904, accuracy=0.9561; confusion=[[41094, 1101], [797, 208]]
+
+=== oversampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+oversampling [applied] seed=45 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,011, Non-adult=206,978
+  AFTER:  Adult=41,396, Non-adult=206,978; duplicated=36,385, synthetic=0, unused originals=0
+  Fit iterations=10; warnings=0
+  val: Adult precision=0.1362, recall=0.1552, F1=0.1451, macro-F1=0.5610, balanced accuracy=0.5652, accuracy=0.9550; confusion=[[36581, 932], [800, 147]]
+  test: Adult precision=0.2010, recall=0.1940, F1=0.1975, macro-F1=0.5893, balanced accuracy=0.5878, accuracy=0.9633; confusion=[[41420, 775], [810, 195]]
+
+=== smote: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+smote [applied] seed=45 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,011, Non-adult=206,978
+  AFTER:  Adult=41,396, Non-adult=206,978; duplicated=0, synthetic=36,385, unused originals=0
+  SMOTE neighbors: requested=5, used=5; status=applied
+  Fit iterations=10; warnings=0
+  val: Adult precision=0.1451, recall=0.1563, F1=0.1505, macro-F1=0.5641, balanced accuracy=0.5665, accuracy=0.9566; confusion=[[36641, 872], [799, 148]]
+  test: Adult precision=0.2036, recall=0.1900, F1=0.1966, macro-F1=0.5891, balanced accuracy=0.5862, accuracy=0.9639; confusion=[[41448, 747], [814, 191]]
+
+=== ensemble_undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+Member 1: ensemble_undersampling [applied] seed=384309742 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,011, Non-adult=206,978
+  AFTER:  Adult=5,011, Non-adult=25,055; duplicated=0, synthetic=0, unused originals=181,923
+  Fit iterations=24; warnings=0
+Member 2: ensemble_undersampling [applied] seed=2165957773 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,011, Non-adult=206,978
+  AFTER:  Adult=5,011, Non-adult=25,055; duplicated=0, synthetic=0, unused originals=181,923
+  Fit iterations=21; warnings=0
+Member 3: ensemble_undersampling [applied] seed=898150331 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,011, Non-adult=206,978
+  AFTER:  Adult=5,011, Non-adult=25,055; duplicated=0, synthetic=0, unused originals=181,923
+  Fit iterations=26; warnings=0
+Member 4: ensemble_undersampling [applied] seed=2289654706 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,011, Non-adult=206,978
+  AFTER:  Adult=5,011, Non-adult=25,055; duplicated=0, synthetic=0, unused originals=181,923
+  Fit iterations=27; warnings=0
+Member 5: ensemble_undersampling [applied] seed=1444749844 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,011, Non-adult=206,978
+  AFTER:  Adult=5,011, Non-adult=25,055; duplicated=0, synthetic=0, unused originals=181,923
+  Fit iterations=22; warnings=0
+  val: Adult precision=0.1411, recall=0.1658, F1=0.1524, macro-F1=0.5646, balanced accuracy=0.5702, accuracy=0.9546; confusion=[[36557, 956], [790, 157]]
+  test: Adult precision=0.1933, recall=0.1950, F1=0.1942, macro-F1=0.5874, balanced accuracy=0.5878, accuracy=0.9623; confusion=[[41377, 818], [809, 196]]
+
+##### client-iid-v1 / Client 5 (storage 4) #####
+Local training only: {'Adult': 5026, 'Non-adult': 205902}; numerical features, classifier=sgd_logistic
+
+=== undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+undersampling [applied] seed=46 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,026, Non-adult=205,902
+  AFTER:  Adult=5,026, Non-adult=25,130; duplicated=0, synthetic=0, unused originals=180,772
+  Fit iterations=25; warnings=0
+  val: Adult precision=0.1366, recall=0.1899, F1=0.1589, macro-F1=0.5666, balanced accuracy=0.5796, accuracy=0.9499; confusion=[[36949, 1169], [789, 185]]
+  test: Adult precision=0.1257, recall=0.1559, F1=0.1392, macro-F1=0.5587, balanced accuracy=0.5657, accuracy=0.9575; confusion=[[41624, 1043], [812, 150]]
+
+=== oversampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+oversampling [applied] seed=46 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,026, Non-adult=205,902
+  AFTER:  Adult=41,181, Non-adult=205,902; duplicated=36,155, synthetic=0, unused originals=0
+  Fit iterations=10; warnings=0
+  val: Adult precision=0.1639, recall=0.1992, F1=0.1798, macro-F1=0.5783, balanced accuracy=0.5866, accuracy=0.9547; confusion=[[37128, 990], [780, 194]]
+  test: Adult precision=0.1663, recall=0.1642, F1=0.1653, macro-F1=0.5733, balanced accuracy=0.5728, accuracy=0.9634; confusion=[[41875, 792], [804, 158]]
+
+=== smote: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+smote [applied] seed=46 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,026, Non-adult=205,902
+  AFTER:  Adult=41,181, Non-adult=205,902; duplicated=0, synthetic=36,155, unused originals=0
+  SMOTE neighbors: requested=5, used=5; status=applied
+  Fit iterations=10; warnings=0
+  val: Adult precision=0.1610, recall=0.2043, F1=0.1801, macro-F1=0.5781, balanced accuracy=0.5886, accuracy=0.9536; confusion=[[37081, 1037], [775, 199]]
+  test: Adult precision=0.1739, recall=0.1705, F1=0.1722, macro-F1=0.5769, balanced accuracy=0.5761, accuracy=0.9639; confusion=[[41888, 779], [798, 164]]
+
+=== ensemble_undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+Member 1: ensemble_undersampling [applied] seed=843705637 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,026, Non-adult=205,902
+  AFTER:  Adult=5,026, Non-adult=25,130; duplicated=0, synthetic=0, unused originals=180,772
+  Fit iterations=25; warnings=0
+Member 2: ensemble_undersampling [applied] seed=744107521 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,026, Non-adult=205,902
+  AFTER:  Adult=5,026, Non-adult=25,130; duplicated=0, synthetic=0, unused originals=180,772
+  Fit iterations=28; warnings=0
+Member 3: ensemble_undersampling [applied] seed=3230435958 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,026, Non-adult=205,902
+  AFTER:  Adult=5,026, Non-adult=25,130; duplicated=0, synthetic=0, unused originals=180,772
+  Fit iterations=26; warnings=0
+Member 4: ensemble_undersampling [applied] seed=3831056544 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,026, Non-adult=205,902
+  AFTER:  Adult=5,026, Non-adult=25,130; duplicated=0, synthetic=0, unused originals=180,772
+  Fit iterations=28; warnings=0
+Member 5: ensemble_undersampling [applied] seed=3040639404 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,026, Non-adult=205,902
+  AFTER:  Adult=5,026, Non-adult=25,130; duplicated=0, synthetic=0, unused originals=180,772
+  Fit iterations=22; warnings=0
+  val: Adult precision=0.1471, recall=0.2012, F1=0.1700, macro-F1=0.5724, balanced accuracy=0.5857, accuracy=0.9510; confusion=[[36982, 1136], [778, 196]]
+  test: Adult precision=0.1565, recall=0.1736, F1=0.1646, macro-F1=0.5724, balanced accuracy=0.5763, accuracy=0.9611; confusion=[[41767, 900], [795, 167]]
+
+##### client-label-skew-v1 / Client 1 (storage 0) #####
+Local training only: {'Adult': 8679, 'Non-adult': 202551}; numerical features, classifier=sgd_logistic
+
+=== undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+undersampling [applied] seed=42 target Adult:Non-adult=1:5
+  BEFORE: Adult=8,679, Non-adult=202,551
+  AFTER:  Adult=8,679, Non-adult=43,395; duplicated=0, synthetic=0, unused originals=159,156
+  Fit iterations=20; warnings=0
+  val: Adult precision=0.2095, recall=0.1568, F1=0.1794, macro-F1=0.5739, balanced accuracy=0.5653, accuracy=0.9391; confusion=[[36393, 981], [1398, 260]]
+  test: Adult precision=0.2617, recall=0.1545, F1=0.1943, macro-F1=0.5845, balanced accuracy=0.5686, accuracy=0.9509; confusion=[[40999, 725], [1406, 257]]
+
+=== oversampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+oversampling [applied] seed=42 target Adult:Non-adult=1:5
+  BEFORE: Adult=8,679, Non-adult=202,551
+  AFTER:  Adult=40,511, Non-adult=202,551; duplicated=31,832, synthetic=0, unused originals=0
+  Fit iterations=11; warnings=0
+  val: Adult precision=0.2350, recall=0.1580, F1=0.1890, macro-F1=0.5795, balanced accuracy=0.5676, accuracy=0.9424; confusion=[[36521, 853], [1396, 262]]
+  test: Adult precision=0.2813, recall=0.1527, F1=0.1980, macro-F1=0.5868, balanced accuracy=0.5686, accuracy=0.9526; confusion=[[41075, 649], [1409, 254]]
+
+=== smote: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+smote [applied] seed=42 target Adult:Non-adult=1:5
+  BEFORE: Adult=8,679, Non-adult=202,551
+  AFTER:  Adult=40,511, Non-adult=202,551; duplicated=0, synthetic=31,832, unused originals=0
+  SMOTE neighbors: requested=5, used=5; status=applied
+  Fit iterations=12; warnings=0
+  val: Adult precision=0.2341, recall=0.1484, F1=0.1816, macro-F1=0.5761, balanced accuracy=0.5634, accuracy=0.9432; confusion=[[36569, 805], [1412, 246]]
+  test: Adult precision=0.2854, recall=0.1479, F1=0.1949, macro-F1=0.5854, balanced accuracy=0.5666, accuracy=0.9531; confusion=[[41108, 616], [1417, 246]]
+
+=== ensemble_undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+Member 1: ensemble_undersampling [applied] seed=2684470948 target Adult:Non-adult=1:5
+  BEFORE: Adult=8,679, Non-adult=202,551
+  AFTER:  Adult=8,679, Non-adult=43,395; duplicated=0, synthetic=0, unused originals=159,156
+  Fit iterations=19; warnings=0
+Member 2: ensemble_undersampling [applied] seed=4091952314 target Adult:Non-adult=1:5
+  BEFORE: Adult=8,679, Non-adult=202,551
+  AFTER:  Adult=8,679, Non-adult=43,395; duplicated=0, synthetic=0, unused originals=159,156
+  Fit iterations=19; warnings=0
+Member 3: ensemble_undersampling [applied] seed=233227757 target Adult:Non-adult=1:5
+  BEFORE: Adult=8,679, Non-adult=202,551
+  AFTER:  Adult=8,679, Non-adult=43,395; duplicated=0, synthetic=0, unused originals=159,156
+  Fit iterations=20; warnings=0
+Member 4: ensemble_undersampling [applied] seed=3276785861 target Adult:Non-adult=1:5
+  BEFORE: Adult=8,679, Non-adult=202,551
+  AFTER:  Adult=8,679, Non-adult=43,395; duplicated=0, synthetic=0, unused originals=159,156
+  Fit iterations=21; warnings=0
+Member 5: ensemble_undersampling [applied] seed=3644269654 target Adult:Non-adult=1:5
+  BEFORE: Adult=8,679, Non-adult=202,551
+  AFTER:  Adult=8,679, Non-adult=43,395; duplicated=0, synthetic=0, unused originals=159,156
+  Fit iterations=30; warnings=1
+  val: Adult precision=0.2250, recall=0.1725, F1=0.1953, macro-F1=0.5820, balanced accuracy=0.5731, accuracy=0.9396; confusion=[[36389, 985], [1372, 286]]
+  test: Adult precision=0.2654, recall=0.1654, F1=0.2038, macro-F1=0.5891, balanced accuracy=0.5736, accuracy=0.9505; confusion=[[40963, 761], [1388, 275]]
+
+##### client-label-skew-v1 / Client 2 (storage 1) #####
+Local training only: {'Adult': 6124, 'Non-adult': 205354}; numerical features, classifier=sgd_logistic
+
+=== undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+undersampling [applied] seed=43 target Adult:Non-adult=1:5
+  BEFORE: Adult=6,124, Non-adult=205,354
+  AFTER:  Adult=6,124, Non-adult=30,620; duplicated=0, synthetic=0, unused originals=174,734
+  Fit iterations=20; warnings=0
+  val: Adult precision=0.1391, recall=0.2293, F1=0.1731, macro-F1=0.5692, balanced accuracy=0.5924, accuracy=0.9332; confusion=[[36049, 1684], [914, 272]]
+  test: Adult precision=0.1338, recall=0.2336, F1=0.1701, macro-F1=0.5688, balanced accuracy=0.5954, accuracy=0.9373; confusion=[[40262, 1800], [912, 278]]
+
+=== oversampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+oversampling [applied] seed=43 target Adult:Non-adult=1:5
+  BEFORE: Adult=6,124, Non-adult=205,354
+  AFTER:  Adult=41,071, Non-adult=205,354; duplicated=34,947, synthetic=0, unused originals=0
+  Fit iterations=10; warnings=0
+  val: Adult precision=0.1748, recall=0.1661, F1=0.1703, macro-F1=0.5725, balanced accuracy=0.5707, accuracy=0.9507; confusion=[[36803, 930], [989, 197]]
+  test: Adult precision=0.2335, recall=0.1958, F1=0.2130, macro-F1=0.5963, balanced accuracy=0.5888, accuracy=0.9602; confusion=[[41297, 765], [957, 233]]
+
+=== smote: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+smote [applied] seed=43 target Adult:Non-adult=1:5
+  BEFORE: Adult=6,124, Non-adult=205,354
+  AFTER:  Adult=41,071, Non-adult=205,354; duplicated=0, synthetic=34,947, unused originals=0
+  SMOTE neighbors: requested=5, used=5; status=applied
+  Fit iterations=10; warnings=0
+  val: Adult precision=0.1605, recall=0.1400, F1=0.1495, macro-F1=0.5623, balanced accuracy=0.5585, accuracy=0.9515; confusion=[[36865, 868], [1020, 166]]
+  test: Adult precision=0.2163, recall=0.1672, F1=0.1886, macro-F1=0.5842, balanced accuracy=0.5750, accuracy=0.9604; confusion=[[41341, 721], [991, 199]]
+
+=== ensemble_undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+Member 1: ensemble_undersampling [applied] seed=3245521287 target Adult:Non-adult=1:5
+  BEFORE: Adult=6,124, Non-adult=205,354
+  AFTER:  Adult=6,124, Non-adult=30,620; duplicated=0, synthetic=0, unused originals=174,734
+  Fit iterations=19; warnings=0
+Member 2: ensemble_undersampling [applied] seed=1692733417 target Adult:Non-adult=1:5
+  BEFORE: Adult=6,124, Non-adult=205,354
+  AFTER:  Adult=6,124, Non-adult=30,620; duplicated=0, synthetic=0, unused originals=174,734
+  Fit iterations=23; warnings=0
+Member 3: ensemble_undersampling [applied] seed=3680399997 target Adult:Non-adult=1:5
+  BEFORE: Adult=6,124, Non-adult=205,354
+  AFTER:  Adult=6,124, Non-adult=30,620; duplicated=0, synthetic=0, unused originals=174,734
+  Fit iterations=18; warnings=0
+Member 4: ensemble_undersampling [applied] seed=3905576545 target Adult:Non-adult=1:5
+  BEFORE: Adult=6,124, Non-adult=205,354
+  AFTER:  Adult=6,124, Non-adult=30,620; duplicated=0, synthetic=0, unused originals=174,734
+  Fit iterations=19; warnings=0
+Member 5: ensemble_undersampling [applied] seed=3758222472 target Adult:Non-adult=1:5
+  BEFORE: Adult=6,124, Non-adult=205,354
+  AFTER:  Adult=6,124, Non-adult=30,620; duplicated=0, synthetic=0, unused originals=174,734
+  Fit iterations=17; warnings=0
+  val: Adult precision=0.1862, recall=0.1796, F1=0.1828, macro-F1=0.5788, balanced accuracy=0.5775, accuracy=0.9511; confusion=[[36802, 931], [973, 213]]
+  test: Adult precision=0.2169, recall=0.1983, F1=0.2072, macro-F1=0.5929, balanced accuracy=0.5890, accuracy=0.9582; confusion=[[41210, 852], [954, 236]]
+
+##### client-label-skew-v1 / Client 3 (storage 2) #####
+Local training only: {'Adult': 4701, 'Non-adult': 206643}; numerical features, classifier=sgd_logistic
+
+=== undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+undersampling [applied] seed=44 target Adult:Non-adult=1:5
+  BEFORE: Adult=4,701, Non-adult=206,643
+  AFTER:  Adult=4,701, Non-adult=23,505; duplicated=0, synthetic=0, unused originals=183,138
+  Fit iterations=26; warnings=0
+  val: Adult precision=0.1407, recall=0.1714, F1=0.1545, macro-F1=0.5659, balanced accuracy=0.5730, accuracy=0.9556; confusion=[[37035, 965], [764, 158]]
+  test: Adult precision=0.1960, recall=0.1995, F1=0.1977, macro-F1=0.5905, balanced accuracy=0.5913, accuracy=0.9673; confusion=[[41788, 718], [702, 175]]
+
+=== oversampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+oversampling [applied] seed=44 target Adult:Non-adult=1:5
+  BEFORE: Adult=4,701, Non-adult=206,643
+  AFTER:  Adult=41,329, Non-adult=206,643; duplicated=36,628, synthetic=0, unused originals=0
+  Fit iterations=10; warnings=0
+  val: Adult precision=0.1492, recall=0.1638, F1=0.1562, macro-F1=0.5673, balanced accuracy=0.5706, accuracy=0.9581; confusion=[[37139, 861], [771, 151]]
+  test: Adult precision=0.2140, recall=0.1916, F1=0.2022, macro-F1=0.5933, balanced accuracy=0.5885, accuracy=0.9694; confusion=[[41889, 617], [709, 168]]
+
+=== smote: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+smote [applied] seed=44 target Adult:Non-adult=1:5
+  BEFORE: Adult=4,701, Non-adult=206,643
+  AFTER:  Adult=41,329, Non-adult=206,643; duplicated=0, synthetic=36,628, unused originals=0
+  SMOTE neighbors: requested=5, used=5; status=applied
+  Fit iterations=10; warnings=0
+  val: Adult precision=0.1450, recall=0.1540, F1=0.1494, macro-F1=0.5641, balanced accuracy=0.5660, accuracy=0.9585; confusion=[[37163, 837], [780, 142]]
+  test: Adult precision=0.1961, recall=0.1813, F1=0.1884, macro-F1=0.5861, balanced accuracy=0.5830, accuracy=0.9684; confusion=[[41854, 652], [718, 159]]
+
+=== ensemble_undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+Member 1: ensemble_undersampling [applied] seed=2535795776 target Adult:Non-adult=1:5
+  BEFORE: Adult=4,701, Non-adult=206,643
+  AFTER:  Adult=4,701, Non-adult=23,505; duplicated=0, synthetic=0, unused originals=183,138
+  Fit iterations=22; warnings=0
+Member 2: ensemble_undersampling [applied] seed=2706348293 target Adult:Non-adult=1:5
+  BEFORE: Adult=4,701, Non-adult=206,643
+  AFTER:  Adult=4,701, Non-adult=23,505; duplicated=0, synthetic=0, unused originals=183,138
+  Fit iterations=27; warnings=0
+Member 3: ensemble_undersampling [applied] seed=3767400454 target Adult:Non-adult=1:5
+  BEFORE: Adult=4,701, Non-adult=206,643
+  AFTER:  Adult=4,701, Non-adult=23,505; duplicated=0, synthetic=0, unused originals=183,138
+  Fit iterations=26; warnings=0
+Member 4: ensemble_undersampling [applied] seed=620754375 target Adult:Non-adult=1:5
+  BEFORE: Adult=4,701, Non-adult=206,643
+  AFTER:  Adult=4,701, Non-adult=23,505; duplicated=0, synthetic=0, unused originals=183,138
+  Fit iterations=26; warnings=0
+Member 5: ensemble_undersampling [applied] seed=729707487 target Adult:Non-adult=1:5
+  BEFORE: Adult=4,701, Non-adult=206,643
+  AFTER:  Adult=4,701, Non-adult=23,505; duplicated=0, synthetic=0, unused originals=183,138
+  Fit iterations=26; warnings=0
+  val: Adult precision=0.1453, recall=0.1866, F1=0.1633, macro-F1=0.5700, balanced accuracy=0.5800, accuracy=0.9547; confusion=[[36988, 1012], [750, 172]]
+  test: Adult precision=0.1894, recall=0.2030, F1=0.1959, macro-F1=0.5894, balanced accuracy=0.5925, accuracy=0.9663; confusion=[[41744, 762], [699, 178]]
+
+##### client-label-skew-v1 / Client 4 (storage 3) #####
+Local training only: {'Adult': 3220, 'Non-adult': 208282}; numerical features, classifier=sgd_logistic
+
+=== undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+undersampling [applied] seed=45 target Adult:Non-adult=1:5
+  BEFORE: Adult=3,220, Non-adult=208,282
+  AFTER:  Adult=3,220, Non-adult=16,100; duplicated=0, synthetic=0, unused originals=192,182
+  Fit iterations=28; warnings=0
+  val: Adult precision=0.0862, recall=0.1927, F1=0.1191, macro-F1=0.5481, balanced accuracy=0.5801, accuracy=0.9555; confusion=[[36689, 1230], [486, 116]]
+  test: Adult precision=0.1073, recall=0.2021, F1=0.1402, macro-F1=0.5602, balanced accuracy=0.5878, accuracy=0.9615; confusion=[[41807, 1140], [541, 137]]
+
+=== oversampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+oversampling [applied] seed=45 target Adult:Non-adult=1:5
+  BEFORE: Adult=3,220, Non-adult=208,282
+  AFTER:  Adult=41,657, Non-adult=208,282; duplicated=38,437, synthetic=0, unused originals=0
+  Fit iterations=10; warnings=0
+  val: Adult precision=0.0864, recall=0.1379, F1=0.1062, macro-F1=0.5438, balanced accuracy=0.5574, accuracy=0.9637; confusion=[[37041, 878], [519, 83]]
+  test: Adult precision=0.1284, recall=0.1475, F1=0.1373, macro-F1=0.5613, balanced accuracy=0.5658, accuracy=0.9712; confusion=[[42268, 679], [578, 100]]
+
+=== smote: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+smote [applied] seed=45 target Adult:Non-adult=1:5
+  BEFORE: Adult=3,220, Non-adult=208,282
+  AFTER:  Adult=41,657, Non-adult=208,282; duplicated=0, synthetic=38,437, unused originals=0
+  SMOTE neighbors: requested=5, used=5; status=applied
+  Fit iterations=10; warnings=0
+  val: Adult precision=0.0982, recall=0.1578, F1=0.1211, macro-F1=0.5514, balanced accuracy=0.5674, accuracy=0.9642; confusion=[[37047, 872], [507, 95]]
+  test: Adult precision=0.1404, recall=0.1652, F1=0.1518, macro-F1=0.5686, balanced accuracy=0.5746, accuracy=0.9713; confusion=[[42261, 686], [566, 112]]
+
+=== ensemble_undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+Member 1: ensemble_undersampling [applied] seed=384309742 target Adult:Non-adult=1:5
+  BEFORE: Adult=3,220, Non-adult=208,282
+  AFTER:  Adult=3,220, Non-adult=16,100; duplicated=0, synthetic=0, unused originals=192,182
+  Fit iterations=26; warnings=0
+Member 2: ensemble_undersampling [applied] seed=2165957773 target Adult:Non-adult=1:5
+  BEFORE: Adult=3,220, Non-adult=208,282
+  AFTER:  Adult=3,220, Non-adult=16,100; duplicated=0, synthetic=0, unused originals=192,182
+  Fit iterations=30; warnings=1
+Member 3: ensemble_undersampling [applied] seed=898150331 target Adult:Non-adult=1:5
+  BEFORE: Adult=3,220, Non-adult=208,282
+  AFTER:  Adult=3,220, Non-adult=16,100; duplicated=0, synthetic=0, unused originals=192,182
+  Fit iterations=29; warnings=0
+Member 4: ensemble_undersampling [applied] seed=2289654706 target Adult:Non-adult=1:5
+  BEFORE: Adult=3,220, Non-adult=208,282
+  AFTER:  Adult=3,220, Non-adult=16,100; duplicated=0, synthetic=0, unused originals=192,182
+  Fit iterations=29; warnings=0
+Member 5: ensemble_undersampling [applied] seed=1444749844 target Adult:Non-adult=1:5
+  BEFORE: Adult=3,220, Non-adult=208,282
+  AFTER:  Adult=3,220, Non-adult=16,100; duplicated=0, synthetic=0, unused originals=192,182
+  Fit iterations=29; warnings=0
+  val: Adult precision=0.0957, recall=0.1379, F1=0.1130, macro-F1=0.5479, balanced accuracy=0.5586, accuracy=0.9662; confusion=[[37135, 784], [519, 83]]
+  test: Adult precision=0.1483, recall=0.1549, F1=0.1515, macro-F1=0.5689, balanced accuracy=0.5704, accuracy=0.9730; confusion=[[42344, 603], [573, 105]]
+
+##### client-label-skew-v1 / Client 5 (storage 4) #####
+Local training only: {'Adult': 2413, 'Non-adult': 208742}; numerical features, classifier=sgd_logistic
+
+=== undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+undersampling [applied] seed=46 target Adult:Non-adult=1:5
+  BEFORE: Adult=2,413, Non-adult=208,742
+  AFTER:  Adult=2,413, Non-adult=12,065; duplicated=0, synthetic=0, unused originals=196,677
+  Fit iterations=30; warnings=1
+  val: Adult precision=0.2738, recall=0.0513, F1=0.0865, macro-F1=0.5401, balanced accuracy=0.5249, accuracy=0.9876; confusion=[[38737, 61], [425, 23]]
+  test: Adult precision=0.1810, recall=0.0467, F1=0.0742, macro-F1=0.5341, balanced accuracy=0.5222, accuracy=0.9879; confusion=[[42702, 95], [429, 21]]
+
+=== oversampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+oversampling [applied] seed=46 target Adult:Non-adult=1:5
+  BEFORE: Adult=2,413, Non-adult=208,742
+  AFTER:  Adult=41,749, Non-adult=208,742; duplicated=39,336, synthetic=0, unused originals=0
+  Fit iterations=11; warnings=0
+  val: Adult precision=0.0706, recall=0.1585, F1=0.0977, macro-F1=0.5403, balanced accuracy=0.5672, accuracy=0.9666; confusion=[[37863, 935], [377, 71]]
+  test: Adult precision=0.0845, recall=0.1311, F1=0.1028, macro-F1=0.5454, balanced accuracy=0.5581, accuracy=0.9762; confusion=[[42158, 639], [391, 59]]
+
+=== smote: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+smote [applied] seed=46 target Adult:Non-adult=1:5
+  BEFORE: Adult=2,413, Non-adult=208,742
+  AFTER:  Adult=41,749, Non-adult=208,742; duplicated=0, synthetic=39,336, unused originals=0
+  SMOTE neighbors: requested=5, used=5; status=applied
+  Fit iterations=10; warnings=0
+  val: Adult precision=0.0721, recall=0.1473, F1=0.0968, macro-F1=0.5404, balanced accuracy=0.5627, accuracy=0.9686; confusion=[[37948, 850], [382, 66]]
+  test: Adult precision=0.0857, recall=0.1222, F1=0.1007, macro-F1=0.5446, balanced accuracy=0.5543, accuracy=0.9773; confusion=[[42210, 587], [395, 55]]
+
+=== ensemble_undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+Member 1: ensemble_undersampling [applied] seed=843705637 target Adult:Non-adult=1:5
+  BEFORE: Adult=2,413, Non-adult=208,742
+  AFTER:  Adult=2,413, Non-adult=12,065; duplicated=0, synthetic=0, unused originals=196,677
+  Fit iterations=30; warnings=1
+Member 2: ensemble_undersampling [applied] seed=744107521 target Adult:Non-adult=1:5
+  BEFORE: Adult=2,413, Non-adult=208,742
+  AFTER:  Adult=2,413, Non-adult=12,065; duplicated=0, synthetic=0, unused originals=196,677
+  Fit iterations=22; warnings=0
+Member 3: ensemble_undersampling [applied] seed=3230435958 target Adult:Non-adult=1:5
+  BEFORE: Adult=2,413, Non-adult=208,742
+  AFTER:  Adult=2,413, Non-adult=12,065; duplicated=0, synthetic=0, unused originals=196,677
+  Fit iterations=18; warnings=0
+Member 4: ensemble_undersampling [applied] seed=3831056544 target Adult:Non-adult=1:5
+  BEFORE: Adult=2,413, Non-adult=208,742
+  AFTER:  Adult=2,413, Non-adult=12,065; duplicated=0, synthetic=0, unused originals=196,677
+  Fit iterations=30; warnings=1
+Member 5: ensemble_undersampling [applied] seed=3040639404 target Adult:Non-adult=1:5
+  BEFORE: Adult=2,413, Non-adult=208,742
+  AFTER:  Adult=2,413, Non-adult=12,065; duplicated=0, synthetic=0, unused originals=196,677
+  Fit iterations=22; warnings=0
+  val: Adult precision=0.0705, recall=0.1942, F1=0.1034, macro-F1=0.5419, balanced accuracy=0.5823, accuracy=0.9616; confusion=[[37651, 1147], [361, 87]]
+  test: Adult precision=0.0743, recall=0.1578, F1=0.1011, macro-F1=0.5431, balanced accuracy=0.5686, accuracy=0.9708; confusion=[[41913, 884], [379, 71]]
+
+##### client-category-skew-v1 / Client 1 (storage 0) #####
+Local training only: {'Adult': 5025, 'Non-adult': 207708}; numerical features, classifier=sgd_logistic
+
+=== undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+undersampling [applied] seed=42 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,025, Non-adult=207,708
+  AFTER:  Adult=5,025, Non-adult=25,125; duplicated=0, synthetic=0, unused originals=182,583
+  Fit iterations=25; warnings=0
+  val: Adult precision=0.1478, recall=0.1596, F1=0.1535, macro-F1=0.5642, balanced accuracy=0.5667, accuracy=0.9513; confusion=[[33891, 911], [832, 158]]
+  test: Adult precision=0.2329, recall=0.1540, F1=0.1854, macro-F1=0.5855, balanced accuracy=0.5716, accuracy=0.9716; confusion=[[43695, 481], [802, 146]]
+
+=== oversampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+oversampling [applied] seed=42 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,025, Non-adult=207,708
+  AFTER:  Adult=41,542, Non-adult=207,708; duplicated=36,517, synthetic=0, unused originals=0
+  Fit iterations=11; warnings=0
+  val: Adult precision=0.2473, recall=0.1384, F1=0.1775, macro-F1=0.5797, balanced accuracy=0.5632, accuracy=0.9645; confusion=[[34385, 417], [853, 137]]
+  test: Adult precision=0.3390, recall=0.1255, F1=0.1832, macro-F1=0.5856, balanced accuracy=0.5601, accuracy=0.9765; confusion=[[43944, 232], [829, 119]]
+
+=== smote: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+smote [applied] seed=42 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,025, Non-adult=207,708
+  AFTER:  Adult=41,542, Non-adult=207,708; duplicated=0, synthetic=36,517, unused originals=0
+  SMOTE neighbors: requested=5, used=5; status=applied
+  Fit iterations=12; warnings=0
+  val: Adult precision=0.2213, recall=0.1323, F1=0.1656, macro-F1=0.5734, balanced accuracy=0.5595, accuracy=0.9631; confusion=[[34341, 461], [859, 131]]
+  test: Adult precision=0.3149, recall=0.1203, F1=0.1740, macro-F1=0.5809, balanced accuracy=0.5573, accuracy=0.9760; confusion=[[43928, 248], [834, 114]]
+
+=== ensemble_undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+Member 1: ensemble_undersampling [applied] seed=2684470948 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,025, Non-adult=207,708
+  AFTER:  Adult=5,025, Non-adult=25,125; duplicated=0, synthetic=0, unused originals=182,583
+  Fit iterations=22; warnings=0
+Member 2: ensemble_undersampling [applied] seed=4091952314 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,025, Non-adult=207,708
+  AFTER:  Adult=5,025, Non-adult=25,125; duplicated=0, synthetic=0, unused originals=182,583
+  Fit iterations=16; warnings=0
+Member 3: ensemble_undersampling [applied] seed=233227757 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,025, Non-adult=207,708
+  AFTER:  Adult=5,025, Non-adult=25,125; duplicated=0, synthetic=0, unused originals=182,583
+  Fit iterations=27; warnings=0
+Member 4: ensemble_undersampling [applied] seed=3276785861 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,025, Non-adult=207,708
+  AFTER:  Adult=5,025, Non-adult=25,125; duplicated=0, synthetic=0, unused originals=182,583
+  Fit iterations=30; warnings=1
+Member 5: ensemble_undersampling [applied] seed=3644269654 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,025, Non-adult=207,708
+  AFTER:  Adult=5,025, Non-adult=25,125; duplicated=0, synthetic=0, unused originals=182,583
+  Fit iterations=27; warnings=0
+  val: Adult precision=0.2376, recall=0.1495, F1=0.1835, macro-F1=0.5823, balanced accuracy=0.5679, accuracy=0.9632; confusion=[[34327, 475], [842, 148]]
+  test: Adult precision=0.3174, recall=0.1329, F1=0.1874, macro-F1=0.5875, balanced accuracy=0.5634, accuracy=0.9758; confusion=[[43905, 271], [822, 126]]
+
+##### client-category-skew-v1 / Client 2 (storage 1) #####
+Local training only: {'Adult': 5016, 'Non-adult': 207630}; numerical features, classifier=sgd_logistic
+
+=== undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+undersampling [applied] seed=43 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,016, Non-adult=207,630
+  AFTER:  Adult=5,016, Non-adult=25,080; duplicated=0, synthetic=0, unused originals=182,550
+  Fit iterations=21; warnings=0
+  val: Adult precision=0.0759, recall=0.1920, F1=0.1088, macro-F1=0.5344, balanced accuracy=0.5668, accuracy=0.9232; confusion=[[35847, 2227], [770, 183]]
+  test: Adult precision=0.2730, recall=0.2125, F1=0.2390, macro-F1=0.6113, balanced accuracy=0.5994, accuracy=0.9680; confusion=[[40421, 562], [782, 211]]
+
+=== oversampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+oversampling [applied] seed=43 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,016, Non-adult=207,630
+  AFTER:  Adult=41,526, Non-adult=207,630; duplicated=36,510, synthetic=0, unused originals=0
+  Fit iterations=9; warnings=0
+  val: Adult precision=0.0692, recall=0.1448, F1=0.0937, macro-F1=0.5291, balanced accuracy=0.5480, accuracy=0.9316; confusion=[[36219, 1855], [815, 138]]
+  test: Adult precision=0.3980, recall=0.1611, F1=0.2294, macro-F1=0.6082, balanced accuracy=0.5776, accuracy=0.9744; confusion=[[40741, 242], [833, 160]]
+
+=== smote: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+smote [applied] seed=43 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,016, Non-adult=207,630
+  AFTER:  Adult=41,526, Non-adult=207,630; duplicated=0, synthetic=36,510, unused originals=0
+  SMOTE neighbors: requested=5, used=5; status=applied
+  Fit iterations=10; warnings=0
+  val: Adult precision=0.0725, recall=0.1700, F1=0.1017, macro-F1=0.5317, balanced accuracy=0.5578, accuracy=0.9267; confusion=[[36003, 2071], [791, 162]]
+  test: Adult precision=0.3036, recall=0.1883, F1=0.2324, macro-F1=0.6087, balanced accuracy=0.5889, accuracy=0.9706; confusion=[[40554, 429], [806, 187]]
+
+=== ensemble_undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+Member 1: ensemble_undersampling [applied] seed=3245521287 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,016, Non-adult=207,630
+  AFTER:  Adult=5,016, Non-adult=25,080; duplicated=0, synthetic=0, unused originals=182,550
+  Fit iterations=24; warnings=0
+Member 2: ensemble_undersampling [applied] seed=1692733417 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,016, Non-adult=207,630
+  AFTER:  Adult=5,016, Non-adult=25,080; duplicated=0, synthetic=0, unused originals=182,550
+  Fit iterations=24; warnings=0
+Member 3: ensemble_undersampling [applied] seed=3680399997 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,016, Non-adult=207,630
+  AFTER:  Adult=5,016, Non-adult=25,080; duplicated=0, synthetic=0, unused originals=182,550
+  Fit iterations=22; warnings=0
+Member 4: ensemble_undersampling [applied] seed=3905576545 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,016, Non-adult=207,630
+  AFTER:  Adult=5,016, Non-adult=25,080; duplicated=0, synthetic=0, unused originals=182,550
+  Fit iterations=26; warnings=0
+Member 5: ensemble_undersampling [applied] seed=3758222472 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,016, Non-adult=207,630
+  AFTER:  Adult=5,016, Non-adult=25,080; duplicated=0, synthetic=0, unused originals=182,550
+  Fit iterations=26; warnings=0
+  val: Adult precision=0.0745, recall=0.1836, F1=0.1060, macro-F1=0.5333, balanced accuracy=0.5633, accuracy=0.9244; confusion=[[35900, 2174], [778, 175]]
+  test: Adult precision=0.2516, recall=0.1964, F1=0.2206, macro-F1=0.6019, balanced accuracy=0.5911, accuracy=0.9672; confusion=[[40403, 580], [798, 195]]
+
+##### client-category-skew-v1 / Client 3 (storage 2) #####
+Local training only: {'Adult': 5036, 'Non-adult': 204043}; numerical features, classifier=sgd_logistic
+
+=== undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+undersampling [applied] seed=44 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,036, Non-adult=204,043
+  AFTER:  Adult=5,036, Non-adult=25,180; duplicated=0, synthetic=0, unused originals=178,863
+  Fit iterations=21; warnings=0
+  val: Adult precision=0.1348, recall=0.1362, F1=0.1355, macro-F1=0.5575, balanced accuracy=0.5578, accuracy=0.9600; confusion=[[40035, 841], [831, 131]]
+  test: Adult precision=0.2741, recall=0.1535, F1=0.1968, macro-F1=0.5912, balanced accuracy=0.5721, accuracy=0.9717; confusion=[[41376, 392], [816, 148]]
+
+=== oversampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+oversampling [applied] seed=44 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,036, Non-adult=204,043
+  AFTER:  Adult=40,809, Non-adult=204,043; duplicated=35,773, synthetic=0, unused originals=0
+  Fit iterations=10; warnings=0
+  val: Adult precision=0.1599, recall=0.1674, F1=0.1635, macro-F1=0.5717, balanced accuracy=0.5733, accuracy=0.9606; confusion=[[40030, 846], [801, 161]]
+  test: Adult precision=0.2401, recall=0.1940, F1=0.2146, macro-F1=0.5991, balanced accuracy=0.5899, accuracy=0.9680; confusion=[[41176, 592], [777, 187]]
+
+=== smote: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+smote [applied] seed=44 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,036, Non-adult=204,043
+  AFTER:  Adult=40,809, Non-adult=204,043; duplicated=0, synthetic=35,773, unused originals=0
+  SMOTE neighbors: requested=5, used=5; status=applied
+  Fit iterations=10; warnings=0
+  val: Adult precision=0.1634, recall=0.1549, F1=0.1590, macro-F1=0.5699, balanced accuracy=0.5681, accuracy=0.9623; confusion=[[40113, 763], [813, 149]]
+  test: Adult precision=0.2544, recall=0.1784, F1=0.2098, macro-F1=0.5971, balanced accuracy=0.5832, accuracy=0.9697; confusion=[[41264, 504], [792, 172]]
+
+=== ensemble_undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+Member 1: ensemble_undersampling [applied] seed=2535795776 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,036, Non-adult=204,043
+  AFTER:  Adult=5,036, Non-adult=25,180; duplicated=0, synthetic=0, unused originals=178,863
+  Fit iterations=22; warnings=0
+Member 2: ensemble_undersampling [applied] seed=2706348293 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,036, Non-adult=204,043
+  AFTER:  Adult=5,036, Non-adult=25,180; duplicated=0, synthetic=0, unused originals=178,863
+  Fit iterations=25; warnings=0
+Member 3: ensemble_undersampling [applied] seed=3767400454 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,036, Non-adult=204,043
+  AFTER:  Adult=5,036, Non-adult=25,180; duplicated=0, synthetic=0, unused originals=178,863
+  Fit iterations=19; warnings=0
+Member 4: ensemble_undersampling [applied] seed=620754375 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,036, Non-adult=204,043
+  AFTER:  Adult=5,036, Non-adult=25,180; duplicated=0, synthetic=0, unused originals=178,863
+  Fit iterations=21; warnings=0
+Member 5: ensemble_undersampling [applied] seed=729707487 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,036, Non-adult=204,043
+  AFTER:  Adult=5,036, Non-adult=25,180; duplicated=0, synthetic=0, unused originals=178,863
+  Fit iterations=25; warnings=0
+  val: Adult precision=0.1523, recall=0.1840, F1=0.1667, macro-F1=0.5725, balanced accuracy=0.5799, accuracy=0.9577; confusion=[[39891, 985], [785, 177]]
+  test: Adult precision=0.2232, recall=0.2075, F1=0.2151, macro-F1=0.5988, balanced accuracy=0.5954, accuracy=0.9658; confusion=[[41072, 696], [764, 200]]
+
+##### client-category-skew-v1 / Client 4 (storage 3) #####
+Local training only: {'Adult': 5032, 'Non-adult': 208928}; numerical features, classifier=sgd_logistic
+
+=== undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+undersampling [applied] seed=45 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,032, Non-adult=208,928
+  AFTER:  Adult=5,032, Non-adult=25,160; duplicated=0, synthetic=0, unused originals=183,768
+  Fit iterations=29; warnings=0
+  val: Adult precision=0.4142, recall=0.1311, F1=0.1992, macro-F1=0.5924, balanced accuracy=0.5630, accuracy=0.9715; confusion=[[35008, 181], [848, 128]]
+  test: Adult precision=0.0779, recall=0.1426, F1=0.1007, macro-F1=0.5360, balanced accuracy=0.5524, accuracy=0.9442; confusion=[[40959, 1610], [818, 136]]
+
+=== oversampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+oversampling [applied] seed=45 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,032, Non-adult=208,928
+  AFTER:  Adult=41,786, Non-adult=208,928; duplicated=36,754, synthetic=0, unused originals=0
+  Fit iterations=11; warnings=0
+  val: Adult precision=0.2939, recall=0.1936, F1=0.2335, macro-F1=0.6080, balanced accuracy=0.5904, accuracy=0.9657; confusion=[[34735, 454], [787, 189]]
+  test: Adult precision=0.0884, recall=0.2055, F1=0.1237, macro-F1=0.5453, balanced accuracy=0.5790, accuracy=0.9362; confusion=[[40549, 2020], [758, 196]]
+
+=== smote: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+smote [applied] seed=45 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,032, Non-adult=208,928
+  AFTER:  Adult=41,786, Non-adult=208,928; duplicated=0, synthetic=36,754, unused originals=0
+  SMOTE neighbors: requested=5, used=5; status=applied
+  Fit iterations=9; warnings=0
+  val: Adult precision=0.2870, recall=0.1906, F1=0.2291, macro-F1=0.6057, balanced accuracy=0.5887, accuracy=0.9654; confusion=[[34727, 462], [790, 186]]
+  test: Adult precision=0.0912, recall=0.2075, F1=0.1268, macro-F1=0.5471, balanced accuracy=0.5806, accuracy=0.9373; confusion=[[40597, 1972], [756, 198]]
+
+=== ensemble_undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+Member 1: ensemble_undersampling [applied] seed=384309742 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,032, Non-adult=208,928
+  AFTER:  Adult=5,032, Non-adult=25,160; duplicated=0, synthetic=0, unused originals=183,768
+  Fit iterations=24; warnings=0
+Member 2: ensemble_undersampling [applied] seed=2165957773 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,032, Non-adult=208,928
+  AFTER:  Adult=5,032, Non-adult=25,160; duplicated=0, synthetic=0, unused originals=183,768
+  Fit iterations=21; warnings=0
+Member 3: ensemble_undersampling [applied] seed=898150331 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,032, Non-adult=208,928
+  AFTER:  Adult=5,032, Non-adult=25,160; duplicated=0, synthetic=0, unused originals=183,768
+  Fit iterations=25; warnings=0
+Member 4: ensemble_undersampling [applied] seed=2289654706 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,032, Non-adult=208,928
+  AFTER:  Adult=5,032, Non-adult=25,160; duplicated=0, synthetic=0, unused originals=183,768
+  Fit iterations=23; warnings=0
+Member 5: ensemble_undersampling [applied] seed=1444749844 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,032, Non-adult=208,928
+  AFTER:  Adult=5,032, Non-adult=25,160; duplicated=0, synthetic=0, unused originals=183,768
+  Fit iterations=19; warnings=0
+  val: Adult precision=0.2781, recall=0.1875, F1=0.2240, macro-F1=0.6030, balanced accuracy=0.5870, accuracy=0.9649; confusion=[[34714, 475], [793, 183]]
+  test: Adult precision=0.0901, recall=0.2096, F1=0.1261, macro-F1=0.5465, balanced accuracy=0.5811, accuracy=0.9363; confusion=[[40550, 2019], [754, 200]]
+
+##### client-category-skew-v1 / Client 5 (storage 4) #####
+Local training only: {'Adult': 5028, 'Non-adult': 203263}; numerical features, classifier=sgd_logistic
+
+=== undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+undersampling [applied] seed=46 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,028, Non-adult=203,263
+  AFTER:  Adult=5,028, Non-adult=25,140; duplicated=0, synthetic=0, unused originals=178,123
+  Fit iterations=17; warnings=0
+  val: Adult precision=0.2577, recall=0.2064, F1=0.2292, macro-F1=0.6067, balanced accuracy=0.5964, accuracy=0.9690; confusion=[[40327, 556], [742, 193]]
+  test: Adult precision=0.2516, recall=0.2002, F1=0.2230, macro-F1=0.6033, balanced accuracy=0.5931, accuracy=0.9680; confusion=[[41945, 595], [799, 200]]
+
+=== oversampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+oversampling [applied] seed=46 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,028, Non-adult=203,263
+  AFTER:  Adult=40,653, Non-adult=203,263; duplicated=35,625, synthetic=0, unused originals=0
+  Fit iterations=17; warnings=0
+  val: Adult precision=0.3402, recall=0.2128, F1=0.2618, macro-F1=0.6241, balanced accuracy=0.6017, accuracy=0.9732; confusion=[[40497, 386], [736, 199]]
+  test: Adult precision=0.3481, recall=0.1962, F1=0.2510, macro-F1=0.6186, balanced accuracy=0.5938, accuracy=0.9731; confusion=[[42173, 367], [803, 196]]
+
+=== smote: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+smote [applied] seed=46 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,028, Non-adult=203,263
+  AFTER:  Adult=40,653, Non-adult=203,263; duplicated=0, synthetic=35,625, unused originals=0
+  SMOTE neighbors: requested=5, used=5; status=applied
+  Fit iterations=15; warnings=0
+  val: Adult precision=0.2413, recall=0.2984, F1=0.2669, macro-F1=0.6240, balanced accuracy=0.6385, accuracy=0.9633; confusion=[[40006, 877], [656, 279]]
+  test: Adult precision=0.2211, recall=0.2753, F1=0.2452, macro-F1=0.6126, balanced accuracy=0.6262, accuracy=0.9611; confusion=[[41571, 969], [724, 275]]
+
+=== ensemble_undersampling: engineered_numeric / sgd_logistic, fixed threshold=0.5 ===
+Member 1: ensemble_undersampling [applied] seed=843705637 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,028, Non-adult=203,263
+  AFTER:  Adult=5,028, Non-adult=25,140; duplicated=0, synthetic=0, unused originals=178,123
+  Fit iterations=30; warnings=1
+Member 2: ensemble_undersampling [applied] seed=744107521 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,028, Non-adult=203,263
+  AFTER:  Adult=5,028, Non-adult=25,140; duplicated=0, synthetic=0, unused originals=178,123
+  Fit iterations=30; warnings=1
+Member 3: ensemble_undersampling [applied] seed=3230435958 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,028, Non-adult=203,263
+  AFTER:  Adult=5,028, Non-adult=25,140; duplicated=0, synthetic=0, unused originals=178,123
+  Fit iterations=26; warnings=0
+Member 4: ensemble_undersampling [applied] seed=3831056544 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,028, Non-adult=203,263
+  AFTER:  Adult=5,028, Non-adult=25,140; duplicated=0, synthetic=0, unused originals=178,123
+  Fit iterations=30; warnings=1
+Member 5: ensemble_undersampling [applied] seed=3040639404 target Adult:Non-adult=1:5
+  BEFORE: Adult=5,028, Non-adult=203,263
+  AFTER:  Adult=5,028, Non-adult=25,140; duplicated=0, synthetic=0, unused originals=178,123
+  Fit iterations=22; warnings=0
+  val: Adult precision=0.2956, recall=0.2374, F1=0.2633, macro-F1=0.6241, balanced accuracy=0.6122, accuracy=0.9703; confusion=[[40354, 529], [713, 222]]
+  test: Adult precision=0.2886, recall=0.2172, F1=0.2479, macro-F1=0.6162, balanced accuracy=0.6023, accuracy=0.9698; confusion=[[42005, 535], [782, 217]]
+
+Complete: original train/validation/test files unchanged; no automatic best-method selection.

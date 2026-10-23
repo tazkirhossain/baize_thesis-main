@@ -557,3 +557,27 @@ Test was not loaded, matching the active false setting. This is synthetic
 execution/integrity evidence, not real-corpus model quality. Audit:
 `data/verify_checkpoint_selection_v1.py` and the run's `verification.json`.
 The active real-data metadata preflight is `data/checkpoint-config-check-v1.log`.
+
+## Complete data publication (owner instruction, 23 October 2026)
+
+The owner explicitly superseded the earlier dataset exclusion and requested
+the complete data folder with no Git ignore patterns. Root .gitignore now has
+no patterns. Publication includes raw data, client partitions/splits, pretrained
+weights, checkpoints, old runs, caches, runtime packages, dependencies and test
+artifacts. Actual credentials/private keys remain prohibited; the publication
+safety guard/CI check those and regular GitHub file limits. Exact known fake
+safety-test values remain test fixtures, not actual credentials.
+
+Large files are staged through Git LFS, and data/runtime attributes disable
+newline conversion to preserve dataset/manifest checksums across operating
+systems. Historical nested test-repository .git directories cannot be ordinary
+Git paths, so their metadata is preserved in a ZIP and SHA-256 manifest under
+data/ while ordinary files are published at their existing locations. Root
+repository metadata is never uploaded. No local source data is deleted or
+repartitioned by this work. Use Git/LFS clone and git lfs pull to obtain actual
+large files; GitHub browser ZIPs may contain pointers. See PUBLISHED_DATA.md.
+
+The ML pipeline was unchanged. The complete regression suite passed 300 tests
+with three optional network tests skipped after the publication policy change.
+The focused safety tests were also rerun to verify public CA bundles, exact
+synthetic payloads, token/private-key blocking and duplicate-content handling.

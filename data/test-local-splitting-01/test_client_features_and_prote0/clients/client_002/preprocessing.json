@@ -1,0 +1,38 @@
+{
+  "schema_version": 2,
+  "config": {
+    "n_clients": 3,
+    "fractions": [
+      0.7,
+      0.15,
+      0.15
+    ],
+    "seed": 0,
+    "n_features": 64,
+    "ngram_range": [
+      3,
+      5
+    ],
+    "min_per_class": 1
+  },
+  "label_mapping": {
+    "adult": 1,
+    "known_other_categories": 0
+  },
+  "features": {
+    "kind": "hashing",
+    "analyzer": "char_wb",
+    "lowercase": true,
+    "n_features": 64,
+    "ngram_range": [
+      3,
+      5
+    ],
+    "norm": "l2",
+    "alternate_sign": false
+  },
+  "scaling": "per-record L2 normalization; no fitted corpus statistics",
+  "sampling": "all valid unique labelled records; no balancing or resampling",
+  "evaluation": "client-owned validation and test; no server dataset",
+  "domain_policy": "one registrable domain per client; local domain-disjoint splits"
+}

@@ -1,0 +1,29 @@
+{
+  "method": "oversampling",
+  "split": "train",
+  "config": {
+    "method": "oversampling",
+    "adult_to_non_adult": "1:1",
+    "seed": 697079281,
+    "ensemble_members": 2,
+    "k_neighbors": 5,
+    "insufficient_minority": "adjust"
+  },
+  "before": {
+    "Adult": 7,
+    "Non-adult": 26
+  },
+  "after": {
+    "Adult": 26,
+    "Non-adult": 26
+  },
+  "achieved_adult_to_non_adult": 1.0,
+  "status": "applied",
+  "duplicated_examples": 19,
+  "synthetic_examples": 0,
+  "removed_training_examples": 0,
+  "selection_sha256": "199cd8532b92f8d1c5f3c5d0075e019377bc112ec30f2defd08d178102f4280d",
+  "round": 2,
+  "member": 0,
+  "warmup_examples_processed": 33
+}

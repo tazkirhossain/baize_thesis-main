@@ -1,5 +1,7 @@
 """Exercise the safety policy in synthetic disposable Git indexes, never the corpus."""
 import shutil
+import hashlib
+import json
 import subprocess
 from pathlib import Path
 
@@ -24,12 +26,17 @@ def stage(root, name, content):
     subprocess.run(["git", "-C", str(root), "add", "-f", "--", name], check=True, capture_output=True)
 
 
-@pytest.mark.parametrize("name", ["data/raw/url.csv", "leaked.csv", "clients/client_000/data.jsonl",
-    ".env", "private.pem", "model.pt", "checkpoints/latest.bin", "other/exclusions.jsonl",
-    "archive.zip", "somewhere/.aws/credentials"])
-def test_force_added_sensitive_artifacts_are_blocked(repository, name):
+@pytest.mark.parametrize("name", [".env", "private.pem", "somewhere/.aws/credentials"])
+def test_force_added_credentials_are_blocked(repository, name):
     stage(repository, name, "synthetic placeholder")
     assert any(path == name for path, _ in check_repository(repository))
+
+
+@pytest.mark.parametrize('name',['data/raw/url.csv','leaked.csv','clients/client_000/data.jsonl',
+    'model.pt','checkpoints/latest.bin','other/exclusions.jsonl','archive.zip'])
+def test_owner_authorized_data_and_artifacts_are_allowed(repository,name):
+    stage(repository,name,'synthetic placeholder')
+    assert check_repository(repository)==[]
 
 
 def test_source_code_and_sanitized_examples_are_allowed(repository):
@@ -43,11 +50,52 @@ def test_private_key_in_unexpected_extension_is_blocked(repository):
     assert any("private key" in reason for _, reason in check_repository(repository))
 
 
-def test_jsonl_exports_have_no_legacy_metric_exception(repository):
+def test_owner_authorized_jsonl_exports_are_allowed(repository):
     name = "experiments/results/E1_random_seeds.jsonl"
     stage(repository, name, '{"seed":0,"pr_auc":0.4,"url":"synthetic.invalid"}\n')
-    assert check_repository(repository)
+    assert check_repository(repository)==[]
     stage(repository, name, '{"seed":0,"pr_auc":0.4}\n')
+    assert check_repository(repository)==[]
+
+
+def test_exact_historical_synthetic_credentials_are_distinct_from_real_secrets(repository):
+    name='data/test-fixture/test_credential_like_tokens_in0/unsafe.txt'
+    value='AKIA'+'A'*16
+    stage(repository,name,value)
+    assert check_repository(repository)==[]
+    stage(repository,name,value+' additional content')
+    assert check_repository(repository)
+
+
+def test_public_ca_certificate_is_not_a_private_key(repository):
+    stage(repository,'data/runtime/cacert.pem','# public CA bundle\n'*100+'-----BEGIN CERTIFICATE-----\npublic fixture\n')
+    assert check_repository(repository)==[]
+
+
+def test_duplicate_secret_findings_keep_paths_and_fixture_context(repository):
+    value='AKIA'+'A'*16
+    for name in ('unsafe1.txt','unsafe2.txt','data/test-example/fixture.txt'):
+        stage(repository,name,value)
+    findings=check_repository(repository)
+    assert {name for name,_ in findings}=={'unsafe1.txt','unsafe2.txt'}
+
+
+def test_pytest_logs_allow_only_the_known_mock_values(repository):
+    path='data/test-publication-example.log'
+    stage(repository,path,'case sk-proj--'+'x'*48+' completed')
+    assert check_repository(repository)==[]
+    stage(repository,path,'case sk-proj--'+'x'*48+' unexpected ghp_'+'z'*36)
+    assert check_repository(repository)
+
+
+def test_public_artifact_review_is_scoped_to_exact_file_bytes(repository):
+    value='ghp_'+'x'*36
+    stage(repository,'public-test-fixture.txt',value)
+    record={'actual_credentials_allowed':False,'reviewed_files':[{'path':'public-test-fixture.txt',
+        'sha256':hashlib.sha256(value.encode()).hexdigest(),'kind':'exact_known_synthetic_safety_artifact'}]}
+    stage(repository,'data/publication-nonsecret-review.json',json.dumps(record))
+    assert check_repository(repository)==[]
+    stage(repository,'public-test-fixture.txt',value+' changed')
     assert check_repository(repository)
 
 

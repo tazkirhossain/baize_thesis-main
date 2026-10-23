@@ -1,0 +1,192 @@
+{
+  "round": 1,
+  "weighting_policy": "original_training",
+  "clients": [
+    {
+      "base_hash": "00d58310e4a5f45835e855b16722f1381b5b7477197e3e64c0065cea6eb58dac",
+      "round": 1,
+      "ensemble_members": 2,
+      "original_train": 12,
+      "client_id": 0,
+      "original_adult": 2,
+      "used_non_adult": 2,
+      "examples_processed": 8,
+      "duplicated": 0,
+      "train_seconds": 0.07364989999769023,
+      "schema": "b857b56fdc12d2dfd111e41658969e5d71f56609b752dd962118d20ebdb5b247",
+      "contract": "3ffbb989b167354413dbabcf4fc5c176f0f2d26b6382a3852626361c7b0eda53",
+      "original_non_adult": 10,
+      "fit_seconds": 0.07996319999801926,
+      "train_loss": 0.6923077404499054,
+      "resampled_train": 4,
+      "used_adult": 2,
+      "aggregation_weight": 12
+    },
+    {
+      "base_hash": "00d58310e4a5f45835e855b16722f1381b5b7477197e3e64c0065cea6eb58dac",
+      "round": 1,
+      "ensemble_members": 2,
+      "original_train": 12,
+      "client_id": 1,
+      "original_adult": 3,
+      "used_non_adult": 3,
+      "examples_processed": 12,
+      "duplicated": 0,
+      "train_seconds": 0.01657080000222777,
+      "schema": "b857b56fdc12d2dfd111e41658969e5d71f56609b752dd962118d20ebdb5b247",
+      "contract": "3ffbb989b167354413dbabcf4fc5c176f0f2d26b6382a3852626361c7b0eda53",
+      "original_non_adult": 9,
+      "fit_seconds": 0.0230435999983456,
+      "train_loss": 0.693149983882904,
+      "resampled_train": 6,
+      "used_adult": 3,
+      "aggregation_weight": 12
+    },
+    {
+      "base_hash": "00d58310e4a5f45835e855b16722f1381b5b7477197e3e64c0065cea6eb58dac",
+      "round": 1,
+      "ensemble_members": 2,
+      "original_train": 12,
+      "client_id": 2,
+      "original_adult": 4,
+      "used_non_adult": 4,
+      "examples_processed": 16,
+      "duplicated": 0,
+      "train_seconds": 0.018250799999805167,
+      "schema": "b857b56fdc12d2dfd111e41658969e5d71f56609b752dd962118d20ebdb5b247",
+      "contract": "3ffbb989b167354413dbabcf4fc5c176f0f2d26b6382a3852626361c7b0eda53",
+      "original_non_adult": 8,
+      "fit_seconds": 0.024640300001919968,
+      "train_loss": 0.6923444271087646,
+      "resampled_train": 8,
+      "used_adult": 4,
+      "aggregation_weight": 12
+    },
+    {
+      "base_hash": "00d58310e4a5f45835e855b16722f1381b5b7477197e3e64c0065cea6eb58dac",
+      "round": 1,
+      "ensemble_members": 2,
+      "original_train": 12,
+      "client_id": 3,
+      "original_adult": 5,
+      "used_non_adult": 5,
+      "examples_processed": 20,
+      "duplicated": 0,
+      "train_seconds": 0.026347600000008242,
+      "schema": "b857b56fdc12d2dfd111e41658969e5d71f56609b752dd962118d20ebdb5b247",
+      "contract": "3ffbb989b167354413dbabcf4fc5c176f0f2d26b6382a3852626361c7b0eda53",
+      "original_non_adult": 7,
+      "fit_seconds": 0.03467620000083116,
+      "train_loss": 0.693331104516983,
+      "resampled_train": 10,
+      "used_adult": 5,
+      "aggregation_weight": 12
+    },
+    {
+      "base_hash": "00d58310e4a5f45835e855b16722f1381b5b7477197e3e64c0065cea6eb58dac",
+      "round": 1,
+      "ensemble_members": 2,
+      "original_train": 12,
+      "client_id": 4,
+      "original_adult": 6,
+      "used_non_adult": 6,
+      "examples_processed": 24,
+      "duplicated": 0,
+      "train_seconds": 0.027852499999426072,
+      "schema": "b857b56fdc12d2dfd111e41658969e5d71f56609b752dd962118d20ebdb5b247",
+      "contract": "3ffbb989b167354413dbabcf4fc5c176f0f2d26b6382a3852626361c7b0eda53",
+      "original_non_adult": 6,
+      "fit_seconds": 0.03605210000023362,
+      "train_loss": 0.6933450102806091,
+      "resampled_train": 12,
+      "used_adult": 6,
+      "aggregation_weight": 12
+    }
+  ],
+  "global_hash": "bf87c78310c56bd057c427943e7c9e6d688e4d476f16b5fede44f42140e6cf31",
+  "optimization": {
+    "loss": 0.6930084362626076,
+    "examples_processed": 80,
+    "scope": "balanced training views, epochs and ensemble members; not global train evaluation"
+  },
+  "timing": {
+    "client_training_seconds_sum": 0.16267159999915748,
+    "client_training_seconds_max": 0.07364989999769023,
+    "fit_round_wall_seconds": 1.880469500003528,
+    "val_client_evaluation_seconds_sum": 0.0759256999954232,
+    "val_phase_wall_seconds": 1.1578496000001905,
+    "round_wall_seconds": 3.0410347000033653,
+    "train_evaluation_seconds_sum": 0.08840189999318682
+  },
+  "communication": {
+    "fit_down_bytes": 293890,
+    "fit_up_bytes": 224880,
+    "evaluation_down_bytes": 258770,
+    "evaluation_up_bytes": 3220,
+    "total_bytes": 780760,
+    "measurement": "serialized Flower Fit/Evaluate and parameter-chunk GetProperties protobuf payloads, both directions; excludes registration/gRPC/TLS/retry overhead"
+  },
+  "val": {
+    "adult_precision": 0.5,
+    "adult_recall": 1.0,
+    "adult_f1": 0.6666666666666666,
+    "non_adult_precision": 0.0,
+    "non_adult_recall": 0.0,
+    "non_adult_f1": 0.0,
+    "macro_f1": 0.3333333333333333,
+    "balanced_accuracy": 0.5,
+    "accuracy": 0.5,
+    "confusion_matrix": [
+      [
+        0,
+        10
+      ],
+      [
+        0,
+        10
+      ]
+    ],
+    "confusion_matrix_order": [
+      "Non-adult",
+      "Adult"
+    ],
+    "n_records": 20,
+    "adult_count": 10,
+    "non_adult_count": 10,
+    "adult_prevalence": 0.5,
+    "loss": 0.6931473016738892,
+    "threshold": 0.5
+  },
+  "train": {
+    "adult_precision": 0.3333333333333333,
+    "adult_recall": 1.0,
+    "adult_f1": 0.5,
+    "non_adult_precision": 0.0,
+    "non_adult_recall": 0.0,
+    "non_adult_f1": 0.0,
+    "macro_f1": 0.25,
+    "balanced_accuracy": 0.5,
+    "accuracy": 0.3333333333333333,
+    "confusion_matrix": [
+      [
+        0,
+        40
+      ],
+      [
+        0,
+        20
+      ]
+    ],
+    "confusion_matrix_order": [
+      "Non-adult",
+      "Adult"
+    ],
+    "n_records": 60,
+    "adult_count": 20,
+    "non_adult_count": 40,
+    "adult_prevalence": 0.3333333333333333,
+    "loss": 0.6933408141136169,
+    "threshold": 0.5,
+    "scope": "updated global model on original local training splits; all five clients"
+  }
+}
