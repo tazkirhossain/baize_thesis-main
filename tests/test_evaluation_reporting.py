@@ -9,7 +9,7 @@ from sklearn.metrics import classification_report, balanced_accuracy_score, f1_s
 
 from src.evaluation.classification import confusion_metrics
 from src.evaluation.reporting import (checked_metrics, comparison_coverage, federated_rows,
-    numerical_rows, report_markdown, verify_comparability)
+    numerical_rows, report_markdown, verify_comparability, checked_client_training)
 
 ROOT = Path(__file__).resolve().parents[1]
 SETTINGS = json.loads((ROOT / "config/reporting/comparison.json").read_text())
@@ -116,6 +116,38 @@ def test_publication_pdf_and_high_resolution_png_export(tmp_path):
     assert all((tmp_path/name).stat().st_size > 1000 for name in names)
     with Image.open(tmp_path/"05_convergence_publication.png") as image:
         assert image.info["dpi"][0] == pytest.approx(300, abs=1)
+
+
+def test_client_training_statistics_are_validated_and_plotted(tmp_path):
+    pytest.importorskip("matplotlib")
+    from src.evaluation.plots import export_plots
+
+    cfg = {"n_clients": 5, "clients_per_round": 5, "aggregation_weight": "original_training"}
+    client_rounds = []
+    for rnd in (1, 2):
+        clients = [{"client_id": cid, "original_train": 100+cid, "resampled_train": 190,
+                    "original_adult": 5+cid, "original_non_adult": 95,
+                    "used_adult": 95, "used_non_adult": 95, "train_loss": 0.5+cid/10+rnd/100,
+                    "train_seconds": 2+cid/10, "aggregation_weight": 100+cid}
+                   for cid in range(5)]
+        report = {"round": rnd, "clients": clients}
+        client_rounds.append(checked_client_training(report, cfg))
+    metrics = dict(confusion_metrics([[90, 5], [2, 8]]), loss=0.4)
+    rows = [{"experiment_id": "clients", "family": "character_cnn", "data_kind": "real",
+             "scope": "federated global model", "partition": "label_skew", "method": "undersampling",
+             "input_mode": "url_only", "split": "val", "round": rnd, "metrics": metrics,
+             "seed": 42, "classifier": "character_cnn", "ratio": "1:1"}
+            for rnd in (1, 2)]
+    report = {"rows": rows, "experiments": {"clients": {"configuration": {"rounds": 2, "n_clients": 5},
+              "client_training_rounds": client_rounds}}}
+    names = export_plots(report, tmp_path, ("png",))
+    assert "08_client_balance_clients.png" in names
+    assert "09_client_heterogeneity_clients.png" in names
+    assert all((tmp_path/name).stat().st_size > 1000 for name in names)
+
+    damaged = {**client_rounds[0]["clients"][0], "aggregation_weight": 99}
+    with pytest.raises(ValueError, match="aggregation weight"):
+        checked_client_training({"round": 1, "clients": [damaged, *client_rounds[0]["clients"][1:]]}, cfg)
 
 
 def test_neural_figures_include_class_bias_and_fixed_final_round(tmp_path):

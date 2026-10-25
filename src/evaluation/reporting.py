@@ -10,6 +10,9 @@ from src.evaluation.classification import confusion_metrics
 
 METRICS = ("adult_precision", "adult_recall", "adult_f1", "non_adult_precision",
            "non_adult_recall", "non_adult_f1", "macro_f1", "balanced_accuracy", "accuracy")
+CLIENT_TRAINING_FIELDS = ("client_id", "original_train", "resampled_train", "original_adult",
+                          "original_non_adult", "used_adult", "used_non_adult", "train_loss",
+                          "train_seconds", "aggregation_weight")
 
 
 def fingerprint(path):
@@ -111,6 +114,37 @@ def checked_selection(cfg, run, rounds):
                 raise ValueError('test model does not match selected checkpoint')
 
 
+def checked_client_training(report, cfg):
+    """Retain only validated coarse client training statistics for FL figures."""
+    clients = report.get("clients")
+    if not isinstance(clients, list) or len(clients) != cfg["clients_per_round"]:
+        raise ValueError("round must contain every sampled client's training statistics")
+    sanitized, seen = [], set()
+    for source in clients:
+        if not isinstance(source, dict) or any(name not in source for name in CLIENT_TRAINING_FIELDS):
+            raise ValueError("incomplete client training statistics")
+        row = {name: source[name] for name in CLIENT_TRAINING_FIELDS}
+        client_id = row["client_id"]
+        if type(client_id) is not int or client_id not in range(cfg["n_clients"]) or client_id in seen:
+            raise ValueError("invalid or duplicate client identifier")
+        seen.add(client_id)
+        count_fields = CLIENT_TRAINING_FIELDS[1:7] + ("aggregation_weight",)
+        if any(type(row[name]) is not int or row[name] < 0 for name in count_fields):
+            raise ValueError("invalid client training count")
+        if (row["original_adult"] + row["original_non_adult"] != row["original_train"]
+                or row["used_adult"] + row["used_non_adult"] != row["resampled_train"]):
+            raise ValueError("client class counts do not reconcile")
+        for name in ("train_loss", "train_seconds"):
+            if type(row[name]) not in (int, float) or not np.isfinite(row[name]) or row[name] < 0:
+                raise ValueError("invalid client training measurement")
+            row[name] = float(row[name])
+        expected_weight = row["original_train"] if cfg["aggregation_weight"] == "original_training" else row["resampled_train"]
+        if row["aggregation_weight"] != expected_weight:
+            raise ValueError("client aggregation weight disagrees with policy")
+        sanitized.append(row)
+    return {"round": report["round"], "clients": sorted(sanitized, key=lambda row: row["client_id"])}
+
+
 def federated_rows(path, settings):
     path = Path(path)
     run = json.loads((path / "run.json").read_text())
@@ -126,7 +160,7 @@ def federated_rows(path, settings):
     partition = settings["partition_aliases"].get(partition, partition)
     source_id = fingerprint(path / "run.json")
     experiment_id = source_id[:16]
-    rows, rounds = [], []
+    rows, rounds, client_training_rounds = [], [], []
     expected = list(range(1, cfg["rounds"]+1))
     files = sorted(path.glob("round_*.json"))
     if len(files) != len(expected):
@@ -138,6 +172,7 @@ def federated_rows(path, settings):
             raise ValueError("federated rounds must be contiguous")
         source_hashes[file.name] = fingerprint(file)
         rounds.append(report)
+        client_training_rounds.append(checked_client_training(report, cfg))
         for split in ("train", "val", "test"):
             if split not in report:
                 continue
@@ -161,11 +196,13 @@ def federated_rows(path, settings):
                                "final_global_hash": run["global_hash"],
                                "client_runtime": run.get("client_runtime", {}),
                                "server_runtime": run.get("server_runtime", {}),
+                               "client_training_rounds": client_training_rounds,
                                "selection": run["selection"], "declared_experiment": declared}}
     parent = path.parent
     if (parent / "reproduction.json").exists():
         metadata[experiment_id]["reproduction"] = json.loads((parent / "reproduction.json").read_text())
-    # Never export raw per-client records; only pooled round rows and provenance.
+    # Never export raw client records. Per-client detail is limited to validated
+    # coarse training counts, loss, time and FedAvg weight already held by the server.
     return rows, metadata
 
 

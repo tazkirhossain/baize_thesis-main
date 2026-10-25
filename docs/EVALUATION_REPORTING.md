@@ -149,6 +149,13 @@ publication-ready 300-DPI PNG plus SVG/PDF vector figures:
    final test only when measured. Counts and percentages within each true class
    expose majority-only/minority-only predictions; panels have separate count
    color scales. No round is selected using evaluation scores.
+8. Five-client original/balanced Adult prevalence and declared FedAvg weights.
+9. Per-client local optimization-loss and training-time heatmaps across rounds;
+   missing cells identify clients not sampled in a round.
+
+The client figures contain only coarse counts, local training loss/time and
+aggregation weights already received by the Flower server. They contain no URLs,
+record identifiers, examples, predictions or local validation metrics.
 
 The first four figures compare the existing **real numerical** experiments.
 The current convergence/cost figures use an explicitly labelled **synthetic

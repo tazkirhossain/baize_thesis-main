@@ -231,4 +231,70 @@ def export_plots(report, output, formats=("png", "svg")):
             figure.suptitle(f"Measured training and communication costs\n{scope}", fontsize=13)
             figure.tight_layout(rect=(0, 0.15, 1, 0.92))
             save(figure, f"06_costs_{experiment}", "Client time sum is not parallel elapsed time. Payload excludes gRPC/TLS/control/retries; final round includes optional final-test exchange.")
+
+        client_rounds = report["experiments"][experiment].get("client_training_rounds", [])
+        if client_rounds:
+            final_clients = client_rounds[-1]["clients"]
+            labels = [f"Client {row['client_id'] + 1}" for row in final_clients]
+            x = np.arange(len(final_clients))
+            original_share = [100*row["original_adult"]/row["original_train"] if row["original_train"] else 0
+                              for row in final_clients]
+            balanced_share = [100*row["used_adult"]/row["resampled_train"] if row["resampled_train"] else 0
+                              for row in final_clients]
+            weights = [row["aggregation_weight"] for row in final_clients]
+            figure, axes = plt.subplots(1, 3, figsize=(15, 4.8))
+            bars = axes[0].bar(x, original_share, color=COLORS[0])
+            axes[0].set_title("(a)  Original Adult prevalence", loc="left")
+            axes[0].set_ylabel("Adult share of local optimization pool, %")
+            axes[0].bar_label(bars, labels=[f"{value:.2f}%" for value in original_share], padding=3, fontsize=8)
+            bars = axes[1].bar(x, balanced_share, color=COLORS[1], hatch="//")
+            axes[1].axhline(50, color="#444444", linewidth=1, linestyle=":", label="1:1 reference")
+            axes[1].set_title("(b)  Adult share after balancing", loc="left")
+            axes[1].set_ylabel("Adult share of local training view, %")
+            axes[1].bar_label(bars, labels=[f"{value:.1f}%" for value in balanced_share], padding=3, fontsize=8)
+            axes[1].legend(fontsize=8)
+            bars = axes[2].bar(x, weights, color=COLORS[2])
+            axes[2].set_title("(c)  FedAvg aggregation weight", loc="left")
+            axes[2].set_ylabel("Training examples used for weighting")
+            axes[2].bar_label(bars, labels=[f"{value:,}" for value in weights], padding=3, fontsize=8)
+            for axis in axes:
+                axis.set_xticks(x, labels, rotation=25, ha="right")
+                axis.set_ylim(bottom=0)
+                _style(axis, rate=False)
+            figure.suptitle(f"Client data balance and aggregation · round {client_rounds[-1]['round']}\n{scope}", fontsize=13)
+            figure.tight_layout(rect=(0, 0.13, 1, 0.90))
+            save(figure, f"08_client_balance_{experiment}",
+                 "Non-adult share is the complement of Adult share. Balancing changes only the local training view; FedAvg uses the declared aggregation policy.")
+
+            round_numbers = [item["round"] for item in client_rounds]
+            client_ids = list(range(report["experiments"][experiment]["configuration"]["n_clients"]))
+            matrices = []
+            for field in ("train_loss", "train_seconds"):
+                matrix = np.full((len(client_ids), len(round_numbers)), np.nan)
+                for column, item in enumerate(client_rounds):
+                    for row in item["clients"]:
+                        matrix[row["client_id"], column] = row[field]
+                matrices.append(matrix)
+            figure, axes = plt.subplots(1, 2, figsize=(12, 5.2))
+            heat_titles = ("Local optimization loss", "Local training time, seconds")
+            for panel_index, (axis, matrix, title) in enumerate(zip(axes, matrices, heat_titles)):
+                palette = plt.colormaps["Blues"].copy()
+                palette.set_bad("#EEEEEE")
+                image = axis.imshow(np.ma.masked_invalid(matrix), aspect="auto", cmap=palette)
+                axis.set_title(f"({chr(97 + panel_index)})  {title}", loc="left")
+                axis.set_xticks(np.arange(len(round_numbers)), round_numbers)
+                axis.set_yticks(np.arange(len(client_ids)), [f"Client {client_id + 1}" for client_id in client_ids])
+                axis.set_xlabel("Communication round")
+                for row_index in range(matrix.shape[0]):
+                    for column in range(matrix.shape[1]):
+                        value = matrix[row_index, column]
+                        if np.isfinite(value):
+                            axis.text(column, row_index, f"{value:.2f}", ha="center", va="center", fontsize=8,
+                                      color="white" if value > np.nanmax(matrix)*0.58 else "black")
+                figure.colorbar(image, ax=axis, shrink=0.78)
+                axis.grid(False)
+            figure.suptitle(f"Client optimization heterogeneity across rounds\n{scope}", fontsize=13)
+            figure.tight_layout(rect=(0, 0.12, 1, 0.90))
+            save(figure, f"09_client_heterogeneity_{experiment}",
+                 "Grey cells indicate clients not sampled in that round. Loss is measured on each balanced local training view and is not a validation metric.")
     return files
