@@ -71,6 +71,15 @@ class FiveClientFedAvg(fl.server.strategy.FedAvg):
                 ("train_sha256", "val_sha256", "test_sha256", "partition_strategy", "data_kind",
                  "optimization_membership_sha256", "selection_membership_sha256")
                 if key in properties}
+            if self.cfg.get('website_enrichment'):
+                for key in ('enrichment_digest', 'enrichment_database_sha256'):
+                    value = properties.get(key)
+                    if not isinstance(value, str) or len(value) != 64 or any(c not in '0123456789abcdef' for c in value):
+                        raise ValueError('missing frozen website snapshot fingerprint')
+                if type(properties.get('enrichment_n_records')) is not int or properties['enrichment_n_records'] < 1:
+                    raise ValueError('invalid website snapshot coverage')
+                self.client_data_contracts[str(cid)].update({key: properties[key] for key in
+                    ('enrichment_digest', 'enrichment_database_sha256', 'enrichment_n_records')})
             if self.cfg.get('model_selection'):
                 for name in ('optimization', 'selection'):
                     digest = properties.get(f'{name}_membership_sha256')

@@ -1,5 +1,12 @@
 # Character CNN and DeBERTa-v3-base
 
+Website inputs were added 25 October 2026 as an optional client-local mode.
+`config/experiment_website.json` enables frozen title/metadata/text/sitemap context
+for both models; URL-only remains available. Inputs use fixed field budgets, a
+declared CNN whitespace vocabulary and the existing DeBERTa tokenizer. Collection
+and training are separate; no model fetches websites. Read WEBSITE_ENRICHMENT.md
+before starting an enriched experiment or reloading an older URL-only checkpoint.
+
 CNN setup recorded 22 October 2026; DeBERTa implementation added 23 October 2026.
 
 The two research models have separate files:

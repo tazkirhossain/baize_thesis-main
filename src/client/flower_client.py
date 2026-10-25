@@ -35,7 +35,11 @@ class URLFlowerClient(fl.client.NumPyClient):
             raise ValueError("ensemble member count mismatch")
         self.device = torch.device(device)
         self.codec = StateCodec(self.models)
-        self.collate = collator if collator is not None else make_collator(cfg["model"])
+        self.enrichment = None
+        if cfg.get('website_enrichment'):
+            from src.data.enrichment.store import EnrichmentReader
+            self.enrichment = EnrichmentReader(self.directory, cfg['website_enrichment'])
+        self.collate = collator if collator is not None else make_collator(cfg["model"], cfg.get('website_enrichment'))
         self.last_fit_round = 0
         self.row_ids = {}
         self.selection_membership = None
@@ -57,6 +61,10 @@ class URLFlowerClient(fl.client.NumPyClient):
                 **{f"{name}_sha256": manifest["splits"][name]["sha256"] for name in ("train", "val", "test")},
                 "partition_strategy": preprocessing.get("partitioning", {}).get("strategy", "unknown"),
                 "data_kind": "synthetic" if synthetic else "real"}
+        if self.enrichment:
+            manifest = self.enrichment.manifest
+            properties.update(enrichment_digest=manifest['input_digest'], enrichment_n_records=manifest['n_records'],
+                              enrichment_database_sha256=manifest['database_sha256'])
         if self.cfg.get('model_selection'):
             if self.selection_summary is None:
                 data, _ = self._read('train')
@@ -100,6 +108,8 @@ class URLFlowerClient(fl.client.NumPyClient):
         self.codec.set(parameters)
 
     def _read(self, split):
+        if self.enrichment:
+            self.enrichment.assert_unchanged()
         data = read_local_split(self.directory, split)
         rows = set(int(row) for row in data.source_rows)
         if len(rows) != len(data):
@@ -110,7 +120,7 @@ class URLFlowerClient(fl.client.NumPyClient):
         if any(rows & other for name, other in self.row_ids.items() if name != split):
             raise ValueError("client-local training/holdout source-row leakage")
         self.row_ids[split] = rows
-        return data, LocalURLDataset(data)
+        return data, LocalURLDataset(data, self.enrichment)
 
     def _unchanged(self, split, digest):
         if _file_hash(self.directory / "splits" / f"{split}.jsonl") != digest:
@@ -136,7 +146,7 @@ class URLFlowerClient(fl.client.NumPyClient):
         if self.cfg.get('model_selection'):
             data, held = self._training_views(data)
             selection_count = len(held)
-            dataset = LocalURLDataset(data)
+            dataset = LocalURLDataset(data, self.enrichment)
         seed = int(np.random.SeedSequence([self.cfg["balancing"]["seed"], self.client_id, rnd]).generate_state(1)[0])
         balance = replace(BalanceConfig(**self.cfg["balancing"]), seed=seed)
         selections = ([None] if balance.method == "smote" else ensemble_training_indices(data.labels, balance, split="train")
@@ -254,7 +264,7 @@ class URLFlowerClient(fl.client.NumPyClient):
         if self.cfg.get('model_selection') and split in ('train', 'selection'):
             views = self._training_views(data)
             data = views[1 if split == 'selection' else 0]
-            dataset = LocalURLDataset(data)
+            dataset = LocalURLDataset(data, self.enrichment)
         # Empty local selection is legitimate for a small/domain-grouped client.
         # No fallback, replacement, seed search or evaluation-pool migration.
         if not len(data):

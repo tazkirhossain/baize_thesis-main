@@ -27,6 +27,7 @@
   "threads": 8,
   "generate_plots": true,
   "progress_interval_seconds": 30,
+  "website_enrichment": null,
   "model_selection": {
     "source": "training_selection",
     "fraction": 0.1,

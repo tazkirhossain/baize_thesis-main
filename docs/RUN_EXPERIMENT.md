@@ -1,5 +1,12 @@
 # One-file experiment configuration
 
+For website inputs, use `config/experiment_website.json`, collect every client's
+snapshot with `scripts/enrich_client.py`, then pass that experiment file to this
+launcher. Optional `website_enrichment` selects the snapshot and collection
+settings; null retains URL-only operation. See
+[WEBSITE_ENRICHMENT.md](WEBSITE_ENRICHMENT.md). Training never fetches websites,
+and preflight refuses missing or partial enriched snapshots.
+
 Edit **`config/experiment.json`** for ordinary experiments. Run
 **`python scripts/run_experiment.py`** from the repository root. The launcher
 resolves model defaults, chooses the matching existing five-client dataset,

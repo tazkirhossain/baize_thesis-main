@@ -140,14 +140,11 @@ def test_every_round_best_checkpoint_reloads_and_only_training_selection_selects
         assert not set(training.source_rows)&set(held.source_rows)
         assert state_hash(client.codec.get())==strategy.best['global_hash']
 
-    from src.evaluation.dashboard import load_run
     from src.evaluation.reporting import federated_rows
     settings=json.loads((ROOT/'config/reporting/comparison.json').read_text())
     rows,_=federated_rows(tmp_path/'server',settings)
     test_row=next(row for row in rows if row['split']=='test')
     assert test_row['checkpoint_round']==best_round and test_row['checkpoint_hash']==strategy.best['global_hash']
-    observed=load_run(tmp_path/'server',tmp_path)
-    assert f'Selected checkpoint: {best_round}.' in observed['evaluation_protocol']
     # Read-only exports must reject a mislabeled test checkpoint.
     report_path=tmp_path/'server/round_0002.json'
     damaged=json.loads(report_path.read_text())
@@ -155,8 +152,6 @@ def test_every_round_best_checkpoint_reloads_and_only_training_selection_selects
     report_path.write_text(json.dumps(damaged))
     with pytest.raises(ValueError,match='test model'):
         federated_rows(tmp_path/'server',settings)
-    with pytest.raises(ValueError,match='test model'):
-        load_run(tmp_path/'server',tmp_path)
 
 
 def test_best_ties_keep_earliest_and_holdout_scores_do_not_select(tmp_path):

@@ -113,6 +113,9 @@ def main(argv=None):
     print(f"Model: {cfg['model']['family']} | Distribution: {cfg['experiment']['partition_strategy']} | Balancing: {cfg['balancing']['method']}", flush=True)
     print(f"Protocol: {request['training_protocol']} | Rounds: {cfg['rounds']} | Local epochs: {cfg['local_epochs']} | Batch: {cfg['batch_size']} | LR: {cfg['learning_rate']}", flush=True)
     print(f"Device: {plan.device} | Threads: {plan.threads} | FedAvg weights: {cfg['aggregation_weight']}", flush=True)
+    enrichment = cfg.get('website_enrichment')
+    print(f"Model inputs: {'URL + frozen website metadata/text/sitemap context' if enrichment else 'URL only'}" +
+          (f" | Snapshot: {enrichment['snapshot_id']} | Offline training" if enrichment else ''), flush=True)
     if cfg.get('model_selection'):
         print(f"Checkpoint selection: {cfg['model_selection']['fraction']:.0%} of original training domains; "
               'Adult F1; earliest round wins ties. Selection rows are excluded from all optimization/balancing. '
@@ -120,7 +123,10 @@ def main(argv=None):
     if cfg.get('representation'):
         print(f"Additional original-training encoder warmup: {cfg['representation']['warmup_epochs']} epoch(s); local_epochs counts the balanced head phase.", flush=True)
     if args.mode == 'smoke':
-        print('SMOKE overrides: synthetic fixtures, unknown distribution, rounds=2, batch_size=8, sequence_length=32, CPU. Configured local_epochs is retained.', flush=True)
+        length = 64 if enrichment else 32
+        print(f'SMOKE overrides: synthetic fixtures, unknown distribution, rounds=2, batch_size=8, sequence_length={length}, CPU. Configured local_epochs is retained.', flush=True)
+        if enrichment:
+            print('Website inputs are explicit frozen synthetic fixtures; no network collection or real-data quality claim.', flush=True)
     elif args.mode in ('local', 'client'):
         print(f'Assigned data: {directory or plan.partition_root}', flush=True)
     if args.check:

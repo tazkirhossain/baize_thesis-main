@@ -147,8 +147,13 @@ def main():
         cfg.update(rounds=2, batch_size=8)
         cfg["experiment"] = {"partition_strategy": "unknown", "data_kind": "synthetic",
                              "evaluation_population_id": "synthetic-five-client-smoke-v1"}
-        cfg["model"]["sequence_length"] = 32
+        cfg["model"]["sequence_length"] = 64 if cfg.get('website_enrichment') else 32
         synthetic_clients(output / "synthetic-clients", selection_ready=bool(cfg.get('model_selection')))
+        if cfg.get('website_enrichment'):
+            from src.data.enrichment.synthetic import freeze_synthetic_client
+            for cid in range(5):
+                freeze_synthetic_client(output/'synthetic-clients'/f'client_{cid:03d}', cfg['website_enrichment'])
+            print('SYNTHETIC website snapshots generated locally; no websites fetched and no real-data quality measured.', flush=True)
     snapshot(output)
     (output / "experiment.json").write_text(json.dumps(cfg, indent=2) + "\n")
     if args.mode in ("local", "smoke"):

@@ -1,0 +1,15 @@
+{
+  "user_agent": "BaizeResearchBot/1.0",
+  "timeout_seconds": 10,
+  "request_delay_seconds": 1,
+  "max_crawl_delay_seconds": 60,
+  "max_response_bytes": 1048576,
+  "max_robots_bytes": 512000,
+  "max_redirects": 5,
+  "max_sitemap_files": 3,
+  "max_sitemap_entries": 100,
+  "max_title_chars": 256,
+  "max_description_chars": 768,
+  "max_text_chars": 2048,
+  "max_sitemap_chars": 768
+}

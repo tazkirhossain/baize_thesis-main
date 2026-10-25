@@ -148,6 +148,7 @@ def federated_rows(path, settings):
                          "classifier": cfg["model"]["family"], "method": cfg["balancing"]["method"],
                          "ratio": cfg["balancing"]["adult_to_non_adult"], "seed": cfg["seed"],
                          "training_protocol": "encoder_embeddings" if cfg.get("representation") else "end_to_end",
+                         "input_mode": "url_plus_metadata" if cfg.get('website_enrichment') else "url_only",
                          "split": split, "round": index, "metrics": checked_metrics(report[split]),
                          "checkpoint_round": report.get('test_checkpoint', {}).get('round', index) if split == 'test' else index,
                          "checkpoint_hash": report.get('test_checkpoint', {}).get('global_hash', report.get('global_hash')) if split == 'test' else report.get('global_hash'),
@@ -193,6 +194,9 @@ def verify_comparability(rows, metadata):
         signature["balancing_settings"] = balance
         signature["representation"] = cfg.get("representation")
         signature['model_selection'] = cfg.get('model_selection')
+        signature['website_enrichment'] = cfg.get('website_enrichment')
+        from src.data.enrichment.config import pooled_digest
+        signature['website_input_digest'] = pooled_digest(metadata[row['experiment_id']].get('data_contracts', {}))
         signature["evaluation_population_id"] = cfg.get("experiment", {}).get("evaluation_population_id")
         populations[(*key, row["partition"])].append(json.dumps(metadata[row["experiment_id"]].get("data_contracts"), sort_keys=True))
         strata[key].append(json.dumps(signature, sort_keys=True))
@@ -225,13 +229,14 @@ def report_markdown(report, plot_files):
              "Counts are retained per method/scenario in report.json; warnings are not hidden or used to retune against holdouts.", "",
              "Encoder-embedding rows use training-only encoder warmup and a frozen-encoder balanced head phase; they are a distinct protocol from end-to-end training. Never interpolate raw strings or token IDs.", "",
              "With training-only checkpoint selection, train metrics exclude the selection pool. The test is measured once after the FL budget on the selected checkpoint; its checkpoint round may differ from the final communication round. Per-experiment selection metadata and checkpoint hashes/rounds are retained in report.json.", "",
+             "Website-enriched and URL-only inputs are separate experiment contracts. The input mode is shown alongside model/protocol; source configuration and pooled feature fingerprints remain in report.json.", "",
              "## All requested classification metrics", "",
              "| Family / data / protocol | Partition | Method | Split / round | Adult P | Adult R | Adult F1 | Non-adult P | Non-adult R | Non-adult F1 | Macro-F1 | Balanced accuracy | Accuracy | N |",
              "|---|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|"]
     for row in report["rows"]:
         m = row["metrics"]
         values = " | ".join(f"{m[key]:.4f}" for key in METRICS)
-        lines.append(f"| {row['family']} / {row['data_kind']} / {row.get('training_protocol', 'historical')} | {row['partition']} | {row['method']} | "
+        lines.append(f"| {row['family']} / {row['data_kind']} / {row.get('training_protocol', 'historical')} / {row.get('input_mode', 'historical')} | {row['partition']} | {row['method']} | "
                      f"{row['split']} / {row['round'] or 'local'} | {values} | {m['n_records']:,} |")
     lines += ["", "Confusion matrices, class supports, prevalence, source hashes, exact configuration, timing "
               "and communication measurements are retained in report.json. Undefined class ratios use zero; "

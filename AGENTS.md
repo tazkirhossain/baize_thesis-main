@@ -77,8 +77,12 @@ confusion counts before computing global metrics. Missing historical measurement
 are null. Never tune sampling, weights, thresholds or model parameters from
 holdouts, use accuracy alone or claim a best method without measurements.
 Separate model families, real/synthetic data, local/federated scope and compatible
-experiment settings. Full real-data neural studies, LLM review and site enrichment
-remain pending.
+experiment settings. Full real-data neural studies and LLM review remain pending.
+Read docs/WEBSITE_ENRICHMENT.md for optional client-owned website inputs. Keep
+collection label-independent, bounded, robots-aware and separate from offline
+cleaning and training. Never rewrite original splits, drop failed pages, fetch
+private addresses or crawl from the server. Enriched training requires frozen,
+verified local snapshots. Preserve input/cohort digests for fair comparisons.
 
 ## Reproduction and safety
 
@@ -108,20 +112,7 @@ presets as model defaults and low-level interfaces. The launcher selects audited
 roots, checks strategy/own-client metadata, captures requested/effective settings,
 and invokes the existing Flower/reporting scripts. Never silently enable SMOTE
 on token IDs or change end-to-end/embedding budgets. Server mode must not inspect
-client directories. Keep auto outputs as fresh immediate children of ignored
-data/ so the dashboard discovers them. Check-only mode must not train/write runs.
-
-## Local research dashboard
-
-At the user's request, `dashboard/` is a new React/TypeScript/Recharts observer
-of current Flower results. It is not the removed legacy demo. Read
-`dashboard/README.md` and `docs/DASHBOARD_RESULTS_SCHEMA.md`. Preserve the ML
-pipeline. `src/evaluation/dashboard.py` reads allowlisted aggregate JSON and
-audited manifest counts; `scripts/dashboard.py` serves it on loopback only.
-Never serve raw client files, checkpoint directories or arbitrary filesystem
-paths. Keep exact real/synthetic/unknown labels, missing-result states, fixed
-test checkpoints, input/budget comparison guards and snapshot-only statuses.
-Config downloads are drafts, not an automatic training or tuning backend.
-After frontend changes run `npm test` and `npm run build` in `dashboard/` and
-test affected browser controls. Keep node_modules, dist and private exports
-ignored. The React build must not embed the local datasets or experiment logs.
+client directories. Keep auto outputs as fresh immediate children of data/.
+Check-only mode must not train/write runs. The React dashboard and its dedicated
+adapter/server were removed at the user's request; standalone Matplotlib PNG/SVG
+reporting remains supported.

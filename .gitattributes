@@ -1,9 +1,6 @@
 # Preserve data/manifest bytes across operating systems. Large artifacts use LFS.
 data/** -text
 .pytest_cache/** -text
-dashboard/node_modules/** -text
-dashboard/dist/** -text
-"dashboard/node_modules/@esbuild/win32-x64/esbuild.exe" filter=lfs diff=lfs merge=lfs -text
 "data/checkpoint-selection-smoke-v1/server/best_model.npz" filter=lfs diff=lfs merge=lfs -text
 "data/checkpoint-selection-smoke-v1/server/checkpoints/round_0001.npz" filter=lfs diff=lfs merge=lfs -text
 "data/checkpoint-selection-smoke-v1/server/checkpoints/round_0002.npz" filter=lfs diff=lfs merge=lfs -text

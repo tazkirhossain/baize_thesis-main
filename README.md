@@ -13,6 +13,7 @@ See [cleanup details](docs/CLEANUP.md) and the
 1. Validate the local CSV, minimize URLs, map labels, deduplicate and audit every exclusion.
 2. Assign every eligible record to exactly one of five clients using IID, label skew or category skew.
 3. Each client splits its own records into nominal 70% train, 15% validation and 15% test.
+   Optional website enrichment freezes client-local robots/sitemap/metadata/text inputs here.
 4. Encode locally and balance training views only; keep original files and holdouts unchanged.
 5. Run Flower FedAvg and aggregate local evaluation counts, timing and model updates.
 6. Export both-class metrics, reproducibility metadata, comparison tables and plots.
@@ -50,7 +51,8 @@ with local splits:
 | Category skew | `data/client-category-skew-v1/` |
 
 Reuse these verified files. Preparation commands require fresh output paths and
-refuse to overwrite existing runs. No dataset is bundled or uploaded.
+refuse to overwrite existing runs. Owner-authorized data publication uses Git LFS;
+see [publication and clone instructions](docs/PUBLISHED_DATA.md).
 
 ```powershell
 # Only when preparing a new audited source:
@@ -71,17 +73,16 @@ See [preparation and audit rules](docs/PREPROCESSING.md),
 That one file selects the model, IID/label/category distribution, balancing,
 rounds, epochs, batch, learning rate, device and automatic Matplotlib export.
 The launcher selects the correct existing client root. Its current defaults are
-IID -> random oversampling -> Character CNN, one local epoch, two rounds, batch 8.
+IID -> random oversampling -> Character CNN, one local epoch, ten rounds, batch 64.
 Use `--check` to validate without training, or `--mode smoke` for synthetic
 verification. See [single-file configuration and team setup](docs/RUN_EXPERIMENT.md).
 The earlier complete presets and low-level commands below remain available.
 
-The new [local experiment dashboard](dashboard/README.md) visualizes current
-Flower results with interactive filters, round curves, client audits, comparison
-history and CSV export. Start the built dashboard with
-`python scripts/dashboard.py`, then open http://127.0.0.1:8765. A fresh checkout
-requires `npm ci` and `npm run build` in `dashboard/` first. It is read-only and
-keeps synthetic checks distinct from real experiments.
+**Website inputs:** use `config/experiment_website.json` for URL + metadata/text +
+sitemap context, with robots-aware collection. First run `scripts/enrich_client.py`
+on every client's directory, then launch `scripts/run_experiment.py --config
+config/experiment_website.json`. Missing/partial caches fail preflight; training
+never crawls. See [collection, resume and training commands](docs/WEBSITE_ENRICHMENT.md).
 
 ```powershell
 # Tiny synthetic integration check with the actual Character CNN:
@@ -115,13 +116,16 @@ and [metric definitions/reporting](docs/EVALUATION_REPORTING.md).
 
 Reports include both classes' precision/recall/F1, macro-F1, balanced accuracy,
 confusion matrices, overall accuracy, per-round metrics, training time and
-serialized Flower payload sizes. No automatic winner is selected.
+serialized Flower payload sizes. With `"generate_plots": true`, the launcher
+automatically writes standalone PNG and SVG Matplotlib figures into each run's
+`report/` directory. No frontend is required. No automatic winner is selected.
 
 Full real-data neural comparisons are **not yet measured**. Existing
 [historical tables and plots](results/evaluation_reporting_v4/README.md) distinguish
 removed numerical-model experiments from synthetic CNN checks. They do not
-establish real-data CNN/DeBERTa performance. LLM quality/noise review and
-sitemap/robots/metadata enrichment remain pending.
+establish real-data CNN/DeBERTa performance. Website collection and model inputs
+are implemented; full-corpus enriched performance and LLM quality/noise review
+remain pending.
 
 ## Verification and data safety
 

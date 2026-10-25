@@ -126,12 +126,12 @@ def export_plots(report, output, formats=("png", "svg")):
             final = report["experiments"][row["experiment_id"]]["configuration"]["rounds"]
             if row["round"] != final:
                 continue
-        key = row["family"], row["data_kind"], row["scope"], row["seed"], row["classifier"], row["ratio"], row.get("training_protocol", "historical_numeric" if row["family"] == "engineered_numeric" else "end_to_end")
+        key = row["family"], row["data_kind"], row["scope"], row["seed"], row["classifier"], row["ratio"], row.get("training_protocol", "historical_numeric" if row["family"] == "engineered_numeric" else "end_to_end"), row.get('input_mode', 'numeric' if row['family']=='engineered_numeric' else 'url_only')
         cohorts.setdefault(key, []).append(row)
     for index, (key, cohort) in enumerate(sorted(cohorts.items())):
-        family, kind, scope, seed, classifier, ratio, protocol = key
+        family, kind, scope, seed, classifier, ratio, protocol, input_mode = key
         model_scope = "local numerical models" if family == "engineered_numeric" else f"{family} FedAvg"
-        title = f"{model_scope} / {protocol} / {kind} / seed {seed}"
+        title = f"{model_scope} / {protocol} / {input_mode} / {kind} / seed {seed}"
         compare_cohort(cohort, f"{family}_{kind}_seed{seed}_{index}", title)
 
     experiments = sorted({row["experiment_id"] for row in report["rows"] if row["scope"] == "federated global model"})
@@ -139,7 +139,7 @@ def export_plots(report, output, formats=("png", "svg")):
         rows = [row for row in report["rows"] if row["experiment_id"] == experiment]
         first = rows[0]
         selection_enabled = bool(report['experiments'][experiment]['configuration'].get('model_selection'))
-        scope = f"{first['family']} · {first['data_kind']} · {first['partition']} · {first['method']}"
+        scope = f"{first['family']} · {first.get('input_mode', 'url_only')} · {first['data_kind']} · {first['partition']} · {first['method']}"
         figure, axes = plt.subplots(2, 4, figsize=(16, 8))
         curve_metrics = ("loss", "accuracy", "balanced_accuracy", "macro_f1",
                          "adult_precision", "adult_recall", "adult_f1", "non_adult_f1")

@@ -223,6 +223,8 @@ def _snapshot_reproduction(ready):
                                       "scripts/partition_clients.py", "scripts/compare_partitions.py",
                                       "scripts/create_category_skew_config.py", "scripts/verify_partitions.py",
                                       "scripts/prepare_deberta.py", "config/models/deberta_v3_base.json",
+                                      "scripts/enrich_client.py", "config/website_collection.json",
+                                      "scripts/reuse_enrichment.py",
                                       ".gitignore",
                                       "requirements.txt", "pyproject.toml", "docs/PREPROCESSING.md")]
     hashes = {}

@@ -62,7 +62,7 @@ def main():
     large=[path for path in files if path.stat().st_size>=10*1024**2]
     attributes=ROOT/'.gitattributes'
     attributes.write_text('# Preserve data/manifest bytes across operating systems. Large artifacts use LFS.\n'
-        'data/** -text\n.pytest_cache/** -text\ndashboard/node_modules/** -text\ndashboard/dist/** -text\n'+''.join(
+        'data/** -text\n.pytest_cache/** -text\n'+''.join(
         json.dumps(path.relative_to(ROOT).as_posix(),ensure_ascii=False)+' filter=lfs diff=lfs merge=lfs -text\n'
         for path in large),encoding='utf-8')
     subprocess.run(['git','-C',str(ROOT),'lfs','install','--local'],check=True)

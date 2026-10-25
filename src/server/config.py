@@ -10,7 +10,7 @@ def validate_config(cfg):
     allowed = {"n_clients", "rounds", "clients_per_round", "local_epochs", "batch_size",
                "learning_rate", "seed", "model", "balancing", "aggregation_weight",
                "threshold", "evaluate_final_test"}
-    optional = {"evaluate_training", "experiment", "representation", "transport", "progress_interval_seconds", "model_selection"}
+    optional = {"evaluate_training", "experiment", "representation", "transport", "progress_interval_seconds", "model_selection", "website_enrichment"}
     if not allowed <= set(cfg) or set(cfg) - allowed - optional:
         raise ValueError(f"federated configuration fields must be {sorted(allowed)}")
     if type(cfg.get("evaluate_training", True)) is not bool:
@@ -62,6 +62,8 @@ def validate_config(cfg):
             not transport["chunk_bytes"] <= transport["max_transfer_bytes"] <= 64*1024**3):
         raise ValueError("invalid chunked transport limits")
     model = cfg["model"]
+    from src.data.enrichment.config import validate_enrichment
+    enrichment = validate_enrichment(cfg.get('website_enrichment'))
     if model["family"] == "character_cnn":
         if set(model) != {"family", "characters", "sequence_length", "dropout_input"}:
             raise ValueError("invalid character CNN fields")
@@ -72,11 +74,15 @@ def validate_config(cfg):
             raise ValueError("CNN sequence_length must be >= 8 (including singleton training batches)")
         if not 0 <= model["dropout_input"] <= 1:
             raise ValueError("invalid input dropout")
+        if enrichment and (model['sequence_length'] < 64 or ' ' not in alphabet or '\n' not in alphabet):
+            raise ValueError('enriched CNN requires sequence_length >= 64 and fixed space/newline characters')
     elif model["family"] == "deberta_v3_base":
         if set(model) != {"family", "source", "revision", "max_length"}:
             raise ValueError("invalid DeBERTa fields")
         if type(model["max_length"]) is not int or not 2 <= model["max_length"] <= 512:
             raise ValueError("invalid token length")
+        if enrichment and model['max_length'] < 32:
+            raise ValueError('enriched DeBERTa requires max_length >= 32')
     else:
         raise ValueError("unknown neural family")
     return cfg

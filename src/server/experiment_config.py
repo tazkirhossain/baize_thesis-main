@@ -23,7 +23,7 @@ FIELDS = {'model_name', 'partition_type', 'balancing_method', 'training_protocol
           'warmup_epochs', 'aggregation_weight', 'threshold', 'evaluate_training',
           'evaluate_final_test', 'pretrained_source', 'partition_root', 'device',
           'threads', 'generate_plots', 'evaluation_population_id'}
-OPTIONAL_FIELDS = {'progress_interval_seconds', 'model_selection'}
+OPTIONAL_FIELDS = {'progress_interval_seconds', 'model_selection', 'website_enrichment'}
 
 
 def _unique_object(pairs):
@@ -95,6 +95,11 @@ def resolve_experiment(request, root):
         cfg['progress_interval_seconds'] = request['progress_interval_seconds']
     if 'model_selection' in request:
         cfg['model_selection'] = deepcopy(request['model_selection'])
+    from src.data.enrichment.config import resolve_enrichment
+    if 'website_enrichment' in request:
+        cfg['website_enrichment'] = resolve_enrichment(request['website_enrichment'], root)
+        if cfg['website_enrichment'] and family == 'character_cnn':
+            cfg['model']['characters'] += ''.join(c for c in ' \n' if c not in cfg['model']['characters'])
     # Null chooses the model's existing documented LR, never holdout tuning.
     if request['learning_rate'] is not None:
         cfg['learning_rate'] = request['learning_rate']
@@ -119,7 +124,7 @@ def resolve_experiment(request, root):
                           request['generate_plots'], default_file, default_source)
 
 
-def check_client_metadata(directory, cid, partition=None):
+def check_client_metadata(directory, cid, partition=None, enrichment=None):
     """Own-client fingerprints and counts only; never reads records or URLs."""
     directory = Path(directory)
     manifest = read_json(directory/'manifest.json')
@@ -140,6 +145,9 @@ def check_client_metadata(directory, cid, partition=None):
         actual = descriptor.get('name', descriptor.get('strategy'))
         if manifest.get('synthetic', False) or PARTITION_ALIASES.get(actual, actual) != partition:
             raise ValueError(f'Client {cid+1}: actual data distribution differs from selected partition_type')
+    if enrichment:
+        from src.data.enrichment.store import check_snapshot
+        check_snapshot(directory, enrichment)
 
 
 def check_plan(plan, *, mode='local', client_id=None, client_directory=None):
@@ -167,7 +175,7 @@ def check_plan(plan, *, mode='local', client_id=None, client_directory=None):
         if type(client_id) is not int or client_id not in range(5):
             raise ValueError('client mode requires --client-id 0, 1, 2, 3 or 4')
         check_client_metadata(client_directory or plan.partition_root/f'client_{client_id:03d}', client_id,
-                              plan.configuration['experiment']['partition_strategy'])
+                              plan.configuration['experiment']['partition_strategy'], plan.configuration.get('website_enrichment'))
         return
     if mode != 'local':
         raise ValueError('unsupported run mode')
@@ -180,4 +188,5 @@ def check_plan(plan, *, mode='local', client_id=None, client_directory=None):
     if {p.name for p in root.glob('client_*') if p.is_dir()} != {f'client_{i:03d}' for i in range(5)}:
         raise ValueError('partition_root must contain exactly the five assigned client directories')
     for cid in range(5):
-        check_client_metadata(root/f'client_{cid:03d}', cid, plan.configuration['experiment']['partition_strategy'])
+        check_client_metadata(root/f'client_{cid:03d}', cid, plan.configuration['experiment']['partition_strategy'],
+                              plan.configuration.get('website_enrichment'))

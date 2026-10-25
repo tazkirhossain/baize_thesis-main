@@ -116,7 +116,10 @@ tracked files, including force-added ignored artifacts. Run the check locally
 before uploading from a real Git checkout; CI after a push cannot prevent upload.
 This exported workspace has no readable Git index or verified remote history.
 
-No LLM noise/label review or sitemap/robots.txt/metadata collection is implemented
-yet. Quarantined records cannot be reintroduced without checking protected roles.
+Website collection is now a separate optional client-local stage AFTER these fixed
+splits; it does not change this offline preparation or original labels. Read
+WEBSITE_ENRICHMENT.md for robots/sitemap/metadata/text collection and frozen neural
+inputs. LLM noise/label review remains unimplemented. Quarantined records cannot
+be reintroduced without checking protected roles.
 There is no validation/test-driven sampling, class weighting, threshold tuning,
 checkpoint selection or gradient fitting in this preparation stage.
