@@ -10,6 +10,6 @@
   "expected_clients": 5,
   "required_balancing_methods": ["undersampling", "oversampling", "smote", "ensemble_undersampling"],
   "expected_adult_to_non_adult": "1:1",
-  "formats": ["png", "svg"],
+  "formats": ["png", "svg", "pdf"],
   "automatic_method_selection": false
 }

@@ -117,7 +117,7 @@ and [metric definitions/reporting](docs/EVALUATION_REPORTING.md).
 Reports include both classes' precision/recall/F1, macro-F1, balanced accuracy,
 confusion matrices, overall accuracy, per-round metrics, training time and
 serialized Flower payload sizes. With `"generate_plots": true`, the launcher
-automatically writes standalone PNG and SVG Matplotlib figures into each run's
+automatically writes standalone 300-DPI PNG and vector SVG/PDF Matplotlib figures into each run's
 `report/` directory. No frontend is required. No automatic winner is selected.
 
 Full real-data neural comparisons are **not yet measured**. Existing

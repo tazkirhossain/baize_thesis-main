@@ -135,7 +135,8 @@ category-skew neural experiments when available. Export without either input
 type when only the other is available; missing comparisons remain explicit.
 
 Output includes `report.json` (all requested metrics, confusion matrices,
-supports, timing, costs and reproduction metadata), `README.md` tables, and:
+supports, timing, costs and reproduction metadata), `README.md` tables, and
+publication-ready 300-DPI PNG plus SVG/PDF vector figures:
 
 1. IID versus separate label/category non-IID comparisons.
 2. Balancing methods under IID.

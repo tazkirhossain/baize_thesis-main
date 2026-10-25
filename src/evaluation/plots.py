@@ -13,6 +13,15 @@ METHODS = ("undersampling", "oversampling", "smote", "ensemble_undersampling")
 METHOD_NAMES = ("Under", "Over", "SMOTE", "Ensemble")
 COLORS = ("#315E87", "#AF821A", "#C16338")
 PARTITION_NAMES = ("IID", "Label skew", "Category skew")
+FAMILY_NAMES = {"character_cnn": "Character CNN", "deberta_v3_base": "DeBERTa-v3-base",
+                "engineered_numeric": "Engineered numerical features"}
+METHOD_LABELS = {"undersampling": "Random undersampling", "oversampling": "Random oversampling",
+                 "smote": "SMOTE", "ensemble_undersampling": "Undersampling ensemble"}
+INPUT_LABELS = {"url_only": "URL only", "url_plus_metadata": "URL + website context",
+                "numeric": "Numerical features"}
+KIND_LABELS = {"real": "Real data", "synthetic": "Synthetic smoke test", "unknown": "Unspecified data"}
+PARTITION_LABELS = {"iid": "IID", "label_skew": "Non-IID label skew",
+                    "category_skew": "Non-IID category skew", "unknown": "Unspecified partition"}
 
 
 def _style(axis, *, rate=True):
@@ -28,13 +37,17 @@ def export_plots(report, output, formats=("png", "svg")):
     output = Path(output)
     files = []
     plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 10, "axes.titlesize": 11,
-                         "axes.labelsize": 10, "svg.fonttype": "none"})
+                         "axes.labelsize": 10, "axes.titleweight": "semibold",
+                         "figure.titlesize": 14, "figure.titleweight": "semibold",
+                         "legend.frameon": False, "svg.fonttype": "none",
+                         "pdf.fonttype": 42, "ps.fonttype": 42})
 
     def save(figure, name, note):
         figure.text(0.02, 0.018, textwrap.fill(note, width=135), fontsize=9, color="#444444", va="bottom")
         for suffix in formats:
             filename = f"{name}.{suffix}"
-            figure.savefig(output / filename, dpi=160, facecolor="white")
+            figure.savefig(output / filename, dpi=300, facecolor="white",
+                           bbox_inches="tight", pad_inches=0.12)
             files.append(filename)
         plt.close(figure)
 
@@ -139,24 +152,30 @@ def export_plots(report, output, formats=("png", "svg")):
         rows = [row for row in report["rows"] if row["experiment_id"] == experiment]
         first = rows[0]
         selection_enabled = bool(report['experiments'][experiment]['configuration'].get('model_selection'))
-        scope = f"{first['family']} · {first.get('input_mode', 'url_only')} · {first['data_kind']} · {first['partition']} · {first['method']}"
+        scope = " · ".join((
+            FAMILY_NAMES.get(first['family'], first['family'].replace('_', ' ').title()),
+            INPUT_LABELS.get(first.get('input_mode', 'url_only'), first.get('input_mode', 'url_only').replace('_', ' ').title()),
+            KIND_LABELS.get(first['data_kind'], first['data_kind'].replace('_', ' ').title()),
+            PARTITION_LABELS.get(first['partition'], first['partition'].replace('_', ' ').title()),
+            METHOD_LABELS.get(first['method'], first['method'].replace('_', ' ').title()),
+        ))
         figure, axes = plt.subplots(2, 4, figsize=(16, 8))
         curve_metrics = ("loss", "accuracy", "balanced_accuracy", "macro_f1",
                          "adult_precision", "adult_recall", "adult_f1", "non_adult_f1")
-        for axis, metric in zip(axes.flat, curve_metrics):
+        for panel_index, (axis, metric) in enumerate(zip(axes.flat, curve_metrics)):
             for index, split in enumerate(("train", "val")):
                 selected = sorted([row for row in rows if row["split"] == split and metric in row["metrics"]], key=lambda row: row["round"])
                 if selected:
                     axis.plot([row["round"] for row in selected], [row["metrics"][metric] for row in selected],
                               color=COLORS[index], marker=("o", "s")[index], linestyle=("-", "--")[index],
                               markerfacecolor=(COLORS[index], "white")[index], label=(("Optimization pool" if selection_enabled else "Original train"), "Validation")[index])
-            axis.set_title(metric.replace("_", " ").title())
+            axis.set_title(f"({chr(97 + panel_index)})  {metric.replace('_', ' ').title()}", loc="left")
             axis.set_xlabel("Communication round")
             axis.xaxis.set_major_locator(MaxNLocator(integer=True))
             axis.set_ylim(bottom=0)
             _style(axis, rate=metric != "loss")
             axis.legend(fontsize=9)
-        figure.suptitle(f"Training convergence · {scope}", fontsize=12)
+        figure.suptitle(f"Federated training convergence\n{scope}", fontsize=13)
         figure.tight_layout(rect=(0, 0.09, 1, 0.94))
         save(figure, f"05_convergence_{experiment}", "Updated global model evaluated locally on unresampled training/validation data. Training-selection records, when configured, are excluded from the optimization pool. Synthetic runs are implementation checks only.")
 
@@ -167,14 +186,14 @@ def export_plots(report, output, formats=("png", "svg")):
                             key=lambda row: ("train", "val", "test").index(row["split"]))
         if final_rows:
             figure, axes = plt.subplots(1, len(final_rows), figsize=(5*len(final_rows), 5), squeeze=False)
-            for axis, row in zip(axes.flat, final_rows):
+            for panel_index, (axis, row) in enumerate(zip(axes.flat, final_rows)):
                 matrix = np.asarray(row["metrics"]["confusion_matrix"])
                 axis.imshow(matrix, cmap="Blues", vmin=0, vmax=max(1, matrix.max()))
                 support = matrix.sum(axis=1)
                 for actual in range(2):
                     for predicted in range(2):
                         fraction = matrix[actual, predicted]/support[actual] if support[actual] else 0
-                        axis.text(predicted, actual, f"{matrix[actual, predicted]:,}\n{fraction:.1%} of true class",
+                        axis.text(predicted, actual, f"{matrix[actual, predicted]:,}\n({fraction:.1%})",
                                   ha="center", va="center", fontsize=10,
                                   color="white" if matrix[actual, predicted] > matrix.max()/2 else "black")
                 axis.set_xticks((0, 1), ("Non-adult", "Adult"))
@@ -183,26 +202,33 @@ def export_plots(report, output, formats=("png", "svg")):
                 axis.set_ylabel("True class")
                 label = {'train': 'Optimization pool' if selection_enabled else 'Original train', 'val':'Validation', 'test':'Final test'}[row['split']]
                 checkpoint = row.get('checkpoint_round', row['round'])
-                axis.set_title(f"{label} · N={matrix.sum():,}\ncheckpoint round {checkpoint}")
+                axis.set_title(f"({chr(97 + panel_index)})  {label} · N={matrix.sum():,}\ncheckpoint round {checkpoint}", loc="left")
                 axis.grid(False)
-            figure.suptitle(f"Confusion matrices · round {final_round} · {scope}", fontsize=12)
+            figure.suptitle(f"Confusion matrices at communication round {final_round}\n{scope}", fontsize=13)
             figure.tight_layout(rect=(0, 0.12, 1, 0.91))
-            save(figure, f"07_confusion_{experiment}", "Counts and percentages within each true class. Each panel uses its own count color scale; compare printed values. No resampling of evaluation data.")
+            save(figure, f"07_confusion_{experiment}", "Each cell shows count and percentage within its true-class row. Each panel uses its own count color scale; compare printed values. No resampling of evaluation data.")
 
         rounds = sorted([row for row in rows if row["split"] == "val"], key=lambda row: row["round"])
         if any(row.get("timing") and row.get("communication") for row in rounds):
             figure, axes = plt.subplots(1, 2, figsize=(11, 4.5))
             x = [row["round"] for row in rounds]
-            axes[0].bar(x, [row.get("timing", {}).get("client_training_seconds_sum", np.nan) for row in rounds], color=COLORS[0])
+            training_values = [row.get("timing", {}).get("client_training_seconds_sum", np.nan) for row in rounds]
+            payload_values = [row.get("communication", {}).get("total_bytes", np.nan)/1024**2 for row in rounds]
+            training_bars = axes[0].bar(x, training_values, color=COLORS[0])
             axes[0].set_ylabel("Sum of client training wall time, seconds")
-            axes[1].bar(x, [row.get("communication", {}).get("total_bytes", np.nan)/1024**2 for row in rounds], color=COLORS[1], hatch="//")
+            payload_bars = axes[1].bar(x, payload_values, color=COLORS[1], hatch="//")
             axes[1].set_ylabel("Flower protobuf payload, MiB")
-            for axis in axes:
+            panel_titles = ("Client training time", "Communication payload")
+            for panel_index, (axis, bars, values) in enumerate(zip(axes, (training_bars, payload_bars),
+                                                                   (training_values, payload_values))):
                 axis.set_xlabel("Communication round")
                 axis.set_xticks(x)
                 _style(axis, rate=False)
                 axis.set_ylim(bottom=0)
-            figure.suptitle(f"Measured training and communication · {scope}", fontsize=11)
+                axis.set_title(f"({chr(97 + panel_index)})  {panel_titles[panel_index]}", loc="left")
+                labels = [f"{value:.1f}" if np.isfinite(value) else "" for value in values]
+                axis.bar_label(bars, labels=labels, padding=3, fontsize=9)
+            figure.suptitle(f"Measured training and communication costs\n{scope}", fontsize=13)
             figure.tight_layout(rect=(0, 0.15, 1, 0.92))
             save(figure, f"06_costs_{experiment}", "Client time sum is not parallel elapsed time. Payload excludes gRPC/TLS/control/retries; final round includes optional final-test exchange.")
     return files

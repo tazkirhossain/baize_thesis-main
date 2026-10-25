@@ -96,6 +96,28 @@ def test_standalone_figures_and_tables_have_measured_scope(tmp_path):
     assert "Non-adult P" in markdown and "No method is declared best" in markdown
 
 
+def test_publication_pdf_and_high_resolution_png_export(tmp_path):
+    pytest.importorskip("matplotlib")
+    from PIL import Image
+    from src.evaluation.plots import export_plots
+
+    rows = []
+    for rnd in (1, 2, 3):
+        metrics = dict(confusion_metrics([[90-rnd, rnd], [4, 16]]), loss=1/rnd)
+        rows.append({"experiment_id": "publication", "family": "character_cnn", "data_kind": "real",
+                     "scope": "federated global model", "partition": "iid", "method": "oversampling",
+                     "input_mode": "url_only", "split": "val", "round": rnd, "metrics": metrics,
+                     "seed": 42, "classifier": None, "ratio": "1:1",
+                     "timing": {"client_training_seconds_sum": 10+rnd},
+                     "communication": {"total_bytes": 1024**2*(20+rnd)}})
+    report = {"rows": rows, "experiments": {"publication": {"configuration": {"rounds": 3}}}}
+    names = export_plots(report, tmp_path, ("png", "pdf"))
+    assert {name.rsplit(".", 1)[1] for name in names} == {"png", "pdf"}
+    assert all((tmp_path/name).stat().st_size > 1000 for name in names)
+    with Image.open(tmp_path/"05_convergence_publication.png") as image:
+        assert image.info["dpi"][0] == pytest.approx(300, abs=1)
+
+
 def test_neural_figures_include_class_bias_and_fixed_final_round(tmp_path):
     pytest.importorskip("matplotlib")
     import xml.etree.ElementTree as ET
@@ -121,4 +143,4 @@ def test_neural_figures_include_class_bias_and_fixed_final_round(tmp_path):
     matrix = labels("07_confusion_smoke.svg")
     assert "round 2" in matrix and "Original train · N=10" in matrix and "Validation · N=6" in matrix
     assert "123" not in matrix and "Final test" not in matrix
-    assert "True class" in matrix and "Predicted class" in matrix and "100.0% of true class" in matrix
+    assert "True class" in matrix and "Predicted class" in matrix and "100.0%" in matrix
