@@ -1,6 +1,0 @@
-{"source_row": 243, "reason": "unknown_category", "url": "https://unknown.com/", "domain": "unknown.com"}
-{"source_row": 244, "reason": "missing_url"}
-{"source_row": 245, "reason": "unlabelled", "url": "https://unlabelled.com/", "domain": "unlabelled.com"}
-{"source_row": 246, "reason": "malformed_columns"}
-{"source_row": 247, "reason": "invalid_url:host_without_dot"}
-{"source_row": 5, "url": "https://site2.com/page0", "domain": "site2.com", "occurrences": 2, "reason": "label_conflict"}

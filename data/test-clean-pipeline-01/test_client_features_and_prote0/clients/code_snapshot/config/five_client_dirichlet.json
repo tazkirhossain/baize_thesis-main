@@ -1,9 +1,0 @@
-{
-  "strategy": "dirichlet",
-  "parameters": {"alpha": 0.5, "stratify_on": "category"},
-  "n_clients": 5,
-  "seed": 0,
-  "split_seed": 0,
-  "source": "data/client-datasets-v3",
-  "output": "data/client-dirichlet-v1"
-}

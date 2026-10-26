@@ -1,7 +1,0 @@
-{
-  "source": "https://raw.githubusercontent.com/Legrandin/pycryptodome/v3.24.1/lib/Crypto/SelfTest/PublicKey/test_import_DSA.py",
-  "local_sha256": "ae72ff476a6edf11f5c87833e61c3fa22b636ffd9a40bba216dbe4eaaf375734",
-  "upstream_sha256": "d9a5613097b67f8a4d22d08366ca7adc805dc1fc6a8f3042400e1ac6fa9685e8",
-  "matches_after_CRLF_normalization": true,
-  "classification": "public vendor self-test fixture"
-}

@@ -1,7 +1,0 @@
-{
-  "n_clients": 5,
-  "seed": 0,
-  "split_seed": 0,
-  "source": "data/client-datasets-v3",
-  "output": "data/client-iid-v1"
-}

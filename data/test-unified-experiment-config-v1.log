@@ -1,7 +1,0 @@
-........................................................................ [ 88%]
-.........                                                                [100%]
-81 passed in 0.78s
-Exception ignored in: <function Console.__del__ at 0x000002BC94A10B80>
-Traceback (most recent call last):
-  File "C:\Users\hossa\AppData\Roaming\Python\Python313\site-packages\pyreadline3\console\console.py", line 254, in __del__
-OSError: [WinError -1073741816] Windows Error 0xc0000008

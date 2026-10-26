@@ -1,7 +1,0 @@
-{"source_row": 243, "record_id": "unknown", "original_category": "NotACategory", "reason": "unknown_category", "reasons": ["unknown_category"], "url": "https://unknown.com/", "domain": "unknown.com"}
-{"source_row": 244, "record_id": "missing", "original_category": "Adult", "reason": "missing_url", "reasons": ["missing_url"]}
-{"source_row": 245, "record_id": "unlabelled", "original_category": "", "reason": "unlabelled", "reasons": ["unlabelled"], "url": "https://unlabelled.com/", "domain": "unlabelled.com"}
-{"source_row": 246, "record_id": "bad", "original_category": null, "reason": "malformed_columns", "reasons": ["malformed_columns", "missing_url", "unlabelled"]}
-{"source_row": 247, "record_id": "invalid", "original_category": "Adult", "reason": "invalid_url:host_without_dot", "reasons": ["invalid_url:host_without_dot"]}
-{"source_row": 5, "record_id": "2", "original_category": "Health", "label": 0, "target": "Non-adult", "url": "https://site2.com/page0", "domain": "site2.com", "reason": "label_conflict", "reasons": ["label_conflict"]}
-{"source_row": 242, "record_id": "conflict", "original_category": "Adult", "label": 1, "target": "Adult", "url": "https://site2.com/page0", "domain": "site2.com", "reason": "label_conflict", "reasons": ["label_conflict"]}
