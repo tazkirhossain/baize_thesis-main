@@ -712,3 +712,12 @@ Read [CNN_LEARNING_DIAGNOSIS.md](CNN_LEARNING_DIAGNOSIS.md). A fresh full run is
 required to establish actual FL/final-test improvements. No best-method or
 guaranteed-good-result claim is made. These changes are local until committed
 and pushed.
+# Best versus last round visualization (26 October 2026)
+
+Matplotlib now automatically adds best-versus-last validation metric bars and
+validation/test confusion matrices for training-selection runs, plus checkpoint
+markers on all-round convergence curves. Best is read from the saved
+training-selection decision, never chosen from validation/test scores. An
+unmeasured test checkpoint is explicitly labelled "Not evaluated". PNG/SVG/PDF
+formats follow the reporting configuration. Existing saved runs can be exported
+to a fresh report directory without training or evaluating again.

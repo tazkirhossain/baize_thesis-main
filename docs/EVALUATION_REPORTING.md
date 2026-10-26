@@ -215,3 +215,26 @@ describes the phase being executed, not a fresh global evaluation. Embedding
 extraction has no loss. Existing round JSON, dashboard refresh and Matplotlib
 exports are unchanged. See `RUN_EXPERIMENT.md` for the active config field and
 the distinction between an already running process and a newly launched run.
+# Best and last checkpoint figures
+
+For runs with training-only model selection enabled, automatic Matplotlib exports
+include `10_best_vs_last_metrics_<experiment>` (validation precision, recall, F1
+for both classes, accuracy, balanced accuracy, macro-F1 and loss) and
+`11_best_vs_last_confusion_<experiment>` (validation and final-test matrices for
+the selected best and last checkpoints). The convergence figure marks both rounds.
+Exports use the configured formats, including PNG, SVG and PDF.
+
+Best means the checkpoint already selected using training-selection Adult F1,
+with earliest-round tie breaking. The plotting code never ranks holdout metrics.
+Each checkpoint retains its recorded decision threshold. Test results are mapped
+by actual checkpoint round, rather than the communication round when logged.
+An untested checkpoint says **Not evaluated**; no new test pass is performed.
+If best equals last, both columns refer to the same measured checkpoint.
+Existing cross-method comparison figures continue to show last-round validation
+and the recorded final test; the new figures explicitly compare checkpoints
+within each run. Historical runs without selection metadata retain their existing
+figures without inventing a best checkpoint.
+
+Regenerate reports from saved aggregate results into a fresh directory; original
+reports and checkpoints remain unchanged. This requires neither retraining nor
+raw client data.

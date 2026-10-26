@@ -151,7 +151,15 @@ def export_plots(report, output, formats=("png", "svg")):
     for experiment in experiments:
         rows = [row for row in report["rows"] if row["experiment_id"] == experiment]
         first = rows[0]
-        selection_enabled = bool(report['experiments'][experiment]['configuration'].get('model_selection'))
+        metadata = report['experiments'][experiment]
+        selection_enabled = bool(metadata['configuration'].get('model_selection'))
+        final_round = metadata['configuration']['rounds']
+        selection = metadata.get('selection')
+        if selection_enabled and (not isinstance(selection, dict)
+                                  or selection.get('source') != 'training_selection'):
+            raise ValueError('Best-round figures require recorded training-selection provenance')
+        # Read the recorded training-only decision; never rank validation/test scores.
+        best_round = selection['round'] if selection_enabled and isinstance(selection, dict) else None
         scope = " · ".join((
             FAMILY_NAMES.get(first['family'], first['family'].replace('_', ' ').title()),
             INPUT_LABELS.get(first.get('input_mode', 'url_only'), first.get('input_mode', 'url_only').replace('_', ' ').title()),
@@ -174,12 +182,101 @@ def export_plots(report, output, formats=("png", "svg")):
             axis.xaxis.set_major_locator(MaxNLocator(integer=True))
             axis.set_ylim(bottom=0)
             _style(axis, rate=metric != "loss")
+            if best_round is not None:
+                axis.axvline(best_round, color=COLORS[2], linestyle=":", linewidth=1.5)
+                if best_round != final_round:
+                    axis.axvline(final_round, color="#666666", linestyle="-.", linewidth=1)
             axis.legend(fontsize=9)
         figure.suptitle(f"Federated training convergence\n{scope}", fontsize=13)
         figure.tight_layout(rect=(0, 0.09, 1, 0.94))
         threshold_note = (" Per-round decision thresholds use training selection only; loss is threshold-independent."
                           if report['experiments'][experiment]['configuration'].get('threshold_selection') else "")
-        save(figure, f"05_convergence_{experiment}", "Updated global model evaluated locally on unresampled training/validation data. Training-selection records, when configured, are excluded from the optimization pool. Synthetic runs are implementation checks only." + threshold_note)
+        marker_note = (f" Dotted line: selected best round {best_round}; dash-dot line: last round {final_round}."
+                       if best_round is not None and best_round != final_round else
+                       f" Dotted line: selected best = last round {final_round}." if best_round is not None else "")
+        save(figure, f"05_convergence_{experiment}", "Updated global model evaluated locally on unresampled training/validation data. Training-selection records are excluded from optimization. Synthetic runs are implementation checks only." + threshold_note + marker_note)
+
+        if best_round is not None:
+            # Test rows are logged at completion, but may evaluate an earlier checkpoint.
+            def checkpoint_row(split, checkpoint):
+                matches = [row for row in rows if row['split'] == split
+                           and row.get('checkpoint_round', row['round']) == checkpoint]
+                if len(matches) > 1:
+                    raise ValueError(f"Ambiguous {split} results for checkpoint round {checkpoint}")
+                return matches[0] if matches else None
+
+            labels = (f"Selected best · round {best_round}", f"Last · round {final_round}")
+            note = ("Best checkpoint uses training-selection Adult F1 only (earliest round wins ties). "
+                    "Validation/test remain unresampled. Values are recorded measurements; missing evaluations are not zero.")
+            figure, axes = plt.subplots(2, 2, figsize=(13, 9))
+            groups = (("Adult precision", "Adult recall", "Adult F1"),
+                      ("Non-adult precision", "Non-adult recall", "Non-adult F1"),
+                      ("Accuracy", "Balanced accuracy", "Macro F1"), ("Loss",))
+            fields = (("adult_precision", "adult_recall", "adult_f1"),
+                      ("non_adult_precision", "non_adult_recall", "non_adult_f1"),
+                      ("accuracy", "balanced_accuracy", "macro_f1"), ("loss",))
+            for panel, (axis, titles, metrics) in enumerate(zip(axes.flat, groups, fields)):
+                for index, checkpoint in enumerate((best_round, final_round)):
+                    row = checkpoint_row('val', checkpoint)
+                    values = [row['metrics'].get(field, np.nan) if row else np.nan for field in metrics]
+                    bars = axis.bar(np.arange(len(metrics)) + (index - .5)*.36, values, .35,
+                                    color=COLORS[index], hatch=("", "//")[index], label=labels[index])
+                    axis.bar_label(bars, labels=[(f"{v:.3f}" if panel == 3 else f"{v:.1%}")
+                                                if np.isfinite(v) else "Not evaluated" for v in values],
+                                   padding=3, fontsize=9)
+                axis.set_xticks(np.arange(len(metrics)), titles)
+                axis.set_title(f"({chr(97+panel)})  Validation", loc='left')
+                _style(axis, rate=panel != 3)
+                if panel != 3:
+                    axis.set_ylim(0, 1.12)
+                else:
+                    axis.margins(y=.2)
+            axes[0, 0].legend(fontsize=9)
+            thresholds = []
+            for label, checkpoint in zip(labels, (best_round, final_round)):
+                row = checkpoint_row('val', checkpoint)
+                if row and 'threshold' in row['metrics']:
+                    thresholds.append(f"{label}: threshold {row['metrics']['threshold']:.3f}")
+            figure.suptitle(f"Selected best versus last checkpoint\n{scope}", fontsize=13)
+            figure.tight_layout(rect=(0, .13, 1, .92))
+            save(figure, f"10_best_vs_last_metrics_{experiment}", note + " " + "; ".join(thresholds))
+
+            figure, axes = plt.subplots(2, 2, figsize=(11, 10))
+            for split_index, split in enumerate(('val', 'test')):
+                candidates = [checkpoint_row(split, checkpoint) for checkpoint in (best_round, final_round)]
+                maximum = max([max(max(line) for line in row['metrics']['confusion_matrix'])
+                               for row in candidates if row] + [1])
+                for index, (axis, row) in enumerate(zip(axes[split_index], candidates)):
+                    title = f"{labels[index]}\n{'Validation' if split == 'val' else 'Final test'}"
+                    if row is None:
+                        axis.set_facecolor('#F2F2F2')
+                        axis.text(.5, .5, "Not evaluated", ha='center', va='center', transform=axis.transAxes)
+                        axis.set_xticks([])
+                        axis.set_yticks([])
+                    else:
+                        matrix = np.asarray(row['metrics']['confusion_matrix'])
+                        axis.imshow(matrix, cmap='Blues', vmin=0, vmax=maximum)
+                        for actual in range(2):
+                            support = matrix[actual].sum()
+                            for predicted in range(2):
+                                value = matrix[actual, predicted]
+                                fraction = value/support if support else 0
+                                axis.text(predicted, actual, f"{value:,}\n({fraction:.1%})", ha='center', va='center',
+                                          color='white' if value > maximum/2 else 'black')
+                        axis.set_xticks((0, 1), ('Non-adult', 'Adult'))
+                        axis.set_yticks((0, 1), ('Non-adult', 'Adult'))
+                        axis.set_xlabel('Predicted class')
+                        axis.set_ylabel('True class')
+                        title += f" · N={matrix.sum():,}"
+                        if 'threshold' in row['metrics']:
+                            title += f" · threshold {row['metrics']['threshold']:.3f}"
+                    axis.set_title(title, fontsize=10, loc='left')
+                    axis.grid(False)
+            figure.suptitle(f"Best and last checkpoint confusion matrices\n{scope}", fontsize=13)
+            figure.tight_layout(rect=(0, .12, 1, .92))
+            save(figure, f"11_best_vs_last_confusion_{experiment}", note +
+                 " Cells show counts and true-class percentages; color scale is shared within each split. "
+                 "Final test is associated with its actual checkpoint, not its logging round.")
 
         # Use the fixed final round, never choose a round using holdout scores.
         final_round = report["experiments"][experiment]["configuration"]["rounds"]

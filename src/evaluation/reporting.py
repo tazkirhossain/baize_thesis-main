@@ -307,6 +307,10 @@ def report_markdown(report, plot_files):
              "With training-only checkpoint selection, train metrics exclude the selection pool. The test is measured once after the FL budget on the selected checkpoint; its checkpoint round may differ from the final communication round. Per-experiment selection metadata and checkpoint hashes/rounds are retained in report.json.", "",
              "Website-enriched and URL-only inputs are separate experiment contracts. The input mode is shown alongside model/protocol; source configuration and pooled feature fingerprints remain in report.json.", "",
              "With threshold_selection enabled, only reserved training-selection scores choose the decision threshold. Validation/test use that threshold; test freezes the selected checkpoint's threshold. Fixed-threshold references remain in report.json. Probability loss is unchanged by threshold selection.", "",
+             "Figures 10 and 11 compare the recorded training-selected best checkpoint with the last checkpoint, "
+             "when selection metadata is available. Convergence retains every round and marks both checkpoints. "
+             "An untested checkpoint is labelled Not evaluated; exporting figures never runs a new test. "
+             "Existing cross-method figures use last-round validation and the recorded final test.", "",
              "## All requested classification metrics", "",
              "| Family / data / protocol | Partition | Method | Split / round | Adult P | Adult R | Adult F1 | Non-adult P | Non-adult R | Non-adult F1 | Macro-F1 | Balanced accuracy | Accuracy | N |",
              "|---|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|"]

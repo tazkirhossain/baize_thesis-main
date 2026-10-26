@@ -178,3 +178,38 @@ def test_neural_figures_include_class_bias_and_fixed_final_round(tmp_path):
     assert "round 2" in matrix and "Original train · N=10" in matrix and "Validation · N=6" in matrix
     assert "123" not in matrix and "Final test" not in matrix
     assert "True class" in matrix and "Predicted class" in matrix and "100.0%" in matrix
+
+
+@pytest.mark.parametrize('family,best_round', [('character_cnn', 1), ('deberta_v3_base', 2)])
+def test_best_last_figures_use_selected_checkpoint_and_actual_test_round(tmp_path, family, best_round):
+    import xml.etree.ElementTree as ET
+    from src.evaluation.plots import export_plots
+
+    rows = []
+    for rnd in (1, 2):
+        # Validation is better in round 2, independently of the recorded selection.
+        metrics = dict(confusion_metrics([[77, 3], [6, 4]] if rnd == 1 else [[79, 1], [1, 9]]),
+                       loss=.8/rnd, threshold=.5+rnd/10)
+        rows.append(dict(experiment_id='selected', family=family, data_kind='synthetic',
+                         scope='federated global model', partition='unknown', method='undersampling',
+                         split='val', round=rnd, checkpoint_round=rnd, metrics=metrics))
+    rows.append(dict(rows[-1], split='test', round=2, checkpoint_round=best_round,
+                     metrics=dict(confusion_metrics([[333, 7], [3, 17]]), threshold=.6)))
+    report = {'rows': rows, 'experiments': {'selected': {
+        'configuration': {'rounds': 2, 'model_selection': {'metric': 'adult_f1'}},
+        'selection': {'round': best_round, 'source': 'training_selection'}}}}
+    names = export_plots(report, tmp_path, ('svg',))
+
+    def labels(name):
+        return ' '.join(''.join(node.itertext()) for node in ET.parse(tmp_path/name).iter()
+                        if node.tag.endswith('}text'))
+
+    assert '10_best_vs_last_metrics_selected.svg' in names
+    metrics = labels('10_best_vs_last_metrics_selected.svg')
+    assert f'Selected best · round {best_round}' in metrics and 'Last · round 2' in metrics
+    assert '40.0%' in metrics if best_round == 1 else '90.0%' in metrics
+    matrices = labels('11_best_vs_last_confusion_selected.svg')
+    assert '333' in matrices and 'Final test · N=360' in matrices
+    assert ('Not evaluated' in matrices) == (best_round != 2)
+    curves = labels('05_convergence_selected.svg')
+    assert (f'selected best round {best_round}' if best_round == 1 else 'selected best = last round 2') in curves
