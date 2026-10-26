@@ -9,14 +9,15 @@ from torch.utils.data import DataLoader
 from src.data.balancing import print_balance_report, sample_training_indices, training_labels
 from src.data.embedding_smote import EmbeddingTrainingSet, smote_embeddings
 from src.client.progress import BatchProgress
+from src.client.optimizers import make_optimizer
 
 
 def train_batches(model, loader, *, epochs, learning_rate, device, seed, embeddings=False,
-                  progress_label=None, progress_interval_seconds=30):
+                  progress_label=None, progress_interval_seconds=30, optimizer_config=None):
     model.eval() if embeddings else model.train()
     head = model.feature_head() if embeddings else model
     head.train()
-    optimizer = torch.optim.SGD(head.parameters(), lr=learning_rate)
+    optimizer = make_optimizer(head.parameters(), learning_rate=learning_rate, settings=optimizer_config)
     loss_sum, seen = 0.0, 0
     progress = (BatchProgress(progress_label, total_batches=len(loader)*epochs,
         total_examples=len(loader.dataset)*epochs, epochs=epochs, interval_seconds=progress_interval_seconds)
@@ -63,6 +64,7 @@ def train_embedding_member(model, dataset, data, cfg, balance, *, collate, devic
             collate_fn=collate if encoder else None)
     warm_loss, warm_seen = train_batches(model, loader(dataset, shuffle=True),
         epochs=cfg["representation"]["warmup_epochs"], learning_rate=cfg["learning_rate"], device=device, seed=seed,
+        optimizer_config=cfg.get('optimizer'),
         progress_label=f'{progress_label} | original-training warmup' if progress_label else None,
         progress_interval_seconds=cfg.get('progress_interval_seconds', 30))
     model.eval()
@@ -102,6 +104,7 @@ def train_embedding_member(model, dataset, data, cfg, balance, *, collate, devic
               f"features={matrix.shape[1]}; SMOTE k={report.get('effective_k_neighbors', 0)}; status={report['status']}", flush=True)
         head_loss, head_seen = train_batches(model, loader(view, shuffle=True, encoder=False),
             epochs=cfg["local_epochs"], learning_rate=cfg["learning_rate"], device=device, seed=seed, embeddings=True,
+            optimizer_config=cfg.get('optimizer'),
             progress_label=f'{progress_label} | balanced head training' if progress_label else None,
             progress_interval_seconds=cfg.get('progress_interval_seconds', 30))
         # Explicitly release the mmap before TemporaryDirectory cleanup on Windows.

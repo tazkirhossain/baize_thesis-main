@@ -13,10 +13,12 @@ resolves model defaults, chooses the matching existing five-client dataset,
 checks its declared strategy, and invokes the existing Flower runner. It never
 repartitions data, changes splits or replaces the training/aggregation code.
 
-The current active combination is IID -> random oversampling -> Character CNN,
-ten FL rounds, one local epoch and batch size 64. These are the user's declared
-first real-data settings, not tuned recommendations. Check the file and the
-printed effective settings before each launch.
+Check `config/experiment.json` and the printed effective settings before each
+launch; the owner changes the distribution/balancing combination for separate
+experiments. The 26 October correction enables versioned stable CNN classifier
+initialization and training-only threshold selection in the active file. These
+are declared policies, not a measured claim of optimal Adult detection. See
+[the diagnosis](ADULT_PERFORMANCE_DIAGNOSIS.md).
 
 ## Main controls
 
@@ -30,6 +32,7 @@ printed effective settings before each launch.
 | `local_epochs` | Full-model epochs in end-to-end mode; balanced head epochs in embedding mode |
 | `batch_size` | Local batch size, applied as specified |
 | `learning_rate` | Positive number, or null for model default (CNN 0.001; DeBERTa 0.00002) |
+| `optimizer` | Optional explicit local optimizer; active CNN uses `{"name":"adamw","weight_decay":0.0}`; absent preserves plain SGD |
 | `sequence_length` | CNN character length / DeBERTa token maximum length |
 | `seed` | Model, training and balancing seed; does not regenerate partitions |
 | `n_clients` | Exactly 5 |
@@ -43,9 +46,11 @@ printed effective settings before each launch.
 | `warmup_epochs` | Additional original-training warmup epochs in embedding mode only |
 | `aggregation_weight` | Primary `original_training`; explicit alternative `resampled_training` |
 | `threshold` | Predeclared fixed Adult decision threshold |
+| `threshold_selection` | Optional training-selection Adult F1 grid policy; requires `model_selection`; see below |
+| `cnn_initialization` | `stable_classifier_v1` or `legacy_fan_out`; absent retains legacy behavior; CNN only |
 | `evaluate_training` | Evaluate updated global model on original training splits |
 | `evaluate_final_test` | Evaluate untouched test splits once at the fixed final round |
-| `generate_plots` | Automatically export Matplotlib metrics/tables/PNG/SVG after success |
+| `generate_plots` | Automatically export Matplotlib metrics/tables/PNG/SVG/PDF after success |
 | `progress_interval_seconds` | Optional; default 30 seconds between batch progress updates; 0 disables batch progress |
 | `model_selection` | Optional; training-only domain selection and best Adult F1 checkpoint; see `CHECKPOINTS.md`; null uses fixed final round |
 | `pretrained_source` | Local DeBERTa checkpoint directory, used only by DeBERTa |
@@ -56,6 +61,49 @@ Do not write comments inside JSON. Unknown, missing required, duplicate or inval
 are rejected. The launcher prints the resolved settings, including an inherited
 learning rate, before starting. It does not inspect validation/test scores to
 choose any parameter. Balancing remains local to TRAINING only.
+
+The 26 October learning diagnostic compared equal-budget training-only pilots
+on two clients and found that local AdamW learned more effectively than the
+previous SGD at 0.001. The active file enables AdamW without changing the
+balancing ratio, dataset memberships or local epoch budget. This is a promising
+next configuration, not a guarantee of final Adult precision/recall.
+See [CNN_LEARNING_DIAGNOSIS.md](CNN_LEARNING_DIAGNOSIS.md).
+
+For SGD explicitly use `{"name":"sgd","momentum":0.0,"weight_decay":0.0}`.
+Local optimizer state resets each round/phase. Encoder warmup and balanced head
+training use the same optimizer contract. When switching model families, set
+`learning_rate` to null to inherit that model's documented starting rate, or
+choose an explicit rate using training-only selection; the CNN rate 0.001 is
+not silently replaced when switching to DeBERTa.
+
+### Adult operating point, 26 October 2026
+
+The active file contains:
+
+```json
+"cnn_initialization": "stable_classifier_v1",
+"threshold_selection": {
+  "source": "training_selection",
+  "metric": "adult_f1",
+  "bins": 201,
+  "tie_break": "highest_threshold"
+}
+```
+
+Keep the existing `model_selection` block. The server chooses a threshold per
+round from pooled protected TRAINING-SELECTION bin counts only, breaking equal
+Adult F1 values with the higher threshold. Checkpoint selection uses that Adult
+F1; equal round scores retain the earliest checkpoint. Final test freezes the
+selected model AND its threshold. Fixed-0.5 reference metrics remain saved.
+Validation/test do not choose settings, checkpoints or thresholds. Clients send
+only 2-by-201 class-conditional bin counts, never individual scores or URLs.
+
+The CNN policy changes only the final layer to normal weights with standard
+deviation 0.01 and zero bias. It leaves hidden layers and the supplied architecture
+intact. Missing flags preserve legacy initialization and fixed thresholds.
+Keep both policies consistent across primary comparisons. A fresh run is needed;
+editing the file does not change a running process, and synthetic startup checks
+are not evidence of final model quality.
 
 ## Console progress and round metrics
 

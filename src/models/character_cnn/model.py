@@ -17,6 +17,7 @@ class CharacterCNNConfig:
     number_of_characters: int
     extra_characters: str = ""
     dropout_input: float = 0.0
+    initialization: str = "legacy_fan_out"
 
 
 class CharacterLevelCNN(nn.Module):
@@ -30,6 +31,9 @@ class CharacterLevelCNN(nn.Module):
             raise ValueError("extra_characters must be a string")
         if not math.isfinite(args.dropout_input) or not 0 <= args.dropout_input <= 1:
             raise ValueError("dropout_input must be between zero and one")
+        self.initialization = getattr(args, "initialization", "legacy_fan_out")
+        if self.initialization not in ("legacy_fan_out", "stable_classifier_v1"):
+            raise ValueError("unknown character CNN initialization")
         self.n_characters = args.number_of_characters + len(args.extra_characters)
         self.number_of_classes = number_of_classes
         self.dropout_input = nn.Dropout1d(args.dropout_input)
@@ -79,6 +83,13 @@ class CharacterLevelCNN(nn.Module):
                 nn.init.kaiming_normal_(module.weight, mode="fan_out", nonlinearity="relu")
                 if module.bias is not None:
                     nn.init.constant_(module.bias, 0)
+        if self.initialization == "stable_classifier_v1":
+            # The output logits have no ReLU. Applying fan_out ReLU scaling to
+            # a two-output layer gives std=1 and saturated random predictions.
+            # Keep every supplied hidden-layer initialization exactly intact;
+            # only initialize the classifier output on a modest fixed scale.
+            nn.init.normal_(self.fc[-1].weight, mean=0.0, std=0.01)
+            nn.init.zeros_(self.fc[-1].bias)
 
     def extract_features(self, x):
         if x.ndim != 3 or x.shape[2] != self.n_characters:

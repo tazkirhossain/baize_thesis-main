@@ -13,6 +13,9 @@ def print_round_summary(report, *, split, rounds):
         print(f'Test model: checkpoint round {report["test_checkpoint"]["round"]}, '
               'chosen exclusively using training-selection Adult F1.', flush=True)
     rows.append(('Validation' if split == 'val' else 'Final test', report[split]))
+    if 'threshold_selection' in report:
+        print(f"Decision threshold: {report[split]['threshold']:.3f}; chosen only from training selection. "
+              f"Fixed {report['threshold_selection']['reference_threshold']:.3f} reference retained in round JSON.", flush=True)
     print(f'{"Split":<16} {"N":>10} {"Loss":>9} {"Accuracy":>9} {"Balanced":>9} {"Macro-F1":>9}', flush=True)
     for name, values in rows:
         print(f'{name:<16} {values["n_records"]:>10,} {values["loss"]:>9.4f} '

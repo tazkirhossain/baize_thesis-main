@@ -1,5 +1,21 @@
 # Current-pipeline cleanup
 
+## Data artifact cleanup, 26 October 2026
+
+The owner requested removal of unnecessary data-folder files and generated test
+cases. Disposable `data/test-*` fixtures, repeated synthetic smoke checkpoints,
+plot previews and the removed dashboard's npm cache/artifacts are removed.
+Small aggregate records and loose historical logs/scripts are relocated under
+`results/maintenance/data-cleanup-20261026-*/`; initialization/training diagnostics
+move to `results/diagnostics/`. The manifest lists each removed entry, logical
+bytes, tracked-file counts, and protected-file SHA-256 values verified afterward.
+Original datasets, all client-owned train/validation/test data, pretrained
+DeBERTa assets, required runtime packages, enrichment caches and original recovery
+archive remain. Source regression tests in `tests/` remain required for pipeline
+verification and are not run during ordinary training. Launcher temporary files
+and transport staging are retained because active training may use them.
+The older cleanup below remains historical context.
+
 Authorized by the user on 23 October 2026: remove the previous person's work
 outside the current research pipeline. This supersedes earlier instructions to
 preserve the old simulator in the active tree.

@@ -1,5 +1,19 @@
 # Published data and artifacts
 
+## Local cleanup, 26 October 2026
+
+The owner's new cleanup request supersedes retaining disposable test outputs
+in the working data folder. Generated `data/test-*` fixtures, repeated synthetic
+smoke checkpoints, preview graphs and obsolete dashboard/npm artifacts are
+removed locally. Small historical verification records, including the nested
+test Git metadata archive, are relocated under
+`results/maintenance/data-cleanup-20261026-*/`. CNN diagnostic evidence lives in
+`results/diagnostics/`. Checksummed cleanup manifests record the changes.
+Source `tests/`, original CSV, audited datasets/client splits, pretrained weights,
+required Python runtimes, and client-local enrichment caches are retained.
+This does not rewrite Git history or publish the cleanup automatically. The
+following sections describe the earlier publication snapshot.
+
 On 23 October 2026 the owner explicitly requested publishing the complete data
 folder and removing Git ignore patterns. This overrides the older instructions
 to exclude datasets, checkpoints, local runs, caches and dependencies. Older

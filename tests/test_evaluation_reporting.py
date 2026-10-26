@@ -62,7 +62,9 @@ def test_historical_numerical_results_derive_negative_metrics_without_retraining
     assert all(item["status"] == "not measured" for item in coverage if item["family"] == "character_cnn" and item["method"] != "smote")
 
 
-def test_duplicate_or_incomparable_experiments_are_rejected():
+@pytest.mark.parametrize('change', [{'aggregation_weight':'resampled_training'},
+                                   {'optimizer':{'name':'adamw','weight_decay':0.0}}])
+def test_duplicate_or_incomparable_experiments_are_rejected(change):
     row = {"scope": "federated global model", "family": "character_cnn", "data_kind": "real",
            "seed": 42, "partition": "iid", "method": "undersampling", "split": "val", "round": 1,
            "experiment_id": "a"}
@@ -72,7 +74,7 @@ def test_duplicate_or_incomparable_experiments_are_rejected():
         verify_comparability([row, dict(row)], metadata)
     second = dict(row, method="oversampling", experiment_id="b")
     changed = deepcopy(cfg)
-    changed["aggregation_weight"] = "resampled_training"
+    changed.update(change)
     metadata["b"] = {"configuration": changed, "data_contracts": {}}
     with pytest.raises(ValueError, match="incompatible"):
         verify_comparability([row, second], metadata)

@@ -62,7 +62,7 @@ def main():
               "reproduction": {"python": platform.python_version(), "packages": {name: importlib.metadata.version(name)
                   for name in ("numpy", "matplotlib", "scikit-learn")},
                   "report_sources_sha256": {relative: fingerprint(ROOT / relative) for relative in
-                      ("scripts/report_evaluation.py", "src/evaluation/reporting.py", "src/evaluation/plots.py", "src/evaluation/classification.py")},
+                      ("scripts/report_evaluation.py", "src/evaluation/reporting.py", "src/evaluation/plots.py", "src/evaluation/classification.py", "src/evaluation/thresholds.py")},
                   "settings_sha256": fingerprint(args.config)}}
     args.output.mkdir(parents=True)
     plots = export_plots(report, args.output, settings["formats"])

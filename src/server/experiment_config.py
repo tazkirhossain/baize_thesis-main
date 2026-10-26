@@ -23,7 +23,8 @@ FIELDS = {'model_name', 'partition_type', 'balancing_method', 'training_protocol
           'warmup_epochs', 'aggregation_weight', 'threshold', 'evaluate_training',
           'evaluate_final_test', 'pretrained_source', 'partition_root', 'device',
           'threads', 'generate_plots', 'evaluation_population_id'}
-OPTIONAL_FIELDS = {'progress_interval_seconds', 'model_selection', 'website_enrichment'}
+OPTIONAL_FIELDS = {'progress_interval_seconds', 'model_selection', 'website_enrichment',
+                   'cnn_initialization', 'threshold_selection', 'optimizer'}
 
 
 def _unique_object(pairs):
@@ -58,6 +59,9 @@ def resolve_experiment(request, root):
     family, partition = request['model_name'], request['partition_type']
     if family not in ('character_cnn', 'deberta_v3_base'):
         raise ValueError('model_name must be character_cnn or deberta_v3_base')
+    if ('cnn_initialization' in request
+            and request['cnn_initialization'] not in ('legacy_fan_out', 'stable_classifier_v1')):
+        raise ValueError('cnn_initialization must be legacy_fan_out or stable_classifier_v1')
     if partition not in PARTITIONS:
         raise ValueError('partition_type must be iid, label_skew or category_skew')
     protocol = request['training_protocol']
@@ -95,6 +99,12 @@ def resolve_experiment(request, root):
         cfg['progress_interval_seconds'] = request['progress_interval_seconds']
     if 'model_selection' in request:
         cfg['model_selection'] = deepcopy(request['model_selection'])
+    if 'threshold_selection' in request:
+        cfg['threshold_selection'] = deepcopy(request['threshold_selection'])
+    if 'optimizer' in request:
+        cfg['optimizer'] = deepcopy(request['optimizer'])
+    if family == 'character_cnn' and 'cnn_initialization' in request:
+        cfg['model']['initialization'] = request['cnn_initialization']
     from src.data.enrichment.config import resolve_enrichment
     if 'website_enrichment' in request:
         cfg['website_enrichment'] = resolve_enrichment(request['website_enrichment'], root)

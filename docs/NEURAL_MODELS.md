@@ -27,7 +27,23 @@ ReLU, two factor-two max pools, residual additions at blocks 3 through 6,
 adaptive average pooling, and a 512 -> 1024 -> number_of_classes head with 0.5
 classifier dropout. Convolution channels are 256 in blocks 1-6 and 512 in blocks
 7-8. Kernel sizes are 7, 7, 3, 3, 3, 3, 3, 3, with length-preserving padding.
-Conv/linear weights use the supplied Kaiming initialization and zero biases.
+Conv/hidden-linear weights use the supplied Kaiming initialization and zero
+biases. The optional versioned final-classifier initialization is described below.
+
+### CNN initialization correction, 26 October 2026
+
+The active launcher setting `cnn_initialization="stable_classifier_v1"` maps to
+the low-level CNN `model.initialization` setting of the same name. It initializes
+only the final 1024-to-2 classifier with zero-mean normal weights, standard
+deviation 0.01 and zero bias. Hidden layers and the supplied architecture remain
+unchanged. Missing settings retain `legacy_fan_out`, including its final-layer
+Kaiming initialization, so historical experiments are not silently redefined.
+The policy is bound into the experiment contract and must match across primary
+comparisons. Synthetic startup checks establish initialization behavior only;
+they do not establish improved Adult detection. See
+[the diagnosis](ADULT_PERFORMANCE_DIAGNOSIS.md) for the optimization-only audit
+and training-only threshold selection. Existing runs require no migration;
+launch a fresh run to use the correction.
 
 One dimensional correction is intentional: input is transposed before
 `Dropout1d`, so this layer sees (batch, characters, sequence_length) and drops

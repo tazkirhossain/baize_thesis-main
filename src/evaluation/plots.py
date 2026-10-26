@@ -177,7 +177,9 @@ def export_plots(report, output, formats=("png", "svg")):
             axis.legend(fontsize=9)
         figure.suptitle(f"Federated training convergence\n{scope}", fontsize=13)
         figure.tight_layout(rect=(0, 0.09, 1, 0.94))
-        save(figure, f"05_convergence_{experiment}", "Updated global model evaluated locally on unresampled training/validation data. Training-selection records, when configured, are excluded from the optimization pool. Synthetic runs are implementation checks only.")
+        threshold_note = (" Per-round decision thresholds use training selection only; loss is threshold-independent."
+                          if report['experiments'][experiment]['configuration'].get('threshold_selection') else "")
+        save(figure, f"05_convergence_{experiment}", "Updated global model evaluated locally on unresampled training/validation data. Training-selection records, when configured, are excluded from the optimization pool. Synthetic runs are implementation checks only." + threshold_note)
 
         # Use the fixed final round, never choose a round using holdout scores.
         final_round = report["experiments"][experiment]["configuration"]["rounds"]
@@ -206,7 +208,10 @@ def export_plots(report, output, formats=("png", "svg")):
                 axis.grid(False)
             figure.suptitle(f"Confusion matrices at communication round {final_round}\n{scope}", fontsize=13)
             figure.tight_layout(rect=(0, 0.12, 1, 0.91))
-            save(figure, f"07_confusion_{experiment}", "Each cell shows count and percentage within its true-class row. Each panel uses its own count color scale; compare printed values. No resampling of evaluation data.")
+            thresholds = (" Training-selected thresholds: " + "; ".join(
+                f"{row['split']}={row['metrics']['threshold']:.3f}" for row in final_rows) + "."
+                if threshold_note else "")
+            save(figure, f"07_confusion_{experiment}", "Each cell shows count and percentage within its true-class row. Each panel uses its own count color scale; compare printed values. No resampling of evaluation data." + thresholds)
 
         rounds = sorted([row for row in rows if row["split"] == "val"], key=lambda row: row["round"])
         if any(row.get("timing") and row.get("communication") for row in rounds):

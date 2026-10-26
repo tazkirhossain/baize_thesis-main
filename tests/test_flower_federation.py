@@ -216,11 +216,14 @@ def test_codec_and_fixed_encoder_reject_incompatible_inputs():
     assert metrics["adult_recall"] == 1 and metrics["accuracy"] == 0.75
 
 
-def test_deberta_forward_interface_in_actual_federation(tmp_path):
+@pytest.mark.parametrize('optimizer', [None, {'name':'adamw','weight_decay':0.0}])
+def test_deberta_forward_interface_in_actual_federation(tmp_path, optimizer):
     pytest.importorskip("transformers")
     from transformers import DebertaV2Config
     from src.models.deberta_v3_base.model import DebertaV3BaseClassifier
     cfg = json.loads((ROOT / "config/federated/deberta_v3_base.json").read_text())
+    if optimizer is not None:
+        cfg['optimizer'] = optimizer
     cfg.update(rounds=1, clients_per_round=2, batch_size=4)
     cfg["model"]["max_length"] = 8
     synthetic_clients(tmp_path / "clients")

@@ -282,6 +282,12 @@ class FiveClientFedAvg(fl.server.strategy.FedAvg):
         if split == 'val' and self.cfg.get('model_selection'):
             allowed |= {'selection_n_records', 'selection_tn', 'selection_fp', 'selection_fn',
                         'selection_tp', 'selection_loss_sum', 'selection_evaluation_seconds'}
+        if self.cfg.get('threshold_selection'):
+            allowed.add('score_histogram')
+            if split == 'val':
+                allowed.add('selection_score_histogram')
+                if self.cfg.get('evaluate_training', True):
+                    allowed.add('train_score_histogram')
         if any(set(result.metrics) != allowed for _, result in results):
             raise ValueError("only aggregate evaluation counts/loss may leave a client")
         results = sorted(results, key=lambda item: item[1].metrics["client_id"])
@@ -317,6 +323,10 @@ class FiveClientFedAvg(fl.server.strategy.FedAvg):
                     'updated global model on unresampled optimization pools; excludes training-selection data'
                     if self.cfg.get('model_selection') else
                     'updated global model on original local training splits; all five clients'))
+        if self.cfg.get('threshold_selection'):
+            self._apply_threshold_policy(server_round, split, results)
+            aggregate = self.round_reports[server_round][split]
+            selection = self.round_reports[server_round].get('selection') if split == 'val' else None
         timing = self.round_reports[server_round]["timing"]
         for _, res in results:
             for key in ("evaluation_seconds", "train_evaluation_seconds", "selection_evaluation_seconds"):
@@ -347,6 +357,54 @@ class FiveClientFedAvg(fl.server.strategy.FedAvg):
         return aggregate["loss"], {key: value for key, value in aggregate.items()
                                   if isinstance(value, (int, float))}
 
+    def _apply_threshold_policy(self, rnd, split, results):
+        """Choose with training selection only, then score fixed holdout histograms.
+
+        Binned counts permit exact confusion counts at the public threshold grid.
+        No individual prediction, URL or source record leaves its client.
+        """
+        from src.evaluation.thresholds import parse_histogram, pool_histograms, select_threshold, metrics_at_threshold
+        report = self.round_reports[rnd]
+        bins = self.cfg['threshold_selection']['bins']
+
+        def pooled(name):
+            prefix = '' if name == split else f'{name}_'
+            histograms = []
+            for _, result in results:
+                values = result.metrics
+                counts = (values[prefix+'tn']+values[prefix+'fp'],
+                          values[prefix+'fn']+values[prefix+'tp'])
+                histograms.append(parse_histogram(values[prefix+'score_histogram'], bins, counts))
+            return pool_histograms(histograms)
+
+        if split == 'val':
+            selection_histogram = pooled('selection')
+            # This decision is made before parsing/using validation histograms.
+            selected = select_threshold(selection_histogram)
+            threshold = selected['threshold']
+            report['threshold_selection'] = dict(self.cfg['threshold_selection'], threshold=threshold,
+                score=selected['adult_f1'], reference_threshold=self.cfg['threshold'])
+            histograms = {'selection': selection_histogram, 'val': pooled('val')}
+            if self.cfg.get('evaluate_training', True):
+                histograms['train'] = pooled('train')
+        else:
+            if self.best is None or self.pending_eval[rnd][1]['base_hash'] != self.best['global_hash']:
+                raise ValueError('threshold-selected test must use the selected checkpoint')
+            threshold = self.best['threshold']
+            histograms = {'test': pooled('test')}
+            report['test_checkpoint']['threshold'] = threshold
+        for name, histogram in histograms.items():
+            reference = report[name]
+            measured = metrics_at_threshold(histogram, threshold)
+            if measured['n_records'] != reference['n_records']:
+                raise ValueError('threshold histogram population differs from evaluation population')
+            report.setdefault('fixed_threshold_metrics', {})[name] = reference
+            report.setdefault('score_histograms', {})[name] = histogram.tolist()
+            report[name] = dict(measured, loss=reference['loss'],
+                **({'scope': reference['scope']} if 'scope' in reference else {}))
+        print(f"Decision threshold={threshold:.3f}; selected on training-selection Adult F1 only; "
+              "validation/test never choose the threshold.", flush=True)
+
     def _checkpoint(self, rnd, *, evaluated):
         if self.output is None:
             return
@@ -364,6 +422,9 @@ class FiveClientFedAvg(fl.server.strategy.FedAvg):
             'metrics':{name:self.round_reports[rnd][name] for name in ('train','selection','val')
                        if evaluated and name in self.round_reports[rnd]},
             'purpose':'global model weights; includes all ensemble members; not a complete resumable training session'}
+        if self.cfg.get('threshold_selection') and evaluated:
+            metadata['threshold_selection'] = self.round_reports[rnd]['threshold_selection']
+            metadata['decision_threshold'] = self.round_reports[rnd]['selection']['threshold']
         atomic_json(path.with_suffix('.json'), metadata)
         print(f'Saved global checkpoint: round {rnd}, {metadata["status"]}: {path}', flush=True)
 
@@ -376,6 +437,7 @@ class FiveClientFedAvg(fl.server.strategy.FedAvg):
             'tie_break':'earliest round', 'global_hash':state_hash(self.current),
             'checkpoint':f'checkpoints/round_{rnd:04d}.npz', 'selection_metrics':selection,
             'scope':'best checkpoint within this run only; not a best model/method claim across experiments'}
+        best['threshold'] = selection.get('threshold', self.cfg['threshold'])
         if self.output is not None:
             path = self.output/best['checkpoint']
             copy_best(path, self.output/'best_model.npz')
@@ -434,7 +496,7 @@ class FederatedServer(fl.server.Server):
                 evaluation_parameters = self.strategy.selected_parameters()
                 self.strategy.round_reports[num_rounds]['test_checkpoint'] = {
                     'round':self.strategy.best['round'], 'global_hash':self.strategy.best['global_hash'],
-                    'source':'training_selection'}
+                    'source':'training_selection', 'threshold':self.strategy.best['threshold']}
             requests = self.strategy.evaluation_requests(num_rounds, evaluation_parameters, self._client_manager, split="test")
             responses = [(proxy, proxy.evaluate(ins, timeout, num_rounds)) for proxy, ins in requests]
             self.strategy.aggregate_evaluate(num_rounds, responses, [])

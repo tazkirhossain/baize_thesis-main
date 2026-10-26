@@ -102,8 +102,11 @@ def test_selection_config_rejects_unsafe_or_ambiguous_options(selection):
 @pytest.mark.parametrize('method,protocol', [('undersampling','end_to_end'),('oversampling','end_to_end'),
     ('ensemble_undersampling','end_to_end'), ('smote','encoder_embeddings'),
     ('oversampling','encoder_embeddings')])
-def test_every_round_best_checkpoint_reloads_and_only_training_selection_selects(tmp_path, method, protocol):
+@pytest.mark.parametrize('optimizer', [None, {'name':'adamw','weight_decay':0.0}])
+def test_every_round_best_checkpoint_reloads_and_only_training_selection_selects(tmp_path, method, protocol, optimizer):
     value=cfg()
+    if optimizer is not None:
+        value['optimizer'] = optimizer
     value['balancing']['method']=method
     if protocol=='encoder_embeddings':
         value['representation']={'mode':protocol,'warmup_epochs':1}
@@ -172,6 +175,98 @@ def test_best_ties_keep_earliest_and_holdout_scores_do_not_select(tmp_path):
     assert state_hash(arrays)==first and metadata['round']==1
     # A worse final checkpoint never replaces a better earlier checkpoint.
     assert state_hash(strategy.current)!=first
+
+
+def test_threshold_is_selected_only_on_training_and_frozen_with_best_checkpoint(tmp_path):
+    from dataclasses import replace
+    from src.evaluation.thresholds import select_threshold, metrics_at_threshold
+    from src.evaluation.reporting import federated_rows
+    value = cfg()
+    value['threshold_selection'] = dict(source='training_selection', metric='adult_f1',
+                                      bins=201, tie_break='highest_threshold')
+    validate_config(value)
+    synthetic_clients(tmp_path/'clients', selection_ready=True)
+    originals = {p: p.read_bytes() for p in (tmp_path/'clients').rglob('*.jsonl')}
+    runs = []
+    # Alter validation labels only in memory. Neither weights, threshold nor
+    # checkpoint choice may depend on these labels. Test labels stay untouched.
+    for perturb_validation in (False, True):
+        directory = tmp_path/str(perturb_validation)
+        strategy = FiveClientFedAvg(value, models(value), output=directory)
+        clients = [URLFlowerClient(cid, tmp_path/'clients'/f'client_{cid:03d}', value,
+                                   models=models(value)) for cid in range(5)]
+        if perturb_validation:
+            from src.client.neural_data import LocalURLDataset
+            for client in clients:
+                original_read = client._read
+                def read(split, original=original_read):
+                    data, dataset = original(split)
+                    if split == 'val':
+                        data = replace(data, labels=np.zeros_like(data.labels))
+                        dataset = LocalURLDataset(data)
+                    return data, dataset
+                client._read = read
+        run_local(strategy, clients)
+        for rnd, report in strategy.round_reports.items():
+            chosen = select_threshold(np.array(report['score_histograms']['selection']))
+            assert report['selection']['threshold'] == chosen['threshold']
+            assert report['selection']['adult_f1'] == chosen['adult_f1']
+            assert report['selection']['adult_f1'] >= report['fixed_threshold_metrics']['selection']['adult_f1']
+            assert report['val']['threshold'] == chosen['threshold']
+            for split in ('val', 'selection', 'train'):
+                expected = metrics_at_threshold(np.array(report['score_histograms'][split]), chosen['threshold'])
+                assert report[split]['confusion_matrix'] == expected['confusion_matrix']
+        final = strategy.round_reports[2]
+        assert final['test']['threshold'] == strategy.best['threshold'] == final['test_checkpoint']['threshold']
+        metadata = json.loads((directory/'best_model.json').read_text())
+        assert metadata['decision_threshold'] == strategy.best['threshold']
+        settings = json.loads((ROOT/'config/reporting/comparison.json').read_text())
+        federated_rows(directory, settings)
+        runs.append(strategy)
+    assert runs[0].best == runs[1].best
+    assert state_hash(runs[0].current) == state_hash(runs[1].current)
+    assert runs[0].round_reports[2]['val']['confusion_matrix'] != runs[1].round_reports[2]['val']['confusion_matrix']
+    assert all(p.read_bytes() == content for p, content in originals.items())
+
+    from src.evaluation.reporting import checked_selection
+    run_metadata = json.loads((tmp_path/'False/run.json').read_text())
+    run_metadata['selection']['threshold'] = -1
+    without_test = [{key: val for key, val in report.items() if key not in ('test', 'test_checkpoint')}
+                    for report in runs[0].round_reports.values()]
+    with pytest.raises(ValueError, match='selected threshold'):
+        checked_selection(value, run_metadata, without_test)
+
+    # Historical exports must fail if a held-out test is mislabeled with a
+    # different threshold, even when its checkpoint hash is still correct.
+    path = tmp_path/'False/round_0002.json'
+    report = json.loads(path.read_text())
+    report['test_checkpoint']['threshold'] = -1
+    path.write_text(json.dumps(report))
+    with pytest.raises(ValueError, match='test threshold'):
+        federated_rows(tmp_path/'False', settings)
+
+
+def test_final_test_uses_earlier_best_threshold_instead_of_final_round_threshold():
+    from types import SimpleNamespace
+    from src.evaluation.thresholds import encode_probability_histogram, histogram_counts, metrics_at_threshold
+    value = cfg()
+    value['threshold_selection'] = dict(source='training_selection', metric='adult_f1',
+                                      bins=201, tie_break='highest_threshold')
+    strategy = FiveClientFedAvg(value, models(value))
+    digest = state_hash(strategy.current)
+    strategy.best = dict(round=1, global_hash=digest, threshold=0.7)
+    strategy.pending_eval[2] = ({}, dict(base_hash=digest))
+    scores, labels = np.array([.1, .6, .65, .9]), np.array([0, 0, 1, 1])
+    reference = dict(confusion_metrics([[1, 1], [0, 2]]), threshold=.5, loss=.4)
+    strategy.round_reports[2] = dict(test=reference, test_checkpoint=dict(round=1),
+        threshold_selection=dict(threshold=.8))
+    metrics = dict(tn=1, fp=1, fn=0, tp=2,
+                   score_histogram=encode_probability_histogram(scores, labels, 201))
+    strategy._apply_threshold_policy(2, 'test', [(None, SimpleNamespace(metrics=metrics))])
+    measured = strategy.round_reports[2]['test']
+    assert measured['threshold'] == .7
+    assert measured['confusion_matrix'] == metrics_at_threshold(histogram_counts(scores, labels, 201), .7)['confusion_matrix']
+    assert strategy.round_reports[2]['test_checkpoint']['threshold'] == .7
 
 
 def test_interrupted_evaluation_keeps_aggregated_checkpoint_without_claiming_best(tmp_path, monkeypatch):

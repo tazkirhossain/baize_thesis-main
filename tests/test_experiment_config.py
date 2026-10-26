@@ -65,6 +65,34 @@ def test_custom_source_requires_declared_identity_and_explicit_lr():
     assert cfg['balancing']['adult_to_non_adult'] == '1:5'
 
 
+@pytest.mark.parametrize('policy', ['legacy_fan_out', 'stable_classifier_v1'])
+def test_cnn_initialization_is_explicit_in_contract_but_not_deberta(policy):
+    from src.server.config import contract_hash, validate_config
+    value = request()
+    value['cnn_initialization'] = policy
+    cnn = resolve_experiment(value, ROOT).configuration
+    assert cnn['model']['initialization'] == policy
+    changed = deepcopy(cnn)
+    changed['model']['initialization'] = 'legacy_fan_out' if policy == 'stable_classifier_v1' else 'stable_classifier_v1'
+    assert contract_hash(cnn) != contract_hash(changed)
+    value['model_name'] = 'deberta_v3_base'
+    assert 'initialization' not in resolve_experiment(value, ROOT).configuration['model']
+    value['cnn_initialization'] = 'unknown'
+    with pytest.raises(ValueError, match='cnn_initialization'):
+        resolve_experiment(value, ROOT)
+    changed['model']['initialization'] = 'unknown'
+    with pytest.raises(ValueError, match='initialization'):
+        validate_config(changed)
+
+
+def test_missing_initialization_preserves_legacy_config_and_training_selection_policy():
+    value = request()
+    value.pop('cnn_initialization', None)
+    cfg = resolve_experiment(value, ROOT).configuration
+    assert 'initialization' not in cfg['model']
+    assert cfg['threshold_selection'] == value['threshold_selection']
+
+
 def test_duplicate_json_keys_are_rejected(tmp_path):
     source = tmp_path/'bad.json'
     source.write_text('{"rounds": 2, "rounds": 10}')

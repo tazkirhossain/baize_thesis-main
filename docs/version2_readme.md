@@ -622,3 +622,93 @@ server/runtime client operation. Original URL/source-row/split matches are
 required, copied rows belong only to the target client, partial copies resume,
 and the pooled feature fingerprint stays identical across client reallocations.
 This supports fair IID/non-IID comparisons using exactly the same website inputs.
+
+## Adult false-alarm investigation — 26 October 2026
+
+The user reported weak Adult precision during a real IID undersampling CNN run.
+The read-only audit verified correct labels, retained minority examples, majority
+sampling without replacement, unchanged original files and correct fixed character
+encoding. Client 1's ORIGINAL OPTIMIZATION pool (selection excluded) contains
+4,564 Adult and 181,920 Non-adult records. No Adult URL is truncated at length 256
+or contains an unknown encoded character; only two Non-adult URLs truncate.
+There are no duplicate/conflicting 256-character prefixes in that inspected pool.
+This is training-only evidence, not a raw validation/test audit. Detailed counts
+and limitations are in [ADULT_PERFORMANCE_DIAGNOSIS.md](ADULT_PERFORMANCE_DIAGNOSIS.md).
+
+Added versioned `stable_classifier_v1` CNN initialization: only the final
+1024-to-2 layer uses normal weights with standard deviation 0.01 and zero bias.
+The hidden layers and supplied architecture remain intact. Missing settings keep
+the legacy `fan_out` initialization for historical reproduction. Synthetic startup
+behavior does not prove improved final detection quality.
+
+The active experiment enables optional `threshold_selection` from the existing
+protected training-selection domains: 201 class-conditional bins, Adult F1, and
+higher-threshold ties. Clients return only 2-by-201 counts; the server uses pooled
+selection counts only. Fixed 0.5 reference metrics are retained. Validation/test
+never choose thresholds or checkpoints. Earliest-round checkpoint ties remain;
+the checkpoint records its threshold, and optional final test freezes both.
+This adds no differential privacy or secure aggregation guarantee.
+
+A fresh run is required. Existing running processes/checkpoints do not change.
+Primary comparisons must use matching initialization and threshold policies;
+improvement remains unmeasured until the new experiment and reserved final test
+complete. The four balancing methods, original partitions/splits and FedAvg
+original-optimization-count weighting remain in place.
+
+## Data folder cleaned — 26 October 2026
+
+Removed 111,713 disposable files (1.072 GiB) across 148 entries: generated
+`data/test-*` fixtures/logs, repeated synthetic smoke checkpoints, preview graphs,
+and obsolete dashboard/npm artifacts. No generated `data/test-*` directories
+remain. Source `tests/` retains 24 Python files for leakage/model/FL checks;
+ordinary training does not run those tests.
+
+All 313 recorded protected raw/active-partition/pretrained file hashes match
+their pre-cleanup SHA-256 values. Client train/validation/test files, raw CSV,
+all audited dataset versions, required Python runtimes, enrichment caches and
+the original recovery archive remain. Transport staging and launcher temporary
+configs were retained for possible active jobs. Real-data launcher preflight
+passes after cleanup; no new training or full test suite was run during cleanup.
+
+Small historical loose files and compact verification evidence are relocated to
+`results/maintenance/data-cleanup-20261026-015555/`. CNN diagnostic scripts and
+measurements live in `results/diagnostics/`. The cleanup manifest records each
+removed path, size, tracked-file count, and protected file checksum. This cleanup
+does not rewrite Git history or push changes to GitHub.
+
+## CNN learning investigation and local optimizer — 26 October 2026
+
+After stable initialization, the user reported loss near 0.693 and weak Adult
+discrimination. A frozen round-1 checkpoint and controlled client-local probes
+used original TRAIN only, preserving optimization/selection domain roles.
+The current SGD 0.001 barely changed the encoder and failed to fit a 64-example
+balanced training sample after 60 updates. AdamW at the same rate reduced recent
+training loss to 0.028 on that memorization check; this is not a holdout result.
+
+Larger matched pilots used 1,024 balanced optimization examples, three epochs
+(48 updates) and separate unbalanced 4,096-row training-selection samples per
+client. Selection Adult F1 increased from 0.0414 to 0.2623 on Client 1 and from
+0.0330 to 0.2195 on Client 2. ROC-AUC increased from 0.5025 to 0.7366 and from
+0.4778 to 0.7445 respectively. F1 uses the existing 201-bin selection-only policy.
+These are single-seed, two-client local pilot results, not a full FedAvg study;
+Adult recall at selected F1 thresholds remains limited.
+
+Added a reusable local optimizer factory for both model families and all four
+balancing methods, including encoder warmup and frozen-head training. Explicit
+AdamW/SGD settings enter configuration, hashes, snapshots, console output and
+comparison checks. Missing settings reproduce historical plain SGD exactly.
+State resets per member/phase/round; server aggregation remains FedAvg.
+The active file now selects AdamW at 0.001, zero weight decay. Original datasets,
+balancing ratio, train/selection/validation/test memberships and epoch/round
+budgets remain unchanged. Validation/test were not balanced or used for tuning.
+
+Verification: 427 full-suite tests passed, three skipped; a later exact-update
+parity regression also passed. Actual Character CNN five-client/two-round AdamW
+integration exercised checkpoint selection and frozen-threshold final testing.
+Source tests and compact evidence/logs remain; generated test fixtures were
+removed afterward. `scripts/diagnose_cnn_learning.py` reproduces bounded probes;
+CSV/JSON evidence and source fingerprints are under `results/diagnostics/`.
+Read [CNN_LEARNING_DIAGNOSIS.md](CNN_LEARNING_DIAGNOSIS.md). A fresh full run is
+required to establish actual FL/final-test improvements. No best-method or
+guaranteed-good-result claim is made. These changes are local until committed
+and pushed.

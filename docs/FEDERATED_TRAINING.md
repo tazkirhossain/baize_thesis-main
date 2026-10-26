@@ -49,10 +49,13 @@ records for central training.
    round number and declared local settings. Stale/incompatible states fail.
 3. Each client reads its own existing training split, verifies its checksum,
    creates the configured training-only sampling view, and trains locally for
-   `local_epochs` using the configured batch size and learning rate. Plain SGD
-   is reset each round; there is no momentum or optimizer state aggregation.
+   `local_epochs` using the configured batch size, learning rate and local
+   optimizer. Missing optimizer settings preserve plain SGD. The active CNN
+   experiment now explicitly uses AdamW, based on training-only pilot evidence.
+   Local optimizer state resets each round/phase and is never aggregated.
    Sampling and loader/dropout seeds are deterministic from client/round/member.
    No validation/test data chooses ratios, optimizer settings or thresholds.
+
 4. Clients return full compatible states plus original/resampled training counts,
    original/resulting class counts, duplicates, examples processed and mean loss.
    Full-state averaging is mathematically equivalent to averaging deltas from
@@ -62,6 +65,17 @@ records for central training.
 5. The server aggregates and sends the **new global model** to all five clients,
    including clients not selected for training. Each evaluates its original local
    validation split. No centralized validation dataset exists in this path.
+
+The optional `optimizer` contract is `{"name":"adamw","weight_decay":0.0}`
+or `{"name":"sgd","momentum":0.0,"weight_decay":0.0}`. AdamW uses fixed
+betas (0.9, 0.999) and epsilon 1e-8. The same helper is used for end-to-end,
+encoder warmup and frozen-head training with both model families and all four
+balancing methods. Adam state belongs only to that local phase; it is reset at
+the next phase/round. This remains server FedAvg with local AdamW, not FedAdam.
+The contract, source snapshots and checkpoint metadata retain the optimizer.
+Use the same optimizer/settings across primary distribution/balancing comparisons.
+See [the training diagnosis](CNN_LEARNING_DIAGNOSIS.md) for the limited pilot
+evidence; it is not a completed five-client performance study.
 
 Each validation response contains only `tn`, `fp`, `fn`, `tp`, count and loss sum,
 plus protocol identity/hashes and aggregate timing. Reporting added on 23 October
@@ -90,6 +104,24 @@ records never determine checkpoint selection. See `CHECKPOINTS.md` for counts,
 membership/weighting changes, exact storage and reload checks.
 
 ## FedAvg weighting policy
+
+### Optional training-only threshold selection, 26 October 2026
+
+`threshold_selection={"source":"training_selection","metric":"adult_f1",
+"bins":201,"tie_break":"highest_threshold"}` requires `model_selection`.
+Clients send class-conditional score-bin counts (2 by 201) for training selection,
+validation and optional original-training/test evaluation. The server chooses a
+grid threshold using pooled training-selection Adult F1 only; equal values choose
+the higher threshold. It then measures validation at that threshold and retains
+the fixed-0.5 reference. Validation/test histograms never choose thresholds.
+The selected checkpoint carries its threshold, and final test freezes both.
+Without this option, the fixed-threshold protocol remains unchanged.
+
+These are coarse aggregate statistics, never raw scores, predictions, URLs or
+record IDs. The server sees the histograms; no differential-privacy or secure-
+aggregation guarantee is added. Model tensors and original-count FedAvg weighting
+are unchanged. Use consistent initialization and threshold policies across method
+comparisons. See [diagnosis and limits](ADULT_PERFORMANCE_DIAGNOSIS.md).
 
 Both primary presets use `aggregation_weight="original_training"`:
 

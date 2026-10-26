@@ -113,6 +113,17 @@ def main(argv=None):
     print(f"Model: {cfg['model']['family']} | Distribution: {cfg['experiment']['partition_strategy']} | Balancing: {cfg['balancing']['method']}", flush=True)
     print(f"Protocol: {request['training_protocol']} | Rounds: {cfg['rounds']} | Local epochs: {cfg['local_epochs']} | Batch: {cfg['batch_size']} | LR: {cfg['learning_rate']}", flush=True)
     print(f"Device: {plan.device} | Threads: {plan.threads} | FedAvg weights: {cfg['aggregation_weight']}", flush=True)
+    from src.client.optimizers import optimizer_settings
+    print(f"Local optimizer: {optimizer_settings(cfg.get('optimizer'))}; fresh state each local phase/round.", flush=True)
+    if cfg['model']['family'] == 'character_cnn':
+        print(f"CNN initialization: {cfg['model'].get('initialization', 'legacy_fan_out')}", flush=True)
+    if cfg.get('threshold_selection'):
+        policy = cfg['threshold_selection']
+        print(f"Decision threshold: selected from training-selection summaries only; {policy['metric']}; "
+              f"{policy['bins']} fixed probability bins; ties use {policy['tie_break']}. "
+              f"Reference threshold={cfg['threshold']}. Validation/test never select the threshold.", flush=True)
+    else:
+        print(f"Decision threshold: fixed at {cfg['threshold']}", flush=True)
     enrichment = cfg.get('website_enrichment')
     print(f"Model inputs: {'URL + frozen website metadata/text/sitemap context' if enrichment else 'URL only'}" +
           (f" | Snapshot: {enrichment['snapshot_id']} | Offline training" if enrichment else ''), flush=True)

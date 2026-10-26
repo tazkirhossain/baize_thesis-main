@@ -1,5 +1,6 @@
 """CNN tensor contract and backward pass."""
 import pytest
+from types import SimpleNamespace
 
 torch = pytest.importorskip("torch")
 from src.models.character_cnn.model import CharacterCNNConfig, CharacterLevelCNN
@@ -54,5 +55,39 @@ def test_rejects_token_ids_bad_channels_and_too_short_sequences(model):
         model(torch.zeros(2, 16, 9))
     with pytest.raises(ValueError, match="length"):
         model(torch.zeros(2, 3, 10))
+
+
+def test_versioned_initialization_preserves_hidden_states_and_historical_callers(model):
+    torch.manual_seed(42)
+    explicit = CharacterLevelCNN(CharacterCNNConfig(8, "_-", 0.1, "legacy_fan_out"), 2)
+    torch.manual_seed(42)
+    old_args = CharacterLevelCNN(SimpleNamespace(number_of_characters=8, extra_characters="_-", dropout_input=0.1), 2)
+    torch.manual_seed(42)
+    stable = CharacterLevelCNN(CharacterCNNConfig(8, "_-", 0.1, "stable_classifier_v1"), 2)
+    for key, expected in model.state_dict().items():
+        torch.testing.assert_close(explicit.state_dict()[key], expected, rtol=0, atol=0)
+        torch.testing.assert_close(old_args.state_dict()[key], expected, rtol=0, atol=0)
+        if key != "fc.3.weight":
+            torch.testing.assert_close(stable.state_dict()[key], expected, rtol=0, atol=0)
+    assert not torch.equal(stable.fc[-1].weight, explicit.fc[-1].weight)
+    with pytest.raises(ValueError, match="initialization"):
+        CharacterLevelCNN(CharacterCNNConfig(8, initialization="unknown"), 2)
+
+
+@pytest.mark.parametrize("seed", [7, 42, 101])
+def test_stable_classifier_avoids_saturated_random_predictions_and_can_backpropagate(model, seed):
+    # A fresh binary classifier should not be confidently wrong on arbitrary
+    # balanced inputs. This failed with ReLU fan_out applied to the output layer.
+    torch.manual_seed(seed)
+    network = CharacterLevelCNN(CharacterCNNConfig(10, initialization="stable_classifier_v1"), 2).train()
+    x = one_hot(16, 64)
+    labels = torch.arange(16) % 2
+    logits = network(x)
+    loss = torch.nn.functional.cross_entropy(logits, labels)
+    assert float(logits.softmax(1).max(1).values.mean().detach()) < 0.8
+    assert 0.4 < float(loss.detach()) < 1.2
+    loss.backward()
+    assert torch.isfinite(network.conv1[0].weight.grad).all()
+    assert network.conv1[0].weight.grad.abs().sum() > 0
 
 

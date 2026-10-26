@@ -15,6 +15,7 @@ from src.data.preprocessing import _file_hash
 from src.client.data import read_local_split
 from src.client.neural_data import LocalURLDataset, make_collator
 from src.client.progress import BatchProgress
+from src.client.optimizers import make_optimizer
 from src.data.balancing import (BalanceConfig, ensemble_training_indices,
                                print_balance_report, sample_training_indices)
 from src.models.federated_state import StateCodec, make_models, state_hash
@@ -181,8 +182,9 @@ class URLFlowerClient(fl.client.NumPyClient):
             loader = DataLoader(view, batch_size=self.cfg["batch_size"], shuffle=True,
                                 generator=generator, collate_fn=self.collate, num_workers=0)
             model.to(self.device).train()
-            # Plain SGD, reset each round. No class-weight/focal replacement.
-            optimizer = torch.optim.SGD(model.parameters(), lr=self.cfg["learning_rate"])
+            # State is local and reset each round; FedAvg still aggregates weights.
+            optimizer = make_optimizer(model.parameters(), learning_rate=self.cfg['learning_rate'],
+                                       settings=self.cfg.get('optimizer'))
             progress = BatchProgress(f'Client {self.client_id+1} | round {rnd} | member {member+1} | training view',
                 total_batches=len(loader)*self.cfg['local_epochs'], total_examples=len(view)*self.cfg['local_epochs'],
                 epochs=self.cfg['local_epochs'], interval_seconds=self.cfg.get('progress_interval_seconds', 30))
@@ -271,11 +273,19 @@ class URLFlowerClient(fl.client.NumPyClient):
             if split != 'selection':
                 raise ValueError('empty local evaluation pool')
             self._unchanged(parent, data.sha256)
-            return 0.0, 0, dict(tn=0, fp=0, fn=0, tp=0, loss_sum=0.0,
-                                evaluation_seconds=time.perf_counter()-started)
+            empty = dict(tn=0, fp=0, fn=0, tp=0, loss_sum=0.0,
+                         evaluation_seconds=time.perf_counter()-started)
+            if self.cfg.get('threshold_selection'):
+                bins = self.cfg['threshold_selection']['bins']
+                empty['score_histogram'] = json.dumps([[0]*bins, [0]*bins])
+            return 0.0, 0, empty
         loader = DataLoader(dataset, batch_size=self.cfg['batch_size'], shuffle=False,
                             collate_fn=self.collate, num_workers=0)
         matrix = np.zeros((2, 2), dtype=np.int64)
+        score_histogram = None
+        if self.cfg.get('threshold_selection'):
+            from src.evaluation.thresholds import histogram_counts
+            score_histogram = np.zeros((2, self.cfg['threshold_selection']['bins']), dtype=np.int64)
         loss_sum = 0.0
         for model in self.models:
             model.to(self.device).eval()
@@ -292,12 +302,22 @@ class URLFlowerClient(fl.client.NumPyClient):
                 batch_loss_sum = float(torch.nn.functional.nll_loss(
                     probabilities.clamp_min(1e-12).log(), labels, reduction="sum"))
                 loss_sum += batch_loss_sum
-                predicted = (probabilities[:, 1] >= self.cfg["threshold"]).long()
+                adult_scores = probabilities[:, 1]
+                if score_histogram is not None:
+                    # Match the public float64 probability grid at boundaries.
+                    adult_scores = adult_scores.double()
+                predicted = (adult_scores >= self.cfg["threshold"]).long()
                 matrix += np.bincount((2*labels + predicted).numpy(), minlength=4).reshape(2, 2)
+                if score_histogram is not None:
+                    # Fixed coarse bins only. Individual scores and records remain local.
+                    score_histogram += histogram_counts(adult_scores.numpy(), labels.numpy(),
+                                                        self.cfg['threshold_selection']['bins'])
                 progress.update(len(labels), loss=batch_loss_sum/len(labels))
         for model in self.models:
             model.cpu()
         self._unchanged(parent, data.sha256)
         metrics = dict(zip(("tn", "fp", "fn", "tp"), [int(x) for x in matrix.ravel()]))
         metrics.update({"loss_sum": loss_sum, "evaluation_seconds": time.perf_counter() - started})
+        if score_histogram is not None:
+            metrics['score_histogram'] = json.dumps(score_histogram.tolist(), separators=(',', ':'))
         return loss_sum / len(data), len(data), metrics

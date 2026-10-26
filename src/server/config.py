@@ -10,7 +10,7 @@ def validate_config(cfg):
     allowed = {"n_clients", "rounds", "clients_per_round", "local_epochs", "batch_size",
                "learning_rate", "seed", "model", "balancing", "aggregation_weight",
                "threshold", "evaluate_final_test"}
-    optional = {"evaluate_training", "experiment", "representation", "transport", "progress_interval_seconds", "model_selection", "website_enrichment"}
+    optional = {"evaluate_training", "experiment", "representation", "transport", "progress_interval_seconds", "model_selection", "website_enrichment", "threshold_selection", "optimizer"}
     if not allowed <= set(cfg) or set(cfg) - allowed - optional:
         raise ValueError(f"federated configuration fields must be {sorted(allowed)}")
     if type(cfg.get("evaluate_training", True)) is not bool:
@@ -22,6 +22,10 @@ def validate_config(cfg):
                 or type(selection['fraction']) not in (int, float)
                 or not math.isfinite(selection['fraction']) or not 0 < selection['fraction'] <= .5):
             raise ValueError('model_selection requires training_selection, adult_f1 and fraction in (0, 0.5]')
+    from src.evaluation.thresholds import validate_threshold_selection
+    validate_threshold_selection(cfg)
+    from src.client.optimizers import optimizer_settings
+    optimizer_settings(cfg.get('optimizer'))
     interval = cfg.get('progress_interval_seconds', 30)
     if type(interval) not in (int, float) or not math.isfinite(interval) or interval < 0:
         raise ValueError('progress_interval_seconds must be finite and nonnegative (0 disables progress)')
@@ -65,8 +69,11 @@ def validate_config(cfg):
     from src.data.enrichment.config import validate_enrichment
     enrichment = validate_enrichment(cfg.get('website_enrichment'))
     if model["family"] == "character_cnn":
-        if set(model) != {"family", "characters", "sequence_length", "dropout_input"}:
+        required_model_fields = {"family", "characters", "sequence_length", "dropout_input"}
+        if not required_model_fields <= set(model) or set(model) - required_model_fields - {"initialization"}:
             raise ValueError("invalid character CNN fields")
+        if model.get("initialization", "legacy_fan_out") not in ("legacy_fan_out", "stable_classifier_v1"):
+            raise ValueError("unknown character CNN initialization")
         alphabet = model["characters"]
         if not isinstance(alphabet, str) or not alphabet or len(set(alphabet)) != len(alphabet):
             raise ValueError("characters must be a unique, fixed public alphabet")

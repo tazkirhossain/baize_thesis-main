@@ -74,6 +74,13 @@ remains configurable. Original partition and split files never change.
 
 ## Ensembles and bounded model transfer
 
+All four methods honor the same optional local `optimizer` configuration for
+both model families. It applies to end-to-end training, original-data encoder
+warmup and balanced head training. State is fresh per member/phase/round;
+optimizer state is not part of FedAvg. Missing settings retain historical SGD.
+The active CNN file explicitly selects AdamW; keep this setting constant when
+comparing balancing methods and distributions.
+
 Every ensemble member has its own model, random seed, optimizer and independently
 undersampled head-training subset. In end-to-end mode, its original URL training
 view is undersampled. In embedding mode, each member has the same declared

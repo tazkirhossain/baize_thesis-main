@@ -56,7 +56,8 @@ def make_models(cfg):
                 torch.random.default_generator.manual_seed(seed)
                 # Extra channel is UNK; all-zero vectors are padding.
                 args = CharacterCNNConfig(len(cfg["model"]["characters"]) + 1,
-                                          dropout_input=cfg["model"]["dropout_input"])
+                                          dropout_input=cfg["model"]["dropout_input"],
+                                          initialization=cfg["model"].get("initialization", "legacy_fan_out"))
                 models.append(CharacterLevelCNN(args, 2))
         else:
             from src.models.deberta_v3_base.model import build_model

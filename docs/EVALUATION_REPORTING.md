@@ -13,6 +13,26 @@ and real partitions remain immutable. Outputs require a fresh directory.
 
 ## Classification metrics
 
+### Training-only threshold metrics, 26 October 2026
+
+Optional `threshold_selection` evaluates a declared 201-bin grid using pooled
+TRAINING-SELECTION class-conditional score counts. It requires the existing
+`model_selection` reservation. Adult F1 chooses the threshold, with higher
+thresholds winning equal scores. Each round retains fixed-0.5 reference metrics
+alongside selected-threshold metrics. Validation and optional original-training
+metrics use that round's selected threshold; optional final test uses the frozen
+selected checkpoint and its own recorded threshold. Validation/test never select
+or adjust either. Model loss is independent of the decision threshold.
+
+Clients return 2-by-201 histograms rather than raw scores, records or individual
+predictions. These coarse statistics are visible to the server and add no formal
+privacy/security guarantee. Grid-based curves or operating points must be
+labelled approximate; do not present them as exact score-level PR-AUC. Missing
+historical histograms remain missing. Preserve the configured threshold policy
+and versioned CNN initialization in comparison metadata, and do not mix legacy
+fixed-threshold runs with the new active policy as identical methods. See
+[diagnosis and limitations](ADULT_PERFORMANCE_DIAGNOSIS.md).
+
 The shared calculator `src/evaluation/classification.py` reports Adult and
 Non-adult precision, recall and F1, macro-F1, balanced accuracy, overall accuracy,
 confusion matrix, both class supports and observed Adult prevalence.

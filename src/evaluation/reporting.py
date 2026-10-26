@@ -100,6 +100,24 @@ def checked_selection(cfg, run, rounds):
     candidates = []
     for report in rounds:
         measured = checked_metrics(report['selection'])
+        if cfg.get('threshold_selection'):
+            from src.evaluation.thresholds import parse_histogram, select_threshold, metrics_at_threshold
+            bins = cfg['threshold_selection']['bins']
+            selected_histogram = parse_histogram(json.dumps(report['score_histograms']['selection']), bins)
+            chosen = select_threshold(selected_histogram)
+            threshold_decision = report['threshold_selection']
+            if (any(threshold_decision.get(key) != value for key, value in cfg['threshold_selection'].items())
+                    or threshold_decision.get('threshold') != chosen['threshold']
+                    or threshold_decision.get('score') != chosen['adult_f1']):
+                raise ValueError('threshold disagrees with training-selection histogram')
+            for name in ('selection', 'val', 'train'):
+                if name not in report:
+                    continue
+                histogram = parse_histogram(json.dumps(report['score_histograms'][name]), bins)
+                expected_metrics = metrics_at_threshold(histogram, chosen['threshold'])
+                if (report[name].get('threshold') != chosen['threshold']
+                        or report[name]['confusion_matrix'] != expected_metrics['confusion_matrix']):
+                    raise ValueError('evaluation does not use the training-selected threshold')
         if not measured['adult_count'] or not measured['non_adult_count']:
             raise ValueError('training-selection data must include both classes')
         candidates.append((measured['adult_f1'], report['round'], report['global_hash']))
@@ -107,11 +125,24 @@ def checked_selection(cfg, run, rounds):
     if (decision.get('score') != best[0] or decision.get('round') != best[1]
             or decision.get('global_hash') != best[2]):
         raise ValueError('selected checkpoint disagrees with training-selection counts')
+    if cfg.get('threshold_selection'):
+        best_report = next(item for item in rounds if item['round'] == best[1])
+        threshold = best_report['selection']['threshold']
+        if (decision.get('threshold') != threshold
+                or decision.get('selection_metrics', {}).get('threshold') != threshold):
+            raise ValueError('selected threshold does not match selected checkpoint')
     for report in rounds:
         if 'test' in report:
             reference = report.get('test_checkpoint', {})
             if reference.get('round') != best[1] or reference.get('global_hash') != best[2] or reference.get('source') != 'training_selection':
                 raise ValueError('test model does not match selected checkpoint')
+            if cfg.get('threshold_selection'):
+                from src.evaluation.thresholds import parse_histogram, metrics_at_threshold
+                histogram = parse_histogram(json.dumps(report['score_histograms']['test']), cfg['threshold_selection']['bins'])
+                if (decision.get('threshold') != threshold or reference.get('threshold') != threshold
+                        or report['test'].get('threshold') != threshold
+                        or report['test']['confusion_matrix'] != metrics_at_threshold(histogram, threshold)['confusion_matrix']):
+                    raise ValueError('test threshold does not match selected checkpoint')
 
 
 def checked_client_training(report, cfg):
@@ -184,6 +215,7 @@ def federated_rows(path, settings):
                          "ratio": cfg["balancing"]["adult_to_non_adult"], "seed": cfg["seed"],
                          "training_protocol": "encoder_embeddings" if cfg.get("representation") else "end_to_end",
                          "input_mode": "url_plus_metadata" if cfg.get('website_enrichment') else "url_only",
+                         "threshold_policy": "training_selection" if cfg.get('threshold_selection') else "fixed",
                          "split": split, "round": index, "metrics": checked_metrics(report[split]),
                          "checkpoint_round": report.get('test_checkpoint', {}).get('round', index) if split == 'test' else index,
                          "checkpoint_hash": report.get('test_checkpoint', {}).get('global_hash', report.get('global_hash')) if split == 'test' else report.get('global_hash'),
@@ -197,6 +229,10 @@ def federated_rows(path, settings):
                                "client_runtime": run.get("client_runtime", {}),
                                "server_runtime": run.get("server_runtime", {}),
                                "client_training_rounds": client_training_rounds,
+                               "threshold_history": [{"round": item['round'],
+                                   "decision": item['threshold_selection'],
+                                   "fixed_threshold_metrics": item['fixed_threshold_metrics']}
+                                   for item in rounds if 'threshold_selection' in item],
                                "selection": run["selection"], "declared_experiment": declared}}
     parent = path.parent
     if (parent / "reproduction.json").exists():
@@ -231,6 +267,9 @@ def verify_comparability(rows, metadata):
         signature["balancing_settings"] = balance
         signature["representation"] = cfg.get("representation")
         signature['model_selection'] = cfg.get('model_selection')
+        signature['threshold_selection'] = cfg.get('threshold_selection')
+        from src.client.optimizers import optimizer_settings
+        signature['optimizer'] = optimizer_settings(cfg.get('optimizer'))
         signature['website_enrichment'] = cfg.get('website_enrichment')
         from src.data.enrichment.config import pooled_digest
         signature['website_input_digest'] = pooled_digest(metadata[row['experiment_id']].get('data_contracts', {}))
@@ -267,6 +306,7 @@ def report_markdown(report, plot_files):
              "Encoder-embedding rows use training-only encoder warmup and a frozen-encoder balanced head phase; they are a distinct protocol from end-to-end training. Never interpolate raw strings or token IDs.", "",
              "With training-only checkpoint selection, train metrics exclude the selection pool. The test is measured once after the FL budget on the selected checkpoint; its checkpoint round may differ from the final communication round. Per-experiment selection metadata and checkpoint hashes/rounds are retained in report.json.", "",
              "Website-enriched and URL-only inputs are separate experiment contracts. The input mode is shown alongside model/protocol; source configuration and pooled feature fingerprints remain in report.json.", "",
+             "With threshold_selection enabled, only reserved training-selection scores choose the decision threshold. Validation/test use that threshold; test freezes the selected checkpoint's threshold. Fixed-threshold references remain in report.json. Probability loss is unchanged by threshold selection.", "",
              "## All requested classification metrics", "",
              "| Family / data / protocol | Partition | Method | Split / round | Adult P | Adult R | Adult F1 | Non-adult P | Non-adult R | Non-adult F1 | Macro-F1 | Balanced accuracy | Accuracy | N |",
              "|---|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|"]

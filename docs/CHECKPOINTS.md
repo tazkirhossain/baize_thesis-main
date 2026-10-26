@@ -38,6 +38,24 @@ global model or ensemble; individual client updates are not archived here.
 
 ## Select the best checkpoint
 
+### Optional threshold stored with each checkpoint, 26 October 2026
+
+The active experiment also enables `threshold_selection` with source
+`training_selection`, metric `adult_f1`, 201 score bins and tie-break
+`highest_threshold`. It requires the existing domain-disjoint `model_selection`
+reservation. Clients supply only class-conditional bin counts. Each round's
+threshold maximizes pooled TRAINING-SELECTION Adult F1 on the declared grid;
+ties choose the higher threshold. Round selection then uses that selection F1,
+retaining the earliest round on equal scores. The checkpoint metadata binds its
+threshold to the selected model; optional final test uses that exact model and
+threshold once after the configured budget. Validation/test never choose either.
+
+Fixed-0.5 reference measurements remain available alongside selected-threshold
+metrics. Configurations without `threshold_selection` retain the existing fixed
+threshold. Initialization and threshold policies form part of the experiment
+contract; a new run is needed, and old checkpoints must not be silently labelled
+with the new policies. See [diagnosis](ADULT_PERFORMANCE_DIAGNOSIS.md).
+
 The active `config/experiment.json` now declares:
 
 ```json
